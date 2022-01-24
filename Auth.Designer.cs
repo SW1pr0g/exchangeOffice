@@ -36,7 +36,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.login = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.logBtn = new System.Windows.Forms.Button();
             this.passwordPanel = new System.Windows.Forms.Panel();
             this.passBox = new System.Windows.Forms.TextBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -124,7 +124,7 @@
             // 
             // login
             // 
-            this.login.Controls.Add(this.button1);
+            this.login.Controls.Add(this.logBtn);
             this.login.Controls.Add(this.passwordPanel);
             this.login.Controls.Add(this.loginPanel);
             this.login.Controls.Add(this.label5);
@@ -135,18 +135,20 @@
             this.login.Size = new System.Drawing.Size(450, 530);
             this.login.TabIndex = 1;
             // 
-            // button1
+            // logBtn
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(15, 310);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(148, 35);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Войти";
-            this.button1.UseVisualStyleBackColor = false;
+            this.logBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.logBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.logBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.logBtn.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.logBtn.ForeColor = System.Drawing.Color.White;
+            this.logBtn.Location = new System.Drawing.Point(15, 310);
+            this.logBtn.Name = "logBtn";
+            this.logBtn.Size = new System.Drawing.Size(148, 35);
+            this.logBtn.TabIndex = 7;
+            this.logBtn.Text = "Войти";
+            this.logBtn.UseVisualStyleBackColor = false;
+            this.logBtn.Click += new System.EventHandler(this.logBtn_Click);
             // 
             // passwordPanel
             // 
@@ -175,6 +177,7 @@
             // 
             this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox3.Location = new System.Drawing.Point(13, 11);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(24, 24);
@@ -252,6 +255,7 @@
             this.ControlBox = false;
             this.Controls.Add(this.login);
             this.Controls.Add(this.info);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AuthForm";
@@ -289,7 +293,7 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.TextBox passBox;
         private System.Windows.Forms.TextBox loginBox;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button logBtn;
     }
 }
 

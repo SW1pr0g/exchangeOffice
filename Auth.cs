@@ -47,5 +47,12 @@ namespace AIS_exchangeOffice
         {
             passBox.UseSystemPasswordChar = true;
         }
+
+        private void logBtn_Click(object sender, EventArgs e)
+        {
+            CashierWindow show = new CashierWindow();
+            show.Show();
+            this.Hide();
+        }
     }
 }
