@@ -50,7 +50,7 @@ namespace AIS_exchangeOffice
 
         private void logBtn_Click(object sender, EventArgs e)
         {
-            CashierWindow show = new CashierWindow();
+            AdminWindow show = new AdminWindow();
             show.Show();
             this.Hide();
         }
