@@ -55,6 +55,7 @@ namespace AIS_exchangeOffice
             clientsPanel.Visible = false;
             exchangePanel.Visible = false;
             searchPanel.Visible = false;
+            bdPanel.Visible = false;
         }
 
         private void MainBtn_Leave(object sender, EventArgs e)
@@ -72,6 +73,7 @@ namespace AIS_exchangeOffice
             clientsPanel.Visible = true;
             exchangePanel.Visible = false;
             searchPanel.Visible = false;
+            bdPanel.Visible = false;
         }
 
         private void ClientsBtn_Leave(object sender, EventArgs e)
@@ -89,6 +91,7 @@ namespace AIS_exchangeOffice
             mainPanel.Visible = false;
             clientsPanel.Visible = false;
             searchPanel.Visible = false;
+            bdPanel.Visible = false;
         }
 
         private void ExchangeBtn_Leave(object sender, EventArgs e)
@@ -106,11 +109,53 @@ namespace AIS_exchangeOffice
             exchangePanel.Visible = false;
             mainPanel.Visible = false;
             clientsPanel.Visible = false;
+            bdPanel.Visible = false;
         }
-
         private void SearchBtn_Leave(object sender, EventArgs e)
         {
             SearchBtn.BackColor = Color.FromArgb(11, 100, 103);
+        }
+        private void BDbtn_Click(object sender, EventArgs e)
+        {
+            pnlNav.Height = BDbtn.Height;
+            pnlNav.Top = BDbtn.Top;
+            pnlNav.Left = BDbtn.Left;
+            BDbtn.BackColor = Color.FromArgb(46, 51, 73);
+            exchangePanel.Visible = false;
+            mainPanel.Visible = false;
+            clientsPanel.Visible = false;
+            searchPanel.Visible = false;
+            bdPanel.Visible = true;
+        }
+        private void BDbtn_Leave(object sender, EventArgs e)
+        {
+            BDbtn.BackColor = Color.FromArgb(11, 100, 103);
+        }        
+        private void OtchetBtn_Click(object sender, EventArgs e)
+        {
+            pnlNav.Height = OtchetBtn.Height;
+            pnlNav.Top = OtchetBtn.Top;
+            pnlNav.Left = OtchetBtn.Left;
+            OtchetBtn.BackColor = Color.FromArgb(46, 51, 73);
+            exchangePanel.Visible = false;
+            mainPanel.Visible = false;
+            clientsPanel.Visible = false;
+            searchPanel.Visible = false;
+            bdPanel.Visible = false;
+        }       
+        private void OtchetBtn_Leave(object sender, EventArgs e)
+        {
+            OtchetBtn.BackColor = Color.FromArgb(11, 100, 103);
+        }
+
+        private void exitButton_BD_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void exitButton_Otchet_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
