@@ -56,6 +56,7 @@ namespace AIS_exchangeOffice
             exchangePanel.Visible = false;
             searchPanel.Visible = false;
             bdPanel.Visible = false;
+            otchetPanel.Visible = false;
         }
 
         private void MainBtn_Leave(object sender, EventArgs e)
@@ -74,6 +75,7 @@ namespace AIS_exchangeOffice
             exchangePanel.Visible = false;
             searchPanel.Visible = false;
             bdPanel.Visible = false;
+            otchetPanel.Visible = false;
         }
 
         private void ClientsBtn_Leave(object sender, EventArgs e)
@@ -92,6 +94,7 @@ namespace AIS_exchangeOffice
             clientsPanel.Visible = false;
             searchPanel.Visible = false;
             bdPanel.Visible = false;
+            otchetPanel.Visible = false;
         }
 
         private void ExchangeBtn_Leave(object sender, EventArgs e)
@@ -110,6 +113,7 @@ namespace AIS_exchangeOffice
             mainPanel.Visible = false;
             clientsPanel.Visible = false;
             bdPanel.Visible = false;
+            otchetPanel.Visible = false;
         }
         private void SearchBtn_Leave(object sender, EventArgs e)
         {
@@ -126,6 +130,7 @@ namespace AIS_exchangeOffice
             clientsPanel.Visible = false;
             searchPanel.Visible = false;
             bdPanel.Visible = true;
+            otchetPanel.Visible = false;
         }
         private void BDbtn_Leave(object sender, EventArgs e)
         {
@@ -142,6 +147,7 @@ namespace AIS_exchangeOffice
             clientsPanel.Visible = false;
             searchPanel.Visible = false;
             bdPanel.Visible = false;
+            otchetPanel.Visible = true;
         }       
         private void OtchetBtn_Leave(object sender, EventArgs e)
         {
