@@ -15,3 +15,5 @@ A:\Projects\exchangeOffice\obj\Debug\AIS_exchangeOffice.csproj.CoreCompileInputs
 A:\Projects\exchangeOffice\obj\Debug\AIS_exchangeOffice.exe
 A:\Projects\exchangeOffice\obj\Debug\AIS_exchangeOffice.pdb
 A:\Projects\exchangeOffice\obj\Debug\AIS_exchangeOffice.AdminWindow.resources
+A:\Projects\exchangeOffice\bin\Debug\MySql.Data.dll
+A:\Projects\exchangeOffice\obj\Debug\AIS_exchangeOffice.csproj.CopyComplete

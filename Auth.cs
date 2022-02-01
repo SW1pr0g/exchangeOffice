@@ -15,21 +15,7 @@ namespace AIS_exchangeOffice
     {
         public AuthForm()
         {
-            InitializeComponent();
-            //connect to BD
-            string connStr = "server=localhost;user=root;database=aisdatabd;password=root123;";
-
-            MySqlConnection conn = new MySqlConnection(connStr);
-
-            conn.Open();
-
-            string sql = "SELECT login FROM users WHERE id = 2";
-
-            MySqlCommand command = new MySqlCommand(sql, conn);
-
-            string login = command.ExecuteScalar().ToString();
-
-            conn.Close();
+            InitializeComponent();           
         }
 
         private void exit_Click(object sender, EventArgs e)
@@ -65,9 +51,45 @@ namespace AIS_exchangeOffice
 
         private void logBtn_Click(object sender, EventArgs e)
         {
-            AdminWindow show = new AdminWindow();
-            show.Show();
-            this.Hide();
+            string connStr = "server=localhost;user=root;database=aisdatabd;password=root123;";
+            MySqlConnection conn = new MySqlConnection(connStr);
+            conn.Open();
+
+            string login = loginBox.Text, pass = passBox.Text;
+
+            string sql = "SELECT password FROM users WHERE login = '" + login + "'";
+
+            MySqlCommand command = new MySqlCommand(sql, conn);
+            try
+            {
+                if (pass == command.ExecuteScalar().ToString())
+                {
+                    MessageBox.Show("Авторизация успешна");
+                    string data = command.ExecuteScalar().ToString();
+                    switch (data)
+                    {
+                        case "cashier":
+                            CashierWindowMain showCashier = new CashierWindowMain();
+                            showCashier.Show();
+                            this.Hide();
+                            break;
+                        case "admin":
+                            AdminWindow showAdmin = new AdminWindow();
+                            showAdmin.Show();
+                            this.Hide();
+                            break;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Пароль некорректен!");
+                }
+            }
+            catch (MySql.Data.MySqlClient.MySqlException)
+            {
+                MessageBox.Show("Такого пользователя нет в системе");
+            }
+            conn.Close();                      
         }
     }
 }

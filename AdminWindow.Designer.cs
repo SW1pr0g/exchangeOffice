@@ -118,16 +118,15 @@
             this.exitButton_search = new System.Windows.Forms.Button();
             this.label38 = new System.Windows.Forms.Label();
             this.bdPanel = new System.Windows.Forms.Panel();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.ClientsRadioBtn = new System.Windows.Forms.RadioButton();
+            this.SaledRadioBtn = new System.Windows.Forms.RadioButton();
+            this.PurchasedRadioBtn = new System.Windows.Forms.RadioButton();
+            this.UsersRadioBtn = new System.Windows.Forms.RadioButton();
+            this.CourseRadioBtn = new System.Windows.Forms.RadioButton();
             this.label42 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label40 = new System.Windows.Forms.Label();
-            this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.exitButton_BD = new System.Windows.Forms.Button();
             this.label41 = new System.Windows.Forms.Label();
             this.otchetPanel = new System.Windows.Forms.Panel();
@@ -140,6 +139,7 @@
             this.label44 = new System.Windows.Forms.Label();
             this.exitButton_Otchet = new System.Windows.Forms.Button();
             this.label45 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -164,10 +164,10 @@
             this.searchPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             this.bdPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             this.otchetPanel.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -1297,16 +1297,16 @@
             // 
             // bdPanel
             // 
-            this.bdPanel.Controls.Add(this.radioButton5);
-            this.bdPanel.Controls.Add(this.radioButton4);
-            this.bdPanel.Controls.Add(this.radioButton3);
-            this.bdPanel.Controls.Add(this.radioButton2);
-            this.bdPanel.Controls.Add(this.radioButton1);
+            this.bdPanel.Controls.Add(this.dataGridView1);
+            this.bdPanel.Controls.Add(this.ClientsRadioBtn);
+            this.bdPanel.Controls.Add(this.SaledRadioBtn);
+            this.bdPanel.Controls.Add(this.PurchasedRadioBtn);
+            this.bdPanel.Controls.Add(this.UsersRadioBtn);
+            this.bdPanel.Controls.Add(this.CourseRadioBtn);
             this.bdPanel.Controls.Add(this.label42);
             this.bdPanel.Controls.Add(this.button6);
             this.bdPanel.Controls.Add(this.textBox2);
             this.bdPanel.Controls.Add(this.label40);
-            this.bdPanel.Controls.Add(this.pictureBox12);
             this.bdPanel.Controls.Add(this.exitButton_BD);
             this.bdPanel.Controls.Add(this.label41);
             this.bdPanel.Location = new System.Drawing.Point(186, 0);
@@ -1315,62 +1315,65 @@
             this.bdPanel.TabIndex = 21;
             this.bdPanel.Visible = false;
             // 
-            // radioButton5
+            // ClientsRadioBtn
             // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.radioButton5.Location = new System.Drawing.Point(573, 140);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(113, 29);
-            this.radioButton5.TabIndex = 28;
-            this.radioButton5.Text = "Клиенты";
-            this.radioButton5.UseVisualStyleBackColor = true;
+            this.ClientsRadioBtn.AutoSize = true;
+            this.ClientsRadioBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ClientsRadioBtn.Location = new System.Drawing.Point(573, 140);
+            this.ClientsRadioBtn.Name = "ClientsRadioBtn";
+            this.ClientsRadioBtn.Size = new System.Drawing.Size(113, 29);
+            this.ClientsRadioBtn.TabIndex = 28;
+            this.ClientsRadioBtn.Text = "Клиенты";
+            this.ClientsRadioBtn.UseVisualStyleBackColor = true;
+            this.ClientsRadioBtn.CheckedChanged += new System.EventHandler(this.ClientsRadioBtn_CheckedChanged);
             // 
-            // radioButton4
+            // SaledRadioBtn
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.radioButton4.Location = new System.Drawing.Point(188, 139);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(193, 29);
-            this.radioButton4.TabIndex = 27;
-            this.radioButton4.Text = "Продажа валюты";
-            this.radioButton4.UseVisualStyleBackColor = true;
+            this.SaledRadioBtn.AutoSize = true;
+            this.SaledRadioBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.SaledRadioBtn.Location = new System.Drawing.Point(188, 139);
+            this.SaledRadioBtn.Name = "SaledRadioBtn";
+            this.SaledRadioBtn.Size = new System.Drawing.Size(193, 29);
+            this.SaledRadioBtn.TabIndex = 27;
+            this.SaledRadioBtn.Text = "Продажа валюты";
+            this.SaledRadioBtn.UseVisualStyleBackColor = true;
+            this.SaledRadioBtn.CheckedChanged += new System.EventHandler(this.SaledRadioBtn_CheckedChanged);
             // 
-            // radioButton3
+            // PurchasedRadioBtn
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.radioButton3.Location = new System.Drawing.Point(387, 139);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(183, 29);
-            this.radioButton3.TabIndex = 26;
-            this.radioButton3.Text = "Покупка валюты";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.PurchasedRadioBtn.AutoSize = true;
+            this.PurchasedRadioBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.PurchasedRadioBtn.Location = new System.Drawing.Point(387, 139);
+            this.PurchasedRadioBtn.Name = "PurchasedRadioBtn";
+            this.PurchasedRadioBtn.Size = new System.Drawing.Size(183, 29);
+            this.PurchasedRadioBtn.TabIndex = 26;
+            this.PurchasedRadioBtn.Text = "Покупка валюты";
+            this.PurchasedRadioBtn.UseVisualStyleBackColor = true;
+            this.PurchasedRadioBtn.CheckedChanged += new System.EventHandler(this.PurchasedRadioBtn_CheckedChanged);
             // 
-            // radioButton2
+            // UsersRadioBtn
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Checked = true;
-            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.radioButton2.Location = new System.Drawing.Point(282, 180);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(165, 29);
-            this.radioButton2.TabIndex = 25;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Пользователи";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.UsersRadioBtn.AutoSize = true;
+            this.UsersRadioBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.UsersRadioBtn.Location = new System.Drawing.Point(282, 180);
+            this.UsersRadioBtn.Name = "UsersRadioBtn";
+            this.UsersRadioBtn.Size = new System.Drawing.Size(165, 29);
+            this.UsersRadioBtn.TabIndex = 25;
+            this.UsersRadioBtn.Text = "Пользователи";
+            this.UsersRadioBtn.UseVisualStyleBackColor = true;
+            this.UsersRadioBtn.CheckedChanged += new System.EventHandler(this.UsersRadioBtn_CheckedChanged);
             // 
-            // radioButton1
+            // CourseRadioBtn
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.radioButton1.Location = new System.Drawing.Point(26, 139);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(156, 29);
-            this.radioButton1.TabIndex = 24;
-            this.radioButton1.Text = "Текущий курс";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.CourseRadioBtn.AutoSize = true;
+            this.CourseRadioBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CourseRadioBtn.Location = new System.Drawing.Point(26, 139);
+            this.CourseRadioBtn.Name = "CourseRadioBtn";
+            this.CourseRadioBtn.Size = new System.Drawing.Size(156, 29);
+            this.CourseRadioBtn.TabIndex = 24;
+            this.CourseRadioBtn.Text = "Текущий курс";
+            this.CourseRadioBtn.UseVisualStyleBackColor = true;
+            this.CourseRadioBtn.CheckedChanged += new System.EventHandler(this.CourseRadioBtn_CheckedChanged);
             // 
             // label42
             // 
@@ -1423,15 +1426,6 @@
             this.label40.Size = new System.Drawing.Size(371, 31);
             this.label40.TabIndex = 13;
             this.label40.Text = "Выбранная таблица из БД";
-            // 
-            // pictureBox12
-            // 
-            this.pictureBox12.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox12.Image")));
-            this.pictureBox12.Location = new System.Drawing.Point(26, 328);
-            this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(687, 185);
-            this.pictureBox12.TabIndex = 10;
-            this.pictureBox12.TabStop = false;
             // 
             // exitButton_BD
             // 
@@ -1596,13 +1590,21 @@
             this.label45.TabIndex = 1;
             this.label45.Text = "Отчёты";
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(26, 327);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(650, 226);
+            this.dataGridView1.TabIndex = 29;
+            // 
             // AdminWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(951, 577);
-            this.Controls.Add(this.otchetPanel);
             this.Controls.Add(this.bdPanel);
+            this.Controls.Add(this.otchetPanel);
             this.Controls.Add(this.searchPanel);
             this.Controls.Add(this.exchangePanel);
             this.Controls.Add(this.clientsPanel);
@@ -1647,12 +1649,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             this.bdPanel.ResumeLayout(false);
             this.bdPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
             this.otchetPanel.ResumeLayout(false);
             this.otchetPanel.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1750,16 +1752,15 @@
         private System.Windows.Forms.Panel bdPanel;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label40;
-        private System.Windows.Forms.PictureBox pictureBox12;
         private System.Windows.Forms.Button exitButton_BD;
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton5;
-        private System.Windows.Forms.RadioButton radioButton4;
-        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton UsersRadioBtn;
+        private System.Windows.Forms.RadioButton CourseRadioBtn;
+        private System.Windows.Forms.RadioButton ClientsRadioBtn;
+        private System.Windows.Forms.RadioButton SaledRadioBtn;
+        private System.Windows.Forms.RadioButton PurchasedRadioBtn;
         private System.Windows.Forms.Panel otchetPanel;
         private System.Windows.Forms.Button exitButton_Otchet;
         private System.Windows.Forms.Label label45;
@@ -1770,5 +1771,6 @@
         private System.Windows.Forms.PictureBox pictureBox13;
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

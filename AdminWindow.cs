@@ -138,6 +138,7 @@ namespace AIS_exchangeOffice
             searchPanel.Visible = false;
             bdPanel.Visible = true;
             otchetPanel.Visible = false;
+
         }
         private void BDbtn_Leave(object sender, EventArgs e)
         {
@@ -174,6 +175,232 @@ namespace AIS_exchangeOffice
         private void button7_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void CourseRadioBtn_CheckedChanged(object sender, EventArgs e)
+        {
+            dataGridView1.Rows.Clear();
+            dataGridView1.Columns.Clear();
+
+            //datagrid
+            string connStr = "server=localhost;user=root;database=aisdatabd;password=root123;";
+            MySqlConnection conn = new MySqlConnection(connStr);
+
+            MySqlCommand command = new MySqlCommand();
+            string commandString = "SELECT * FROM currencycourse;";
+            command.CommandText = commandString;
+            command.Connection = conn;
+            MySqlDataReader reader;
+            try
+            {
+                command.Connection.Open();
+                reader = command.ExecuteReader();
+                this.dataGridView1.Columns.Add("id", "ID");
+                this.dataGridView1.Columns["id"].Width = 20;
+                this.dataGridView1.Columns.Add("name", "Name");
+                this.dataGridView1.Columns["name"].Width = 50;
+                this.dataGridView1.Columns.Add("summsale", "SummSale");
+                this.dataGridView1.Columns["summsale"].Width = 100;
+                this.dataGridView1.Columns.Add("summpurchase", "SummPurchase");
+                this.dataGridView1.Columns["summpurchase"].Width = 100;
+                while (reader.Read())
+                {
+                    dataGridView1.Rows.Add(reader["id"].ToString(), reader["name"].ToString(), reader["summsale"].ToString(), reader["summpurchase"].ToString());
+                }
+                reader.Close();
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("Error: \r\n{0}", ex.ToString());
+            }
+            finally
+            {
+                command.Connection.Close();
+            }
+        }
+
+        private void SaledRadioBtn_CheckedChanged(object sender, EventArgs e)
+        {
+            dataGridView1.Rows.Clear();
+            dataGridView1.Columns.Clear();
+
+            //datagrid
+            string connStr = "server=localhost;user=root;database=aisdatabd;password=root123;";
+            MySqlConnection conn = new MySqlConnection(connStr);
+
+            MySqlCommand command = new MySqlCommand();
+            string commandString = "SELECT * FROM currencycourse;";
+            command.CommandText = commandString;
+            command.Connection = conn;
+            MySqlDataReader reader;
+            try
+            {
+                command.Connection.Open();
+                reader = command.ExecuteReader();
+                this.dataGridView1.Columns.Add("id", "ID");
+                this.dataGridView1.Columns["id"].Width = 20;
+                this.dataGridView1.Columns.Add("name", "Name");
+                this.dataGridView1.Columns["name"].Width = 50;
+                this.dataGridView1.Columns.Add("surname", "Surname");
+                this.dataGridView1.Columns["surname"].Width = 100;
+                this.dataGridView1.Columns.Add("patronymic", "Patronymic");
+                this.dataGridView1.Columns["patronymic"].Width = 100;
+                this.dataGridView1.Columns.Add("summ", "Summ");
+                this.dataGridView1.Columns["summ"].Width = 100;
+                this.dataGridView1.Columns.Add("currency", "Currency");
+                this.dataGridView1.Columns["currency"].Width = 100;
+                this.dataGridView1.Columns.Add("date", "Date");
+                this.dataGridView1.Columns["date"].Width = 100;
+                while (reader.Read())
+                {
+                    //dataGridView1.Rows.Add(reader["id"].ToString(), reader["name"].ToString(), reader["surname"].ToString(), reader["patronymic"].ToString(), reader["date_birth"].ToString(), reader["seriesDoc"].ToString(), reader["numberDoc"].ToString());
+                }
+                reader.Close();
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("Error: \r\n{0}", ex.ToString());
+            }
+            finally
+            {
+                command.Connection.Close();
+            }
+        }
+
+        private void PurchasedRadioBtn_CheckedChanged(object sender, EventArgs e)
+        {
+            dataGridView1.Rows.Clear();
+            dataGridView1.Columns.Clear();
+
+            //datagrid
+            string connStr = "server=localhost;user=root;database=aisdatabd;password=root123;";
+            MySqlConnection conn = new MySqlConnection(connStr);
+
+            MySqlCommand command = new MySqlCommand();
+            string commandString = "SELECT * FROM currencycourse;";
+            command.CommandText = commandString;
+            command.Connection = conn;
+            MySqlDataReader reader;
+            try
+            {
+                command.Connection.Open();
+                reader = command.ExecuteReader();
+                this.dataGridView1.Columns.Add("id", "ID");
+                this.dataGridView1.Columns["id"].Width = 20;
+                this.dataGridView1.Columns.Add("name", "Name");
+                this.dataGridView1.Columns["name"].Width = 50;
+                this.dataGridView1.Columns.Add("surname", "Surname");
+                this.dataGridView1.Columns["surname"].Width = 100;
+                this.dataGridView1.Columns.Add("patronymic", "Patronymic");
+                this.dataGridView1.Columns["patronymic"].Width = 100;
+                this.dataGridView1.Columns.Add("summ", "Summ");
+                this.dataGridView1.Columns["summ"].Width = 100;
+                this.dataGridView1.Columns.Add("currency", "Currency");
+                this.dataGridView1.Columns["currency"].Width = 100;
+                this.dataGridView1.Columns.Add("date", "Date");
+                this.dataGridView1.Columns["date"].Width = 100;
+                while (reader.Read())
+                {
+                    //dataGridView1.Rows.Add(reader["id"].ToString(), reader["name"].ToString(), reader["surname"].ToString(), reader["patronymic"].ToString(), reader["date_birth"].ToString(), reader["seriesDoc"].ToString(), reader["numberDoc"].ToString());
+                }
+                reader.Close();
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("Error: \r\n{0}", ex.ToString());
+            }
+            finally
+            {
+                command.Connection.Close();
+            }
+        }
+
+        private void ClientsRadioBtn_CheckedChanged(object sender, EventArgs e)
+        {
+            dataGridView1.Rows.Clear();
+            dataGridView1.Columns.Clear();
+
+            //datagrid
+            string connStr = "server=localhost;user=root;database=aisdatabd;password=root123;";
+            MySqlConnection conn = new MySqlConnection(connStr);
+
+            MySqlCommand command = new MySqlCommand();
+            string commandString = "SELECT * FROM currencycourse;";
+            command.CommandText = commandString;
+            command.Connection = conn;
+            MySqlDataReader reader;
+            try
+            {
+                command.Connection.Open();
+                reader = command.ExecuteReader();
+                this.dataGridView1.Columns.Add("id", "ID");
+                this.dataGridView1.Columns["id"].Width = 20;
+                this.dataGridView1.Columns.Add("name", "Name");
+                this.dataGridView1.Columns["name"].Width = 50;
+                this.dataGridView1.Columns.Add("surname", "Surname");
+                this.dataGridView1.Columns["surname"].Width = 100;
+                this.dataGridView1.Columns.Add("patronymic", "Patronymic");
+                this.dataGridView1.Columns["patronymic"].Width = 100;
+                this.dataGridView1.Columns.Add("date_birth", "Date_birth");
+                this.dataGridView1.Columns["date_birth"].Width = 100;
+                this.dataGridView1.Columns.Add("seriesDoc", "SeriesDoc");
+                this.dataGridView1.Columns["seriesDoc"].Width = 100;
+                this.dataGridView1.Columns.Add("numberDoc", "NumberDoc");
+                this.dataGridView1.Columns["numberDoc"].Width = 100;
+                while (reader.Read())
+                {
+                    //dataGridView1.Rows.Add(reader["id"].ToString(), reader["name"].ToString(), reader["surname"].ToString(), reader["patronymic"].ToString(), reader["date_birth"].ToString(), reader["seriesDoc"].ToString(), reader["numberDoc"].ToString());
+                }
+                reader.Close();
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("Error: \r\n{0}", ex.ToString());
+            }
+            finally
+            {
+                command.Connection.Close();
+            }
+        }
+
+        private void UsersRadioBtn_CheckedChanged(object sender, EventArgs e)
+        {
+            dataGridView1.Rows.Clear();
+            dataGridView1.Columns.Clear();
+
+            //datagrid
+            string connStr = "server=localhost;user=root;database=aisdatabd;password=root123;";
+            MySqlConnection conn = new MySqlConnection(connStr);
+
+            MySqlCommand command = new MySqlCommand();
+            string commandString = "SELECT * FROM users;";
+            command.CommandText = commandString;
+            command.Connection = conn;
+            MySqlDataReader reader;
+            try
+            {
+                command.Connection.Open();
+                reader = command.ExecuteReader();
+                this.dataGridView1.Columns.Add("id", "ID");
+                this.dataGridView1.Columns["id"].Width = 20;
+                this.dataGridView1.Columns.Add("login", "Login");
+                this.dataGridView1.Columns["login"].Width = 50;
+                this.dataGridView1.Columns.Add("password", "Password");
+                this.dataGridView1.Columns["password"].Width = 100;
+                while (reader.Read())
+                {
+                    dataGridView1.Rows.Add(reader["id"].ToString(), reader["login"].ToString(), reader["password"].ToString());
+                }
+                reader.Close();
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("Error: \r\n{0}", ex.ToString());
+            }
+            finally
+            {
+                command.Connection.Close();
+            }
         }
     }
 }
