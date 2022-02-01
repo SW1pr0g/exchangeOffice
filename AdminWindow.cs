@@ -8,11 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using MySql.Data.MySqlClient;
 
 namespace AIS_exchangeOffice
 {
     public partial class AdminWindow : Form
     {
+        //connect to BD
+        string connStr = "server=localhost;user=root;database=aisdatabd;password=root123;";
+
+        //MySqlConnection conn = new MySqlConnection(connStr);
+
+
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn(int nLeftRect, int nTopRect, int nRightRect, int nBottomRect, int nWidthEllipse, int nHeightEllipse);
         public AdminWindow()
@@ -162,6 +169,11 @@ namespace AIS_exchangeOffice
         private void exitButton_Otchet_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
