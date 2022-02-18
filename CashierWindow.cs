@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using MySql.Data.MySqlClient;
 
 namespace AIS_exchangeOffice
 {
@@ -108,6 +109,34 @@ namespace AIS_exchangeOffice
         private void exitButton_search_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void mainPanel_Paint(object sender, PaintEventArgs e)
+        {
+            //sell
+            string connStr = "server=localhost;user=root;database=aisdatabd;password=root123;";
+            MySqlConnection conn = new MySqlConnection(connStr);
+
+            MySqlCommand command = new MySqlCommand();
+            string commandString = "SELECT * FROM currencycourse;";
+            command.CommandText = commandString;
+            command.Connection = conn;
+            MySqlDataReader reader;
+            try
+            {
+                command.Connection.Open();
+                reader = command.ExecuteReader();
+                
+                reader.Close();
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("Error: \r\n{0}", ex.ToString());
+            }
+            finally
+            {
+                command.Connection.Close();
+            }
         }
     }
 }

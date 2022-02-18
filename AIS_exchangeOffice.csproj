@@ -131,6 +131,7 @@
     <Content Include="images\icons\refresh.png" />
     <Content Include="images\icons\report.png" />
     <Content Include="images\icons\reports.png" />
+    <Content Include="images\icons\save.png" />
     <Content Include="images\icons\search.png" />
     <Content Include="images\icons\searchh.png" />
     <Content Include="images\icons\switzerland.png" />

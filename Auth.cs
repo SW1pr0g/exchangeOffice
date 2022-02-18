@@ -13,14 +13,24 @@ namespace AIS_exchangeOffice
 {
     public partial class AuthForm : Form
     {
+        public DialogResult dialog;
         public AuthForm()
         {
-            InitializeComponent();           
+            InitializeComponent();     
+            
         }
 
         private void exit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult dialogResult = MessageBox.Show("Вы уверены?", "Выход из приложения", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                //do nothing
+            }
         }
 
         private void loginBox_Click(object sender, EventArgs e)
@@ -59,13 +69,14 @@ namespace AIS_exchangeOffice
 
             string sql = "SELECT password FROM users WHERE login = '" + login + "'";
 
-            MySqlCommand command = new MySqlCommand(sql, conn);
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+
             try
             {
-                if (pass == command.ExecuteScalar().ToString())
+                if (pass == cmd.ExecuteScalar().ToString())
                 {
                     MessageBox.Show("Авторизация успешна");
-                    string data = command.ExecuteScalar().ToString();
+                    string data = cmd.ExecuteScalar().ToString();
                     switch (data)
                     {
                         case "cashier":
@@ -82,14 +93,42 @@ namespace AIS_exchangeOffice
                 }
                 else
                 {
-                    MessageBox.Show("Пароль некорректен!");
+                    dialog = MessageBox.Show("Пароль некорректен!");
                 }
             }
             catch (MySql.Data.MySqlClient.MySqlException)
             {
-                MessageBox.Show("Такого пользователя нет в системе");
+                dialog = MessageBox.Show("Такого пользователя нет в системе");
+            }
+            catch (NullReferenceException)
+            {
+                dialog = MessageBox.Show("Такого пользователя нет в системе");
             }
             conn.Close();                      
         }
+
+        private void loginBox_KeyUp(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter && passBox.Text == "")
+            {
+                passBox.BackColor = Color.White;
+                passwordPanel.BackColor = Color.White;
+                loginPanel.BackColor = SystemColors.Control;
+                loginBox.BackColor = SystemColors.Control;
+                passBox.Focus();
+            }
+            else if (e.KeyCode == Keys.Enter && passBox.Text != "")
+            {
+                logBtn_Click(sender, e);
+            }
+        }
+
+        private void passBox_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                logBtn_Click(sender, e);
+            }
+        }   
     }
 }

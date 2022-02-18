@@ -172,6 +172,7 @@
             this.passBox.TabIndex = 6;
             this.passBox.UseSystemPasswordChar = true;
             this.passBox.Click += new System.EventHandler(this.passBox_Click);
+            this.passBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.passBox_KeyUp);
             // 
             // pictureBox3
             // 
@@ -206,6 +207,7 @@
             this.loginBox.Size = new System.Drawing.Size(370, 20);
             this.loginBox.TabIndex = 5;
             this.loginBox.Click += new System.EventHandler(this.loginBox_Click);
+            this.loginBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.loginBox_KeyUp);
             // 
             // pictureBox2
             // 

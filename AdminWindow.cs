@@ -15,7 +15,7 @@ namespace AIS_exchangeOffice
     public partial class AdminWindow : Form
     {
         //connect to BD
-        string connStr = "server=localhost;user=root;database=aisdatabd;password=root123;";
+        //string connStr = "server=localhost;user=root;database=aisdatabd;password=root123;";
 
         //MySqlConnection conn = new MySqlConnection(connStr);
 
@@ -49,7 +49,17 @@ namespace AIS_exchangeOffice
 
         private void exit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult dialogResult = MessageBox.Show("Выйти из аккаунта?", "Выход из аккаунта", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                AuthForm showAuthForm = new AuthForm();
+                showAuthForm.Show();
+                this.Hide();
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                //do nothing
+            }
         }
 
         private void MainBtn_Click(object sender, EventArgs e)
@@ -400,6 +410,25 @@ namespace AIS_exchangeOffice
             finally
             {
                 command.Connection.Close();
+            }
+        }
+
+        private void bdPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+        private void saveBD_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Вы уверены?", "Внесение изменений в БД", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                AuthForm showAuthForm = new AuthForm();
+                showAuthForm.Show();
+                this.Hide();
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                //do nothing
             }
         }
     }
