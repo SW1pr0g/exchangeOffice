@@ -19,7 +19,8 @@ namespace AIS_exchangeOffice
 
         //MySqlConnection conn = new MySqlConnection(connStr);
 
-
+        public int rowRindex = 0;
+        public int rowRcount = 0;
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn(int nLeftRect, int nTopRect, int nRightRect, int nBottomRect, int nWidthEllipse, int nHeightEllipse);
         public AdminWindow()
@@ -239,7 +240,7 @@ namespace AIS_exchangeOffice
             MySqlConnection conn = new MySqlConnection(connStr);
 
             MySqlCommand command = new MySqlCommand();
-            string commandString = "SELECT * FROM currencycourse;";
+            string commandString = "SELECT * FROM saled;";
             command.CommandText = commandString;
             command.Connection = conn;
             MySqlDataReader reader;
@@ -263,7 +264,8 @@ namespace AIS_exchangeOffice
                 this.dataGridView1.Columns["date"].Width = 100;
                 while (reader.Read())
                 {
-                    //dataGridView1.Rows.Add(reader["id"].ToString(), reader["name"].ToString(), reader["surname"].ToString(), reader["patronymic"].ToString(), reader["date_birth"].ToString(), reader["seriesDoc"].ToString(), reader["numberDoc"].ToString());
+                    classes.reversedate reversedate = new classes.reversedate();
+                    dataGridView1.Rows.Add(reader["id"].ToString(), reader["name"].ToString(), reader["surname"].ToString(), reader["patronymic"].ToString(), reader["summ"].ToString(), reader["currency"].ToString(), reversedate.datetimeReverse(reader["date"].ToString()));
                 }
                 reader.Close();
             }
@@ -287,7 +289,7 @@ namespace AIS_exchangeOffice
             MySqlConnection conn = new MySqlConnection(connStr);
 
             MySqlCommand command = new MySqlCommand();
-            string commandString = "SELECT * FROM currencycourse;";
+            string commandString = "SELECT * FROM purchased;";
             command.CommandText = commandString;
             command.Connection = conn;
             MySqlDataReader reader;
@@ -311,7 +313,8 @@ namespace AIS_exchangeOffice
                 this.dataGridView1.Columns["date"].Width = 100;
                 while (reader.Read())
                 {
-                    //dataGridView1.Rows.Add(reader["id"].ToString(), reader["name"].ToString(), reader["surname"].ToString(), reader["patronymic"].ToString(), reader["date_birth"].ToString(), reader["seriesDoc"].ToString(), reader["numberDoc"].ToString());
+                    classes.reversedate reversedate = new classes.reversedate();
+                    dataGridView1.Rows.Add(reader["id"].ToString(), reader["name"].ToString(), reader["surname"].ToString(), reader["patronymic"].ToString(), reader["summ"].ToString(), reader["currency"].ToString(), reversedate.datetimeReverse(reader["date"].ToString()));
                 }
                 reader.Close();
             }
@@ -335,7 +338,7 @@ namespace AIS_exchangeOffice
             MySqlConnection conn = new MySqlConnection(connStr);
 
             MySqlCommand command = new MySqlCommand();
-            string commandString = "SELECT * FROM currencycourse;";
+            string commandString = "SELECT * FROM clients;";
             command.CommandText = commandString;
             command.Connection = conn;
             MySqlDataReader reader;
@@ -359,7 +362,7 @@ namespace AIS_exchangeOffice
                 this.dataGridView1.Columns["numberDoc"].Width = 100;
                 while (reader.Read())
                 {
-                    //dataGridView1.Rows.Add(reader["id"].ToString(), reader["name"].ToString(), reader["surname"].ToString(), reader["patronymic"].ToString(), reader["date_birth"].ToString(), reader["seriesDoc"].ToString(), reader["numberDoc"].ToString());
+                    dataGridView1.Rows.Add(reader["id"].ToString(), reader["name"].ToString(), reader["surname"].ToString(), reader["patronymic"].ToString(), reader["date_birth"].ToString(), reader["seriesDoc"].ToString(), reader["numberDoc"].ToString());
                 }
                 reader.Close();
             }
@@ -419,17 +422,197 @@ namespace AIS_exchangeOffice
         }
         private void saveBD_Click(object sender, EventArgs e)
         {
+            
             DialogResult dialogResult = MessageBox.Show("Вы уверены?", "Внесение изменений в БД", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                AuthForm showAuthForm = new AuthForm();
-                showAuthForm.Show();
-                this.Hide();
+                string connectionString = "server = localhost; user = root; database = aisdatabd; password = root123;";
+                MySqlConnection connection = new MySqlConnection(connectionString);
+                connection.Open();
+                if (CourseRadioBtn.Checked == true)
+                {
+                    bool enderr = false;
+                    int id = dataGridView1.Rows.Count;
+                    string name = "";
+                    string summsale = "", summpurchase = "";
+                    for (int i = 0; i < dataGridView1.Rows.Count-1; i++)
+                    {
+                        try
+                        {
+                            id = Convert.ToInt32(dataGridView1[0, i].Value.ToString());
+                            name = dataGridView1[1, i].Value.ToString();
+                            summsale = dataGridView1[2, i].Value.ToString();
+                            summpurchase = dataGridView1[3, i].Value.ToString();
+                            string query = "UPDATE currencycourse SET name = '" + name + "', summsale = " + summsale.Replace(',', '.') + ", summpurchase = " + summpurchase.Replace(',', '.') + " WHERE id = " + id;
+                            MySqlCommand command = new MySqlCommand(query, connection);
+                            command.ExecuteNonQuery();       
+                        }
+                        catch (MySqlException)
+                        {
+                            dataGridView1.Rows.Clear();
+                            dataGridView1.Columns.Clear();
+                            enderr = true;
+                            MessageBox.Show("Нельзя добавлять новые валюты или изменять курс валют посредством добавления строк.");
+                            MySqlConnection conn = new MySqlConnection(connectionString);
+
+                            MySqlCommand command = new MySqlCommand();
+                            string commandString = "SELECT * FROM currencycourse;";
+                            command.CommandText = commandString;
+                            command.Connection = conn;
+                            MySqlDataReader reader;
+                            command.Connection.Open();
+                            reader = command.ExecuteReader();
+                            this.dataGridView1.Columns.Add("id", "ID");
+                            this.dataGridView1.Columns["id"].Width = 20;
+                            this.dataGridView1.Columns.Add("name", "Name");
+                            this.dataGridView1.Columns["name"].Width = 50;
+                            this.dataGridView1.Columns.Add("summsale", "SummSale");
+                            this.dataGridView1.Columns["summsale"].Width = 100;
+                            this.dataGridView1.Columns.Add("summpurchase", "SummPurchase");
+                            this.dataGridView1.Columns["summpurchase"].Width = 100;
+                            while (reader.Read())
+                            {
+                                dataGridView1.Rows.Add(reader["id"].ToString(), reader["name"].ToString(), reader["summsale"].ToString(), reader["summpurchase"].ToString());
+                            }
+                            reader.Close();
+                            break;
+                        }
+                        catch (NullReferenceException)
+                        {
+                            enderr = true;
+                            MessageBox.Show("Какая-то из ячеек не заполнена полностью. Заполните пустые ячейки.");
+                            break;
+                        }
+                        catch (FormatException)
+                        {
+                            enderr = true;
+                            MessageBox.Show("В какой то из ячеек содержится некорректная информация, либо поле id не увеличивается на 1. Измените данные и попробуйте снова.");
+                            break;
+                        }
+                    }
+                    if (enderr == false)
+                    {
+                        MessageBox.Show("Изменения внесены!");
+                        rowRindex = 0;
+                        rowRcount = 0;
+                        connection.Close();
+                    } 
+                }
+                else if (SaledRadioBtn.Checked == true)
+                {
+                    bool enderr = false;
+                    int id = dataGridView1.Rows.Count;
+                    string name = "", surname = "", patronymic = "", currency = "", date = "", summ = "", query = "";
+                    MySqlCommand command = new MySqlCommand(query, connection); ;
+                    for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
+                    {                       
+                        try
+                        {
+                            if (rowRcount != 0)
+                            {
+                                query = "DELETE FROM saled WHERE id = " + (rowRindex + 1);
+                                command = new MySqlCommand(query, connection);
+                                command.ExecuteNonQuery();
+                            }
+                            id = Convert.ToInt32(dataGridView1[0, i].Value.ToString());
+                            if (id != i + 1)
+                            {
+                                enderr = true;
+                                MessageBox.Show("ID не инкрементируется с каждым следующим полем, либо начинается не с 1. Проверьте поля id.");
+                                break;
+                            }
+                            name = dataGridView1[1, i].Value.ToString();
+                            surname = dataGridView1[2, i].Value.ToString();
+                            patronymic = dataGridView1[3, i].Value.ToString();
+                            summ = dataGridView1[4, i].Value.ToString();
+                            currency = dataGridView1[5, i].Value.ToString();
+                            date = dataGridView1[6, i].Value.ToString();
+                            query = "UPDATE saled SET name = '" + name + "', surname = '" + surname + "', patronymic = '" + patronymic + "', summ = " + summ.Replace(',', '.') + ", date = '" + date + "' WHERE id = " + id;
+                            command = new MySqlCommand(query, connection);
+                            var tr = command.ExecuteNonQuery();
+                            if (tr == 0) 
+                            {
+                                id = Convert.ToInt32(dataGridView1[0, i].Value.ToString());
+                                if (id != i + 1)
+                                {
+                                    enderr = true;
+                                    MessageBox.Show("ID не инкрементируется с каждым следующим полем, либо начинается не с 1. Проверьте поля id.");
+                                    break;
+                                }
+                                name = dataGridView1[1, i].Value.ToString();
+                                surname = dataGridView1[2, i].Value.ToString();
+                                patronymic = dataGridView1[3, i].Value.ToString();
+                                summ = dataGridView1[4, i].Value.ToString();
+                                currency = dataGridView1[5, i].Value.ToString();
+                                date = dataGridView1[6, i].Value.ToString();
+                                query = "INSERT INTO saled (id, name, surname, patronymic, summ, currency, date) VALUES (" + id + ", '" + name + "', '" + surname + "', '" + patronymic + "', " + summ.Replace(',', '.') + ", '" + currency + "', '" + date + "')";
+                                command = new MySqlCommand(query, connection);
+                                command.ExecuteNonQuery();
+                            }                           
+                        }    
+                        catch (MySqlException) 
+                        {   
+                            if (currency.Length > 1)
+                            {
+                                enderr = true;
+                                MessageBox.Show("Поля currency не может содержать больше 1 символа. Проверьте поля currency.");
+                                break;
+                            }
+                            else
+                            {
+                                enderr = true;
+                                MessageBox.Show("Возникла непредвиденная ошибка данных. Проверьте на корректность ввода только что введённые значения.");
+                                break;
+                            }
+                        }
+                        catch (NullReferenceException)
+                        {
+                            enderr = true;
+                            MessageBox.Show("Какая-то из ячеек не заполнена полностью. Заполните пустые ячейки.");
+                            break;
+                        }
+                        catch (FormatException)
+                        {
+                            enderr = true;
+                            MessageBox.Show("В какой то из ячеек содержится некорректная информация, либо поле id не увеличивается на 1. Измените данные и попробуйте снова.");
+                            break;
+                        }
+
+                    }
+                    if (enderr == false)
+                    {
+                        MessageBox.Show("Изменения внесены!");
+                        connection.Close();
+                    }
+                }
+                else if (PurchasedRadioBtn.Checked == true)
+                {
+                    MessageBox.Show("Изменения внесены!");
+                }
+                else if (ClientsRadioBtn.Checked == true)
+                {
+                    MessageBox.Show("Изменения внесены!");
+                }
+                else if (UsersRadioBtn.Checked == true)
+                {
+                    MessageBox.Show("Изменения внесены!");
+                }
+                else
+                {
+                    MessageBox.Show("Изменения не внесены! Таблица не выбрана.");
+                }
+                
             }
             else if (dialogResult == DialogResult.No)
             {
                 //do nothing
             }
+        }
+
+        private void dataGridView1_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            rowRindex = e.RowIndex;
+            rowRcount = e.RowCount;
         }
     }
 }

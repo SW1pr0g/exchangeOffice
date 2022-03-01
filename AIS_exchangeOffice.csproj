@@ -66,6 +66,7 @@
     <Compile Include="CashierWindow.Designer.cs">
       <DependentUpon>CashierWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="classes\reversedate.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AdminWindow.resx">
