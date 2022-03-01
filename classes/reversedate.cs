@@ -28,7 +28,7 @@ namespace AIS_exchangeOffice.classes
         }
         public string dateReverse(string s)
         {
-            //date Reversing
+            //date Reversing 
             //s = s.Replace('.', '-');
             //char[] charArr = s.ToCharArray();
             //char[] charArr1 = new char[charArr.Length];
