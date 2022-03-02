@@ -103,6 +103,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="bd\aisdatabd.sql" />
     <Content Include="images\icons\clientsall.png" />
     <Content Include="images\icons\customer.png" />
     <Content Include="images\icons\customers.png" />
