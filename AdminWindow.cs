@@ -19,8 +19,7 @@ namespace AIS_exchangeOffice
 
         //MySqlConnection conn = new MySqlConnection(connStr);
 
-        public int rowRindex = 0;
-        public int rowRcount = 0;
+        public int rowRindex = 0, rowRcount = 0;
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn(int nLeftRect, int nTopRect, int nRightRect, int nBottomRect, int nWidthEllipse, int nHeightEllipse);
         public AdminWindow()
@@ -362,7 +361,8 @@ namespace AIS_exchangeOffice
                 this.dataGridView1.Columns["numberDoc"].Width = 100;
                 while (reader.Read())
                 {
-                    dataGridView1.Rows.Add(reader["id"].ToString(), reader["name"].ToString(), reader["surname"].ToString(), reader["patronymic"].ToString(), reader["date_birth"].ToString(), reader["seriesDoc"].ToString(), reader["numberDoc"].ToString());
+                    classes.reversedate reversedate = new classes.reversedate();
+                    dataGridView1.Rows.Add(reader["id"].ToString(), reader["name"].ToString(), reader["surname"].ToString(), reader["patronymic"].ToString(), reversedate.dateReverse(reader["date_birth"].ToString()), reader["seriesDoc"].ToString(), reader["numberDoc"].ToString());
                 }
                 reader.Close();
             }
@@ -492,9 +492,7 @@ namespace AIS_exchangeOffice
                     }
                     if (enderr == false)
                     {
-                        MessageBox.Show("Изменения внесены!");
-                        rowRindex = 0;
-                        rowRcount = 0;
+                        MessageBox.Show("Изменения внесены!");                        
                         connection.Close();
                     } 
                 }
@@ -502,10 +500,10 @@ namespace AIS_exchangeOffice
                 {
                     bool enderr = false;
                     int id = dataGridView1.Rows.Count;
-                    string name = "", surname = "", patronymic = "", currency = "", date = "", summ = "", query = "";
-                    MySqlCommand command = new MySqlCommand(query, connection); ;
+                    string name = "", surname = "", patronymic = "", currency = "", date = "", summ = "", query = "";                    
                     for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
-                    {                       
+                    {
+                        MySqlCommand command = new MySqlCommand(query, connection);
                         try
                         {
                             if (rowRcount != 0)
@@ -549,9 +547,9 @@ namespace AIS_exchangeOffice
                                 command = new MySqlCommand(query, connection);
                                 command.ExecuteNonQuery();
                             }                           
-                        }    
-                        catch (MySqlException) 
-                        {   
+                        }
+                        catch (MySqlException)
+                        {
                             if (currency.Length > 1)
                             {
                                 enderr = true;
@@ -582,16 +580,179 @@ namespace AIS_exchangeOffice
                     if (enderr == false)
                     {
                         MessageBox.Show("Изменения внесены!");
+                        rowRindex = 0;
+                        rowRcount = 0;
                         connection.Close();
                     }
                 }
                 else if (PurchasedRadioBtn.Checked == true)
                 {
-                    MessageBox.Show("Изменения внесены!");
+                    bool enderr = false;
+                    int id = dataGridView1.Rows.Count;
+                    string name = "", surname = "", patronymic = "", currency = "", date = "", summ = "", query = "";
+                    for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
+                    {
+                        MySqlCommand command = new MySqlCommand(query, connection);
+                        try
+                        {
+                            if (rowRcount != 0)
+                            {
+                                query = "DELETE FROM purchased WHERE id = " + (rowRindex + 1);
+                                command = new MySqlCommand(query, connection);
+                                command.ExecuteNonQuery();
+                            }
+                            id = Convert.ToInt32(dataGridView1[0, i].Value.ToString());
+                            if (id != i + 1)
+                            {
+                                enderr = true;
+                                MessageBox.Show("ID не инкрементируется с каждым следующим полем, либо начинается не с 1. Проверьте поля id.");
+                                break;
+                            }
+                            name = dataGridView1[1, i].Value.ToString();
+                            surname = dataGridView1[2, i].Value.ToString();
+                            patronymic = dataGridView1[3, i].Value.ToString();
+                            summ = dataGridView1[4, i].Value.ToString();
+                            currency = dataGridView1[5, i].Value.ToString();
+                            date = dataGridView1[6, i].Value.ToString();
+                            query = "UPDATE purchased SET name = '" + name + "', surname = '" + surname + "', patronymic = '" + patronymic + "', summ = " + summ.Replace(',', '.') + ", date = '" + date + "' WHERE id = " + id;
+                            command = new MySqlCommand(query, connection);
+                            var tr = command.ExecuteNonQuery();
+                            if (tr == 0)
+                            {
+                                id = Convert.ToInt32(dataGridView1[0, i].Value.ToString());
+                                if (id != i + 1)
+                                {
+                                    enderr = true;
+                                    MessageBox.Show("ID не инкрементируется с каждым следующим полем, либо начинается не с 1. Проверьте поля id.");
+                                    break;
+                                }
+                                name = dataGridView1[1, i].Value.ToString();
+                                surname = dataGridView1[2, i].Value.ToString();
+                                patronymic = dataGridView1[3, i].Value.ToString();
+                                summ = dataGridView1[4, i].Value.ToString();
+                                currency = dataGridView1[5, i].Value.ToString();
+                                date = dataGridView1[6, i].Value.ToString();
+                                query = "INSERT INTO purchased (id, name, surname, patronymic, summ, currency, date) VALUES (" + id + ", '" + name + "', '" + surname + "', '" + patronymic + "', " + summ.Replace(',', '.') + ", '" + currency + "', '" + date + "')";
+                                command = new MySqlCommand(query, connection);
+                                command.ExecuteNonQuery();
+                            }
+                        }
+                        catch (MySqlException)
+                        {
+                            if (currency.Length > 1)
+                            {
+                                enderr = true;
+                                MessageBox.Show("Поля currency не может содержать больше 1 символа. Проверьте поля currency.");
+                                break;
+                            }
+                            else
+                            {
+                                enderr = true;
+                                MessageBox.Show("Возникла непредвиденная ошибка данных. Проверьте на корректность ввода только что введённые значения.");
+                                break;
+                            }
+                        }
+                        catch (NullReferenceException)
+                        {
+                            enderr = true;
+                            MessageBox.Show("Какая-то из ячеек не заполнена полностью. Заполните пустые ячейки.");
+                            break;
+                        }
+                        catch (FormatException)
+                        {
+                            enderr = true;
+                            MessageBox.Show("В какой то из ячеек содержится некорректная информация, либо поле id не увеличивается на 1. Измените данные и попробуйте снова.");
+                            break;
+                        }
+
+                    }
+                    if (enderr == false)
+                    {
+                        MessageBox.Show("Изменения внесены!");
+                        rowRindex = 0;
+                        rowRcount = 0;
+                        connection.Close();
+                    }
                 }
                 else if (ClientsRadioBtn.Checked == true)
                 {
-                    MessageBox.Show("Изменения внесены!");
+                    bool enderr = false;
+                    int id = dataGridView1.Rows.Count, seriesDoc = 0, numberDoc = 0;
+                    string name = "", surname = "", patronymic = "", date_birth = "", query = "";
+                    for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
+                    {
+                        MySqlCommand command = new MySqlCommand(query, connection);
+                        try
+                        {
+                            if (rowRcount != 0)
+                            {
+                                query = "DELETE FROM clients WHERE id = " + (rowRindex + 1);
+                                command = new MySqlCommand(query, connection);
+                                command.ExecuteNonQuery();
+                            }
+                            id = Convert.ToInt32(dataGridView1[0, i].Value.ToString());
+                            if (id != i + 1)
+                            {
+                                enderr = true;
+                                MessageBox.Show("ID не инкрементируется с каждым следующим полем, либо начинается не с 1. Проверьте поля id.");
+                                break;
+                            }
+                            name = dataGridView1[1, i].Value.ToString();
+                            surname = dataGridView1[2, i].Value.ToString();
+                            patronymic = dataGridView1[3, i].Value.ToString();
+                            date_birth = dataGridView1[4, i].Value.ToString();
+                            seriesDoc = Convert.ToInt32(dataGridView1[5, i].Value);
+                            numberDoc = Convert.ToInt32(dataGridView1[6, i].Value);
+                            query = "UPDATE clients SET name = '" + name + "', surname = '" + surname + "', patronymic = '" + patronymic + "', date_birth = '" + date_birth + "', seriesDoc = " + seriesDoc + ", numberDoc = " + numberDoc + " WHERE id = " + id;
+                            command = new MySqlCommand(query, connection);
+                            var tr = command.ExecuteNonQuery();
+                            if (tr == 0)
+                            {
+                                id = Convert.ToInt32(dataGridView1[0, i].Value.ToString());
+                                if (id != i + 1)
+                                {
+                                    enderr = true;
+                                    MessageBox.Show("ID не инкрементируется с каждым следующим полем, либо начинается не с 1. Проверьте поля id.");
+                                    break;
+                                }
+                                name = dataGridView1[1, i].Value.ToString();
+                                surname = dataGridView1[2, i].Value.ToString();
+                                patronymic = dataGridView1[3, i].Value.ToString();
+                                date_birth = dataGridView1[4, i].Value.ToString();
+                                seriesDoc = Convert.ToInt32(dataGridView1[5, i].Value);
+                                numberDoc = Convert.ToInt32(dataGridView1[6, i].Value);
+                                query = "INSERT INTO saled (id, name, surname, patronymic, date_birth, seriesDoc, numberDoc) VALUES (" + id + ", '" + name + "', '" + surname + "', '" + patronymic + "', '" + date_birth + "', " + seriesDoc + ", " + numberDoc + ")";
+                                command = new MySqlCommand(query, connection);
+                                command.ExecuteNonQuery();
+                            }
+                        }
+                        catch (MySqlException)
+                        {
+                                enderr = true;
+                                MessageBox.Show("Возникла непредвиденная ошибка данных. Проверьте на корректность ввода только что введённые значения.");
+                                break;
+                        }
+                        catch (NullReferenceException)
+                        {
+                            enderr = true;
+                            MessageBox.Show("Какая-то из ячеек не заполнена полностью. Заполните пустые ячейки.");
+                            break;
+                        }
+                        catch (FormatException)
+                        {
+                            enderr = true;
+                            MessageBox.Show("В какой то из ячеек содержится некорректная информация, либо поле id не увеличивается на 1. Измените данные и попробуйте снова.");
+                            break;
+                        }
+
+                    }
+                    if (enderr == false)
+                    {
+                        MessageBox.Show("Изменения внесены!");
+                        rowRindex = 0;
+                        rowRcount = 0;
+                        connection.Close();
+                    }
                 }
                 else if (UsersRadioBtn.Checked == true)
                 {
