@@ -76,7 +76,17 @@ namespace AIS_exchangeOffice
 
         private void exit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult dialogResult = MessageBox.Show("Выйти из аккаунта?", "Выход из аккаунта", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                AuthForm showAuthForm = new AuthForm();
+                showAuthForm.Show();
+                this.Hide();
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                //do nothing
+            }
         }
 
         private void SearchBtn_Click(object sender, EventArgs e)
@@ -98,17 +108,47 @@ namespace AIS_exchangeOffice
 
         private void exitButton_clients_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult dialogResult = MessageBox.Show("Выйти из аккаунта?", "Выход из аккаунта", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                AuthForm showAuthForm = new AuthForm();
+                showAuthForm.Show();
+                this.Hide();
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                //do nothing
+            }
         }
 
         private void exitButton_exchange_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult dialogResult = MessageBox.Show("Выйти из аккаунта?", "Выход из аккаунта", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                AuthForm showAuthForm = new AuthForm();
+                showAuthForm.Show();
+                this.Hide();
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                //do nothing
+            }
         }
 
         private void exitButton_search_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult dialogResult = MessageBox.Show("Выйти из аккаунта?", "Выход из аккаунта", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                AuthForm showAuthForm = new AuthForm();
+                showAuthForm.Show();
+                this.Hide();
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                //do nothing
+            }
         }
 
         private void mainPanel_Paint(object sender, PaintEventArgs e)

@@ -14,6 +14,7 @@ namespace AIS_exchangeOffice
     public partial class AuthForm : Form
     {
         public DialogResult dialog;
+        public bool resultBtn = false;
         public AuthForm()
         {
             InitializeComponent();     
@@ -61,6 +62,7 @@ namespace AIS_exchangeOffice
 
         private void logBtn_Click(object sender, EventArgs e)
         {
+            resultBtn = false;
             string connStr = "server=localhost;user=root;database=aisdatabd;password=root123;";
             MySqlConnection conn = new MySqlConnection(connStr);
             conn.Open();
@@ -93,23 +95,30 @@ namespace AIS_exchangeOffice
                 }
                 else
                 {
+                    resultBtn = true;
                     dialog = MessageBox.Show("Пароль некорректен!");
                 }
             }
+            catch (System.NullReferenceException)
+            {
+                resultBtn = true;
+                dialog = MessageBox.Show("Такого пользователя нет в системе");
+            }
             catch (MySql.Data.MySqlClient.MySqlException)
             {
+                resultBtn = true;
                 dialog = MessageBox.Show("Такого пользователя нет в системе");
-            }
-            catch (NullReferenceException)
-            {
-                dialog = MessageBox.Show("Такого пользователя нет в системе");
-            }
+            }            
             conn.Close();                      
         }
 
         private void loginBox_KeyUp(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Enter && passBox.Text == "")
+            if(resultBtn == true)
+            {
+                resultBtn = false;
+            }
+            else if (e.KeyCode == Keys.Enter && passBox.Text == "")
             {
                 passBox.BackColor = Color.White;
                 passwordPanel.BackColor = Color.White;
@@ -125,7 +134,11 @@ namespace AIS_exchangeOffice
 
         private void passBox_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            if (resultBtn == true)
+            {
+                resultBtn = false;
+            }
+            else if (e.KeyCode == Keys.Enter)
             {
                 logBtn_Click(sender, e);
             }

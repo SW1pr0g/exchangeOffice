@@ -34,17 +34,47 @@ namespace AIS_exchangeOffice
 
         private void exitButton_search_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult dialogResult = MessageBox.Show("Выйти из аккаунта?", "Выход из аккаунта", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                AuthForm showAuthForm = new AuthForm();
+                showAuthForm.Show();
+                this.Hide();
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                //do nothing
+            }
         }
 
         private void exitButton_exchange_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult dialogResult = MessageBox.Show("Выйти из аккаунта?", "Выход из аккаунта", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                AuthForm showAuthForm = new AuthForm();
+                showAuthForm.Show();
+                this.Hide();
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                //do nothing
+            }
         }
 
         private void exitButton_clients_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult dialogResult = MessageBox.Show("Выйти из аккаунта?", "Выход из аккаунта", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                AuthForm showAuthForm = new AuthForm();
+                showAuthForm.Show();
+                this.Hide();
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                //do nothing
+            }
         }
 
         private void exit_Click(object sender, EventArgs e)
@@ -174,12 +204,32 @@ namespace AIS_exchangeOffice
 
         private void exitButton_BD_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult dialogResult = MessageBox.Show("Выйти из аккаунта?", "Выход из аккаунта", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                AuthForm showAuthForm = new AuthForm();
+                showAuthForm.Show();
+                this.Hide();
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                //do nothing
+            }
         }
 
         private void exitButton_Otchet_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult dialogResult = MessageBox.Show("Выйти из аккаунта?", "Выход из аккаунта", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                AuthForm showAuthForm = new AuthForm();
+                showAuthForm.Show();
+                this.Hide();
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                //do nothing
+            }
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -431,6 +481,12 @@ namespace AIS_exchangeOffice
                 connection.Open();
                 if (CourseRadioBtn.Checked == true)
                 {
+                    bool mistake = false;
+                    if (rowRindex != 0 || rowRcount != 0) 
+                    {
+                        mistake = true;
+                        
+                    }
                     bool enderr = false;
                     int id = dataGridView1.Rows.Count;
                     string name = "";
@@ -492,8 +548,38 @@ namespace AIS_exchangeOffice
                     }
                     if (enderr == false)
                     {
-                        MessageBox.Show("Изменения внесены!");                        
-                        connection.Close();
+                        if (mistake == true)
+                        {                           
+                            MessageBox.Show("Удаление строк в данной таблице невозможно!");
+                            dataGridView1.Rows.Clear();
+                            dataGridView1.Columns.Clear();
+                            MySqlConnection conn = new MySqlConnection(connectionString);
+                            MySqlCommand command = new MySqlCommand();
+                            string commandString = "SELECT * FROM currencycourse;";
+                            command.CommandText = commandString;
+                            command.Connection = conn;
+                            MySqlDataReader reader;
+                            command.Connection.Open();
+                            reader = command.ExecuteReader();
+                            this.dataGridView1.Columns.Add("id", "ID");
+                            this.dataGridView1.Columns["id"].Width = 20;
+                            this.dataGridView1.Columns.Add("name", "Name");
+                            this.dataGridView1.Columns["name"].Width = 50;
+                            this.dataGridView1.Columns.Add("summsale", "SummSale");
+                            this.dataGridView1.Columns["summsale"].Width = 100;
+                            this.dataGridView1.Columns.Add("summpurchase", "SummPurchase");
+                            this.dataGridView1.Columns["summpurchase"].Width = 100;
+                            while (reader.Read())
+                            {
+                                dataGridView1.Rows.Add(reader["id"].ToString(), reader["name"].ToString(), reader["summsale"].ToString(), reader["summpurchase"].ToString());
+                            }
+                            reader.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Изменения внесены!");
+                            connection.Close();
+                        }                        
                     } 
                 }
                 else if (SaledRadioBtn.Checked == true)
@@ -586,7 +672,7 @@ namespace AIS_exchangeOffice
                     }
                 }
                 else if (PurchasedRadioBtn.Checked == true)
-                {
+                {                    
                     bool enderr = false;
                     int id = dataGridView1.Rows.Count;
                     string name = "", surname = "", patronymic = "", currency = "", date = "", summ = "", query = "";
