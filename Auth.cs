@@ -99,12 +99,12 @@ namespace AIS_exchangeOffice
                     dialog = MessageBox.Show("Пароль некорректен!");
                 }
             }
-            catch (System.NullReferenceException)
+            catch (NullReferenceException)
             {
                 resultBtn = true;
                 dialog = MessageBox.Show("Такого пользователя нет в системе");
             }
-            catch (MySql.Data.MySqlClient.MySqlException)
+            catch (MySqlException)
             {
                 resultBtn = true;
                 dialog = MessageBox.Show("Такого пользователя нет в системе");

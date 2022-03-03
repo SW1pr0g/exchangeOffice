@@ -587,7 +587,7 @@ namespace AIS_exchangeOffice
                     bool enderr = false;
                     int id = dataGridView1.Rows.Count;
                     string name = "", surname = "", patronymic = "", currency = "", date = "", summ = "", query = "";                    
-                    for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
+                    for (int i = 0; i <= dataGridView1.Rows.Count - 1; i++)
                     {
                         MySqlCommand command = new MySqlCommand(query, connection);
                         try
@@ -597,20 +597,29 @@ namespace AIS_exchangeOffice
                                 query = "DELETE FROM saled WHERE id = " + (rowRindex + 1);
                                 command = new MySqlCommand(query, connection);
                                 command.ExecuteNonQuery();
+                                break;
                             }
-                            id = Convert.ToInt32(dataGridView1[0, i].Value.ToString());
+                            if (i == (dataGridView1.Rows.Count-1))
+                            {
+                                id++;
+                            }
+                            else
+                            {
+                                id = Convert.ToInt32(dataGridView1[0, i].Value.ToString());
+                                name = dataGridView1[1, i].Value.ToString();
+                                surname = dataGridView1[2, i].Value.ToString();
+                                patronymic = dataGridView1[3, i].Value.ToString();
+                                summ = dataGridView1[4, i].Value.ToString();
+                                currency = dataGridView1[5, i].Value.ToString();
+                                date = dataGridView1[6, i].Value.ToString();
+                            }                          
                             if (id != i + 1)
                             {
                                 enderr = true;
                                 MessageBox.Show("ID не инкрементируется с каждым следующим полем, либо начинается не с 1. Проверьте поля id.");
                                 break;
                             }
-                            name = dataGridView1[1, i].Value.ToString();
-                            surname = dataGridView1[2, i].Value.ToString();
-                            patronymic = dataGridView1[3, i].Value.ToString();
-                            summ = dataGridView1[4, i].Value.ToString();
-                            currency = dataGridView1[5, i].Value.ToString();
-                            date = dataGridView1[6, i].Value.ToString();
+                            
                             query = "UPDATE saled SET name = '" + name + "', surname = '" + surname + "', patronymic = '" + patronymic + "', summ = " + summ.Replace(',', '.') + ", date = '" + date + "' WHERE id = " + id;
                             command = new MySqlCommand(query, connection);
                             var tr = command.ExecuteNonQuery();
@@ -665,11 +674,11 @@ namespace AIS_exchangeOffice
                     }
                     if (enderr == false)
                     {
-                        MessageBox.Show("Изменения внесены!");
-                        rowRindex = 0;
-                        rowRcount = 0;
+                        MessageBox.Show("Изменения внесены!");                       
                         connection.Close();
                     }
+                    rowRindex = 0;
+                    rowRcount = 0;
                 }
                 else if (PurchasedRadioBtn.Checked == true)
                 {                    
