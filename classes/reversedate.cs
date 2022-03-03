@@ -19,11 +19,12 @@ namespace AIS_exchangeOffice.classes
             charArr[2] = charArr1[8];
             charArr[3] = charArr1[9];
             charArr[4] = '-';
-            charArr[5] = charArr1[0];
-            charArr[6] = charArr1[1];
+            charArr[5] = charArr1[3];
+            charArr[6] = charArr1[4];
             charArr[7] = '-';
-            charArr[8] = charArr1[3];
-            charArr[9] = charArr1[4];
+            charArr[8] = charArr1[0];
+            charArr[9] = charArr1[1];
+            s = new string(charArr);
             return new string(charArr);
         }
         public string dateReverse(string s)
