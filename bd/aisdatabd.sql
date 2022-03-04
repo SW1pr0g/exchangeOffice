@@ -41,7 +41,7 @@ CREATE TABLE `clients` (
 
 LOCK TABLES `clients` WRITE;
 /*!40000 ALTER TABLE `clients` DISABLE KEYS */;
-INSERT INTO `clients` VALUES (1,'Ivan','Ivanov','Ivanovich','2004-02-20',1564,456987);
+INSERT INTO `clients` VALUES (1,'Ivan','Ivanov','Ivanovich','2004-02-20',4563,456988);
 /*!40000 ALTER TABLE `clients` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -68,7 +68,7 @@ CREATE TABLE `currencycourse` (
 
 LOCK TABLES `currencycourse` WRITE;
 /*!40000 ALTER TABLE `currencycourse` DISABLE KEYS */;
-INSERT INTO `currencycourse` VALUES (1,'USD',77.87,79.81),(2,'EUR',88.47,90.47),(3,'GBP',105.37,107.4),(4,'CHF',85.45,87.46),(5,'JPY',66.32,68.31);
+INSERT INTO `currencycourse` VALUES (1,'USD',77.89,79.81),(2,'EUR',88.47,90.47),(3,'GBP',105.37,107.4),(4,'CHF',85.45,87.46),(5,'JPY',66.32,68.31);
 /*!40000 ALTER TABLE `currencycourse` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -141,6 +141,8 @@ CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `login` varchar(45) DEFAULT NULL,
   `password` varchar(45) DEFAULT NULL,
+  `name` varchar(45) DEFAULT NULL,
+  `type` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -152,7 +154,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'cashier','cashier'),(2,'administrator','admin');
+INSERT INTO `users` VALUES (1,'cashier','cashier','Воробьева Е.С.','cashier'),(2,'administrator','admin','Минин С.В.','admin');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -173,4 +175,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-03-02 18:53:00
+-- Dump completed on 2022-03-05  0:53:41
