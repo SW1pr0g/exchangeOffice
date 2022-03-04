@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminWindow));
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.NameAdmin = new System.Windows.Forms.Label();
             this.pictureUser = new System.Windows.Forms.PictureBox();
             this.MainBtn = new System.Windows.Forms.Button();
             this.ClientsBtn = new System.Windows.Forms.Button();
@@ -171,7 +171,7 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.NameAdmin);
             this.panel2.Controls.Add(this.pictureUser);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
@@ -190,16 +190,16 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Администратор";
             // 
-            // label1
+            // NameAdmin
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(-4, 99);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(191, 20);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Имя администратора";
+            this.NameAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.NameAdmin.ForeColor = System.Drawing.Color.White;
+            this.NameAdmin.Location = new System.Drawing.Point(-4, 99);
+            this.NameAdmin.Name = "NameAdmin";
+            this.NameAdmin.Size = new System.Drawing.Size(191, 20);
+            this.NameAdmin.TabIndex = 1;
+            this.NameAdmin.Text = "Имя администратора";
+            this.NameAdmin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureUser
             // 
@@ -1591,6 +1591,7 @@
             this.Name = "AdminWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Обменный пункт-Администратор";
+            this.Load += new System.EventHandler(this.AdminWindow_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUser)).EndInit();
@@ -1639,7 +1640,7 @@
 
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label NameAdmin;
         private System.Windows.Forms.PictureBox pictureUser;
         private System.Windows.Forms.Button MainBtn;
         private System.Windows.Forms.Button ClientsBtn;

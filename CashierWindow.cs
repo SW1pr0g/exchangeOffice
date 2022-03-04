@@ -178,5 +178,10 @@ namespace AIS_exchangeOffice
                 command.Connection.Close();
             }
         }
+
+        private void CashierWindowMain_Load(object sender, EventArgs e)
+        {
+            CashierName.Text = AuthForm.nameUser;
+        }
     }
 }

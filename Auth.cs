@@ -15,10 +15,10 @@ namespace AIS_exchangeOffice
     {
         public DialogResult dialog;
         public bool resultBtn = false;
+        public static string nameUser = "";
         public AuthForm()
         {
-            InitializeComponent();     
-            
+            InitializeComponent();                
         }
 
         private void exit_Click(object sender, EventArgs e)
@@ -78,7 +78,12 @@ namespace AIS_exchangeOffice
                 if (pass == cmd.ExecuteScalar().ToString())
                 {
                     MessageBox.Show("Авторизация успешна");
+                    sql = "SELECT type FROM users WHERE login = '" + login + "'";
+                    cmd = new MySqlCommand(sql, conn);                    
                     string data = cmd.ExecuteScalar().ToString();
+                    sql = "SELECT name FROM users WHERE login = '" + login + "'";
+                    cmd = new MySqlCommand(sql, conn);
+                    nameUser = cmd.ExecuteScalar().ToString();
                     switch (data)
                     {
                         case "cashier":
@@ -90,8 +95,9 @@ namespace AIS_exchangeOffice
                             AdminWindow showAdmin = new AdminWindow();
                             showAdmin.Show();
                             this.Hide();
-                            break;
+                            break;                       
                     }
+
                 }
                 else
                 {
