@@ -41,7 +41,6 @@
             this.CashierName = new System.Windows.Forms.Label();
             this.pictureUser = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.SearchBox = new System.Windows.Forms.TextBox();
             this.exit = new System.Windows.Forms.Button();
             this.BalancePanel = new System.Windows.Forms.Panel();
             this.label29 = new System.Windows.Forms.Label();
@@ -306,23 +305,6 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "Главная";
             // 
-            // SearchBox
-            // 
-            this.SearchBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.SearchBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.SearchBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.SearchBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(77)));
-            this.SearchBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.SearchBox.Location = new System.Drawing.Point(409, 22);
-            this.SearchBox.Multiline = true;
-            this.SearchBox.Name = "SearchBox";
-            this.SearchBox.Size = new System.Drawing.Size(292, 25);
-            this.SearchBox.TabIndex = 2;
-            this.SearchBox.Text = " Введите для поиска...";
-            this.SearchBox.Visible = false;
-            // 
             // exit
             // 
             this.exit.BackColor = System.Drawing.SystemColors.Control;
@@ -483,14 +465,14 @@
             this.mainPanel.Controls.Add(this.pnael4);
             this.mainPanel.Controls.Add(this.BalancePanel);
             this.mainPanel.Controls.Add(this.exit);
-            this.mainPanel.Controls.Add(this.SearchBox);
             this.mainPanel.Controls.Add(this.label3);
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Right;
             this.mainPanel.Location = new System.Drawing.Point(186, 0);
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(765, 577);
             this.mainPanel.TabIndex = 1;
-            this.mainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainPanel_Paint);
+            this.mainPanel.EnabledChanged += new System.EventHandler(this.mainPanel_EnabledChanged);
+            this.mainPanel.VisibleChanged += new System.EventHandler(this.mainPanel_VisibleChanged);
             // 
             // RatePanel
             // 
@@ -1257,7 +1239,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel pnlNav;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox SearchBox;
         private System.Windows.Forms.Button exit;
         private System.Windows.Forms.Panel BalancePanel;
         private System.Windows.Forms.PictureBox pictureBox2;

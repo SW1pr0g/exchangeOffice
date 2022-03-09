@@ -1006,5 +1006,72 @@ namespace AIS_exchangeOffice
         {
             NameAdmin.Text = AuthForm.nameUser;
         }
+
+        private void mainPanel_VisibleChanged(object sender, EventArgs e)
+        {
+            string connStr = "server=localhost;user=root;database=aisdatabd;password=root123;";
+            MySqlConnection conn = new MySqlConnection(connStr);
+
+            MySqlCommand command = new MySqlCommand();
+            string commandString = "SELECT summsale, summpurchase FROM currencycourse WHERE name = 'USD';";
+            command.CommandText = commandString;
+            command.Connection = conn;
+            MySqlDataReader reader;
+            try
+            {
+                command.Connection.Open();
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    USD_sell.Text = reader["summsale"].ToString().Replace(',', '.');
+                    USD_buy.Text = reader["summpurchase"].ToString().Replace(',', '.');
+                }
+                reader.Close();
+                commandString = "SELECT summsale, summpurchase FROM currencycourse WHERE name = 'EUR';";
+                command.CommandText = commandString;
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    EUR_sell.Text = reader["summsale"].ToString().Replace(',', '.');
+                    EUR_buy.Text = reader["summpurchase"].ToString().Replace(',', '.');
+                }
+                reader.Close();
+                commandString = "SELECT summsale, summpurchase FROM currencycourse WHERE name = 'GBP';";
+                command.CommandText = commandString;
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    GBP_sell.Text = reader["summsale"].ToString().Replace(',', '.');
+                    GBP_buy.Text = reader["summpurchase"].ToString().Replace(',', '.');
+                }
+                reader.Close();
+                commandString = "SELECT summsale, summpurchase FROM currencycourse WHERE name = 'CHF';";
+                command.CommandText = commandString;
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    CHF_sell.Text = reader["summsale"].ToString().Replace(',', '.');
+                    CHF_buy.Text = reader["summpurchase"].ToString().Replace(',', '.');
+                }
+                reader.Close();
+                commandString = "SELECT summsale, summpurchase FROM currencycourse WHERE name = 'JPY';";
+                command.CommandText = commandString;
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    JPY_sell.Text = reader["summsale"].ToString().Replace(',', '.');
+                    JPY_buy.Text = reader["summpurchase"].ToString().Replace(',', '.');
+                }
+                reader.Close();
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("Error: \r\n{0}", ex.ToString());
+            }
+            finally
+            {
+                command.Connection.Close();
+            }
+        }
     }
 }

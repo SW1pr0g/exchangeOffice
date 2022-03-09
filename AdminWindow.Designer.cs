@@ -43,7 +43,6 @@
             this.pnlNav = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.SearchBox = new System.Windows.Forms.TextBox();
             this.exit = new System.Windows.Forms.Button();
             this.BalancePanel = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
@@ -66,18 +65,18 @@
             this.label31 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
+            this.JPY_buy = new System.Windows.Forms.Label();
+            this.CHF_buy = new System.Windows.Forms.Label();
+            this.GBP_buy = new System.Windows.Forms.Label();
+            this.EUR_buy = new System.Windows.Forms.Label();
+            this.USD_buy = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
+            this.JPY_sell = new System.Windows.Forms.Label();
+            this.CHF_sell = new System.Windows.Forms.Label();
+            this.GBP_sell = new System.Windows.Forms.Label();
+            this.EUR_sell = new System.Windows.Forms.Label();
+            this.USD_sell = new System.Windows.Forms.Label();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
@@ -378,23 +377,6 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "Главная";
             // 
-            // SearchBox
-            // 
-            this.SearchBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.SearchBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.SearchBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.SearchBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(77)));
-            this.SearchBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.SearchBox.Location = new System.Drawing.Point(409, 22);
-            this.SearchBox.Multiline = true;
-            this.SearchBox.Name = "SearchBox";
-            this.SearchBox.Size = new System.Drawing.Size(292, 25);
-            this.SearchBox.TabIndex = 2;
-            this.SearchBox.Text = " Введите для поиска...";
-            this.SearchBox.Visible = false;
-            // 
             // exit
             // 
             this.exit.BackColor = System.Drawing.SystemColors.Control;
@@ -575,18 +557,18 @@
             this.RatePanel.Controls.Add(this.label31);
             this.RatePanel.Controls.Add(this.label30);
             this.RatePanel.Controls.Add(this.button2);
-            this.RatePanel.Controls.Add(this.label25);
-            this.RatePanel.Controls.Add(this.label24);
-            this.RatePanel.Controls.Add(this.label23);
-            this.RatePanel.Controls.Add(this.label22);
-            this.RatePanel.Controls.Add(this.label21);
+            this.RatePanel.Controls.Add(this.JPY_buy);
+            this.RatePanel.Controls.Add(this.CHF_buy);
+            this.RatePanel.Controls.Add(this.GBP_buy);
+            this.RatePanel.Controls.Add(this.EUR_buy);
+            this.RatePanel.Controls.Add(this.USD_buy);
             this.RatePanel.Controls.Add(this.label20);
             this.RatePanel.Controls.Add(this.label19);
-            this.RatePanel.Controls.Add(this.label18);
-            this.RatePanel.Controls.Add(this.label17);
-            this.RatePanel.Controls.Add(this.label16);
-            this.RatePanel.Controls.Add(this.label15);
-            this.RatePanel.Controls.Add(this.label14);
+            this.RatePanel.Controls.Add(this.JPY_sell);
+            this.RatePanel.Controls.Add(this.CHF_sell);
+            this.RatePanel.Controls.Add(this.GBP_sell);
+            this.RatePanel.Controls.Add(this.EUR_sell);
+            this.RatePanel.Controls.Add(this.USD_sell);
             this.RatePanel.Controls.Add(this.pictureBox8);
             this.RatePanel.Controls.Add(this.pictureBox7);
             this.RatePanel.Controls.Add(this.pictureBox6);
@@ -688,60 +670,60 @@
             this.button2.TabIndex = 31;
             this.button2.UseVisualStyleBackColor = false;
             // 
-            // label25
+            // JPY_buy
             // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
-            this.label25.Location = new System.Drawing.Point(472, 265);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(91, 32);
-            this.label25.TabIndex = 30;
-            this.label25.Text = "68,31";
+            this.JPY_buy.AutoSize = true;
+            this.JPY_buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.JPY_buy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.JPY_buy.Location = new System.Drawing.Point(472, 265);
+            this.JPY_buy.Name = "JPY_buy";
+            this.JPY_buy.Size = new System.Drawing.Size(91, 32);
+            this.JPY_buy.TabIndex = 30;
+            this.JPY_buy.Text = "68,31";
             // 
-            // label24
+            // CHF_buy
             // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
-            this.label24.Location = new System.Drawing.Point(472, 213);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(91, 32);
-            this.label24.TabIndex = 29;
-            this.label24.Text = "87,46";
+            this.CHF_buy.AutoSize = true;
+            this.CHF_buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CHF_buy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.CHF_buy.Location = new System.Drawing.Point(472, 213);
+            this.CHF_buy.Name = "CHF_buy";
+            this.CHF_buy.Size = new System.Drawing.Size(91, 32);
+            this.CHF_buy.TabIndex = 29;
+            this.CHF_buy.Text = "87,46";
             // 
-            // label23
+            // GBP_buy
             // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
-            this.label23.Location = new System.Drawing.Point(472, 159);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(108, 32);
-            this.label23.TabIndex = 28;
-            this.label23.Text = "107,40";
+            this.GBP_buy.AutoSize = true;
+            this.GBP_buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.GBP_buy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.GBP_buy.Location = new System.Drawing.Point(472, 159);
+            this.GBP_buy.Name = "GBP_buy";
+            this.GBP_buy.Size = new System.Drawing.Size(108, 32);
+            this.GBP_buy.TabIndex = 28;
+            this.GBP_buy.Text = "107,40";
             // 
-            // label22
+            // EUR_buy
             // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
-            this.label22.Location = new System.Drawing.Point(472, 105);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(91, 32);
-            this.label22.TabIndex = 27;
-            this.label22.Text = "90,47";
+            this.EUR_buy.AutoSize = true;
+            this.EUR_buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.EUR_buy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.EUR_buy.Location = new System.Drawing.Point(472, 105);
+            this.EUR_buy.Name = "EUR_buy";
+            this.EUR_buy.Size = new System.Drawing.Size(91, 32);
+            this.EUR_buy.TabIndex = 27;
+            this.EUR_buy.Text = "90,47";
             // 
-            // label21
+            // USD_buy
             // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
-            this.label21.Location = new System.Drawing.Point(472, 52);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(91, 32);
-            this.label21.TabIndex = 26;
-            this.label21.Text = "79,81";
+            this.USD_buy.AutoSize = true;
+            this.USD_buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.USD_buy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.USD_buy.Location = new System.Drawing.Point(472, 52);
+            this.USD_buy.Name = "USD_buy";
+            this.USD_buy.Size = new System.Drawing.Size(91, 32);
+            this.USD_buy.TabIndex = 26;
+            this.USD_buy.Text = "79,81";
             // 
             // label20
             // 
@@ -767,60 +749,60 @@
             this.label19.TabIndex = 24;
             this.label19.Text = "Продать";
             // 
-            // label18
+            // JPY_sell
             // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
-            this.label18.Location = new System.Drawing.Point(273, 265);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(91, 32);
-            this.label18.TabIndex = 23;
-            this.label18.Text = "66,31";
+            this.JPY_sell.AutoSize = true;
+            this.JPY_sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.JPY_sell.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.JPY_sell.Location = new System.Drawing.Point(273, 265);
+            this.JPY_sell.Name = "JPY_sell";
+            this.JPY_sell.Size = new System.Drawing.Size(91, 32);
+            this.JPY_sell.TabIndex = 23;
+            this.JPY_sell.Text = "66,31";
             // 
-            // label17
+            // CHF_sell
             // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
-            this.label17.Location = new System.Drawing.Point(273, 213);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(91, 32);
-            this.label17.TabIndex = 22;
-            this.label17.Text = "85,46";
+            this.CHF_sell.AutoSize = true;
+            this.CHF_sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CHF_sell.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.CHF_sell.Location = new System.Drawing.Point(273, 213);
+            this.CHF_sell.Name = "CHF_sell";
+            this.CHF_sell.Size = new System.Drawing.Size(91, 32);
+            this.CHF_sell.TabIndex = 22;
+            this.CHF_sell.Text = "85,46";
             // 
-            // label16
+            // GBP_sell
             // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
-            this.label16.Location = new System.Drawing.Point(272, 159);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(108, 32);
-            this.label16.TabIndex = 21;
-            this.label16.Text = "105,38";
+            this.GBP_sell.AutoSize = true;
+            this.GBP_sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.GBP_sell.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.GBP_sell.Location = new System.Drawing.Point(272, 159);
+            this.GBP_sell.Name = "GBP_sell";
+            this.GBP_sell.Size = new System.Drawing.Size(108, 32);
+            this.GBP_sell.TabIndex = 21;
+            this.GBP_sell.Text = "105,38";
             // 
-            // label15
+            // EUR_sell
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
-            this.label15.Location = new System.Drawing.Point(273, 105);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(91, 32);
-            this.label15.TabIndex = 20;
-            this.label15.Text = "88,47";
+            this.EUR_sell.AutoSize = true;
+            this.EUR_sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.EUR_sell.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.EUR_sell.Location = new System.Drawing.Point(273, 105);
+            this.EUR_sell.Name = "EUR_sell";
+            this.EUR_sell.Size = new System.Drawing.Size(91, 32);
+            this.EUR_sell.TabIndex = 20;
+            this.EUR_sell.Text = "88,47";
             // 
-            // label14
+            // USD_sell
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
-            this.label14.Location = new System.Drawing.Point(272, 52);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(91, 32);
-            this.label14.TabIndex = 19;
-            this.label14.Text = "77,81";
+            this.USD_sell.AutoSize = true;
+            this.USD_sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.USD_sell.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.USD_sell.Location = new System.Drawing.Point(272, 52);
+            this.USD_sell.Name = "USD_sell";
+            this.USD_sell.Size = new System.Drawing.Size(91, 32);
+            this.USD_sell.TabIndex = 19;
+            this.USD_sell.Text = "77,81";
             // 
             // pictureBox8
             // 
@@ -945,13 +927,13 @@
             this.mainPanel.Controls.Add(this.pnael4);
             this.mainPanel.Controls.Add(this.BalancePanel);
             this.mainPanel.Controls.Add(this.exit);
-            this.mainPanel.Controls.Add(this.SearchBox);
             this.mainPanel.Controls.Add(this.label3);
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Right;
             this.mainPanel.Location = new System.Drawing.Point(186, 0);
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(765, 577);
             this.mainPanel.TabIndex = 2;
+            this.mainPanel.VisibleChanged += new System.EventHandler(this.mainPanel_VisibleChanged);
             // 
             // label66
             // 
@@ -1579,12 +1561,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(951, 577);
+            this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.bdPanel);
             this.Controls.Add(this.otchetPanel);
             this.Controls.Add(this.searchPanel);
             this.Controls.Add(this.exchangePanel);
             this.Controls.Add(this.clientsPanel);
-            this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -1652,7 +1634,6 @@
         private System.Windows.Forms.Panel pnlNav;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox SearchBox;
         private System.Windows.Forms.Button exit;
         private System.Windows.Forms.Panel BalancePanel;
         private System.Windows.Forms.Button button4;
@@ -1675,18 +1656,18 @@
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label JPY_buy;
+        private System.Windows.Forms.Label CHF_buy;
+        private System.Windows.Forms.Label GBP_buy;
+        private System.Windows.Forms.Label EUR_buy;
+        private System.Windows.Forms.Label USD_buy;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label JPY_sell;
+        private System.Windows.Forms.Label CHF_sell;
+        private System.Windows.Forms.Label GBP_sell;
+        private System.Windows.Forms.Label EUR_sell;
+        private System.Windows.Forms.Label USD_sell;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox6;
