@@ -72,6 +72,7 @@
     <Compile Include="CashierWindow.Designer.cs">
       <DependentUpon>CashierWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="classes\print_documents.cs" />
     <Compile Include="classes\reversedate.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -111,6 +112,8 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="bd\aisdatabd.sql" />
+    <Content Include="images\icons\add-users.png" />
+    <Content Include="images\icons\back.png" />
     <Content Include="images\icons\clientsall.png" />
     <Content Include="images\icons\customer.png" />
     <Content Include="images\icons\customers.png" />

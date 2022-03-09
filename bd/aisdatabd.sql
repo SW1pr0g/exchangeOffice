@@ -46,6 +46,31 @@ INSERT INTO `clients` VALUES (1,'Ivan','Ivanov','Ivanovich','2004-02-20',4563,45
 UNLOCK TABLES;
 
 --
+-- Table structure for table `currency_values`
+--
+
+DROP TABLE IF EXISTS `currency_values`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `currency_values` (
+  `id` int(11) NOT NULL,
+  `name` varchar(45) DEFAULT NULL,
+  `value` double DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `currency_values`
+--
+
+LOCK TABLES `currency_values` WRITE;
+/*!40000 ALTER TABLE `currency_values` DISABLE KEYS */;
+INSERT INTO `currency_values` VALUES (1,'USD',1020.5),(2,'EUR',5000),(3,'GBP',789),(4,'CHF',623.569),(5,'JPY',1500.6);
+/*!40000 ALTER TABLE `currency_values` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `currencycourse`
 --
 
@@ -175,4 +200,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-03-09 18:11:36
+-- Dump completed on 2022-03-09 22:39:47

@@ -29,39 +29,29 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CashierWindowMain));
-            this.panel1 = new System.Windows.Forms.Panel();
             this.pnlNav = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.SearchBtn = new System.Windows.Forms.Button();
-            this.ExchangeBtn = new System.Windows.Forms.Button();
-            this.ClientsBtn = new System.Windows.Forms.Button();
-            this.MainBtn = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.CashierName = new System.Windows.Forms.Label();
-            this.pictureUser = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.exit = new System.Windows.Forms.Button();
             this.BalancePanel = new System.Windows.Forms.Panel();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
+            this.USD_value = new System.Windows.Forms.Label();
+            this.JPY_value = new System.Windows.Forms.Label();
+            this.CHF_value = new System.Windows.Forms.Label();
+            this.GBP_value = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.EUR_value = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.pnael4 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.ClientsNum = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.RatePanel = new System.Windows.Forms.Panel();
             this.label34 = new System.Windows.Forms.Label();
+            this.print_currencies = new System.Windows.Forms.Button();
             this.label33 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.JPY_buy = new System.Windows.Forms.Label();
             this.CHF_buy = new System.Windows.Forms.Label();
             this.GBP_buy = new System.Windows.Forms.Label();
@@ -86,12 +76,12 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.clientsPanel = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.AddClientsBtn = new System.Windows.Forms.Button();
             this.label35 = new System.Windows.Forms.Label();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.pictureBox14 = new System.Windows.Forms.PictureBox();
-            this.label58 = new System.Windows.Forms.Label();
+            this.clientsNumT = new System.Windows.Forms.Label();
             this.label59 = new System.Windows.Forms.Label();
             this.exitButton_clients = new System.Windows.Forms.Button();
             this.label66 = new System.Windows.Forms.Label();
@@ -106,16 +96,40 @@
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.SearchButn = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.SearchBut = new System.Windows.Forms.Button();
+            this.searchBox = new System.Windows.Forms.TextBox();
             this.label37 = new System.Windows.Forms.Label();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.exitButton_search = new System.Windows.Forms.Button();
             this.label38 = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureUser)).BeginInit();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.CashierName = new System.Windows.Forms.Label();
+            this.pictureUser = new System.Windows.Forms.PictureBox();
+            this.MainBtn = new System.Windows.Forms.Button();
+            this.ClientsBtn = new System.Windows.Forms.Button();
+            this.ExchangeBtn = new System.Windows.Forms.Button();
+            this.SearchBtn = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.addclientPanel = new System.Windows.Forms.Panel();
+            this.GoBackClientsPanel = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.AddClientBtn = new System.Windows.Forms.Button();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.numberBox = new System.Windows.Forms.TextBox();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.seriesBox = new System.Windows.Forms.TextBox();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.patronymicBox = new System.Windows.Forms.TextBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.surnameBox = new System.Windows.Forms.TextBox();
+            this.loginPanel = new System.Windows.Forms.Panel();
+            this.nameBox = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.BalancePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.pnael4.SuspendLayout();
@@ -128,30 +142,26 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.clientsPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
             this.exchangePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             this.searchPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureUser)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.addclientPanel.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel9.SuspendLayout();
+            this.panel8.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.loginPanel.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
-            this.panel1.Controls.Add(this.pnlNav);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.SearchBtn);
-            this.panel1.Controls.Add(this.ExchangeBtn);
-            this.panel1.Controls.Add(this.ClientsBtn);
-            this.panel1.Controls.Add(this.MainBtn);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(186, 577);
-            this.panel1.TabIndex = 0;
             // 
             // pnlNav
             // 
@@ -160,139 +170,6 @@
             this.pnlNav.Name = "pnlNav";
             this.pnlNav.Size = new System.Drawing.Size(3, 100);
             this.pnlNav.TabIndex = 1;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(36, 453);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(120, 100);
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
-            // 
-            // SearchBtn
-            // 
-            this.SearchBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.SearchBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SearchBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.SearchBtn.FlatAppearance.BorderSize = 0;
-            this.SearchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SearchBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchBtn.ForeColor = System.Drawing.Color.White;
-            this.SearchBtn.Image = ((System.Drawing.Image)(resources.GetObject("SearchBtn.Image")));
-            this.SearchBtn.Location = new System.Drawing.Point(0, 282);
-            this.SearchBtn.Name = "SearchBtn";
-            this.SearchBtn.Size = new System.Drawing.Size(186, 42);
-            this.SearchBtn.TabIndex = 4;
-            this.SearchBtn.Text = "Поиск    ";
-            this.SearchBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.SearchBtn.UseVisualStyleBackColor = true;
-            this.SearchBtn.Click += new System.EventHandler(this.SearchBtn_Click);
-            this.SearchBtn.Leave += new System.EventHandler(this.SearchBtn_Leave);
-            // 
-            // ExchangeBtn
-            // 
-            this.ExchangeBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ExchangeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ExchangeBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ExchangeBtn.FlatAppearance.BorderSize = 0;
-            this.ExchangeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ExchangeBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExchangeBtn.ForeColor = System.Drawing.Color.White;
-            this.ExchangeBtn.Image = ((System.Drawing.Image)(resources.GetObject("ExchangeBtn.Image")));
-            this.ExchangeBtn.Location = new System.Drawing.Point(0, 240);
-            this.ExchangeBtn.Name = "ExchangeBtn";
-            this.ExchangeBtn.Size = new System.Drawing.Size(186, 42);
-            this.ExchangeBtn.TabIndex = 3;
-            this.ExchangeBtn.Text = "Обмен   ";
-            this.ExchangeBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.ExchangeBtn.UseVisualStyleBackColor = true;
-            this.ExchangeBtn.Click += new System.EventHandler(this.ExchangeBtn_Click);
-            this.ExchangeBtn.Leave += new System.EventHandler(this.ExchangeBtn_Leave);
-            // 
-            // ClientsBtn
-            // 
-            this.ClientsBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientsBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ClientsBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ClientsBtn.FlatAppearance.BorderSize = 0;
-            this.ClientsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ClientsBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ClientsBtn.ForeColor = System.Drawing.Color.White;
-            this.ClientsBtn.Image = ((System.Drawing.Image)(resources.GetObject("ClientsBtn.Image")));
-            this.ClientsBtn.Location = new System.Drawing.Point(0, 198);
-            this.ClientsBtn.Name = "ClientsBtn";
-            this.ClientsBtn.Size = new System.Drawing.Size(186, 42);
-            this.ClientsBtn.TabIndex = 2;
-            this.ClientsBtn.Text = "Клиенты";
-            this.ClientsBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.ClientsBtn.UseVisualStyleBackColor = true;
-            this.ClientsBtn.Click += new System.EventHandler(this.ClientsBtn_Click);
-            this.ClientsBtn.Leave += new System.EventHandler(this.ClientsBtn_Leave);
-            // 
-            // MainBtn
-            // 
-            this.MainBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.MainBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.MainBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.MainBtn.FlatAppearance.BorderSize = 0;
-            this.MainBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MainBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MainBtn.ForeColor = System.Drawing.Color.White;
-            this.MainBtn.Image = ((System.Drawing.Image)(resources.GetObject("MainBtn.Image")));
-            this.MainBtn.Location = new System.Drawing.Point(0, 156);
-            this.MainBtn.Name = "MainBtn";
-            this.MainBtn.Size = new System.Drawing.Size(186, 42);
-            this.MainBtn.TabIndex = 1;
-            this.MainBtn.Text = "Главная";
-            this.MainBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.MainBtn.UseVisualStyleBackColor = true;
-            this.MainBtn.Click += new System.EventHandler(this.MainBtn_Click);
-            this.MainBtn.Leave += new System.EventHandler(this.MainBtn_Leave);
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.CashierName);
-            this.panel2.Controls.Add(this.pictureUser);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(186, 156);
-            this.panel2.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.label2.Location = new System.Drawing.Point(57, 129);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 16);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Кассир";
-            // 
-            // CashierName
-            // 
-            this.CashierName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CashierName.ForeColor = System.Drawing.Color.White;
-            this.CashierName.Location = new System.Drawing.Point(3, 99);
-            this.CashierName.Name = "CashierName";
-            this.CashierName.Size = new System.Drawing.Size(183, 20);
-            this.CashierName.TabIndex = 1;
-            this.CashierName.Text = "Имя кассира";
-            this.CashierName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pictureUser
-            // 
-            this.pictureUser.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureUser.BackgroundImage")));
-            this.pictureUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureUser.Location = new System.Drawing.Point(60, 22);
-            this.pictureUser.Name = "pictureUser";
-            this.pictureUser.Size = new System.Drawing.Size(63, 63);
-            this.pictureUser.TabIndex = 0;
-            this.pictureUser.TabStop = false;
             // 
             // label3
             // 
@@ -324,61 +201,61 @@
             // BalancePanel
             // 
             this.BalancePanel.BackColor = System.Drawing.SystemColors.Control;
-            this.BalancePanel.Controls.Add(this.label29);
-            this.BalancePanel.Controls.Add(this.label28);
-            this.BalancePanel.Controls.Add(this.label27);
-            this.BalancePanel.Controls.Add(this.label26);
+            this.BalancePanel.Controls.Add(this.USD_value);
+            this.BalancePanel.Controls.Add(this.JPY_value);
+            this.BalancePanel.Controls.Add(this.CHF_value);
+            this.BalancePanel.Controls.Add(this.GBP_value);
             this.BalancePanel.Controls.Add(this.pictureBox2);
-            this.BalancePanel.Controls.Add(this.label5);
+            this.BalancePanel.Controls.Add(this.EUR_value);
             this.BalancePanel.Controls.Add(this.label4);
             this.BalancePanel.Location = new System.Drawing.Point(26, 56);
             this.BalancePanel.Name = "BalancePanel";
             this.BalancePanel.Size = new System.Drawing.Size(265, 184);
             this.BalancePanel.TabIndex = 5;
             // 
-            // label29
+            // USD_value
             // 
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label29.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
-            this.label29.Location = new System.Drawing.Point(17, 34);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(90, 29);
-            this.label29.TabIndex = 12;
-            this.label29.Text = "$ 1234";
+            this.USD_value.AutoSize = true;
+            this.USD_value.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.USD_value.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.USD_value.Location = new System.Drawing.Point(17, 34);
+            this.USD_value.Name = "USD_value";
+            this.USD_value.Size = new System.Drawing.Size(90, 29);
+            this.USD_value.TabIndex = 12;
+            this.USD_value.Text = "$ 1234";
             // 
-            // label28
+            // JPY_value
             // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label28.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
-            this.label28.Location = new System.Drawing.Point(17, 145);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(90, 29);
-            this.label28.TabIndex = 11;
-            this.label28.Text = "¥ 1234";
+            this.JPY_value.AutoSize = true;
+            this.JPY_value.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.JPY_value.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.JPY_value.Location = new System.Drawing.Point(17, 145);
+            this.JPY_value.Name = "JPY_value";
+            this.JPY_value.Size = new System.Drawing.Size(90, 29);
+            this.JPY_value.TabIndex = 11;
+            this.JPY_value.Text = "¥ 1234";
             // 
-            // label27
+            // CHF_value
             // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
-            this.label27.Location = new System.Drawing.Point(15, 116);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(92, 29);
-            this.label27.TabIndex = 10;
-            this.label27.Text = "₣ 1234";
+            this.CHF_value.AutoSize = true;
+            this.CHF_value.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CHF_value.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.CHF_value.Location = new System.Drawing.Point(15, 116);
+            this.CHF_value.Name = "CHF_value";
+            this.CHF_value.Size = new System.Drawing.Size(92, 29);
+            this.CHF_value.TabIndex = 10;
+            this.CHF_value.Text = "₣ 1234";
             // 
-            // label26
+            // GBP_value
             // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
-            this.label26.Location = new System.Drawing.Point(17, 90);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(90, 29);
-            this.label26.TabIndex = 9;
-            this.label26.Text = "£ 1234";
+            this.GBP_value.AutoSize = true;
+            this.GBP_value.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.GBP_value.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.GBP_value.Location = new System.Drawing.Point(17, 90);
+            this.GBP_value.Name = "GBP_value";
+            this.GBP_value.Size = new System.Drawing.Size(90, 29);
+            this.GBP_value.TabIndex = 9;
+            this.GBP_value.Text = "£ 1234";
             // 
             // pictureBox2
             // 
@@ -391,16 +268,16 @@
             this.pictureBox2.TabIndex = 8;
             this.pictureBox2.TabStop = false;
             // 
-            // label5
+            // EUR_value
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
-            this.label5.Location = new System.Drawing.Point(17, 63);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(90, 29);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "€ 1234";
+            this.EUR_value.AutoSize = true;
+            this.EUR_value.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.EUR_value.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.EUR_value.Location = new System.Drawing.Point(17, 63);
+            this.EUR_value.Name = "EUR_value";
+            this.EUR_value.Size = new System.Drawing.Size(90, 29);
+            this.EUR_value.TabIndex = 7;
+            this.EUR_value.Text = "€ 1234";
             // 
             // label4
             // 
@@ -418,7 +295,7 @@
             // 
             this.pnael4.BackColor = System.Drawing.SystemColors.Control;
             this.pnael4.Controls.Add(this.pictureBox3);
-            this.pnael4.Controls.Add(this.label6);
+            this.pnael4.Controls.Add(this.ClientsNum);
             this.pnael4.Controls.Add(this.label7);
             this.pnael4.Location = new System.Drawing.Point(443, 90);
             this.pnael4.Name = "pnael4";
@@ -436,16 +313,16 @@
             this.pictureBox3.TabIndex = 8;
             this.pictureBox3.TabStop = false;
             // 
-            // label6
+            // ClientsNum
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
-            this.label6.Location = new System.Drawing.Point(55, 53);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(31, 32);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "5";
+            this.ClientsNum.AutoSize = true;
+            this.ClientsNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ClientsNum.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.ClientsNum.Location = new System.Drawing.Point(55, 53);
+            this.ClientsNum.Name = "ClientsNum";
+            this.ClientsNum.Size = new System.Drawing.Size(31, 32);
+            this.ClientsNum.TabIndex = 7;
+            this.ClientsNum.Text = "5";
             // 
             // label7
             // 
@@ -471,18 +348,17 @@
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(765, 577);
             this.mainPanel.TabIndex = 1;
-            this.mainPanel.EnabledChanged += new System.EventHandler(this.mainPanel_EnabledChanged);
             this.mainPanel.VisibleChanged += new System.EventHandler(this.mainPanel_VisibleChanged);
             // 
             // RatePanel
             // 
             this.RatePanel.BackColor = System.Drawing.SystemColors.Control;
             this.RatePanel.Controls.Add(this.label34);
+            this.RatePanel.Controls.Add(this.print_currencies);
             this.RatePanel.Controls.Add(this.label33);
             this.RatePanel.Controls.Add(this.label32);
             this.RatePanel.Controls.Add(this.label31);
             this.RatePanel.Controls.Add(this.label30);
-            this.RatePanel.Controls.Add(this.button2);
             this.RatePanel.Controls.Add(this.JPY_buy);
             this.RatePanel.Controls.Add(this.CHF_buy);
             this.RatePanel.Controls.Add(this.GBP_buy);
@@ -521,6 +397,22 @@
             this.label34.Size = new System.Drawing.Size(37, 39);
             this.label34.TabIndex = 36;
             this.label34.Text = "¥";
+            // 
+            // print_currencies
+            // 
+            this.print_currencies.BackColor = System.Drawing.SystemColors.Control;
+            this.print_currencies.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.print_currencies.FlatAppearance.BorderSize = 0;
+            this.print_currencies.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.print_currencies.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.print_currencies.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.print_currencies.Image = ((System.Drawing.Image)(resources.GetObject("print_currencies.Image")));
+            this.print_currencies.Location = new System.Drawing.Point(615, 253);
+            this.print_currencies.Name = "print_currencies";
+            this.print_currencies.Size = new System.Drawing.Size(60, 60);
+            this.print_currencies.TabIndex = 31;
+            this.print_currencies.UseVisualStyleBackColor = false;
+            this.print_currencies.Click += new System.EventHandler(this.print_currencies_Click);
             // 
             // label33
             // 
@@ -565,21 +457,6 @@
             this.label30.Size = new System.Drawing.Size(40, 42);
             this.label30.TabIndex = 32;
             this.label30.Text = "$";
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.SystemColors.Control;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(615, 253);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(60, 60);
-            this.button2.TabIndex = 31;
-            this.button2.UseVisualStyleBackColor = false;
             // 
             // JPY_buy
             // 
@@ -834,9 +711,9 @@
             // 
             // clientsPanel
             // 
-            this.clientsPanel.Controls.Add(this.button1);
+            this.clientsPanel.Controls.Add(this.dataGridView1);
+            this.clientsPanel.Controls.Add(this.AddClientsBtn);
             this.clientsPanel.Controls.Add(this.label35);
-            this.clientsPanel.Controls.Add(this.pictureBox9);
             this.clientsPanel.Controls.Add(this.panel5);
             this.clientsPanel.Controls.Add(this.exitButton_clients);
             this.clientsPanel.Controls.Add(this.label66);
@@ -845,21 +722,34 @@
             this.clientsPanel.Size = new System.Drawing.Size(765, 577);
             this.clientsPanel.TabIndex = 11;
             this.clientsPanel.Visible = false;
+            this.clientsPanel.VisibleChanged += new System.EventHandler(this.clientsPanel_VisibleChanged);
             // 
-            // button1
+            // dataGridView1
             // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(197)))), ((int)(((byte)(254)))));
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(26, 88);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(308, 142);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Добавить";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.button1.UseVisualStyleBackColor = true;
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(26, 327);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(675, 226);
+            this.dataGridView1.TabIndex = 30;
+            // 
+            // AddClientsBtn
+            // 
+            this.AddClientsBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.AddClientsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddClientsBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AddClientsBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(197)))), ((int)(((byte)(254)))));
+            this.AddClientsBtn.Image = ((System.Drawing.Image)(resources.GetObject("AddClientsBtn.Image")));
+            this.AddClientsBtn.Location = new System.Drawing.Point(26, 88);
+            this.AddClientsBtn.Name = "AddClientsBtn";
+            this.AddClientsBtn.Size = new System.Drawing.Size(308, 142);
+            this.AddClientsBtn.TabIndex = 14;
+            this.AddClientsBtn.Text = "Добавить";
+            this.AddClientsBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.AddClientsBtn.UseVisualStyleBackColor = true;
+            this.AddClientsBtn.Click += new System.EventHandler(this.AddClientsBtn_Click);
             // 
             // label35
             // 
@@ -873,20 +763,11 @@
             this.label35.TabIndex = 13;
             this.label35.Text = "Все клиенты";
             // 
-            // pictureBox9
-            // 
-            this.pictureBox9.Image = global::AIS_exchangeOffice.Properties.Resources.clientsall;
-            this.pictureBox9.Location = new System.Drawing.Point(26, 328);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(687, 185);
-            this.pictureBox9.TabIndex = 10;
-            this.pictureBox9.TabStop = false;
-            // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.SystemColors.Control;
             this.panel5.Controls.Add(this.pictureBox14);
-            this.panel5.Controls.Add(this.label58);
+            this.panel5.Controls.Add(this.clientsNumT);
             this.panel5.Controls.Add(this.label59);
             this.panel5.Location = new System.Drawing.Point(443, 90);
             this.panel5.Name = "panel5";
@@ -904,16 +785,16 @@
             this.pictureBox14.TabIndex = 8;
             this.pictureBox14.TabStop = false;
             // 
-            // label58
+            // clientsNumT
             // 
-            this.label58.AutoSize = true;
-            this.label58.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label58.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
-            this.label58.Location = new System.Drawing.Point(54, 59);
-            this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(31, 32);
-            this.label58.TabIndex = 7;
-            this.label58.Text = "5";
+            this.clientsNumT.AutoSize = true;
+            this.clientsNumT.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.clientsNumT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.clientsNumT.Location = new System.Drawing.Point(54, 59);
+            this.clientsNumT.Name = "clientsNumT";
+            this.clientsNumT.Size = new System.Drawing.Size(31, 32);
+            this.clientsNumT.TabIndex = 7;
+            this.clientsNumT.Text = "5";
             // 
             // label59
             // 
@@ -1036,8 +917,8 @@
             this.searchPanel.Controls.Add(this.checkBox3);
             this.searchPanel.Controls.Add(this.checkBox2);
             this.searchPanel.Controls.Add(this.checkBox1);
-            this.searchPanel.Controls.Add(this.SearchButn);
-            this.searchPanel.Controls.Add(this.textBox1);
+            this.searchPanel.Controls.Add(this.SearchBut);
+            this.searchPanel.Controls.Add(this.searchBox);
             this.searchPanel.Controls.Add(this.label37);
             this.searchPanel.Controls.Add(this.pictureBox11);
             this.searchPanel.Controls.Add(this.exitButton_search);
@@ -1094,35 +975,38 @@
             this.checkBox1.Text = "Валюты";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // SearchButn
+            // SearchBut
             // 
-            this.SearchButn.BackColor = System.Drawing.Color.Transparent;
-            this.SearchButn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("SearchButn.BackgroundImage")));
-            this.SearchButn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.SearchButn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SearchButn.FlatAppearance.BorderSize = 0;
-            this.SearchButn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SearchButn.Location = new System.Drawing.Point(616, 74);
-            this.SearchButn.Name = "SearchButn";
-            this.SearchButn.Size = new System.Drawing.Size(48, 38);
-            this.SearchButn.TabIndex = 16;
-            this.SearchButn.UseVisualStyleBackColor = false;
+            this.SearchBut.BackColor = System.Drawing.Color.Transparent;
+            this.SearchBut.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("SearchBut.BackgroundImage")));
+            this.SearchBut.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.SearchBut.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SearchBut.FlatAppearance.BorderSize = 0;
+            this.SearchBut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SearchBut.Location = new System.Drawing.Point(616, 74);
+            this.SearchBut.Name = "SearchBut";
+            this.SearchBut.Size = new System.Drawing.Size(48, 38);
+            this.SearchBut.TabIndex = 16;
+            this.SearchBut.UseVisualStyleBackColor = false;
+            this.SearchBut.Click += new System.EventHandler(this.SearchBut_Click);
             // 
-            // textBox1
+            // searchBox
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.searchBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.textBox1.Location = new System.Drawing.Point(26, 74);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(580, 38);
-            this.textBox1.TabIndex = 15;
-            this.textBox1.Text = " Введите для поиска...";
+            this.searchBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
+            this.searchBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.searchBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.searchBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.searchBox.Location = new System.Drawing.Point(26, 74);
+            this.searchBox.Multiline = true;
+            this.searchBox.Name = "searchBox";
+            this.searchBox.Size = new System.Drawing.Size(580, 38);
+            this.searchBox.TabIndex = 15;
+            this.searchBox.Text = " Введите для поиска...";
+            this.searchBox.Enter += new System.EventHandler(this.searchBox_Enter);
+            this.searchBox.Leave += new System.EventHandler(this.searchBox_Leave);
             // 
             // label37
             // 
@@ -1172,16 +1056,390 @@
             this.label38.TabIndex = 1;
             this.label38.Text = "Поиск";
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.CashierName);
+            this.panel2.Controls.Add(this.pictureUser);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(186, 156);
+            this.panel2.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
+            this.label2.Location = new System.Drawing.Point(57, 129);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(59, 16);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Кассир";
+            // 
+            // CashierName
+            // 
+            this.CashierName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CashierName.ForeColor = System.Drawing.Color.White;
+            this.CashierName.Location = new System.Drawing.Point(3, 99);
+            this.CashierName.Name = "CashierName";
+            this.CashierName.Size = new System.Drawing.Size(183, 20);
+            this.CashierName.TabIndex = 1;
+            this.CashierName.Text = "Имя кассира";
+            this.CashierName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pictureUser
+            // 
+            this.pictureUser.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureUser.BackgroundImage")));
+            this.pictureUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureUser.Location = new System.Drawing.Point(60, 22);
+            this.pictureUser.Name = "pictureUser";
+            this.pictureUser.Size = new System.Drawing.Size(63, 63);
+            this.pictureUser.TabIndex = 0;
+            this.pictureUser.TabStop = false;
+            // 
+            // MainBtn
+            // 
+            this.MainBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.MainBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.MainBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.MainBtn.FlatAppearance.BorderSize = 0;
+            this.MainBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MainBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MainBtn.ForeColor = System.Drawing.Color.White;
+            this.MainBtn.Image = ((System.Drawing.Image)(resources.GetObject("MainBtn.Image")));
+            this.MainBtn.Location = new System.Drawing.Point(0, 156);
+            this.MainBtn.Name = "MainBtn";
+            this.MainBtn.Size = new System.Drawing.Size(186, 42);
+            this.MainBtn.TabIndex = 1;
+            this.MainBtn.Text = "Главная";
+            this.MainBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.MainBtn.UseVisualStyleBackColor = true;
+            this.MainBtn.Click += new System.EventHandler(this.MainBtn_Click);
+            this.MainBtn.Leave += new System.EventHandler(this.MainBtn_Leave);
+            // 
+            // ClientsBtn
+            // 
+            this.ClientsBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.ClientsBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ClientsBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ClientsBtn.FlatAppearance.BorderSize = 0;
+            this.ClientsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ClientsBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClientsBtn.ForeColor = System.Drawing.Color.White;
+            this.ClientsBtn.Image = ((System.Drawing.Image)(resources.GetObject("ClientsBtn.Image")));
+            this.ClientsBtn.Location = new System.Drawing.Point(0, 198);
+            this.ClientsBtn.Name = "ClientsBtn";
+            this.ClientsBtn.Size = new System.Drawing.Size(186, 42);
+            this.ClientsBtn.TabIndex = 2;
+            this.ClientsBtn.Text = "Клиенты";
+            this.ClientsBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.ClientsBtn.UseVisualStyleBackColor = true;
+            this.ClientsBtn.Click += new System.EventHandler(this.ClientsBtn_Click);
+            this.ClientsBtn.Leave += new System.EventHandler(this.ClientsBtn_Leave);
+            // 
+            // ExchangeBtn
+            // 
+            this.ExchangeBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.ExchangeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ExchangeBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ExchangeBtn.FlatAppearance.BorderSize = 0;
+            this.ExchangeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ExchangeBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExchangeBtn.ForeColor = System.Drawing.Color.White;
+            this.ExchangeBtn.Image = ((System.Drawing.Image)(resources.GetObject("ExchangeBtn.Image")));
+            this.ExchangeBtn.Location = new System.Drawing.Point(0, 240);
+            this.ExchangeBtn.Name = "ExchangeBtn";
+            this.ExchangeBtn.Size = new System.Drawing.Size(186, 42);
+            this.ExchangeBtn.TabIndex = 3;
+            this.ExchangeBtn.Text = "Обмен   ";
+            this.ExchangeBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.ExchangeBtn.UseVisualStyleBackColor = true;
+            this.ExchangeBtn.Click += new System.EventHandler(this.ExchangeBtn_Click);
+            this.ExchangeBtn.Leave += new System.EventHandler(this.ExchangeBtn_Leave);
+            // 
+            // SearchBtn
+            // 
+            this.SearchBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.SearchBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SearchBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.SearchBtn.FlatAppearance.BorderSize = 0;
+            this.SearchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SearchBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchBtn.ForeColor = System.Drawing.Color.White;
+            this.SearchBtn.Image = ((System.Drawing.Image)(resources.GetObject("SearchBtn.Image")));
+            this.SearchBtn.Location = new System.Drawing.Point(0, 282);
+            this.SearchBtn.Name = "SearchBtn";
+            this.SearchBtn.Size = new System.Drawing.Size(186, 42);
+            this.SearchBtn.TabIndex = 4;
+            this.SearchBtn.Text = "Поиск    ";
+            this.SearchBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.SearchBtn.UseVisualStyleBackColor = true;
+            this.SearchBtn.Click += new System.EventHandler(this.SearchBtn_Click);
+            this.SearchBtn.Leave += new System.EventHandler(this.SearchBtn_Leave);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(36, 453);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(120, 100);
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.panel1.Controls.Add(this.pnlNav);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.SearchBtn);
+            this.panel1.Controls.Add(this.ExchangeBtn);
+            this.panel1.Controls.Add(this.ClientsBtn);
+            this.panel1.Controls.Add(this.MainBtn);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(186, 577);
+            this.panel1.TabIndex = 0;
+            // 
+            // addclientPanel
+            // 
+            this.addclientPanel.Controls.Add(this.GoBackClientsPanel);
+            this.addclientPanel.Controls.Add(this.panel4);
+            this.addclientPanel.Controls.Add(this.label14);
+            this.addclientPanel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.addclientPanel.Location = new System.Drawing.Point(186, 0);
+            this.addclientPanel.Name = "addclientPanel";
+            this.addclientPanel.Size = new System.Drawing.Size(765, 577);
+            this.addclientPanel.TabIndex = 31;
+            this.addclientPanel.Visible = false;
+            // 
+            // GoBackClientsPanel
+            // 
+            this.GoBackClientsPanel.BackColor = System.Drawing.SystemColors.Control;
+            this.GoBackClientsPanel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.GoBackClientsPanel.FlatAppearance.BorderSize = 0;
+            this.GoBackClientsPanel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.GoBackClientsPanel.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.GoBackClientsPanel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.GoBackClientsPanel.Image = ((System.Drawing.Image)(resources.GetObject("GoBackClientsPanel.Image")));
+            this.GoBackClientsPanel.Location = new System.Drawing.Point(16, 8);
+            this.GoBackClientsPanel.Name = "GoBackClientsPanel";
+            this.GoBackClientsPanel.Size = new System.Drawing.Size(60, 60);
+            this.GoBackClientsPanel.TabIndex = 32;
+            this.GoBackClientsPanel.UseVisualStyleBackColor = false;
+            this.GoBackClientsPanel.Click += new System.EventHandler(this.GoBackClientsPanel_Click);
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.panel4.Controls.Add(this.AddClientBtn);
+            this.panel4.Controls.Add(this.panel9);
+            this.panel4.Controls.Add(this.panel8);
+            this.panel4.Controls.Add(this.panel6);
+            this.panel4.Controls.Add(this.panel7);
+            this.panel4.Controls.Add(this.panel3);
+            this.panel4.Controls.Add(this.loginPanel);
+            this.panel4.Controls.Add(this.label6);
+            this.panel4.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.panel4.Location = new System.Drawing.Point(182, 74);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(437, 479);
+            this.panel4.TabIndex = 9;
+            // 
+            // AddClientBtn
+            // 
+            this.AddClientBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.AddClientBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddClientBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AddClientBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(197)))), ((int)(((byte)(254)))));
+            this.AddClientBtn.Image = ((System.Drawing.Image)(resources.GetObject("AddClientBtn.Image")));
+            this.AddClientBtn.Location = new System.Drawing.Point(172, 419);
+            this.AddClientBtn.Name = "AddClientBtn";
+            this.AddClientBtn.Size = new System.Drawing.Size(144, 51);
+            this.AddClientBtn.TabIndex = 33;
+            this.AddClientBtn.Text = "Добавить";
+            this.AddClientBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.AddClientBtn.UseVisualStyleBackColor = true;
+            this.AddClientBtn.Click += new System.EventHandler(this.AddClientBtn_Click);
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.White;
+            this.panel9.Controls.Add(this.numberBox);
+            this.panel9.Location = new System.Drawing.Point(3, 356);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(430, 57);
+            this.panel9.TabIndex = 11;
+            // 
+            // numberBox
+            // 
+            this.numberBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.numberBox.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.numberBox.ForeColor = System.Drawing.Color.Silver;
+            this.numberBox.Location = new System.Drawing.Point(8, 11);
+            this.numberBox.Name = "numberBox";
+            this.numberBox.Size = new System.Drawing.Size(417, 30);
+            this.numberBox.TabIndex = 5;
+            this.numberBox.Text = "Введите номер документа";
+            this.numberBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numberBox.Enter += new System.EventHandler(this.numberBox_Enter);
+            this.numberBox.Leave += new System.EventHandler(this.numberBox_Leave);
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.White;
+            this.panel8.Controls.Add(this.seriesBox);
+            this.panel8.Location = new System.Drawing.Point(3, 293);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(430, 57);
+            this.panel8.TabIndex = 10;
+            // 
+            // seriesBox
+            // 
+            this.seriesBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.seriesBox.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.seriesBox.ForeColor = System.Drawing.Color.Silver;
+            this.seriesBox.Location = new System.Drawing.Point(8, 11);
+            this.seriesBox.Name = "seriesBox";
+            this.seriesBox.Size = new System.Drawing.Size(417, 30);
+            this.seriesBox.TabIndex = 5;
+            this.seriesBox.Text = "Введите серию документа";
+            this.seriesBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.seriesBox.Enter += new System.EventHandler(this.seriesBox_Enter);
+            this.seriesBox.Leave += new System.EventHandler(this.seriesBox_Leave);
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.White;
+            this.panel6.Controls.Add(this.dateTimePicker1);
+            this.panel6.Location = new System.Drawing.Point(3, 230);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(430, 57);
+            this.panel6.TabIndex = 9;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dateTimePicker1.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.dateTimePicker1.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.dateTimePicker1.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.dateTimePicker1.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.dateTimePicker1.CalendarTrailingForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.dateTimePicker1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dateTimePicker1.Location = new System.Drawing.Point(95, 12);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(269, 37);
+            this.dateTimePicker1.TabIndex = 33;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.White;
+            this.panel7.Controls.Add(this.patronymicBox);
+            this.panel7.Location = new System.Drawing.Point(3, 167);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(430, 57);
+            this.panel7.TabIndex = 9;
+            // 
+            // patronymicBox
+            // 
+            this.patronymicBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.patronymicBox.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.patronymicBox.ForeColor = System.Drawing.Color.Silver;
+            this.patronymicBox.Location = new System.Drawing.Point(8, 11);
+            this.patronymicBox.Name = "patronymicBox";
+            this.patronymicBox.Size = new System.Drawing.Size(417, 30);
+            this.patronymicBox.TabIndex = 5;
+            this.patronymicBox.Text = "Введите отчество";
+            this.patronymicBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.patronymicBox.Enter += new System.EventHandler(this.patronymicBox_Enter);
+            this.patronymicBox.Leave += new System.EventHandler(this.patronymicBox_Leave);
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.surnameBox);
+            this.panel3.Location = new System.Drawing.Point(3, 104);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(430, 57);
+            this.panel3.TabIndex = 8;
+            // 
+            // surnameBox
+            // 
+            this.surnameBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.surnameBox.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.surnameBox.ForeColor = System.Drawing.Color.Silver;
+            this.surnameBox.Location = new System.Drawing.Point(8, 11);
+            this.surnameBox.Name = "surnameBox";
+            this.surnameBox.Size = new System.Drawing.Size(417, 30);
+            this.surnameBox.TabIndex = 5;
+            this.surnameBox.Text = "Введите фамилию";
+            this.surnameBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.surnameBox.Enter += new System.EventHandler(this.surnameBox_Enter);
+            this.surnameBox.Leave += new System.EventHandler(this.surnameBox_Leave);
+            // 
+            // loginPanel
+            // 
+            this.loginPanel.BackColor = System.Drawing.Color.White;
+            this.loginPanel.Controls.Add(this.nameBox);
+            this.loginPanel.Location = new System.Drawing.Point(3, 41);
+            this.loginPanel.Name = "loginPanel";
+            this.loginPanel.Size = new System.Drawing.Size(430, 57);
+            this.loginPanel.TabIndex = 7;
+            // 
+            // nameBox
+            // 
+            this.nameBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.nameBox.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.nameBox.ForeColor = System.Drawing.Color.Silver;
+            this.nameBox.Location = new System.Drawing.Point(8, 11);
+            this.nameBox.Name = "nameBox";
+            this.nameBox.Size = new System.Drawing.Size(417, 30);
+            this.nameBox.TabIndex = 5;
+            this.nameBox.Text = "Введите имя";
+            this.nameBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nameBox.Enter += new System.EventHandler(this.nameBox_Enter);
+            this.nameBox.Leave += new System.EventHandler(this.nameBox_Leave);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(128, 3);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(197, 25);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "Введите данные:";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.label14.Location = new System.Drawing.Point(191, 22);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(415, 32);
+            this.label14.TabIndex = 1;
+            this.label14.Text = "Добавление нового клиента";
+            // 
             // CashierWindowMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(951, 577);
+            this.Controls.Add(this.addclientPanel);
             this.Controls.Add(this.mainPanel);
+            this.Controls.Add(this.clientsPanel);
             this.Controls.Add(this.searchPanel);
             this.Controls.Add(this.exchangePanel);
-            this.Controls.Add(this.clientsPanel);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -1189,11 +1447,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Обменный пункт-Кассир";
             this.Load += new System.EventHandler(this.CashierWindowMain_Load);
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureUser)).EndInit();
             this.BalancePanel.ResumeLayout(false);
             this.BalancePanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -1211,7 +1464,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.clientsPanel.ResumeLayout(false);
             this.clientsPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
@@ -1221,45 +1474,54 @@
             this.searchPanel.ResumeLayout(false);
             this.searchPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureUser)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.addclientPanel.ResumeLayout(false);
+            this.addclientPanel.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.loginPanel.ResumeLayout(false);
+            this.loginPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.PictureBox pictureUser;
-        private System.Windows.Forms.Label CashierName;
-        private System.Windows.Forms.Button MainBtn;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button SearchBtn;
-        private System.Windows.Forms.Button ExchangeBtn;
-        private System.Windows.Forms.Button ClientsBtn;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel pnlNav;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button exit;
         private System.Windows.Forms.Panel BalancePanel;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label EUR_value;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel pnael4;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label ClientsNum;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel mainPanel;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label USD_value;
+        private System.Windows.Forms.Label JPY_value;
+        private System.Windows.Forms.Label CHF_value;
+        private System.Windows.Forms.Label GBP_value;
         private System.Windows.Forms.Panel RatePanel;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button print_currencies;
         private System.Windows.Forms.Label JPY_buy;
         private System.Windows.Forms.Label CHF_buy;
         private System.Windows.Forms.Label GBP_buy;
@@ -1284,14 +1546,13 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel clientsPanel;
-        private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.PictureBox pictureBox14;
-        private System.Windows.Forms.Label label58;
+        private System.Windows.Forms.Label clientsNumT;
         private System.Windows.Forms.Label label59;
         private System.Windows.Forms.Button exitButton_clients;
         private System.Windows.Forms.Label label66;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button AddClientsBtn;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.Panel exchangePanel;
         private System.Windows.Forms.Button button3;
@@ -1304,11 +1565,40 @@
         private System.Windows.Forms.PictureBox pictureBox11;
         private System.Windows.Forms.Button exitButton_search;
         private System.Windows.Forms.Label label38;
-        private System.Windows.Forms.Button SearchButn;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button SearchBut;
+        private System.Windows.Forms.TextBox searchBox;
         private System.Windows.Forms.CheckBox checkBox3;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.CheckBox checkBox4;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label CashierName;
+        private System.Windows.Forms.PictureBox pictureUser;
+        private System.Windows.Forms.Button MainBtn;
+        private System.Windows.Forms.Button ClientsBtn;
+        private System.Windows.Forms.Button ExchangeBtn;
+        private System.Windows.Forms.Button SearchBtn;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel addclientPanel;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button GoBackClientsPanel;
+        private System.Windows.Forms.Panel loginPanel;
+        private System.Windows.Forms.TextBox nameBox;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.TextBox numberBox;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.TextBox seriesBox;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.TextBox patronymicBox;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.TextBox surnameBox;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Button AddClientBtn;
     }
 }

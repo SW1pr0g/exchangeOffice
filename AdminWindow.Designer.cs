@@ -1561,8 +1561,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(951, 577);
-            this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.bdPanel);
+            this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.otchetPanel);
             this.Controls.Add(this.searchPanel);
             this.Controls.Add(this.exchangePanel);

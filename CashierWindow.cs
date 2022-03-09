@@ -14,8 +14,8 @@ namespace AIS_exchangeOffice
 {
     public partial class CashierWindowMain : Form
     {
-        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
-
+        public bool searchEdit = false;
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]        
         private static extern IntPtr CreateRoundRectRgn(int nLeftRect, int nTopRect, int nRightRect, int nBottomRect, int nWidthEllipse, int nHeightEllipse);
         public CashierWindowMain()
         {
@@ -154,37 +154,7 @@ namespace AIS_exchangeOffice
         private void CashierWindowMain_Load(object sender, EventArgs e)
         {
             CashierName.Text = AuthForm.nameUser;
-        }
-
-        private void mainPanel_EnabledChanged(object sender, EventArgs e)
-        {
-            //sell
-            string connStr = "server=localhost;user=root;database=aisdatabd;password=root123;";
-            MySqlConnection conn = new MySqlConnection(connStr);
-
-            MySqlCommand command = new MySqlCommand();
-            string commandString = "SELECT summsale, summpurchase FROM currencycourse WHERE name = 'USD';";
-            command.CommandText = commandString;
-            command.Connection = conn;
-            MySqlDataReader reader;
-            try
-            {
-                command.Connection.Open();
-                reader = command.ExecuteReader();
-                string r = reader["summsale"].ToString();
-                string r1 = reader["summpurchase"].ToString();
-                reader.Close();
-            }
-            catch (MySqlException ex)
-            {
-                Console.WriteLine("Error: \r\n{0}", ex.ToString());
-            }
-            finally
-            {
-                command.Connection.Close();
-            }
-        }
-
+        }        
         private void mainPanel_VisibleChanged(object sender, EventArgs e)
         {
             string connStr = "server=localhost;user=root;database=aisdatabd;password=root123;";
@@ -198,6 +168,11 @@ namespace AIS_exchangeOffice
             try
             {
                 command.Connection.Open();
+                string commandString1 = "SELECT COUNT(*) FROM clients;";
+                command.CommandText = commandString1;
+                ClientsNum.Text = command.ExecuteScalar().ToString();
+                commandString = "SELECT summsale, summpurchase FROM currencycourse WHERE name = 'USD';";
+                command.CommandText = commandString;
                 reader = command.ExecuteReader();
                 while (reader.Read())
                 {
@@ -241,6 +216,50 @@ namespace AIS_exchangeOffice
                     JPY_buy.Text = reader["summpurchase"].ToString().Replace(',', '.');
                 }
                 reader.Close();
+                commandString = "SELECT value FROM currency_values WHERE name = 'USD';";
+                command.CommandText = commandString;
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    USD_value.Text = "$ " + reader["value"].ToString().Replace(',', '.');
+                }
+                reader.Close();
+                commandString = "SELECT value FROM currency_values WHERE name = 'EUR';";
+                command.CommandText = commandString;
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    EUR_value.Text = "€ " + reader["value"].ToString().Replace(',', '.');
+                }
+                reader.Close();
+                commandString = "SELECT value FROM currency_values WHERE name = 'GBP';";
+                command.CommandText = commandString;
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    GBP_value.Text = "£ " + reader["value"].ToString().Replace(',', '.');
+                }
+                reader.Close();
+                commandString = "SELECT value FROM currency_values WHERE name = 'CHF';";
+                command.CommandText = commandString;
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    CHF_value.Text = "₣ " + reader["value"].ToString().Replace(',', '.');
+                }
+                reader.Close();
+                commandString = "SELECT value FROM currency_values WHERE name = 'JPY';";
+                command.CommandText = commandString;
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    JPY_value.Text = "¥ " + reader["value"].ToString().Replace(',', '.');
+                }
+                reader.Close();
+            }
+            catch (NullReferenceException ex)
+            {
+                Console.WriteLine("Error: \r\n{0}", ex.ToString());
             }
             catch (MySqlException ex)
             {
@@ -250,6 +269,205 @@ namespace AIS_exchangeOffice
             {
                 command.Connection.Close();
             }
+        }
+
+        private void searchBox_Enter(object sender, EventArgs e)
+        {            
+            if (searchBox.Text == " Введите для поиска...")
+            {
+                searchBox.Text = null;
+            }
+        }
+
+        private void searchBox_Leave(object sender, EventArgs e)
+        {
+            if (searchBox.Text == "")
+            {
+                searchBox.Text = " Введите для поиска...";
+            }
+        }
+
+        private void SearchBut_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Aloha");
+        }
+
+        private void clientsPanel_VisibleChanged(object sender, EventArgs e)
+        {
+            clientsNumT.Text = ClientsNum.Text;
+            dataGridView1.Rows.Clear();
+            dataGridView1.Columns.Clear();
+
+            //datagrid
+            string connStr = "server=localhost;user=root;database=aisdatabd;password=root123;";
+            MySqlConnection conn = new MySqlConnection(connStr);
+
+            MySqlCommand command = new MySqlCommand();
+            string commandString = "SELECT * FROM clients;";
+            command.CommandText = commandString;
+            command.Connection = conn;
+            MySqlDataReader reader;
+            try
+            {
+                command.Connection.Open();
+                reader = command.ExecuteReader();
+                this.dataGridView1.Columns.Add("id", "№");
+                this.dataGridView1.Columns["id"].Width = 32;
+                this.dataGridView1.Columns.Add("name", "Имя");
+                this.dataGridView1.Columns["name"].Width = 50;
+                this.dataGridView1.Columns.Add("surname", "Фамилия");
+                this.dataGridView1.Columns["surname"].Width = 110;
+                this.dataGridView1.Columns.Add("patronymic", "Отчество");
+                this.dataGridView1.Columns["patronymic"].Width = 110;
+                this.dataGridView1.Columns.Add("date_birth", "Дата рождения");
+                this.dataGridView1.Columns["date_birth"].Width = 90;
+                this.dataGridView1.Columns.Add("seriesDoc", "Серия документа");
+                this.dataGridView1.Columns["seriesDoc"].Width = 120;
+                this.dataGridView1.Columns.Add("numberDoc", "Номер документа");
+                this.dataGridView1.Columns["numberDoc"].Width = 120;
+                while (reader.Read())
+                {
+                    classes.reversedate reversedate = new classes.reversedate();
+                    dataGridView1.Rows.Add(reader["id"].ToString(), reader["name"].ToString(), reader["surname"].ToString(), reader["patronymic"].ToString(), reversedate.dateReverse(reader["date_birth"].ToString()), reader["seriesDoc"].ToString(), reader["numberDoc"].ToString());
+                }
+                reader.Close();
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("Error: \r\n{0}", ex.ToString());
+            }
+            finally
+            {
+                command.Connection.Close();
+            }
+        }
+
+        private void print_currencies_Click(object sender, EventArgs e)
+        {
+            classes.print_documents print_documents = new classes.print_documents();
+            DialogResult dialogResult = MessageBox.Show("Вывести на печать данные о текущем курсе валют?", "Печать текущего курса валют", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                print_documents.print_currencies();
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                //do nothing
+            }
+        }
+
+        private void AddClientsBtn_Click(object sender, EventArgs e)
+        {
+            clientsPanel.Visible = false;
+            addclientPanel.Visible = true;
+        }
+
+        private void exitButton_addclient_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Выйти из аккаунта?", "Выход из аккаунта", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                AuthForm showAuthForm = new AuthForm();
+                showAuthForm.Show();
+                this.Hide();
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                //do nothing
+            }
+        }
+
+        private void GoBackClientsPanel_Click(object sender, EventArgs e)
+        {
+            clientsPanel.Visible = true;
+            addclientPanel.Visible = false;
+        }
+
+        private void nameBox_Enter(object sender, EventArgs e)
+        {
+            if (nameBox.Text == "Введите имя")
+            {
+                nameBox.Text = null;
+                nameBox.ForeColor = Color.FromArgb(11, 100, 103);
+            }
+        }
+
+        private void nameBox_Leave(object sender, EventArgs e)
+        {
+            if (nameBox.Text == "")
+            {
+                nameBox.Text = "Введите имя";
+                nameBox.ForeColor = Color.Silver;
+            }
+        }
+        private void surnameBox_Enter(object sender, EventArgs e)
+        {
+            if (surnameBox.Text == "Введите фамилию")
+            {
+                surnameBox.Text = null;
+                surnameBox.ForeColor = Color.FromArgb(11, 100, 103);
+            }
+        }
+        private void surnameBox_Leave(object sender, EventArgs e)
+        {
+            if (surnameBox.Text == "")
+            {
+                surnameBox.Text = "Введите фамилию";
+                surnameBox.ForeColor = Color.Silver;
+            }
+        }        
+        private void patronymicBox_Enter(object sender, EventArgs e)
+        {
+            if (patronymicBox.Text == "Введите отчество")
+            {
+                patronymicBox.Text = null;
+                patronymicBox.ForeColor = Color.FromArgb(11, 100, 103);
+            }
+        }
+        private void patronymicBox_Leave(object sender, EventArgs e)
+        {
+            if (patronymicBox.Text == "")
+            {
+                patronymicBox.Text = "Введите отчество";
+                patronymicBox.ForeColor = Color.Silver;
+            }
+        }       
+        private void seriesBox_Enter(object sender, EventArgs e)
+        {
+            if (seriesBox.Text == "Введите серию документа")
+            {
+                seriesBox.Text = null;
+                seriesBox.ForeColor = Color.FromArgb(11, 100, 103);
+            }
+        }
+        private void seriesBox_Leave(object sender, EventArgs e)
+        {
+            if (seriesBox.Text == "")
+            {
+                seriesBox.Text = "Введите серию документа";
+                seriesBox.ForeColor = Color.Silver;
+            }
+        }
+        private void numberBox_Enter(object sender, EventArgs e)
+        {
+            if (numberBox.Text == "Введите номер документа")
+            {
+                numberBox.Text = null;
+                numberBox.ForeColor = Color.FromArgb(11, 100, 103);
+            }
+        }
+        private void numberBox_Leave(object sender, EventArgs e)
+        {
+            if (numberBox.Text == "")
+            {
+                numberBox.Text = "Введите номер документа";
+                numberBox.ForeColor = Color.Silver;
+            }
+        }
+
+        private void AddClientBtn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

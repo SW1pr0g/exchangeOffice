@@ -18,7 +18,7 @@ namespace AIS_exchangeOffice
         public static string nameUser = "";
         public AuthForm()
         {
-            InitializeComponent();                
+            InitializeComponent();
         }
 
         private void exit_Click(object sender, EventArgs e)
@@ -120,7 +120,7 @@ namespace AIS_exchangeOffice
 
         private void loginBox_KeyUp(object sender, KeyEventArgs e)
         {
-            if(resultBtn == true)
+            if (resultBtn == true)
             {
                 resultBtn = false;
             }
@@ -136,6 +136,14 @@ namespace AIS_exchangeOffice
             {
                 logBtn_Click(sender, e);
             }
+            else if (e.KeyData == Keys.Down)
+            {
+                passBox.BackColor = Color.White;
+                passwordPanel.BackColor = Color.White;
+                loginPanel.BackColor = SystemColors.Control;
+                loginBox.BackColor = SystemColors.Control;
+                passBox.Focus();               
+            }           
         }
 
         private void passBox_KeyUp(object sender, KeyEventArgs e)
@@ -147,6 +155,14 @@ namespace AIS_exchangeOffice
             else if (e.KeyCode == Keys.Enter)
             {
                 logBtn_Click(sender, e);
+            }
+            else if (e.KeyData == Keys.Up)
+            {
+                loginBox.BackColor = Color.White;
+                loginPanel.BackColor = Color.White;
+                passwordPanel.BackColor = SystemColors.Control;
+                passBox.BackColor = SystemColors.Control;
+                loginBox.Focus();
             }
         }   
     }
