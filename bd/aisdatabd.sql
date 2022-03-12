@@ -23,7 +23,7 @@ DROP TABLE IF EXISTS `clients`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `clients` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(45) DEFAULT NULL,
   `surname` varchar(45) DEFAULT NULL,
   `patronymic` varchar(45) DEFAULT NULL,
@@ -32,7 +32,7 @@ CREATE TABLE `clients` (
   `numberDoc` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `idnew_table_UNIQUE` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -200,4 +200,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-03-09 22:39:47
+-- Dump completed on 2022-03-12  7:47:57

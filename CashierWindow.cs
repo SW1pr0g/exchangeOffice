@@ -314,7 +314,7 @@ namespace AIS_exchangeOffice
                 this.dataGridView1.Columns.Add("id", "№");
                 this.dataGridView1.Columns["id"].Width = 32;
                 this.dataGridView1.Columns.Add("name", "Имя");
-                this.dataGridView1.Columns["name"].Width = 50;
+                this.dataGridView1.Columns["name"].Width = 90;
                 this.dataGridView1.Columns.Add("surname", "Фамилия");
                 this.dataGridView1.Columns["surname"].Width = 110;
                 this.dataGridView1.Columns.Add("patronymic", "Отчество");
@@ -322,9 +322,9 @@ namespace AIS_exchangeOffice
                 this.dataGridView1.Columns.Add("date_birth", "Дата рождения");
                 this.dataGridView1.Columns["date_birth"].Width = 90;
                 this.dataGridView1.Columns.Add("seriesDoc", "Серия документа");
-                this.dataGridView1.Columns["seriesDoc"].Width = 120;
+                this.dataGridView1.Columns["seriesDoc"].Width = 100;
                 this.dataGridView1.Columns.Add("numberDoc", "Номер документа");
-                this.dataGridView1.Columns["numberDoc"].Width = 120;
+                this.dataGridView1.Columns["numberDoc"].Width = 100;
                 while (reader.Read())
                 {
                     classes.reversedate reversedate = new classes.reversedate();
@@ -437,6 +437,7 @@ namespace AIS_exchangeOffice
             if (seriesBox.Text == "Введите серию документа")
             {
                 seriesBox.Text = null;
+                seriesBox.MaxLength = 4;
                 seriesBox.ForeColor = Color.FromArgb(11, 100, 103);
             }
         }
@@ -444,6 +445,7 @@ namespace AIS_exchangeOffice
         {
             if (seriesBox.Text == "")
             {
+                seriesBox.MaxLength = 32767;
                 seriesBox.Text = "Введите серию документа";
                 seriesBox.ForeColor = Color.Silver;
             }
@@ -453,6 +455,7 @@ namespace AIS_exchangeOffice
             if (numberBox.Text == "Введите номер документа")
             {
                 numberBox.Text = null;
+                numberBox.MaxLength = 6;
                 numberBox.ForeColor = Color.FromArgb(11, 100, 103);
             }
         }
@@ -460,6 +463,7 @@ namespace AIS_exchangeOffice
         {
             if (numberBox.Text == "")
             {
+                seriesBox.MaxLength = 32767;
                 numberBox.Text = "Введите номер документа";
                 numberBox.ForeColor = Color.Silver;
             }
@@ -467,7 +471,109 @@ namespace AIS_exchangeOffice
 
         private void AddClientBtn_Click(object sender, EventArgs e)
         {
+            DialogResult dialogResult = MessageBox.Show("Вы уверены что хотите добавить нового клиента?", "Добавление нового клиента", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                try
+                {
+                    if (nameBox.Text == "Введите имя" || surnameBox.Text == "Введите фамилию" || patronymicBox.Text == "Введите отчество" || seriesBox.Text == "Введите серию документа" || numberBox.Text == "Введите номер документа")
+                    {
+                        MessageBox.Show("Одно или несколько полей не заполнены!");
+                    }
+                    else
+                    {
+                        string connectionString = "server = localhost; user = root; database = aisdatabd; password = root123;";
+                        MySqlConnection connection = new MySqlConnection(connectionString);
+                        connection.Open();
+                        classes.reversedate getDate = new classes.reversedate();
+                        string query = "INSERT INTO clients (name, surname, patronymic, date_birth, seriesDoc, numberDoc) VALUES ('" + nameBox.Text + "', '" + surnameBox.Text + "', '" + patronymicBox.Text + "', '" + getDate.dateReverse(dateTimePicker1.Value.ToString().Substring(0, 10)) + "', " + seriesBox.Text + ", " + numberBox.Text + ")";
+                        MySqlCommand command = new MySqlCommand(query, connection);
+                        command.ExecuteNonQuery();
+                        MessageBox.Show("Клиент успешно добавлен!");
+                        nameBox.Text = "Введите имя";
+                        nameBox.ForeColor = Color.Silver;
+                        surnameBox.Text = "Введите фамилию";
+                        surnameBox.ForeColor = Color.Silver;
+                        patronymicBox.Text = "Введите отчество";
+                        patronymicBox.ForeColor = Color.Silver;
+                        seriesBox.Text = "Введите серию документа";
+                        seriesBox.ForeColor = Color.Silver;
+                        numberBox.Text = "Введите номер документа";
+                        numberBox.ForeColor = Color.Silver;
+                        dateTimePicker1.Text = "01.01.2022";
+                    }
+                }
+                catch (MySqlException)
+                {
+                    MessageBox.Show("Произошла ошибка данных! Проверьте введённые данные.");
+                }
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                //do nothing
+            }
+            
+        }
 
+        private void nameBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar))
+                if ((e.KeyChar > 32 && e.KeyChar < 48) || (e.KeyChar > 57 && e.KeyChar < 65) || (e.KeyChar > 90 && e.KeyChar < 97) || (e.KeyChar > 122 && e.KeyChar < 256))
+                    e.Handled = true;
+                else
+                    e.Handled = false;
+            else if (e.KeyChar == 8)
+                e.Handled = false;
+            else
+                e.Handled = true;
+        }
+
+        private void surnameBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar))
+                if ((e.KeyChar > 32 && e.KeyChar < 48) || (e.KeyChar > 57 && e.KeyChar < 65) || (e.KeyChar > 90 && e.KeyChar < 97) || (e.KeyChar > 122 && e.KeyChar < 256))
+                    e.Handled = true;
+                else
+                    e.Handled = false;
+            else if (e.KeyChar == 8)
+                e.Handled = false;
+            else
+                e.Handled = true;
+        }
+
+        private void patronymicBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar))
+                if ((e.KeyChar > 32 && e.KeyChar < 48) || (e.KeyChar > 57 && e.KeyChar < 65) || (e.KeyChar > 90 && e.KeyChar < 97) || (e.KeyChar > 122 && e.KeyChar < 256))
+                    e.Handled = true;
+                else
+                    e.Handled = false;
+            else if (e.KeyChar == 8)
+                e.Handled = false;
+            else
+                e.Handled = true;
+        }
+
+        private void seriesBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 8){}
+            else
+            {
+                if (Char.IsDigit(e.KeyChar)) return;
+                else
+                    e.Handled = true;
+            }
+        }
+
+        private void numberBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 8){}
+            else
+            {
+                if (Char.IsDigit(e.KeyChar)) return;
+                else
+                    e.Handled = true;
+            }            
         }
     }
 }

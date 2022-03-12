@@ -1287,6 +1287,7 @@
             this.numberBox.Text = "Введите номер документа";
             this.numberBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numberBox.Enter += new System.EventHandler(this.numberBox_Enter);
+            this.numberBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numberBox_KeyPress);
             this.numberBox.Leave += new System.EventHandler(this.numberBox_Leave);
             // 
             // panel8
@@ -1310,6 +1311,7 @@
             this.seriesBox.Text = "Введите серию документа";
             this.seriesBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.seriesBox.Enter += new System.EventHandler(this.seriesBox_Enter);
+            this.seriesBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.seriesBox_KeyPress);
             this.seriesBox.Leave += new System.EventHandler(this.seriesBox_Leave);
             // 
             // panel6
@@ -1336,6 +1338,7 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(269, 37);
             this.dateTimePicker1.TabIndex = 33;
+            this.dateTimePicker1.Value = new System.DateTime(2022, 1, 1, 0, 0, 0, 0);
             // 
             // panel7
             // 
@@ -1358,6 +1361,7 @@
             this.patronymicBox.Text = "Введите отчество";
             this.patronymicBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.patronymicBox.Enter += new System.EventHandler(this.patronymicBox_Enter);
+            this.patronymicBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.patronymicBox_KeyPress);
             this.patronymicBox.Leave += new System.EventHandler(this.patronymicBox_Leave);
             // 
             // panel3
@@ -1381,6 +1385,7 @@
             this.surnameBox.Text = "Введите фамилию";
             this.surnameBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.surnameBox.Enter += new System.EventHandler(this.surnameBox_Enter);
+            this.surnameBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.surnameBox_KeyPress);
             this.surnameBox.Leave += new System.EventHandler(this.surnameBox_Leave);
             // 
             // loginPanel
@@ -1404,6 +1409,7 @@
             this.nameBox.Text = "Введите имя";
             this.nameBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nameBox.Enter += new System.EventHandler(this.nameBox_Enter);
+            this.nameBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nameBox_KeyPress);
             this.nameBox.Leave += new System.EventHandler(this.nameBox_Leave);
             // 
             // label6
