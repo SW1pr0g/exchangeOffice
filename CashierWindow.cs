@@ -293,8 +293,7 @@ namespace AIS_exchangeOffice
         }
 
         private void clientsPanel_VisibleChanged(object sender, EventArgs e)
-        {
-            clientsNumT.Text = ClientsNum.Text;
+        {            
             dataGridView1.Rows.Clear();
             dataGridView1.Columns.Clear();
 
@@ -313,10 +312,10 @@ namespace AIS_exchangeOffice
                 reader = command.ExecuteReader();
                 this.dataGridView1.Columns.Add("id", "№");
                 this.dataGridView1.Columns["id"].Width = 32;
-                this.dataGridView1.Columns.Add("name", "Имя");
-                this.dataGridView1.Columns["name"].Width = 90;
                 this.dataGridView1.Columns.Add("surname", "Фамилия");
                 this.dataGridView1.Columns["surname"].Width = 110;
+                this.dataGridView1.Columns.Add("name", "Имя");
+                this.dataGridView1.Columns["name"].Width = 90;               
                 this.dataGridView1.Columns.Add("patronymic", "Отчество");
                 this.dataGridView1.Columns["patronymic"].Width = 110;
                 this.dataGridView1.Columns.Add("date_birth", "Дата рождения");
@@ -328,7 +327,7 @@ namespace AIS_exchangeOffice
                 while (reader.Read())
                 {
                     classes.reversedate reversedate = new classes.reversedate();
-                    dataGridView1.Rows.Add(reader["id"].ToString(), reader["name"].ToString(), reader["surname"].ToString(), reader["patronymic"].ToString(), reversedate.dateReverse(reader["date_birth"].ToString()), reader["seriesDoc"].ToString(), reader["numberDoc"].ToString());
+                    dataGridView1.Rows.Add(reader["id"].ToString(), reader["surname"].ToString(), reader["name"].ToString(), reader["patronymic"].ToString(), reversedate.dateReverse(reader["date_birth"].ToString()), reader["seriesDoc"].ToString(), reader["numberDoc"].ToString());
                 }
                 reader.Close();
             }
@@ -340,6 +339,7 @@ namespace AIS_exchangeOffice
             {
                 command.Connection.Close();
             }
+            clientsNumT.Text = dataGridView1.RowCount.ToString();
         }
 
         private void print_currencies_Click(object sender, EventArgs e)
@@ -480,27 +480,23 @@ namespace AIS_exchangeOffice
                     {
                         MessageBox.Show("Одно или несколько полей не заполнены!");
                     }
+                    else if (seriesBox.Text.Length != 4 || numberBox.Text.Length != 6)
+                    {
+                        MessageBox.Show("Серия имеет 4 цифры, а номер 6! Проверьте введённые значения и повторите попытку.");
+                    }
                     else
                     {
                         string connectionString = "server = localhost; user = root; database = aisdatabd; password = root123;";
                         MySqlConnection connection = new MySqlConnection(connectionString);
                         connection.Open();
                         classes.reversedate getDate = new classes.reversedate();
-                        string query = "INSERT INTO clients (name, surname, patronymic, date_birth, seriesDoc, numberDoc) VALUES ('" + nameBox.Text + "', '" + surnameBox.Text + "', '" + patronymicBox.Text + "', '" + getDate.dateReverse(dateTimePicker1.Value.ToString().Substring(0, 10)) + "', " + seriesBox.Text + ", " + numberBox.Text + ")";
+                        int id = dataGridView1.RowCount; id++;
+                        string query = "INSERT INTO clients (id, surname, name, patronymic, date_birth, seriesDoc, numberDoc) VALUES (" + id +  ", '" + surnameBox.Text + "', '" + nameBox.Text + "', '" + patronymicBox.Text + "', '" + getDate.dateReverse(dateTimePicker1.Value.ToString().Substring(0, 10)) + "', " + seriesBox.Text + ", " + numberBox.Text + ")";
                         MySqlCommand command = new MySqlCommand(query, connection);
                         command.ExecuteNonQuery();
                         MessageBox.Show("Клиент успешно добавлен!");
-                        nameBox.Text = "Введите имя";
-                        nameBox.ForeColor = Color.Silver;
-                        surnameBox.Text = "Введите фамилию";
-                        surnameBox.ForeColor = Color.Silver;
-                        patronymicBox.Text = "Введите отчество";
-                        patronymicBox.ForeColor = Color.Silver;
-                        seriesBox.Text = "Введите серию документа";
-                        seriesBox.ForeColor = Color.Silver;
-                        numberBox.Text = "Введите номер документа";
-                        numberBox.ForeColor = Color.Silver;
-                        dateTimePicker1.Text = "01.01.2022";
+                        addclientPanel.Visible = false;
+                        clientsPanel.Visible = true;
                     }
                 }
                 catch (MySqlException)

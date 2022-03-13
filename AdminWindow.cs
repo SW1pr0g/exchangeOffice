@@ -953,7 +953,7 @@ namespace AIS_exchangeOffice
                     command = new MySqlCommand(query, connection);
                     command.ExecuteNonQuery();
                     connection.Close();
-                }
+                }                
             }
         }
 
@@ -998,6 +998,21 @@ namespace AIS_exchangeOffice
                 finally
                 {
                     command.Connection.Close();
+                }
+            }
+            for (int j = 0; j <= (dataGridView1.Rows.Count - 2); j++)
+            {
+                try
+                {
+                    if (Convert.ToInt32(dataGridView1[0, 0].Value.ToString()) != 1 || Convert.ToInt32(dataGridView1[0, j].Value.ToString()) != (Convert.ToInt32(dataGridView1[0, j + 1].Value.ToString()) - 1))
+                    {
+                        MessageBox.Show("ID не инкрементируется с каждым следующим полем, либо начинается не с 1. Проверьте поля id.");
+                        break;
+                    }
+                }
+                catch (NullReferenceException)
+                {
+                    //
                 }
             }
         }

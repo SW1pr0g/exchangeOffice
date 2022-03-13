@@ -1368,7 +1368,7 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.Controls.Add(this.surnameBox);
-            this.panel3.Location = new System.Drawing.Point(3, 104);
+            this.panel3.Location = new System.Drawing.Point(3, 41);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(430, 57);
             this.panel3.TabIndex = 8;
@@ -1392,7 +1392,7 @@
             // 
             this.loginPanel.BackColor = System.Drawing.Color.White;
             this.loginPanel.Controls.Add(this.nameBox);
-            this.loginPanel.Location = new System.Drawing.Point(3, 41);
+            this.loginPanel.Location = new System.Drawing.Point(3, 104);
             this.loginPanel.Name = "loginPanel";
             this.loginPanel.Size = new System.Drawing.Size(430, 57);
             this.loginPanel.TabIndex = 7;
