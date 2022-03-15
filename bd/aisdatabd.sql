@@ -23,16 +23,16 @@ DROP TABLE IF EXISTS `clients`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `clients` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(45) DEFAULT NULL,
+  `id` int(11) NOT NULL,
   `surname` varchar(45) DEFAULT NULL,
+  `name` varchar(45) DEFAULT NULL,
   `patronymic` varchar(45) DEFAULT NULL,
   `date_birth` date DEFAULT NULL,
   `seriesDoc` int(11) DEFAULT NULL,
   `numberDoc` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `idnew_table_UNIQUE` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,7 +41,7 @@ CREATE TABLE `clients` (
 
 LOCK TABLES `clients` WRITE;
 /*!40000 ALTER TABLE `clients` DISABLE KEYS */;
-INSERT INTO `clients` VALUES (1,'Ivan','Ivanov','Ivanovich','2004-02-20',4563,456988);
+INSERT INTO `clients` VALUES (1,'афафа','фафа','фафаф','2022-01-01',4567,123456);
 /*!40000 ALTER TABLE `clients` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -106,8 +106,8 @@ DROP TABLE IF EXISTS `purchased`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `purchased` (
   `id` int(11) NOT NULL,
-  `name` varchar(45) DEFAULT NULL,
   `surname` varchar(45) DEFAULT NULL,
+  `name` varchar(45) DEFAULT NULL,
   `patronymic` varchar(45) DEFAULT NULL,
   `summ` double DEFAULT NULL,
   `currency` varchar(1) DEFAULT NULL,
@@ -135,8 +135,8 @@ DROP TABLE IF EXISTS `saled`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `saled` (
   `id` int(11) NOT NULL,
-  `name` varchar(45) DEFAULT NULL,
   `surname` varchar(45) DEFAULT NULL,
+  `name` varchar(45) DEFAULT NULL,
   `patronymic` varchar(45) DEFAULT NULL,
   `summ` double DEFAULT NULL,
   `currency` varchar(1) DEFAULT NULL,
@@ -200,4 +200,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-03-12  7:47:57
+-- Dump completed on 2022-03-15  7:49:41
