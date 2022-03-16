@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using MySql.Data.MySqlClient;
+using Word = Microsoft.Office.Interop.Word;
 
 namespace AIS_exchangeOffice
 {
@@ -344,12 +345,28 @@ namespace AIS_exchangeOffice
 
         private void print_currencies_Click(object sender, EventArgs e)
         {
-            classes.print_documents print_documents = new classes.print_documents();
             DialogResult dialogResult = MessageBox.Show("Вывести на печать данные о текущем курсе валют?", "Печать текущего курса валют", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                print_documents.print_currencies();
-            }
+                var helper = new classes.wordHelper("wordDocs/currencycourse_print.docx");
+                var items = new Dictionary<string, string>
+                {
+                    { "_<date>_", DateTime.Now.ToString().Substring(0, 10) },
+                    { "_<date_update>_", DateTime.Now.ToString() },
+                    { "_<USD_sell>_", USD_sell.Text },
+                    { "_<USD_buy>_", USD_buy.Text },
+                    { "_<EUR_sell>_", EUR_sell.Text },
+                    { "_<EUR_buy>_", EUR_buy.Text },
+                    { "_<GBP_sell>_", GBP_sell.Text },
+                    { "_<GBP_buy>_", GBP_buy.Text },
+                    { "_<CHF_sell>_", CHF_sell.Text },
+                    { "_<CHF_buy>_", CHF_buy.Text },
+                    { "_<JPY_sell>_", JPY_sell.Text },
+                    { "_<JPY_buy>_", JPY_buy.Text },
+                };
+                MessageBox.Show("Сейчас откроется документ на печать. Документ находится в корневой папке программы(AIS_exchangeOffice/wordDocs)");
+                helper.Process(items);                
+            }            
             else if (dialogResult == DialogResult.No)
             {
                 //do nothing

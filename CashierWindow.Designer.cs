@@ -1441,8 +1441,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(951, 577);
-            this.Controls.Add(this.addclientPanel);
             this.Controls.Add(this.mainPanel);
+            this.Controls.Add(this.addclientPanel);
             this.Controls.Add(this.clientsPanel);
             this.Controls.Add(this.searchPanel);
             this.Controls.Add(this.exchangePanel);
