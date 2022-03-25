@@ -164,6 +164,11 @@ namespace AIS_exchangeOffice
                 passBox.BackColor = SystemColors.Control;
                 loginBox.Focus();
             }
-        }   
+        }
+
+        private void AuthForm_Shown(object sender, EventArgs e)
+        {
+            loginBox.Focus();
+        }
     }
 }

@@ -86,9 +86,9 @@
             this.exitButton_clients = new System.Windows.Forms.Button();
             this.label66 = new System.Windows.Forms.Label();
             this.exchangePanel = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.buy_valuesBtn = new System.Windows.Forms.Button();
             this.label36 = new System.Windows.Forms.Label();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.exitButton_exchange = new System.Windows.Forms.Button();
             this.label39 = new System.Windows.Forms.Label();
             this.searchPanel = new System.Windows.Forms.Panel();
@@ -130,6 +130,22 @@
             this.nameBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
+            this.currencies_exchangePanel = new System.Windows.Forms.Panel();
+            this.goBackExchangeBtn = new System.Windows.Forms.Button();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.exchangedBtn = new System.Windows.Forms.Button();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.summBox = new System.Windows.Forms.TextBox();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.quantityBox = new System.Windows.Forms.TextBox();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.selectValueBox = new System.Windows.Forms.ComboBox();
+            this.panel16 = new System.Windows.Forms.Panel();
+            this.selectClientBox = new System.Windows.Forms.ComboBox();
+            this.panel17 = new System.Windows.Forms.Panel();
+            this.selectOperBox = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.BalancePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.pnael4.SuspendLayout();
@@ -146,7 +162,7 @@
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
             this.exchangePanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.searchPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             this.panel2.SuspendLayout();
@@ -161,6 +177,13 @@
             this.panel7.SuspendLayout();
             this.panel3.SuspendLayout();
             this.loginPanel.SuspendLayout();
+            this.currencies_exchangePanel.SuspendLayout();
+            this.panel11.SuspendLayout();
+            this.panel12.SuspendLayout();
+            this.panel13.SuspendLayout();
+            this.panel15.SuspendLayout();
+            this.panel16.SuspendLayout();
+            this.panel17.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlNav
@@ -837,9 +860,9 @@
             // 
             // exchangePanel
             // 
-            this.exchangePanel.Controls.Add(this.button3);
+            this.exchangePanel.Controls.Add(this.dataGridView2);
+            this.exchangePanel.Controls.Add(this.buy_valuesBtn);
             this.exchangePanel.Controls.Add(this.label36);
-            this.exchangePanel.Controls.Add(this.pictureBox10);
             this.exchangePanel.Controls.Add(this.exitButton_exchange);
             this.exchangePanel.Controls.Add(this.label39);
             this.exchangePanel.Location = new System.Drawing.Point(186, 0);
@@ -847,21 +870,34 @@
             this.exchangePanel.Size = new System.Drawing.Size(765, 577);
             this.exchangePanel.TabIndex = 12;
             this.exchangePanel.Visible = false;
+            this.exchangePanel.VisibleChanged += new System.EventHandler(this.exchangePanel_VisibleChanged);
             // 
-            // button3
+            // dataGridView2
             // 
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(197)))), ((int)(((byte)(254)))));
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(178, 85);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(411, 142);
-            this.button3.TabIndex = 14;
-            this.button3.Text = "Покупка/продажа валюты";
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.button3.UseVisualStyleBackColor = true;
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(26, 327);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.Size = new System.Drawing.Size(675, 226);
+            this.dataGridView2.TabIndex = 31;
+            // 
+            // buy_valuesBtn
+            // 
+            this.buy_valuesBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buy_valuesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buy_valuesBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buy_valuesBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(197)))), ((int)(((byte)(254)))));
+            this.buy_valuesBtn.Image = ((System.Drawing.Image)(resources.GetObject("buy_valuesBtn.Image")));
+            this.buy_valuesBtn.Location = new System.Drawing.Point(178, 85);
+            this.buy_valuesBtn.Name = "buy_valuesBtn";
+            this.buy_valuesBtn.Size = new System.Drawing.Size(411, 142);
+            this.buy_valuesBtn.TabIndex = 14;
+            this.buy_valuesBtn.Text = "Покупка/продажа валюты";
+            this.buy_valuesBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.buy_valuesBtn.UseVisualStyleBackColor = true;
+            this.buy_valuesBtn.Click += new System.EventHandler(this.buy_valuesBtn_Click);
             // 
             // label36
             // 
@@ -874,15 +910,6 @@
             this.label36.Size = new System.Drawing.Size(342, 31);
             this.label36.TabIndex = 13;
             this.label36.Text = "Совершенные операции";
-            // 
-            // pictureBox10
-            // 
-            this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
-            this.pictureBox10.Location = new System.Drawing.Point(26, 328);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(687, 185);
-            this.pictureBox10.TabIndex = 10;
-            this.pictureBox10.TabStop = false;
             // 
             // exitButton_exchange
             // 
@@ -1338,7 +1365,7 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(269, 37);
             this.dateTimePicker1.TabIndex = 33;
-            this.dateTimePicker1.Value = new System.DateTime(2022, 1, 1, 0, 0, 0, 0);
+            this.dateTimePicker1.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             // 
             // panel7
             // 
@@ -1435,17 +1462,224 @@
             this.label14.TabIndex = 1;
             this.label14.Text = "Добавление нового клиента";
             // 
+            // currencies_exchangePanel
+            // 
+            this.currencies_exchangePanel.Controls.Add(this.goBackExchangeBtn);
+            this.currencies_exchangePanel.Controls.Add(this.panel11);
+            this.currencies_exchangePanel.Controls.Add(this.label5);
+            this.currencies_exchangePanel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.currencies_exchangePanel.Location = new System.Drawing.Point(186, 0);
+            this.currencies_exchangePanel.Name = "currencies_exchangePanel";
+            this.currencies_exchangePanel.Size = new System.Drawing.Size(765, 577);
+            this.currencies_exchangePanel.TabIndex = 33;
+            this.currencies_exchangePanel.Visible = false;
+            this.currencies_exchangePanel.VisibleChanged += new System.EventHandler(this.currencies_exchangePanel_VisibleChanged);
+            // 
+            // goBackExchangeBtn
+            // 
+            this.goBackExchangeBtn.BackColor = System.Drawing.SystemColors.Control;
+            this.goBackExchangeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.goBackExchangeBtn.FlatAppearance.BorderSize = 0;
+            this.goBackExchangeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.goBackExchangeBtn.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.goBackExchangeBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.goBackExchangeBtn.Image = ((System.Drawing.Image)(resources.GetObject("goBackExchangeBtn.Image")));
+            this.goBackExchangeBtn.Location = new System.Drawing.Point(16, 8);
+            this.goBackExchangeBtn.Name = "goBackExchangeBtn";
+            this.goBackExchangeBtn.Size = new System.Drawing.Size(60, 60);
+            this.goBackExchangeBtn.TabIndex = 32;
+            this.goBackExchangeBtn.UseVisualStyleBackColor = false;
+            this.goBackExchangeBtn.Click += new System.EventHandler(this.goBackExchangeBtn_Click);
+            // 
+            // panel11
+            // 
+            this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.panel11.Controls.Add(this.exchangedBtn);
+            this.panel11.Controls.Add(this.panel12);
+            this.panel11.Controls.Add(this.panel13);
+            this.panel11.Controls.Add(this.panel15);
+            this.panel11.Controls.Add(this.panel16);
+            this.panel11.Controls.Add(this.panel17);
+            this.panel11.Controls.Add(this.label1);
+            this.panel11.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.panel11.Location = new System.Drawing.Point(169, 74);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(437, 479);
+            this.panel11.TabIndex = 9;
+            // 
+            // exchangedBtn
+            // 
+            this.exchangedBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.exchangedBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exchangedBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.exchangedBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(197)))), ((int)(((byte)(254)))));
+            this.exchangedBtn.Image = ((System.Drawing.Image)(resources.GetObject("exchangedBtn.Image")));
+            this.exchangedBtn.Location = new System.Drawing.Point(112, 425);
+            this.exchangedBtn.Name = "exchangedBtn";
+            this.exchangedBtn.Size = new System.Drawing.Size(235, 51);
+            this.exchangedBtn.TabIndex = 33;
+            this.exchangedBtn.Text = "Произвести обмен";
+            this.exchangedBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.exchangedBtn.UseVisualStyleBackColor = true;
+            this.exchangedBtn.Click += new System.EventHandler(this.exchangedBtn_Click);
+            // 
+            // panel12
+            // 
+            this.panel12.BackColor = System.Drawing.Color.White;
+            this.panel12.Controls.Add(this.summBox);
+            this.panel12.Location = new System.Drawing.Point(3, 356);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(430, 57);
+            this.panel12.TabIndex = 11;
+            // 
+            // summBox
+            // 
+            this.summBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.summBox.Enabled = false;
+            this.summBox.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.summBox.ForeColor = System.Drawing.Color.Silver;
+            this.summBox.Location = new System.Drawing.Point(8, 11);
+            this.summBox.Name = "summBox";
+            this.summBox.Size = new System.Drawing.Size(413, 30);
+            this.summBox.TabIndex = 5;
+            this.summBox.Text = "Сумма сделки: 0 рублей";
+            this.summBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // panel13
+            // 
+            this.panel13.BackColor = System.Drawing.Color.White;
+            this.panel13.Controls.Add(this.quantityBox);
+            this.panel13.Location = new System.Drawing.Point(3, 293);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(430, 54);
+            this.panel13.TabIndex = 10;
+            // 
+            // quantityBox
+            // 
+            this.quantityBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.quantityBox.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.quantityBox.ForeColor = System.Drawing.Color.Silver;
+            this.quantityBox.Location = new System.Drawing.Point(8, 11);
+            this.quantityBox.Multiline = true;
+            this.quantityBox.Name = "quantityBox";
+            this.quantityBox.Size = new System.Drawing.Size(413, 30);
+            this.quantityBox.TabIndex = 5;
+            this.quantityBox.Text = "Введите количество валюты";
+            this.quantityBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.quantityBox.TextChanged += new System.EventHandler(this.quantityBox_TextChanged);
+            this.quantityBox.Enter += new System.EventHandler(this.quantityBox_Enter);
+            this.quantityBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.quantityBox_KeyPress);
+            this.quantityBox.Leave += new System.EventHandler(this.quantityBox_Leave);
+            // 
+            // panel15
+            // 
+            this.panel15.BackColor = System.Drawing.Color.White;
+            this.panel15.Controls.Add(this.selectValueBox);
+            this.panel15.Location = new System.Drawing.Point(3, 167);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(430, 57);
+            this.panel15.TabIndex = 9;
+            // 
+            // selectValueBox
+            // 
+            this.selectValueBox.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.selectValueBox.ForeColor = System.Drawing.Color.Silver;
+            this.selectValueBox.FormattingEnabled = true;
+            this.selectValueBox.Items.AddRange(new object[] {
+            "$(Доллар США)",
+            "€(Евро)",
+            "£(Британский фунт стерлингов)",
+            "₣(Швейцарский франк)",
+            "¥(Японская иена)"});
+            this.selectValueBox.Location = new System.Drawing.Point(8, 9);
+            this.selectValueBox.Name = "selectValueBox";
+            this.selectValueBox.Size = new System.Drawing.Size(414, 38);
+            this.selectValueBox.TabIndex = 2;
+            this.selectValueBox.Text = "Выберите валюту";
+            this.selectValueBox.SelectedIndexChanged += new System.EventHandler(this.selectSaledValueBox_SelectedIndexChanged);
+            // 
+            // panel16
+            // 
+            this.panel16.BackColor = System.Drawing.Color.White;
+            this.panel16.Controls.Add(this.selectClientBox);
+            this.panel16.Location = new System.Drawing.Point(3, 41);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(430, 57);
+            this.panel16.TabIndex = 8;
+            // 
+            // selectClientBox
+            // 
+            this.selectClientBox.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.selectClientBox.ForeColor = System.Drawing.Color.Silver;
+            this.selectClientBox.FormattingEnabled = true;
+            this.selectClientBox.Location = new System.Drawing.Point(8, 11);
+            this.selectClientBox.Name = "selectClientBox";
+            this.selectClientBox.Size = new System.Drawing.Size(414, 38);
+            this.selectClientBox.TabIndex = 0;
+            this.selectClientBox.Text = "Выберите клиента";
+            this.selectClientBox.SelectedIndexChanged += new System.EventHandler(this.selectClientBox_SelectedIndexChanged);
+            this.selectClientBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.selectClientBox_KeyPress);
+            // 
+            // panel17
+            // 
+            this.panel17.BackColor = System.Drawing.Color.White;
+            this.panel17.Controls.Add(this.selectOperBox);
+            this.panel17.Location = new System.Drawing.Point(3, 104);
+            this.panel17.Name = "panel17";
+            this.panel17.Size = new System.Drawing.Size(430, 57);
+            this.panel17.TabIndex = 7;
+            // 
+            // selectOperBox
+            // 
+            this.selectOperBox.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.selectOperBox.ForeColor = System.Drawing.Color.Silver;
+            this.selectOperBox.FormattingEnabled = true;
+            this.selectOperBox.Items.AddRange(new object[] {
+            "Покупка",
+            "Продажа"});
+            this.selectOperBox.Location = new System.Drawing.Point(8, 11);
+            this.selectOperBox.Name = "selectOperBox";
+            this.selectOperBox.Size = new System.Drawing.Size(414, 38);
+            this.selectOperBox.TabIndex = 1;
+            this.selectOperBox.Text = "Выберите операцию";
+            this.selectOperBox.SelectedIndexChanged += new System.EventHandler(this.selectOperBox_SelectedIndexChanged);
+            this.selectOperBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.selectClientBox_KeyPress);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(128, 3);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(197, 25);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Введите данные:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.label5.Location = new System.Drawing.Point(264, 21);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(264, 32);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Обменять валюту";
+            // 
             // CashierWindowMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(951, 577);
+            this.Controls.Add(this.currencies_exchangePanel);
+            this.Controls.Add(this.exchangePanel);
+            this.Controls.Add(this.clientsPanel);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.addclientPanel);
-            this.Controls.Add(this.clientsPanel);
             this.Controls.Add(this.searchPanel);
-            this.Controls.Add(this.exchangePanel);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -1476,7 +1710,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
             this.exchangePanel.ResumeLayout(false);
             this.exchangePanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.searchPanel.ResumeLayout(false);
             this.searchPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
@@ -1500,6 +1734,17 @@
             this.panel3.PerformLayout();
             this.loginPanel.ResumeLayout(false);
             this.loginPanel.PerformLayout();
+            this.currencies_exchangePanel.ResumeLayout(false);
+            this.currencies_exchangePanel.PerformLayout();
+            this.panel11.ResumeLayout(false);
+            this.panel11.PerformLayout();
+            this.panel12.ResumeLayout(false);
+            this.panel12.PerformLayout();
+            this.panel13.ResumeLayout(false);
+            this.panel13.PerformLayout();
+            this.panel15.ResumeLayout(false);
+            this.panel16.ResumeLayout(false);
+            this.panel17.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1561,9 +1806,8 @@
         private System.Windows.Forms.Button AddClientsBtn;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.Panel exchangePanel;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button buy_valuesBtn;
         private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.PictureBox pictureBox10;
         private System.Windows.Forms.Button exitButton_exchange;
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.Panel searchPanel;
@@ -1606,5 +1850,22 @@
         private System.Windows.Forms.TextBox surnameBox;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button AddClientBtn;
+        private System.Windows.Forms.Panel currencies_exchangePanel;
+        private System.Windows.Forms.Button goBackExchangeBtn;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.Button exchangedBtn;
+        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.TextBox summBox;
+        private System.Windows.Forms.Panel panel13;
+        private System.Windows.Forms.TextBox quantityBox;
+        private System.Windows.Forms.Panel panel15;
+        private System.Windows.Forms.Panel panel16;
+        private System.Windows.Forms.Panel panel17;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.ComboBox selectClientBox;
+        private System.Windows.Forms.ComboBox selectOperBox;
+        private System.Windows.Forms.ComboBox selectValueBox;
     }
 }

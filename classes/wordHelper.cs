@@ -57,9 +57,9 @@ namespace AIS_exchangeOffice.classes
                 }
 
                 Object newFileName = Path.Combine(_fileInfo.DirectoryName, DateTime.Now.ToString("yyyMMdd_HHmmss_") + _fileInfo.Name);
-                app.ActiveDocument.SaveAs2(newFileName);
-                app.ActiveDocument.Close();
-                System.Diagnostics.Process.Start(newFileName.ToString());
+                app.ActiveDocument.SaveAs(newFileName);
+                //app.ActiveDocument.SaveAs2(newFileName);
+                //System.Diagnostics.Process.Start(newFileName.ToString());
                 return true;
             }
             catch (Exception ex) {Console.WriteLine(ex.Message);}
@@ -67,7 +67,7 @@ namespace AIS_exchangeOffice.classes
             {
                 if (app != null)
                 {
-                    app.Quit();                    
+                    app.Visible = true;                   
                 }
             }
             return false;

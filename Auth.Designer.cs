@@ -263,6 +263,7 @@
             this.Name = "AuthForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Обменный пункт";
+            this.Shown += new System.EventHandler(this.AuthForm_Shown);
             this.info.ResumeLayout(false);
             this.info.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

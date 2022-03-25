@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.7.12, for Win32 (AMD64)
 --
--- Host: 127.0.0.1    Database: aisdatabd
+-- Host: localhost    Database: aisdatabd
 -- ------------------------------------------------------
 -- Server version	5.6.23-log
 
@@ -41,7 +41,7 @@ CREATE TABLE `clients` (
 
 LOCK TABLES `clients` WRITE;
 /*!40000 ALTER TABLE `clients` DISABLE KEYS */;
-INSERT INTO `clients` VALUES (1,'афафа','фафа','фафаф','2022-01-01',4567,123456);
+INSERT INTO `clients` VALUES (1,'Surname','Name','Patronymic','2022-01-01',1234,123456);
 /*!40000 ALTER TABLE `clients` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -98,19 +98,22 @@ INSERT INTO `currencycourse` VALUES (1,'USD',77.12,79.81),(2,'EUR',88.47,90.47),
 UNLOCK TABLES;
 
 --
--- Table structure for table `purchased`
+-- Table structure for table `operations`
 --
 
-DROP TABLE IF EXISTS `purchased`;
+DROP TABLE IF EXISTS `operations`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `purchased` (
+CREATE TABLE `operations` (
   `id` int(11) NOT NULL,
   `surname` varchar(45) DEFAULT NULL,
   `name` varchar(45) DEFAULT NULL,
   `patronymic` varchar(45) DEFAULT NULL,
+  `type` varchar(9) DEFAULT NULL,
+  `saled_currency` varchar(1) DEFAULT NULL,
+  `purchased_currency` varchar(45) DEFAULT NULL,
   `summ` double DEFAULT NULL,
-  `currency` varchar(1) DEFAULT NULL,
+  `quantity` double DEFAULT NULL,
   `date` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`)
@@ -118,41 +121,13 @@ CREATE TABLE `purchased` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `purchased`
+-- Dumping data for table `operations`
 --
 
-LOCK TABLES `purchased` WRITE;
-/*!40000 ALTER TABLE `purchased` DISABLE KEYS */;
-/*!40000 ALTER TABLE `purchased` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `saled`
---
-
-DROP TABLE IF EXISTS `saled`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `saled` (
-  `id` int(11) NOT NULL,
-  `surname` varchar(45) DEFAULT NULL,
-  `name` varchar(45) DEFAULT NULL,
-  `patronymic` varchar(45) DEFAULT NULL,
-  `summ` double DEFAULT NULL,
-  `currency` varchar(1) DEFAULT NULL,
-  `date` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `id_UNIQUE` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `saled`
---
-
-LOCK TABLES `saled` WRITE;
-/*!40000 ALTER TABLE `saled` DISABLE KEYS */;
-/*!40000 ALTER TABLE `saled` ENABLE KEYS */;
+LOCK TABLES `operations` WRITE;
+/*!40000 ALTER TABLE `operations` DISABLE KEYS */;
+INSERT INTO `operations` VALUES (1,'ivanov','ivan','ivanovich','покупка','Р','$',45.56,5,'2022-02-20 11:00:00');
+/*!40000 ALTER TABLE `operations` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -182,14 +157,6 @@ LOCK TABLES `users` WRITE;
 INSERT INTO `users` VALUES (1,'cashier','cashier','Воробьева Е.С.','cashier'),(2,'administrator','admin','Минин С.В.','admin');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Dumping events for database 'aisdatabd'
---
-
---
--- Dumping routines for database 'aisdatabd'
---
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -200,4 +167,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-03-15  7:49:41
+-- Dump completed on 2022-03-16 12:01:15

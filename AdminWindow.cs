@@ -16,10 +16,9 @@ namespace AIS_exchangeOffice
     {
         //connect to BD
         //string connStr = "server=localhost;user=root;database=aisdatabd;password=root123;";
-
         //MySqlConnection conn = new MySqlConnection(connStr);
-
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        
         private static extern IntPtr CreateRoundRectRgn(int nLeftRect, int nTopRect, int nRightRect, int nBottomRect, int nWidthEllipse, int nHeightEllipse);
         public AdminWindow()
         {
@@ -254,17 +253,17 @@ namespace AIS_exchangeOffice
             {
                 command.Connection.Open();
                 reader = command.ExecuteReader();
-                this.dataGridView1.Columns.Add("id", "ID");
-                this.dataGridView1.Columns["id"].Width = 20;
+                this.dataGridView1.Columns.Add("u_num", "u_num");
+                this.dataGridView1.Columns["u_num"].Width = 45;
                 this.dataGridView1.Columns.Add("name", "Name");
-                this.dataGridView1.Columns["name"].Width = 50;
+                this.dataGridView1.Columns["name"].Width = 188;
                 this.dataGridView1.Columns.Add("summsale", "SummSale");
-                this.dataGridView1.Columns["summsale"].Width = 100;
+                this.dataGridView1.Columns["summsale"].Width = 187;
                 this.dataGridView1.Columns.Add("summpurchase", "SummPurchase");
-                this.dataGridView1.Columns["summpurchase"].Width = 100;
+                this.dataGridView1.Columns["summpurchase"].Width = 187;
                 while (reader.Read())
                 {
-                    dataGridView1.Rows.Add(reader["id"].ToString(), reader["name"].ToString(), reader["summsale"].ToString(), reader["summpurchase"].ToString());
+                    dataGridView1.Rows.Add(reader["u_num"].ToString(), reader["name"].ToString(), reader["summsale"].ToString(), reader["summpurchase"].ToString());
                 }
                 reader.Close();
             }
@@ -277,8 +276,7 @@ namespace AIS_exchangeOffice
                 command.Connection.Close();
             }
         }
-
-        private void SaledRadioBtn_CheckedChanged(object sender, EventArgs e)
+        private void OperationsRadioBtn_CheckedChanged(object sender, EventArgs e)
         {
             dataGridView1.Rows.Clear();
             dataGridView1.Columns.Clear();
@@ -288,7 +286,7 @@ namespace AIS_exchangeOffice
             MySqlConnection conn = new MySqlConnection(connStr);
 
             MySqlCommand command = new MySqlCommand();
-            string commandString = "SELECT * FROM saled;";
+            string commandString = "SELECT * FROM operations;";
             command.CommandText = commandString;
             command.Connection = conn;
             MySqlDataReader reader;
@@ -296,24 +294,26 @@ namespace AIS_exchangeOffice
             {
                 command.Connection.Open();
                 reader = command.ExecuteReader();
-                this.dataGridView1.Columns.Add("id", "ID");
-                this.dataGridView1.Columns["id"].Width = 20;
-                this.dataGridView1.Columns.Add("name", "Name");
-                this.dataGridView1.Columns["name"].Width = 50;
+                this.dataGridView1.Columns.Add("u_num", "u_num");
+                this.dataGridView1.Columns["u_num"].Width = 45;
                 this.dataGridView1.Columns.Add("surname", "Surname");
-                this.dataGridView1.Columns["surname"].Width = 100;
+                this.dataGridView1.Columns["surname"].Width = 90;
+                this.dataGridView1.Columns.Add("name", "Name");
+                this.dataGridView1.Columns["name"].Width = 70;
                 this.dataGridView1.Columns.Add("patronymic", "Patronymic");
-                this.dataGridView1.Columns["patronymic"].Width = 100;
+                this.dataGridView1.Columns["patronymic"].Width = 90;
+                this.dataGridView1.Columns.Add("type", "Type");
+                this.dataGridView1.Columns["type"].Width = 60;
+                this.dataGridView1.Columns.Add("quantity", "Quantity");
+                this.dataGridView1.Columns["quantity"].Width = 62;
                 this.dataGridView1.Columns.Add("summ", "Summ");
-                this.dataGridView1.Columns["summ"].Width = 100;
-                this.dataGridView1.Columns.Add("currency", "Currency");
-                this.dataGridView1.Columns["currency"].Width = 100;
+                this.dataGridView1.Columns["summ"].Width = 80;                
                 this.dataGridView1.Columns.Add("date", "Date");
-                this.dataGridView1.Columns["date"].Width = 100;
+                this.dataGridView1.Columns["date"].Width = 110;
                 while (reader.Read())
                 {
                     classes.reversedate reversedate = new classes.reversedate();
-                    dataGridView1.Rows.Add(reader["id"].ToString(), reader["name"].ToString(), reader["surname"].ToString(), reader["patronymic"].ToString(), reader["summ"].ToString(), reader["currency"].ToString(), reversedate.datetimeReverse(reader["date"].ToString()));
+                    dataGridView1.Rows.Add(reader["u_num"].ToString(), reader["surname"].ToString(), reader["name"].ToString(), reader["patronymic"].ToString(), reader["type"].ToString(), reader["quantity"].ToString(), reader["summ"].ToString(), reversedate.datetimeReverse(reader["date"].ToString()));
                 }
                 reader.Close();
             }
@@ -325,57 +325,7 @@ namespace AIS_exchangeOffice
             {
                 command.Connection.Close();
             }
-        }
-
-        private void PurchasedRadioBtn_CheckedChanged(object sender, EventArgs e)
-        {
-            dataGridView1.Rows.Clear();
-            dataGridView1.Columns.Clear();
-
-            //datagrid
-            string connStr = "server=localhost;user=root;database=aisdatabd;password=root123;";
-            MySqlConnection conn = new MySqlConnection(connStr);
-
-            MySqlCommand command = new MySqlCommand();
-            string commandString = "SELECT * FROM purchased;";
-            command.CommandText = commandString;
-            command.Connection = conn;
-            MySqlDataReader reader;
-            try
-            {
-                command.Connection.Open();
-                reader = command.ExecuteReader();
-                this.dataGridView1.Columns.Add("id", "ID");
-                this.dataGridView1.Columns["id"].Width = 20;
-                this.dataGridView1.Columns.Add("name", "Name");
-                this.dataGridView1.Columns["name"].Width = 50;
-                this.dataGridView1.Columns.Add("surname", "Surname");
-                this.dataGridView1.Columns["surname"].Width = 100;
-                this.dataGridView1.Columns.Add("patronymic", "Patronymic");
-                this.dataGridView1.Columns["patronymic"].Width = 100;
-                this.dataGridView1.Columns.Add("summ", "Summ");
-                this.dataGridView1.Columns["summ"].Width = 100;
-                this.dataGridView1.Columns.Add("currency", "Currency");
-                this.dataGridView1.Columns["currency"].Width = 100;
-                this.dataGridView1.Columns.Add("date", "Date");
-                this.dataGridView1.Columns["date"].Width = 100;
-                while (reader.Read())
-                {
-                    classes.reversedate reversedate = new classes.reversedate();
-                    dataGridView1.Rows.Add(reader["id"].ToString(), reader["name"].ToString(), reader["surname"].ToString(), reader["patronymic"].ToString(), reader["summ"].ToString(), reader["currency"].ToString(), reversedate.datetimeReverse(reader["date"].ToString()));
-                }
-                reader.Close();
-            }
-            catch (MySqlException ex)
-            {
-                Console.WriteLine("Error: \r\n{0}", ex.ToString());
-            }
-            finally
-            {
-                command.Connection.Close();
-            }
-        }
-
+        }        
         private void ClientsRadioBtn_CheckedChanged(object sender, EventArgs e)
         {
             dataGridView1.Rows.Clear();
@@ -394,24 +344,24 @@ namespace AIS_exchangeOffice
             {
                 command.Connection.Open();
                 reader = command.ExecuteReader();
-                this.dataGridView1.Columns.Add("id", "ID");
-                this.dataGridView1.Columns["id"].Width = 20;
-                this.dataGridView1.Columns.Add("name", "Name");
-                this.dataGridView1.Columns["name"].Width = 50;
+                this.dataGridView1.Columns.Add("u_num", "u_num");
+                this.dataGridView1.Columns["u_num"].Width = 45;
                 this.dataGridView1.Columns.Add("surname", "Surname");
                 this.dataGridView1.Columns["surname"].Width = 100;
+                this.dataGridView1.Columns.Add("name", "Name");
+                this.dataGridView1.Columns["name"].Width = 100;
                 this.dataGridView1.Columns.Add("patronymic", "Patronymic");
                 this.dataGridView1.Columns["patronymic"].Width = 100;
                 this.dataGridView1.Columns.Add("date_birth", "Date_birth");
                 this.dataGridView1.Columns["date_birth"].Width = 100;
                 this.dataGridView1.Columns.Add("seriesDoc", "SeriesDoc");
-                this.dataGridView1.Columns["seriesDoc"].Width = 100;
+                this.dataGridView1.Columns["seriesDoc"].Width = 79;
                 this.dataGridView1.Columns.Add("numberDoc", "NumberDoc");
-                this.dataGridView1.Columns["numberDoc"].Width = 100;
+                this.dataGridView1.Columns["numberDoc"].Width = 83;
                 while (reader.Read())
                 {
                     classes.reversedate reversedate = new classes.reversedate();
-                    dataGridView1.Rows.Add(reader["id"].ToString(), reader["name"].ToString(), reader["surname"].ToString(), reader["patronymic"].ToString(), reversedate.dateReverse(reader["date_birth"].ToString()), reader["seriesDoc"].ToString(), reader["numberDoc"].ToString());
+                    dataGridView1.Rows.Add(reader["u_num"].ToString(), reader["surname"].ToString(), reader["name"].ToString(), reader["patronymic"].ToString(), reversedate.dateReverse(reader["date_birth"].ToString()), reader["seriesDoc"].ToString(), reader["numberDoc"].ToString());
                 }
                 reader.Close();
             }
@@ -443,19 +393,19 @@ namespace AIS_exchangeOffice
             {
                 command.Connection.Open();
                 reader = command.ExecuteReader();
-                this.dataGridView1.Columns.Add("id", "ID");
-                this.dataGridView1.Columns["id"].Width = 20;
+                this.dataGridView1.Columns.Add("u_num", "u_num");
+                this.dataGridView1.Columns["u_num"].Width = 45;
                 this.dataGridView1.Columns.Add("login", "Login");
-                this.dataGridView1.Columns["login"].Width = 50;
+                this.dataGridView1.Columns["login"].Width = 140;
                 this.dataGridView1.Columns.Add("password", "Password");
-                this.dataGridView1.Columns["password"].Width = 100;
+                this.dataGridView1.Columns["password"].Width = 140;
                 this.dataGridView1.Columns.Add("name", "Name");
-                this.dataGridView1.Columns["name"].Width = 100;
+                this.dataGridView1.Columns["name"].Width = 149;
                 this.dataGridView1.Columns.Add("type", "Type");
-                this.dataGridView1.Columns["type"].Width = 100;
+                this.dataGridView1.Columns["type"].Width = 133;
                 while (reader.Read())
                 {
-                    dataGridView1.Rows.Add(reader["id"].ToString(), reader["login"].ToString(), reader["password"].ToString(), reader["name"].ToString(), reader["type"].ToString());
+                    dataGridView1.Rows.Add(reader["u_num"].ToString(), reader["login"].ToString(), reader["password"].ToString(), reader["name"].ToString(), reader["type"].ToString());
                 }
                 reader.Close();
             }
@@ -474,8 +424,7 @@ namespace AIS_exchangeOffice
 
         }
         private void saveBD_Click(object sender, EventArgs e)
-        {
-            
+        {           
             DialogResult dialogResult = MessageBox.Show("Вы уверены?", "Внесение изменений в БД", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
@@ -485,7 +434,7 @@ namespace AIS_exchangeOffice
                 if (CourseRadioBtn.Checked == true)
                 {                  
                     bool enderr = false;
-                    int id = dataGridView1.Rows.Count;
+                    int u_num = dataGridView1.Rows.Count;
                     string name = "";
                     string summsale = "", summpurchase = "";
                     for (int i = 0; i < dataGridView1.Rows.Count-1; i++)
@@ -505,8 +454,8 @@ namespace AIS_exchangeOffice
                             MySqlDataReader reader;
                             command.Connection.Open();
                             reader = command.ExecuteReader();
-                            this.dataGridView1.Columns.Add("id", "ID");
-                            this.dataGridView1.Columns["id"].Width = 20;
+                            this.dataGridView1.Columns.Add("u_num", "u_num");
+                            this.dataGridView1.Columns["u_num"].Width = 20;
                             this.dataGridView1.Columns.Add("name", "Name");
                             this.dataGridView1.Columns["name"].Width = 50;
                             this.dataGridView1.Columns.Add("summsale", "SummSale");
@@ -515,31 +464,18 @@ namespace AIS_exchangeOffice
                             this.dataGridView1.Columns["summpurchase"].Width = 100;
                             while (reader.Read())
                             {
-                                dataGridView1.Rows.Add(reader["id"].ToString(), reader["name"].ToString(), reader["summsale"].ToString(), reader["summpurchase"].ToString());
+                                dataGridView1.Rows.Add(reader["u_num"].ToString(), reader["name"].ToString(), reader["summsale"].ToString(), reader["summpurchase"].ToString());
                             }
                             reader.Close();
                             break;
                         }
                         try
                         {
-                            for (int j = 0; j <= (dataGridView1.Rows.Count - 3); j++)
-                            {
-                                if (Convert.ToInt32(dataGridView1[0, 0].Value.ToString()) != 1 || Convert.ToInt32(dataGridView1[0, j].Value.ToString()) != (Convert.ToInt32(dataGridView1[0, j + 1].Value.ToString()) - 1))
-                                {
-                                    enderr = true;
-                                    MessageBox.Show("ID не инкрементируется с каждым следующим полем, либо начинается не с 1. Проверьте поля id.");
-                                    break;
-                                }
-                            }
-                            if (enderr == true)
-                            {
-                                break;
-                            }
-                            id = Convert.ToInt32(dataGridView1[0, i].Value.ToString());
+                            u_num = Convert.ToInt32(dataGridView1[0, i].Value.ToString());
                             name = dataGridView1[1, i].Value.ToString();
                             summsale = dataGridView1[2, i].Value.ToString();
                             summpurchase = dataGridView1[3, i].Value.ToString();
-                            string query = "UPDATE currencycourse SET name = '" + name + "', summsale = " + summsale.Replace(',', '.') + ", summpurchase = " + summpurchase.Replace(',', '.') + " WHERE id = " + id;
+                            string query = "UPDATE currencycourse SET name = '" + name + "', summsale = " + summsale.Replace(',', '.') + ", summpurchase = " + summpurchase.Replace(',', '.') + " WHERE u_num = " + u_num;
                             MySqlCommand command = new MySqlCommand(query, connection);
                             command.ExecuteNonQuery();                            
                         }
@@ -568,68 +504,40 @@ namespace AIS_exchangeOffice
                             connection.Close();                                                
                     }
                 }
-                else if (SaledRadioBtn.Checked == true)
+                else if (OperationsRadioBtn.Checked == true)
                 {
                     bool enderr = false;
-                    int id = 0;
-                    string name = "", surname = "", patronymic = "", currency = "", date = "", summ = "", query = "";                    
+                    int u_num = 0;
+                    string name = "", surname = "", patronymic = "", type = "", quantity = "", date = "", summ = "", query = "";                    
                     for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
                     {
                         MySqlCommand command = new MySqlCommand(query, connection);                                                                      
                         try
                         {
-                            id = Convert.ToInt32(dataGridView1[0, i].Value.ToString());
-                            name = dataGridView1[1, i].Value.ToString();
-                            surname = dataGridView1[2, i].Value.ToString();
+                            u_num = Convert.ToInt32(dataGridView1[0, i].Value.ToString());
+                            surname = dataGridView1[1, i].Value.ToString();
+                            name = dataGridView1[2, i].Value.ToString();
                             patronymic = dataGridView1[3, i].Value.ToString();
-                            summ = dataGridView1[4, i].Value.ToString();
-                            currency = dataGridView1[5, i].Value.ToString();
-                            date = dataGridView1[6, i].Value.ToString();
-                            for (int j = 0; j <= (dataGridView1.Rows.Count - 2); j++)
-                            {
-                                try 
-                                { 
-                                    if (Convert.ToInt32(dataGridView1[0, 0].Value.ToString()) != 1 || Convert.ToInt32(dataGridView1[0, j].Value.ToString()) != (Convert.ToInt32(dataGridView1[0, j + 1].Value.ToString()) - 1))
-                                    {
-                                        enderr = true;
-                                        MessageBox.Show("ID не инкрементируется с каждым следующим полем, либо начинается не с 1. Проверьте поля id.");
-                                        break;
-                                    }
-                                }
-                                catch (NullReferenceException)
-                                {
-                                    //
-                                }
-                            }
-                            if (enderr == true)
-                            {
-                                break;
-                            }
-                            query = "UPDATE saled SET name = '" + name + "', surname = '" + surname + "', patronymic = '" + patronymic + "', summ = " + summ.Replace(',', '.') + ", date = '" + date + "' WHERE id = " + id;
+                            type = dataGridView1[4, i].Value.ToString();
+                            summ = dataGridView1[5, i].Value.ToString();
+                            quantity = dataGridView1[6, i].Value.ToString();
+                            date = dataGridView1[7, i].Value.ToString();
+                            query = "UPDATE operations SET surname = '" + surname + "', name = '" + name + "', patronymic = '" + patronymic + "', type = '" + type + "', quantity = " + quantity + ", summ = " + summ.Replace(',', '.') + ", date = '" + date + "' WHERE u_num = " + u_num;
                             command = new MySqlCommand(query, connection);
                             var tr = command.ExecuteNonQuery();
                             if (tr == 0)
                             {    
-                                query = "INSERT INTO saled (id, name, surname, patronymic, summ, currency, date) VALUES (" + id + ", '" + name + "', '" + surname + "', '" + patronymic + "', " + summ.Replace(',', '.') + ", '" + currency + "', '" + date + "')";
+                                query = "INSERT INTO operations (u_num, surname, name, patronymic, type, quantity, summ, date) VALUES (" + u_num + ", '" + surname + "', '" + name + "', '" + patronymic + "', '" + type + "', " + quantity + ", " + summ.Replace(',', '.') + ", '" + date + "')";
                                 command = new MySqlCommand(query, connection);
                                 command.ExecuteNonQuery();    
                             }
                                                       
                         }
                         catch (MySqlException)
-                        {
-                            if (currency.Length > 1)
-                            {
-                                enderr = true;
-                                MessageBox.Show("Поля currency не может содержать больше 1 символа. Проверьте поля currency.");
-                                break;
-                            }
-                            else
-                            {
-                                enderr = true;
-                                MessageBox.Show("Возникла непредвиденная ошибка данных. Проверьте на корректность ввода только что введённые значения.");
-                                break;
-                            }
+                        {                           
+                            enderr = true;
+                            MessageBox.Show("Возникла непредвиденная ошибка данных. Проверьте на корректность ввода только что введённые значения.");
+                            break;
                         }
                         catch (NullReferenceException)
                         {
@@ -650,139 +558,36 @@ namespace AIS_exchangeOffice
                         MessageBox.Show("Изменения внесены!");                       
                         connection.Close();                        
                     }
-                }
-                else if (PurchasedRadioBtn.Checked == true)
-                {
-                    bool enderr = false;
-                    int id = 0;
-                    string name = "", surname = "", patronymic = "", currency = "", date = "", summ = "", query = "";
-                    for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
-                    {
-                        MySqlCommand command = new MySqlCommand(query, connection);                        
-                        try
-                        {
-                            id = Convert.ToInt32(dataGridView1[0, i].Value.ToString());
-                            name = dataGridView1[1, i].Value.ToString();
-                            surname = dataGridView1[2, i].Value.ToString();
-                            patronymic = dataGridView1[3, i].Value.ToString();
-                            summ = dataGridView1[4, i].Value.ToString();
-                            currency = dataGridView1[5, i].Value.ToString();
-                            date = dataGridView1[6, i].Value.ToString();
-                            for (int j = 0; j <= (dataGridView1.Rows.Count - 2); j++)
-                            {
-                                try
-                                {
-                                    if (Convert.ToInt32(dataGridView1[0, 0].Value.ToString()) != 1 || Convert.ToInt32(dataGridView1[0, j].Value.ToString()) != (Convert.ToInt32(dataGridView1[0, j + 1].Value.ToString()) - 1))
-                                    {
-                                        enderr = true;
-                                        MessageBox.Show("ID не инкрементируется с каждым следующим полем, либо начинается не с 1. Проверьте поля id.");
-                                        break;
-                                    }
-                                }
-                                catch (NullReferenceException)
-                                {
-                                    //
-                                }
-                            }
-                            if (enderr == true)
-                            {
-                                break;
-                            }
-                            query = "UPDATE purchased SET name = '" + name + "', surname = '" + surname + "', patronymic = '" + patronymic + "', summ = " + summ.Replace(',', '.') + ", date = '" + date + "' WHERE id = " + id;
-                            command = new MySqlCommand(query, connection);
-                            var tr = command.ExecuteNonQuery();
-                            if (tr == 0)
-                            {
-                                query = "INSERT INTO purchased (id, name, surname, patronymic, summ, currency, date) VALUES (" + id + ", '" + name + "', '" + surname + "', '" + patronymic + "', " + summ.Replace(',', '.') + ", '" + currency + "', '" + date + "')";
-                                command = new MySqlCommand(query, connection);
-                                command.ExecuteNonQuery();
-                            }
-
-                        }
-                        catch (MySqlException)
-                        {
-                            if (currency.Length > 1)
-                            {
-                                enderr = true;
-                                MessageBox.Show("Поля currency не может содержать больше 1 символа. Проверьте поля currency.");
-                                break;
-                            }
-                            else
-                            {
-                                enderr = true;
-                                MessageBox.Show("Возникла непредвиденная ошибка данных. Проверьте на корректность ввода только что введённые значения.");
-                                break;
-                            }
-                        }
-                        catch (NullReferenceException)
-                        {
-                            enderr = true;
-                            MessageBox.Show("Какая-то из ячеек не заполнена полностью. Заполните пустые ячейки.");
-                            break;
-                        }
-                        catch (FormatException)
-                        {
-                            enderr = true;
-                            MessageBox.Show("В какой то из ячеек содержится некорректная информация, либо поле id не увеличивается на 1. Измените данные и попробуйте снова.");
-                            break;
-                        }
-
-                    }
-                    if (enderr == false)
-                    {
-                        MessageBox.Show("Изменения внесены!");
-                        connection.Close();
-                    }
-                }
+                }                                
                 else if (ClientsRadioBtn.Checked == true)
                 {
                     bool enderr = false;
-                    int id = 0, seriesDoc = 0, numberDoc = 0;
+                    int u_num = 0, seriesDoc = 0, numberDoc = 0;
                     string name = "", surname = "", patronymic = "", date_birth = "", query = "";
                     for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
                     {
                         MySqlCommand command = new MySqlCommand(query, connection);                                              
                         try
                         {
-                            id = Convert.ToInt32(dataGridView1[0, i].Value.ToString());
+                            u_num = Convert.ToInt32(dataGridView1[0, i].Value.ToString());
                             name = dataGridView1[1, i].Value.ToString();
                             surname = dataGridView1[2, i].Value.ToString();
                             patronymic = dataGridView1[3, i].Value.ToString();
                             date_birth = dataGridView1[4, i].Value.ToString();
                             seriesDoc = Convert.ToInt32(dataGridView1[5, i].Value.ToString());
-                            numberDoc = Convert.ToInt32(dataGridView1[6, i].Value.ToString());
-                            for (int j = 0; j <= (dataGridView1.Rows.Count - 2); j++)
-                            {
-                                try
-                                {
-                                    if (Convert.ToInt32(dataGridView1[0, 0].Value.ToString()) != 1 || Convert.ToInt32(dataGridView1[0, j].Value.ToString()) != (Convert.ToInt32(dataGridView1[0, j + 1].Value.ToString()) - 1))
-                                    {
-                                        enderr = true;
-                                        MessageBox.Show("ID не инкрементируется с каждым следующим полем, либо начинается не с 1. Проверьте поля id.");
-                                        break;
-                                    }
-                                }
-                                catch (NullReferenceException)
-                                {
-                                    //
-                                }
-                            }
-                            if (enderr == true)
-                            {
-                                break;
-                            }
+                            numberDoc = Convert.ToInt32(dataGridView1[6, i].Value.ToString());                            
                             if (seriesDoc > 9999 || seriesDoc < 1000 || numberDoc > 999999 || numberDoc < 100000)
                             {
                                 enderr = true;
                                 MessageBox.Show("Серия паспорта состоит из 4 цифр, а номер паспорта состоит из 6 цифр. Проверьте поля seriesDoc и numberDoc.");
                                 break;
                             }
-                            query = "UPDATE clients SET name = '" + name + "', surname = '" + surname + "', patronymic = '" + patronymic + "', date_birth = '" + date_birth + "', seriesDoc = " + seriesDoc + ", numberDoc = " + numberDoc + " WHERE id = " + id;
+                            query = "UPDATE clients SET name = '" + name + "', surname = '" + surname + "', patronymic = '" + patronymic + "', date_birth = '" + date_birth + "', seriesDoc = " + seriesDoc + ", numberDoc = " + numberDoc + " WHERE u_num = " + u_num;
                             command = new MySqlCommand(query, connection);
                             var tr = command.ExecuteNonQuery();
                             if (tr == 0)
                             {
-                                query = "INSERT INTO clients (id, name, surname, patronymic, date_birth, seriesDoc, numberDoc) VALUES (" + id + ", '" + name + "', '" + surname + "', '" + patronymic + "', '" + date_birth + "', " + seriesDoc + ", " + numberDoc + ")";
+                                query = "INSERT INTO clients (u_num, name, surname, patronymic, date_birth, seriesDoc, numberDoc) VALUES (" + u_num + ", '" + name + "', '" + surname + "', '" + patronymic + "', '" + date_birth + "', " + seriesDoc + ", " + numberDoc + ")";
                                 command = new MySqlCommand(query, connection);
                                 command.ExecuteNonQuery();
                             }
@@ -817,38 +622,18 @@ namespace AIS_exchangeOffice
                 else if (UsersRadioBtn.Checked == true)
                 {
                     bool enderr = false;
-                    int id = 0;
+                    int u_num = 0;
                     string name = "", login = "", password = "", query = "", type = "";
                     for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
                     {
                         MySqlCommand command = new MySqlCommand(query, connection);
                         try
                         {
-                            id = Convert.ToInt32(dataGridView1[0, i].Value.ToString());
+                            u_num = Convert.ToInt32(dataGridView1[0, i].Value.ToString());
                             login = dataGridView1[1, i].Value.ToString();
                             password = dataGridView1[2, i].Value.ToString();
                             name = dataGridView1[3, i].Value.ToString();
-                            type = dataGridView1[4, i].Value.ToString();
-                            for (int j = 0; j <= (dataGridView1.Rows.Count - 2); j++)
-                            {
-                                try
-                                {
-                                    if (Convert.ToInt32(dataGridView1[0, 0].Value.ToString()) != 1 || Convert.ToInt32(dataGridView1[0, j].Value.ToString()) != (Convert.ToInt32(dataGridView1[0, j + 1].Value.ToString()) - 1))
-                                    {
-                                        enderr = true;
-                                        MessageBox.Show("ID не инкрементируется с каждым следующим полем, либо начинается не с 1. Проверьте поля id.");
-                                        break;
-                                    }
-                                }
-                                catch (NullReferenceException)
-                                {
-                                    //
-                                }
-                            }
-                            if (enderr == true)
-                            {
-                                break;
-                            }                                                                                                             
+                            type = dataGridView1[4, i].Value.ToString();                                                                                                                                      
                             if (type != "admin" )
                             {
                                 if (type != "cashier")
@@ -867,12 +652,12 @@ namespace AIS_exchangeOffice
                                     break;
                                 }
                             }
-                            query = "UPDATE users SET login = '" + login + "', password = '" + password + "', name = '" + name + "', type = '" + type + "' WHERE id = " + id;
+                            query = "UPDATE users SET login = '" + login + "', password = '" + password + "', name = '" + name + "', type = '" + type + "' WHERE u_num = " + u_num;
                             command = new MySqlCommand(query, connection);
                             var tr = command.ExecuteNonQuery();
                             if (tr == 0)
                             {
-                                query = "INSERT INTO users (id, login, password, name) VALUES (" + id + ", '" + login + "', '" + password + "', '" + name + "', '" + type + "')";
+                                query = "INSERT INTO users (id, login, password, name) VALUES (" + u_num + ", '" + login + "', '" + password + "', '" + name + "', '" + type + "')";
                                 command = new MySqlCommand(query, connection);
                                 command.ExecuteNonQuery();
                             }
@@ -928,14 +713,10 @@ namespace AIS_exchangeOffice
                 if (dialogResult == DialogResult.Yes)
                 {
                     string table = "";
-                    if (SaledRadioBtn.Checked == true)
+                    if (OperationsRadioBtn.Checked == true)
                     {
-                        table = "saled";
-                    }
-                    else if (PurchasedRadioBtn.Checked == true)
-                    {
-                        table = "purchased";
-                    }
+                        table = "operations";
+                    }                    
                     else if (ClientsRadioBtn.Checked == true)
                     {
                         table = "clients";                        
@@ -949,7 +730,7 @@ namespace AIS_exchangeOffice
                     connection.Open();
                     string query = "";
                     MySqlCommand command = new MySqlCommand(query, connection);
-                    query = "DELETE FROM " + table + " WHERE id = " + Convert.ToInt32(dataGridView1[0, e.Row.Index].Value.ToString());
+                    query = "DELETE FROM " + table + " WHERE u_num = " + Convert.ToInt32(dataGridView1[0, e.Row.Index].Value.ToString());
                     command = new MySqlCommand(query, connection);
                     command.ExecuteNonQuery();
                     connection.Close();
@@ -999,22 +780,7 @@ namespace AIS_exchangeOffice
                 {
                     command.Connection.Close();
                 }
-            }
-            for (int j = 0; j <= (dataGridView1.Rows.Count - 2); j++)
-            {
-                try
-                {
-                    if (Convert.ToInt32(dataGridView1[0, 0].Value.ToString()) != 1 || Convert.ToInt32(dataGridView1[0, j].Value.ToString()) != (Convert.ToInt32(dataGridView1[0, j + 1].Value.ToString()) - 1))
-                    {
-                        MessageBox.Show("ID не инкрементируется с каждым следующим полем, либо начинается не с 1. Проверьте поля id.");
-                        break;
-                    }
-                }
-                catch (NullReferenceException)
-                {
-                    //
-                }
-            }
+            }            
         }
 
         private void AdminWindow_Load(object sender, EventArgs e)
@@ -1087,6 +853,6 @@ namespace AIS_exchangeOffice
             {
                 command.Connection.Close();
             }
-        }
+        }        
     }
 }
