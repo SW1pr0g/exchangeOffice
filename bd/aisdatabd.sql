@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.7.12, for Win32 (AMD64)
 --
--- Host: localhost    Database: aisdatabd
+-- Host: 127.0.0.1    Database: aisdatabd
 -- ------------------------------------------------------
 -- Server version	5.6.23-log
 
@@ -23,15 +23,15 @@ DROP TABLE IF EXISTS `clients`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `clients` (
-  `id` int(11) NOT NULL,
+  `u_num` int(11) NOT NULL,
   `surname` varchar(45) DEFAULT NULL,
   `name` varchar(45) DEFAULT NULL,
   `patronymic` varchar(45) DEFAULT NULL,
   `date_birth` date DEFAULT NULL,
   `seriesDoc` int(11) DEFAULT NULL,
   `numberDoc` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `idnew_table_UNIQUE` (`id`)
+  PRIMARY KEY (`u_num`),
+  UNIQUE KEY `idnew_table_UNIQUE` (`u_num`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -41,7 +41,7 @@ CREATE TABLE `clients` (
 
 LOCK TABLES `clients` WRITE;
 /*!40000 ALTER TABLE `clients` DISABLE KEYS */;
-INSERT INTO `clients` VALUES (1,'Surname','Name','Patronymic','2022-01-01',1234,123456);
+INSERT INTO `clients` VALUES (161421,'Порядин','Алексей','Евгеньевич','2022-01-01',2202,201141);
 /*!40000 ALTER TABLE `clients` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -53,10 +53,10 @@ DROP TABLE IF EXISTS `currency_values`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `currency_values` (
-  `id` int(11) NOT NULL,
+  `u_num` int(11) NOT NULL,
   `name` varchar(45) DEFAULT NULL,
   `value` double DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`u_num`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -66,7 +66,7 @@ CREATE TABLE `currency_values` (
 
 LOCK TABLES `currency_values` WRITE;
 /*!40000 ALTER TABLE `currency_values` DISABLE KEYS */;
-INSERT INTO `currency_values` VALUES (1,'USD',1020.5),(2,'EUR',5000),(3,'GBP',789),(4,'CHF',623.569),(5,'JPY',1500.6);
+INSERT INTO `currency_values` VALUES (392,'JPY',1500.6),(756,'CHF',623.569),(826,'GBP',789),(840,'USD',1020.7),(978,'EUR',5000);
 /*!40000 ALTER TABLE `currency_values` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -78,12 +78,12 @@ DROP TABLE IF EXISTS `currencycourse`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `currencycourse` (
-  `id` int(11) NOT NULL,
+  `u_num` int(11) NOT NULL,
   `name` varchar(45) DEFAULT NULL,
   `summsale` double DEFAULT NULL,
   `summpurchase` double DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `id_UNIQUE` (`id`)
+  PRIMARY KEY (`u_num`),
+  UNIQUE KEY `id_UNIQUE` (`u_num`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -93,7 +93,7 @@ CREATE TABLE `currencycourse` (
 
 LOCK TABLES `currencycourse` WRITE;
 /*!40000 ALTER TABLE `currencycourse` DISABLE KEYS */;
-INSERT INTO `currencycourse` VALUES (1,'USD',77.12,79.81),(2,'EUR',88.47,90.47),(3,'GBP',105.37,107.4),(4,'CHF',85.45,87.46),(5,'JPY',66.32,68.31);
+INSERT INTO `currencycourse` VALUES (392,'JPY',66.33,68.31),(756,'CHF',85.45,87.46),(826,'GBP',105.37,107.4),(840,'USD',77.12,79.81),(978,'EUR',88.47,90.47);
 /*!40000 ALTER TABLE `currencycourse` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -105,18 +105,17 @@ DROP TABLE IF EXISTS `operations`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `operations` (
-  `id` int(11) NOT NULL,
+  `u_num` int(11) NOT NULL,
   `surname` varchar(45) DEFAULT NULL,
   `name` varchar(45) DEFAULT NULL,
   `patronymic` varchar(45) DEFAULT NULL,
   `type` varchar(9) DEFAULT NULL,
-  `saled_currency` varchar(1) DEFAULT NULL,
-  `purchased_currency` varchar(45) DEFAULT NULL,
-  `summ` double DEFAULT NULL,
+  `value` varchar(1) DEFAULT NULL,
   `quantity` double DEFAULT NULL,
+  `summ` double DEFAULT NULL,
   `date` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `id_UNIQUE` (`id`)
+  PRIMARY KEY (`u_num`),
+  UNIQUE KEY `id_UNIQUE` (`u_num`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -126,7 +125,7 @@ CREATE TABLE `operations` (
 
 LOCK TABLES `operations` WRITE;
 /*!40000 ALTER TABLE `operations` DISABLE KEYS */;
-INSERT INTO `operations` VALUES (1,'ivanov','ivan','ivanovich','покупка','Р','$',45.56,5,'2022-02-20 11:00:00');
+INSERT INTO `operations` VALUES (269968,'Порядин','Алексей','Евгеньевич','Продажа','£',56,5900.72,'2022-03-24 21:16:49'),(824572,'Порядин','Алексей','Евгеньевич','Продажа','€',56,4954.32,'2022-03-24 18:43:05'),(930936,'Порядин','Алексей','Евгеньевич','Покупка','€',5,452.35,'2022-03-24 18:34:38');
 /*!40000 ALTER TABLE `operations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -138,13 +137,13 @@ DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `users` (
-  `id` int(11) NOT NULL,
+  `u_num` int(11) NOT NULL,
   `login` varchar(45) DEFAULT NULL,
   `password` varchar(45) DEFAULT NULL,
   `name` varchar(45) DEFAULT NULL,
   `type` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `id_UNIQUE` (`id`)
+  PRIMARY KEY (`u_num`),
+  UNIQUE KEY `id_UNIQUE` (`u_num`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -157,6 +156,14 @@ LOCK TABLES `users` WRITE;
 INSERT INTO `users` VALUES (1,'cashier','cashier','Воробьева Е.С.','cashier'),(2,'administrator','admin','Минин С.В.','admin');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Dumping events for database 'aisdatabd'
+--
+
+--
+-- Dumping routines for database 'aisdatabd'
+--
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -167,4 +174,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-03-16 12:01:15
+-- Dump completed on 2022-03-25  7:39:23
