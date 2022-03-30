@@ -20,6 +20,6 @@ namespace AIS_exchangeOffice.classes
                 output = value * valuesSell[saledC];
             }
             return output;
-        }
+        }       
     }
 }

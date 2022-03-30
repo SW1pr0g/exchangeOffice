@@ -657,18 +657,13 @@ namespace AIS_exchangeOffice
                             var tr = command.ExecuteNonQuery();
                             if (tr == 0)
                             {
-                                query = "INSERT INTO users (id, login, password, name) VALUES (" + u_num + ", '" + login + "', '" + password + "', '" + name + "', '" + type + "')";
+                                query = "INSERT INTO users (u_num, login, password, name, type) VALUES (" + u_num.ToString() + ", '" + login + "', '" + password + "', '" + name + "', '" + type + "');";
                                 command = new MySqlCommand(query, connection);
                                 command.ExecuteNonQuery();
                             }
 
                         }
-                        catch (MySqlException)
-                        {                                                       
-                            enderr = true;
-                            MessageBox.Show("Возникла непредвиденная ошибка данных. Проверьте на корректность ввода только что введённые значения.");
-                            break;
-                        }
+
                         catch (NullReferenceException)
                         {
                             enderr = true;
@@ -734,6 +729,7 @@ namespace AIS_exchangeOffice
                     command = new MySqlCommand(query, connection);
                     command.ExecuteNonQuery();
                     connection.Close();
+                    MessageBox.Show("Удаление успешно!");
                 }                
             }
         }

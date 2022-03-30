@@ -841,10 +841,108 @@ namespace AIS_exchangeOffice
                         Random rnd = new Random();
                         string[] FIO = selectClientBox.Text.Split(' ');
                         string[] summ = summBox.Text.Split(' ');
-                        string query = "INSERT INTO operations (u_num, surname, name, patronymic, type, value, quantity, summ, date) VALUES (" + rnd.Next(100000, 999999) + ", '" + FIO[0] + "', '" + FIO[1] + "', '" + FIO[2] + "', '" + selectOperBox.Text + "', '" + selectValueBox.Text[0] + "', " + quantityBox.Text + ", " + summ[1].Replace(',', '.') + ", '" + DateTime.Now.ToString("yyyy-MM-dd H:mm:ss") + "');";
+                        int u_num = rnd.Next(100000, 999999);
+                        string query = "INSERT INTO operations (u_num, surname, name, patronymic, type, value, quantity, summ, date) VALUES (" + u_num + ", '" + FIO[0] + "', '" + FIO[1] + "', '" + FIO[2] + "', '" + selectOperBox.Text + "', '" + selectValueBox.Text[0] + "', " + quantityBox.Text + ", " + summ[1].Replace(',', '.') + ", '" + DateTime.Now.ToString("yyyy-MM-dd H:mm:ss") + "');";
                         MySqlCommand command = new MySqlCommand(query, connection);
                         command.ExecuteNonQuery();
                         MessageBox.Show("Обмен успешно совершен!\nСейчас будет произведена печать чека по операции.");
+                        var helper = new classes.wordHelper("wordDocs/transaction_print.docx");
+                        double[] valuesBuy = { Convert.ToDouble(USD_buy.Text.Replace('.', ',')), Convert.ToDouble(EUR_buy.Text.Replace('.', ',')), Convert.ToDouble(GBP_buy.Text.Replace('.', ',')), Convert.ToDouble(CHF_buy.Text.Replace('.', ',')), Convert.ToDouble(JPY_buy.Text.Replace('.', ',')) };
+                        double[] valuesSell = { Convert.ToDouble(USD_sell.Text.Replace('.', ',')), Convert.ToDouble(EUR_sell.Text.Replace('.', ',')), Convert.ToDouble(GBP_sell.Text.Replace('.', ',')), Convert.ToDouble(CHF_sell.Text.Replace('.', ',')), Convert.ToDouble(JPY_sell.Text.Replace('.', ',')) };
+                        string currency = "", nameValue = "";
+                        double numValue = 0.0;
+                        switch (selectValueBox.Text.ToString()[0])
+                        {
+                            case '$':
+                                nameValue = "USD";
+                                if (selectOperBox.Text == "Покупка")
+                                {
+                                    USD_value.Text = Convert.ToString(Convert.ToDouble(USD_value.Text.Substring(1).Replace('.', ',')) - Convert.ToDouble(quantityBox.Text));
+                                }
+                                else if (selectOperBox.Text == "Продажа")
+                                {
+                                    USD_value.Text = Convert.ToString(Convert.ToDouble(USD_value.Text.Substring(1).Replace('.', ',')) + Convert.ToDouble(quantityBox.Text));
+                                }                                
+                                numValue = Convert.ToDouble(USD_value.Text);
+                                break;
+                            case '€':
+                                nameValue = "EUR";
+                                if (selectOperBox.Text == "Покупка")
+                                {
+                                    EUR_value.Text = Convert.ToString(Convert.ToDouble(EUR_value.Text.Substring(1).Replace('.', ',')) - Convert.ToDouble(quantityBox.Text));
+                                }
+                                else if (selectOperBox.Text == "Продажа")
+                                {
+                                    EUR_value.Text = Convert.ToString(Convert.ToDouble(EUR_value.Text.Substring(1).Replace('.', ',')) + Convert.ToDouble(quantityBox.Text));
+                                }
+                                numValue = Convert.ToDouble(EUR_value.Text);
+                                break;
+                            case '£':
+                                nameValue = "GBP";
+                                if (selectOperBox.Text == "Покупка")
+                                {
+                                    GBP_value.Text = Convert.ToString(Convert.ToDouble(GBP_value.Text.Substring(1).Replace('.', ',')) - Convert.ToDouble(quantityBox.Text));
+                                }
+                                else if (selectOperBox.Text == "Продажа")
+                                {
+                                    GBP_value.Text = Convert.ToString(Convert.ToDouble(GBP_value.Text.Substring(1).Replace('.', ',')) + Convert.ToDouble(quantityBox.Text));
+                                }                                
+                                numValue = Convert.ToDouble(GBP_value.Text);
+                                break;
+                            case '₣':
+                                nameValue = "CHF";
+                                if (selectOperBox.Text == "Покупка")
+                                {
+                                    CHF_value.Text = Convert.ToString(Convert.ToDouble(CHF_value.Text.Substring(1).Replace('.', ',')) - Convert.ToDouble(quantityBox.Text));
+                                }
+                                else if (selectOperBox.Text == "Продажа")
+                                {
+                                    CHF_value.Text = Convert.ToString(Convert.ToDouble(CHF_value.Text.Substring(1).Replace('.', ',')) + Convert.ToDouble(quantityBox.Text));
+                                }
+                                numValue = Convert.ToDouble(CHF_value.Text);
+                                break;
+                            case '¥':
+                                nameValue = "JPY";
+                                if (selectOperBox.Text == "Покупка")
+                                {
+                                    JPY_value.Text = Convert.ToString(Convert.ToDouble(JPY_value.Text.Substring(1).Replace('.', ',')) - Convert.ToDouble(quantityBox.Text));
+                                }
+                                else if (selectOperBox.Text == "Продажа")
+                                {
+                                    JPY_value.Text = Convert.ToString(Convert.ToDouble(JPY_value.Text.Substring(1).Replace('.', ',')) + Convert.ToDouble(quantityBox.Text));
+                                }
+                                numValue = Convert.ToDouble(JPY_value.Text);
+                                break;
+                        }
+                        switch (selectOperBox.Text)
+                        {
+                            case "Покупка":
+                                currency = valuesBuy[selectOperBox.SelectedIndex].ToString();
+                                query = "UPDATE currency_values SET value = " + numValue.ToString().Replace(',', '.') + " WHERE name = '" + nameValue + "'";
+                                command = new MySqlCommand(query, connection);
+                                command.ExecuteNonQuery();
+                                break;
+                            case "Продажа":
+                                currency = valuesSell[selectOperBox.SelectedIndex].ToString();
+                                query = "UPDATE currency_values SET value = " + numValue.ToString().Replace(',', '.') + " WHERE name = '" + nameValue + "'";
+                                command = new MySqlCommand(query, connection);
+                                command.ExecuteNonQuery();
+                                break;
+                        }                        
+                        var items = new Dictionary<string, string>
+                        {
+                            { "_<number>_", u_num.ToString() },
+                            { "_<date>_", DateTime.Now.ToString("dd.mm.yyyy") },
+                            { "_<oper>_", selectOperBox.Text },
+                            { "_<value>_", selectValueBox.Text },
+                            { "_<quantity>_", quantityBox.Text },
+                            { "_<currency>_", currency.Replace(',', '.') },
+                            { "_<summ_oper>_", summ[1].Replace(',', '.') },
+                            { "_<name_client>_", FIO[0] + " " + FIO[1].ToString()[0] + ". " + FIO[2].ToString()[0] + "." },
+                            { "_<name_cashier>_", CashierName.Text },
+                            { "_<date_long>_", DateTime.Now.ToString("dd.mm.yyyy HH:mm:ss") },
+                        };
+                        helper.Process(items);
                         selectClientBox.Text = "Выберите клиента";
                         selectClientBox.ForeColor = Color.Silver;
                         selectOperBox.Text = "Выберите операцию";
@@ -858,15 +956,11 @@ namespace AIS_exchangeOffice
                         currencies_exchangePanel.Visible = false;
                         exchangePanel.Visible = true;
                     }
-                }
-                catch (NullReferenceException)
+                }                
+                catch (MySqlException)
                 {
-                    //
+                    MessageBox.Show("Произошла ошибка данных! Проверьте введённые данные.");
                 }
-                //catch (MySqlException)
-                //{
-                //    MessageBox.Show("Произошла ошибка данных! Проверьте введённые данные.");
-                //}
             }
             else if (dialogResult == DialogResult.No)
             {
