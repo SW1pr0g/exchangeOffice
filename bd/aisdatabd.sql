@@ -41,7 +41,7 @@ CREATE TABLE `clients` (
 
 LOCK TABLES `clients` WRITE;
 /*!40000 ALTER TABLE `clients` DISABLE KEYS */;
-INSERT INTO `clients` VALUES (161421,'Порядин','Алексей','Евгеньевич','2022-01-01',2202,201141);
+INSERT INTO `clients` VALUES (549831,'Фортнайтеров','Женя','Татьянович','2000-01-01',4887,855122),(699506,'Порядин','Алексей','Евгеньевич','2004-03-17',4549,213654);
 /*!40000 ALTER TABLE `clients` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -66,7 +66,7 @@ CREATE TABLE `currency_values` (
 
 LOCK TABLES `currency_values` WRITE;
 /*!40000 ALTER TABLE `currency_values` DISABLE KEYS */;
-INSERT INTO `currency_values` VALUES (392,'JPY',1500.6),(756,'CHF',623.569),(826,'GBP',789),(840,'USD',1020.7),(978,'EUR',5000);
+INSERT INTO `currency_values` VALUES (392,'JPY',1500.6),(756,'CHF',623.569),(826,'GBP',789),(840,'USD',1010.7),(978,'EUR',5000);
 /*!40000 ALTER TABLE `currency_values` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -125,7 +125,7 @@ CREATE TABLE `operations` (
 
 LOCK TABLES `operations` WRITE;
 /*!40000 ALTER TABLE `operations` DISABLE KEYS */;
-INSERT INTO `operations` VALUES (269968,'Порядин','Алексей','Евгеньевич','Продажа','£',56,5900.72,'2022-03-24 21:16:49'),(824572,'Порядин','Алексей','Евгеньевич','Продажа','€',56,4954.32,'2022-03-24 18:43:05'),(930936,'Порядин','Алексей','Евгеньевич','Покупка','€',5,452.35,'2022-03-24 18:34:38');
+INSERT INTO `operations` VALUES (694362,'Порядин','Алексей','Евгеньевич','Продажа','€',5000,442350,'2022-04-01 20:17:39');
 /*!40000 ALTER TABLE `operations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -153,7 +153,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'cashier','cashier','Воробьева Е.С.','cashier'),(2,'administrator','admin','Минин С.В.','admin');
+INSERT INTO `users` VALUES (1,'cashier','cashier','Мухина Е. Е.','cashier'),(2,'administrator','admin','Минин С. В.','admin'),(2313,'eqiewu','zhenyalox','Снюсоедов Д. А.','admin');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -174,4 +174,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-03-25  7:39:23
+-- Dump completed on 2022-04-06  8:25:23

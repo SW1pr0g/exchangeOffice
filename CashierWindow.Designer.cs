@@ -92,14 +92,10 @@
             this.exitButton_exchange = new System.Windows.Forms.Button();
             this.label39 = new System.Windows.Forms.Label();
             this.searchPanel = new System.Windows.Forms.Panel();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.SearchBut = new System.Windows.Forms.Button();
             this.searchBox = new System.Windows.Forms.TextBox();
             this.label37 = new System.Windows.Forms.Label();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.exitButton_search = new System.Windows.Forms.Button();
             this.label38 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -146,6 +142,10 @@
             this.selectOperBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.BalancePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.pnael4.SuspendLayout();
@@ -164,7 +164,7 @@
             this.exchangePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.searchPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -940,14 +940,14 @@
             // 
             // searchPanel
             // 
-            this.searchPanel.Controls.Add(this.checkBox4);
-            this.searchPanel.Controls.Add(this.checkBox3);
-            this.searchPanel.Controls.Add(this.checkBox2);
-            this.searchPanel.Controls.Add(this.checkBox1);
+            this.searchPanel.Controls.Add(this.radioButton4);
+            this.searchPanel.Controls.Add(this.radioButton3);
+            this.searchPanel.Controls.Add(this.radioButton2);
+            this.searchPanel.Controls.Add(this.radioButton1);
+            this.searchPanel.Controls.Add(this.dataGridView3);
             this.searchPanel.Controls.Add(this.SearchBut);
             this.searchPanel.Controls.Add(this.searchBox);
             this.searchPanel.Controls.Add(this.label37);
-            this.searchPanel.Controls.Add(this.pictureBox11);
             this.searchPanel.Controls.Add(this.exitButton_search);
             this.searchPanel.Controls.Add(this.label38);
             this.searchPanel.Location = new System.Drawing.Point(186, 0);
@@ -956,51 +956,16 @@
             this.searchPanel.TabIndex = 15;
             this.searchPanel.Visible = false;
             // 
-            // checkBox4
+            // dataGridView3
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Checked = true;
-            this.checkBox4.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.checkBox4.Location = new System.Drawing.Point(549, 140);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(171, 29);
-            this.checkBox4.TabIndex = 20;
-            this.checkBox4.Text = "Без фильтров";
-            this.checkBox4.UseVisualStyleBackColor = true;
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.checkBox3.Location = new System.Drawing.Point(144, 140);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(275, 29);
-            this.checkBox3.TabIndex = 19;
-            this.checkBox3.Text = "Совершенные операции";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.checkBox2.Location = new System.Drawing.Point(425, 140);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(118, 29);
-            this.checkBox2.TabIndex = 18;
-            this.checkBox2.Text = "Клиенты";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.checkBox1.Location = new System.Drawing.Point(28, 140);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(110, 29);
-            this.checkBox1.TabIndex = 17;
-            this.checkBox1.Text = "Валюты";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.dataGridView3.AllowUserToAddRows = false;
+            this.dataGridView3.AllowUserToDeleteRows = false;
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Location = new System.Drawing.Point(35, 324);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.ReadOnly = true;
+            this.dataGridView3.Size = new System.Drawing.Size(675, 226);
+            this.dataGridView3.TabIndex = 31;
             // 
             // SearchBut
             // 
@@ -1010,9 +975,9 @@
             this.SearchBut.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SearchBut.FlatAppearance.BorderSize = 0;
             this.SearchBut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SearchBut.Location = new System.Drawing.Point(616, 74);
+            this.SearchBut.Location = new System.Drawing.Point(612, 74);
             this.SearchBut.Name = "SearchBut";
-            this.SearchBut.Size = new System.Drawing.Size(48, 38);
+            this.SearchBut.Size = new System.Drawing.Size(41, 31);
             this.SearchBut.TabIndex = 16;
             this.SearchBut.UseVisualStyleBackColor = false;
             this.SearchBut.Click += new System.EventHandler(this.SearchBut_Click);
@@ -1027,12 +992,12 @@
             this.searchBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.searchBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
             this.searchBox.Location = new System.Drawing.Point(26, 74);
-            this.searchBox.Multiline = true;
             this.searchBox.Name = "searchBox";
-            this.searchBox.Size = new System.Drawing.Size(580, 38);
+            this.searchBox.Size = new System.Drawing.Size(580, 31);
             this.searchBox.TabIndex = 15;
             this.searchBox.Text = " Введите для поиска...";
             this.searchBox.Enter += new System.EventHandler(this.searchBox_Enter);
+            this.searchBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.searchBox_KeyDown);
             this.searchBox.Leave += new System.EventHandler(this.searchBox_Leave);
             // 
             // label37
@@ -1046,15 +1011,6 @@
             this.label37.Size = new System.Drawing.Size(274, 31);
             this.label37.TabIndex = 13;
             this.label37.Text = "Результаты поиска";
-            // 
-            // pictureBox11
-            // 
-            this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
-            this.pictureBox11.Location = new System.Drawing.Point(26, 328);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(687, 185);
-            this.pictureBox11.TabIndex = 10;
-            this.pictureBox11.TabStop = false;
             // 
             // exitButton_search
             // 
@@ -1668,18 +1624,64 @@
             this.label5.TabIndex = 1;
             this.label5.Text = "Обменять валюту";
             // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.radioButton1.Location = new System.Drawing.Point(35, 135);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(109, 29);
+            this.radioButton1.TabIndex = 32;
+            this.radioButton1.Text = "Валюты";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.radioButton2.Location = new System.Drawing.Point(150, 135);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(274, 29);
+            this.radioButton2.TabIndex = 33;
+            this.radioButton2.Text = "Совершённые операции";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.radioButton3.Location = new System.Drawing.Point(430, 135);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(117, 29);
+            this.radioButton3.TabIndex = 34;
+            this.radioButton3.Text = "Клиенты";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            // 
+            // radioButton4
+            // 
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.Checked = true;
+            this.radioButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.radioButton4.Location = new System.Drawing.Point(553, 135);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(170, 29);
+            this.radioButton4.TabIndex = 35;
+            this.radioButton4.TabStop = true;
+            this.radioButton4.Text = "Без фильтров";
+            this.radioButton4.UseVisualStyleBackColor = true;
+            // 
             // CashierWindowMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(951, 577);
+            this.Controls.Add(this.searchPanel);
             this.Controls.Add(this.currencies_exchangePanel);
             this.Controls.Add(this.exchangePanel);
             this.Controls.Add(this.clientsPanel);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.addclientPanel);
-            this.Controls.Add(this.searchPanel);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -1713,7 +1715,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.searchPanel.ResumeLayout(false);
             this.searchPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUser)).EndInit();
@@ -1812,15 +1814,10 @@
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.Panel searchPanel;
         private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.PictureBox pictureBox11;
         private System.Windows.Forms.Button exitButton_search;
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.Button SearchBut;
         private System.Windows.Forms.TextBox searchBox;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox4;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
@@ -1867,5 +1864,10 @@
         private System.Windows.Forms.ComboBox selectClientBox;
         private System.Windows.Forms.ComboBox selectOperBox;
         private System.Windows.Forms.ComboBox selectValueBox;
+        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
     }
 }
