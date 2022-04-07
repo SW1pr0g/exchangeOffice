@@ -311,49 +311,130 @@ namespace AIS_exchangeOffice
             string connStr = "server=localhost;user=root;database=aisdatabd;password=root123;";
             MySqlConnection conn = new MySqlConnection(connStr);
 
-            //finally
-            //{
-            //    command.Connection.Close();
-            //}
-
             MySqlCommand command = new MySqlCommand();
-            // search string - SELECT * FROM patient WHERE last_name LIKE '%' and first_name LIKE '%' and patronymic_name LIKE '%' and dob LIKE '%' and number_card LIKE '%'
-            //string commandString = "SELECT * FROM clients WHERE u_num LIKE" + " '" + search_string + "%' and surname LIKE" + " '" + search_string + "%' and name LIKE" + " '" + search_string + "%' and patronymic LIKE" + " '" + search_string + "%' and date_birth LIKE" + " '" + search_string + "%' and seriesDoc LIKE" + " '" + search_string + "%' and numberDoc LIKE" + " '" + search_string + "%';";
-            string commandString = "SELECT * FROM clients WHERE (u_num LIKE" + " '%" + search_string + "%') OR (surname LIKE" + " '%" + search_string + "%') OR (name LIKE" + " '%" + search_string + "%') OR (patronymic LIKE" + " '%" + search_string + "%') OR (date_birth LIKE" + " '%" + search_string + "%') OR (seriesDoc LIKE" + " '%" + search_string + "%') OR (numberDoc LIKE" + " '%" + search_string + "%');";
-            //string commandString = "SELECT * FROM clients WHERE u_num LIKE '%" + search_string + "%';";
-            command.CommandText = commandString;
-            command.Connection = conn;
+            string commandString;
             MySqlDataReader reader;
-            try
+            if (search_values.Checked == true)
             {
-                command.Connection.Open();
-                reader = command.ExecuteReader();
-                this.dataGridView3.Columns.Add("u_num", "№");
-                this.dataGridView3.Columns["u_num"].Width = 45;
-                this.dataGridView3.Columns.Add("surname", "Фамилия");
-                this.dataGridView3.Columns["surname"].Width = 110;
-                this.dataGridView3.Columns.Add("name", "Имя");
-                this.dataGridView3.Columns["name"].Width = 90;
-                this.dataGridView3.Columns.Add("patronymic", "Отчество");
-                this.dataGridView3.Columns["patronymic"].Width = 110;
-                this.dataGridView3.Columns.Add("date_birth", "Дата рождения");
-                this.dataGridView3.Columns["date_birth"].Width = 90;
-                this.dataGridView3.Columns.Add("seriesDoc", "Серия документа");
-                this.dataGridView3.Columns["seriesDoc"].Width = 100;
-                this.dataGridView3.Columns.Add("numberDoc", "Номер документа");
-                this.dataGridView3.Columns["numberDoc"].Width = 100;
-                while (reader.Read())
+                commandString = "SELECT * FROM currencycourse WHERE (u_num LIKE" + " '%" + search_string + "%') OR (name LIKE" + " '%" + search_string + "%') OR (summsale LIKE" + " '%" + search_string.Replace(',', '.') + "%') OR (summpurchase LIKE" + " '%" + search_string + "%')";
+                command.CommandText = commandString;
+                command.Connection = conn;
+                try
                 {
-                    classes.reversedate reversedate = new classes.reversedate();
-                    dataGridView3.Rows.Add(reader["u_num"].ToString(), reader["surname"].ToString(), reader["name"].ToString(), reader["patronymic"].ToString(), reversedate.dateReverse(reader["date_birth"].ToString()), reader["seriesDoc"].ToString(), reader["numberDoc"].ToString());
+                    command.Connection.Open();
+                    reader = command.ExecuteReader();
+                    try
+                    {
+                        this.dataGridView3.Columns.Add("u_num", "u_num");
+                        this.dataGridView3.Columns["u_num"].Width = 50;
+                        this.dataGridView3.Columns.Add("name", "Name");
+                        this.dataGridView3.Columns["name"].Width = 130;
+                        this.dataGridView3.Columns.Add("summsale", "SummSale");
+                        this.dataGridView3.Columns["summsale"].Width = 226;
+                        this.dataGridView3.Columns.Add("summpurchase", "SummPurchase");
+                        this.dataGridView3.Columns["summpurchase"].Width = 226;
+                        while (reader.Read())
+                        {
+                            dataGridView3.Rows.Add(reader["u_num"].ToString(), reader["name"].ToString(), reader["summsale"].ToString(), reader["summpurchase"].ToString());
+                        }                        
+                        reader.Close();
+                    }
+                    catch (MySqlException ex)
+                    {
+                        Console.WriteLine("Error: \r\n{0}", ex.ToString());
+                    }
                 }
-                reader.Close();
+                catch (MySqlException ex)
+                {
+                    Console.WriteLine("Error: \r\n{0}", ex.ToString());
+                }
             }
-            catch (MySqlException ex)
+            else if (search_operations.Checked == true)
             {
-                Console.WriteLine("Error: \r\n{0}", ex.ToString());
+                commandString = "SELECT * FROM operations WHERE (u_num LIKE" + " '%" + search_string + "%') OR (surname LIKE" + " '%" + search_string + "%') OR (name LIKE" + " '%" + search_string + "%') OR (patronymic LIKE" + " '%" + search_string + "%') OR (type LIKE" + " '%" + search_string + "%') OR (value LIKE" + " '%" + search_string + "%') OR (quantity LIKE" + " '%" + search_string.Replace(',', '.') + "%') OR (summ LIKE" + " '%" + search_string.Replace(',', '.') + "%') OR (CONVERT(`date` USING utf8) LIKE" + " '%" + search_string + "%');";
+                command.CommandText = commandString;
+                command.Connection = conn;
+                try
+                {
+                    command.Connection.Open();
+                    reader = command.ExecuteReader();
+                    try
+                    {
+                        this.dataGridView3.Columns.Add("u_num", "u_num");
+                        this.dataGridView3.Columns["u_num"].Width = 50;
+                        this.dataGridView3.Columns.Add("surname", "Surname");
+                        this.dataGridView3.Columns["surname"].Width = 90;
+                        this.dataGridView3.Columns.Add("name", "Name");
+                        this.dataGridView3.Columns["name"].Width = 70;
+                        this.dataGridView3.Columns.Add("patronymic", "Patronymic");
+                        this.dataGridView3.Columns["patronymic"].Width = 90;
+                        this.dataGridView3.Columns.Add("type", "Type");
+                        this.dataGridView3.Columns["type"].Width = 60;
+                        this.dataGridView3.Columns.Add("quantity", "Quantity");
+                        this.dataGridView3.Columns["quantity"].Width = 65;
+                        this.dataGridView3.Columns.Add("summ", "Summ");
+                        this.dataGridView3.Columns["summ"].Width = 80;
+                        this.dataGridView3.Columns.Add("date", "Date");
+                        this.dataGridView3.Columns["date"].Width = 127;
+                        while (reader.Read())
+                        {
+                            classes.reversedate reversedate = new classes.reversedate();
+                            dataGridView3.Rows.Add(reader["u_num"].ToString(), reader["surname"].ToString(), reader["name"].ToString(), reader["patronymic"].ToString(), reader["type"].ToString(), reader["quantity"].ToString(), reader["summ"].ToString(), reversedate.datetimeReverse(reader["date"].ToString()));
+                        }
+                        reader.Close();
+                    }
+                    catch (MySqlException ex)
+                    {
+                        Console.WriteLine("Error: \r\n{0}", ex.ToString());
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    Console.WriteLine("Error: \r\n{0}", ex.ToString());
+                }
             }
-            
+            else if (search_clients.Checked == true)
+            {
+                commandString = "SELECT * FROM clients WHERE (u_num LIKE" + " '%" + search_string + "%') OR (surname LIKE" + " '%" + search_string + "%') OR (name LIKE" + " '%" + search_string + "%') OR (patronymic LIKE" + " '%" + search_string + "%') OR (CONVERT(`date_birth` USING utf8) LIKE" + " '%" + search_string + "%') OR (seriesDoc LIKE" + " '%" + search_string + "%') OR (numberDoc LIKE" + " '%" + search_string + "%');";
+                command.CommandText = commandString;
+                command.Connection = conn;
+                try
+                {
+                    command.Connection.Open();
+                    reader = command.ExecuteReader();
+                    try
+                    {
+                        this.dataGridView3.Columns.Add("u_num", "№");
+                        this.dataGridView3.Columns["u_num"].Width = 45;
+                        this.dataGridView3.Columns.Add("surname", "Фамилия");
+                        this.dataGridView3.Columns["surname"].Width = 110;
+                        this.dataGridView3.Columns.Add("name", "Имя");
+                        this.dataGridView3.Columns["name"].Width = 90;
+                        this.dataGridView3.Columns.Add("patronymic", "Отчество");
+                        this.dataGridView3.Columns["patronymic"].Width = 110;
+                        this.dataGridView3.Columns.Add("date_birth", "Дата рождения");
+                        this.dataGridView3.Columns["date_birth"].Width = 89;
+                        this.dataGridView3.Columns.Add("seriesDoc", "Серия документа");
+                        this.dataGridView3.Columns["seriesDoc"].Width = 94;
+                        this.dataGridView3.Columns.Add("numberDoc", "Номер документа");
+                        this.dataGridView3.Columns["numberDoc"].Width = 94;
+                        while (reader.Read())
+                        {
+                            classes.reversedate reversedate = new classes.reversedate();
+                            dataGridView3.Rows.Add(reader["u_num"].ToString(), reader["surname"].ToString(), reader["name"].ToString(), reader["patronymic"].ToString(), reversedate.dateReverse(reader["date_birth"].ToString()), reader["seriesDoc"].ToString(), reader["numberDoc"].ToString());
+                        }
+                        reader.Close();
+                    }
+                    catch (MySqlException ex)
+                    {
+                        Console.WriteLine("Error: \r\n{0}", ex.ToString());
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    Console.WriteLine("Error: \r\n{0}", ex.ToString());
+                }
+            }                                  
         }
 
         private void clientsPanel_VisibleChanged(object sender, EventArgs e)
@@ -1128,6 +1209,24 @@ namespace AIS_exchangeOffice
             {
                 SearchBut_Click(sender, e);
             }
+        }
+
+        private void search_values_CheckedChanged(object sender, EventArgs e)
+        {
+            dataGridView3.Rows.Clear();
+            dataGridView3.Columns.Clear();
+        }
+
+        private void search_operations_CheckedChanged(object sender, EventArgs e)
+        {
+            dataGridView3.Rows.Clear();
+            dataGridView3.Columns.Clear();
+        }
+
+        private void search_clients_CheckedChanged(object sender, EventArgs e)
+        {
+            dataGridView3.Rows.Clear();
+            dataGridView3.Columns.Clear();
         }
     }
 }

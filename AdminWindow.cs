@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using MySql.Data.MySqlClient;
+using System.IO;
 
 namespace AIS_exchangeOffice
 {
@@ -17,6 +18,7 @@ namespace AIS_exchangeOffice
         //connect to BD
         //string connStr = "server=localhost;user=root;database=aisdatabd;password=root123;";
         //MySqlConnection conn = new MySqlConnection(connStr);
+        public bool valuesEdited = false;
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         
         private static extern IntPtr CreateRoundRectRgn(int nLeftRect, int nTopRect, int nRightRect, int nBottomRect, int nWidthEllipse, int nHeightEllipse);
@@ -797,6 +799,11 @@ namespace AIS_exchangeOffice
             try
             {
                 command.Connection.Open();
+                string commandString1 = "SELECT COUNT(*) FROM clients;";
+                command.CommandText = commandString1;
+                ClientsNum.Text = command.ExecuteScalar().ToString();
+                commandString = "SELECT summsale, summpurchase FROM currencycourse WHERE name = 'USD';";
+                command.CommandText = commandString;
                 reader = command.ExecuteReader();
                 while (reader.Read())
                 {
@@ -840,6 +847,50 @@ namespace AIS_exchangeOffice
                     JPY_buy.Text = reader["summpurchase"].ToString().Replace(',', '.');
                 }
                 reader.Close();
+                commandString = "SELECT value FROM currency_values WHERE name = 'USD';";
+                command.CommandText = commandString;
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    USD_value.Text = "$ " + reader["value"].ToString().Replace(',', '.');
+                }
+                reader.Close();
+                commandString = "SELECT value FROM currency_values WHERE name = 'EUR';";
+                command.CommandText = commandString;
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    EUR_value.Text = "€ " + reader["value"].ToString().Replace(',', '.');
+                }
+                reader.Close();
+                commandString = "SELECT value FROM currency_values WHERE name = 'GBP';";
+                command.CommandText = commandString;
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    GBP_value.Text = "£ " + reader["value"].ToString().Replace(',', '.');
+                }
+                reader.Close();
+                commandString = "SELECT value FROM currency_values WHERE name = 'CHF';";
+                command.CommandText = commandString;
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    CHF_value.Text = "₣ " + reader["value"].ToString().Replace(',', '.');
+                }
+                reader.Close();
+                commandString = "SELECT value FROM currency_values WHERE name = 'JPY';";
+                command.CommandText = commandString;
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    JPY_value.Text = "¥ " + reader["value"].ToString().Replace(',', '.');
+                }
+                reader.Close();
+            }
+            catch (NullReferenceException ex)
+            {
+                Console.WriteLine("Error: \r\n{0}", ex.ToString());
             }
             catch (MySqlException ex)
             {
@@ -849,6 +900,311 @@ namespace AIS_exchangeOffice
             {
                 command.Connection.Close();
             }
-        }        
+        }
+
+        private void valuesEdit_btn_Click(object sender, EventArgs e)
+        {
+            if (valuesEdited == false)
+            {
+                sellUSD_edit.Visible = true;
+                sellUSD_edit.Text = USD_sell.Text;
+                buyUSD_edit.Visible = true;
+                buyUSD_edit.Text = USD_buy.Text;
+                sellEUR_edit.Visible = true;
+                sellEUR_edit.Text = EUR_sell.Text;
+                buyEUR_edit.Visible = true;
+                buyEUR_edit.Text = EUR_buy.Text;
+                sellGBP_edit.Visible = true;
+                sellGBP_edit.Text = GBP_sell.Text;
+                buyGBP_edit.Visible = true;
+                buyGBP_edit.Text = GBP_buy.Text;
+                sellCHF_edit.Visible = true;
+                sellCHF_edit.Text = CHF_sell.Text;
+                buyCHF_edit.Visible = true;
+                buyCHF_edit.Text = CHF_buy.Text;
+                sellJPY_edit.Visible = true;
+                sellJPY_edit.Text = JPY_sell.Text;
+                buyJPY_edit.Visible = true;
+                buyJPY_edit.Text = JPY_buy.Text;
+                valuesEdited = true;
+                valuesEdit_btn.Image = Image.FromFile(@Directory.GetCurrentDirectory() + "\\images\\icons\\edit_accept.png");
+            }
+            else if (valuesEdited == true)
+            {
+                if (sellUSD_edit.Text == "" || buyUSD_edit.Text == "" || sellEUR_edit.Text == "" || buyEUR_edit.Text == "" || sellGBP_edit.Text == "" || buyGBP_edit.Text == "" || sellCHF_edit.Text == "" || buyCHF_edit.Text == "" || sellJPY_edit.Text == "" || buyJPY_edit.Text == "" || sellUSD_edit.Text.Count(chr => chr == '.') > 1 || buyUSD_edit.Text.Count(chr => chr == '.') > 1 || sellEUR_edit.Text.Count(chr => chr == '.') > 1 || buyEUR_edit.Text.Count(chr => chr == '.') > 1 || sellGBP_edit.Text.Count(chr => chr == '.') > 1 || buyGBP_edit.Text.Count(chr => chr == '.') > 1 || sellCHF_edit.Text.Count(chr => chr == '.') > 1 || buyCHF_edit.Text.Count(chr => chr == '.') > 1 || sellJPY_edit.Text.Count(chr => chr == '.') > 1 || buyJPY_edit.Text.Count(chr => chr == '.') > 1)
+                {
+                    MessageBox.Show("Ошибка! Заполните все поля изменения валюты или введите корректные значения в эти поля.");
+                    return;
+                }
+
+                string connStr = "server=localhost;user=root;database=aisdatabd;password=root123;";
+                MySqlConnection conn = new MySqlConnection(connStr);
+
+                MySqlCommand command = new MySqlCommand();
+
+                //вставить здесь редактирование БД
+
+                string commandString = "SELECT summsale, summpurchase FROM currencycourse WHERE name = 'USD';";
+                command.CommandText = commandString;
+                command.Connection = conn;
+                MySqlDataReader reader;
+                try
+                {
+                    command.Connection.Open();
+                    string commandString1 = "SELECT COUNT(*) FROM clients;";
+                    command.CommandText = commandString1;
+                    ClientsNum.Text = command.ExecuteScalar().ToString();
+                    commandString = "SELECT summsale, summpurchase FROM currencycourse WHERE name = 'USD';";
+                    command.CommandText = commandString;
+                    reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        USD_sell.Text = reader["summsale"].ToString().Replace(',', '.');
+                        USD_buy.Text = reader["summpurchase"].ToString().Replace(',', '.');
+                    }
+                    reader.Close();
+                    commandString = "SELECT summsale, summpurchase FROM currencycourse WHERE name = 'EUR';";
+                    command.CommandText = commandString;
+                    reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        EUR_sell.Text = reader["summsale"].ToString().Replace(',', '.');
+                        EUR_buy.Text = reader["summpurchase"].ToString().Replace(',', '.');
+                    }
+                    reader.Close();
+                    commandString = "SELECT summsale, summpurchase FROM currencycourse WHERE name = 'GBP';";
+                    command.CommandText = commandString;
+                    reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        GBP_sell.Text = reader["summsale"].ToString().Replace(',', '.');
+                        GBP_buy.Text = reader["summpurchase"].ToString().Replace(',', '.');
+                    }
+                    reader.Close();
+                    commandString = "SELECT summsale, summpurchase FROM currencycourse WHERE name = 'CHF';";
+                    command.CommandText = commandString;
+                    reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        CHF_sell.Text = reader["summsale"].ToString().Replace(',', '.');
+                        CHF_buy.Text = reader["summpurchase"].ToString().Replace(',', '.');
+                    }
+                    reader.Close();
+                    commandString = "SELECT summsale, summpurchase FROM currencycourse WHERE name = 'JPY';";
+                    command.CommandText = commandString;
+                    reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        JPY_sell.Text = reader["summsale"].ToString().Replace(',', '.');
+                        JPY_buy.Text = reader["summpurchase"].ToString().Replace(',', '.');
+                    }
+                    reader.Close();
+                    commandString = "SELECT value FROM currency_values WHERE name = 'USD';";
+                    command.CommandText = commandString;
+                    reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        USD_value.Text = "$ " + reader["value"].ToString().Replace(',', '.');
+                    }
+                    reader.Close();
+                    commandString = "SELECT value FROM currency_values WHERE name = 'EUR';";
+                    command.CommandText = commandString;
+                    reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        EUR_value.Text = "€ " + reader["value"].ToString().Replace(',', '.');
+                    }
+                    reader.Close();
+                    commandString = "SELECT value FROM currency_values WHERE name = 'GBP';";
+                    command.CommandText = commandString;
+                    reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        GBP_value.Text = "£ " + reader["value"].ToString().Replace(',', '.');
+                    }
+                    reader.Close();
+                    commandString = "SELECT value FROM currency_values WHERE name = 'CHF';";
+                    command.CommandText = commandString;
+                    reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        CHF_value.Text = "₣ " + reader["value"].ToString().Replace(',', '.');
+                    }
+                    reader.Close();
+                    commandString = "SELECT value FROM currency_values WHERE name = 'JPY';";
+                    command.CommandText = commandString;
+                    reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        JPY_value.Text = "¥ " + reader["value"].ToString().Replace(',', '.');
+                    }
+                    reader.Close();
+                }
+                catch (NullReferenceException ex)
+                {
+                    Console.WriteLine("Error: \r\n{0}", ex.ToString());
+                }
+                catch (MySqlException ex)
+                {
+                    Console.WriteLine("Error: \r\n{0}", ex.ToString());
+                }
+                finally
+                {
+                    command.Connection.Close();
+                }
+                sellUSD_edit.Visible = false;
+                buyUSD_edit.Visible = false;
+                sellEUR_edit.Visible = false;
+                buyEUR_edit.Visible = false;
+                sellGBP_edit.Visible = false;
+                buyGBP_edit.Visible = false;
+                sellCHF_edit.Visible = false;
+                buyCHF_edit.Visible = false;
+                sellJPY_edit.Visible = false;
+                buyJPY_edit.Visible = false;
+                valuesEdited = false;
+                valuesEdit_btn.Image = Image.FromFile(@Directory.GetCurrentDirectory() + "\\images\\icons\\edit.png");
+            }
+        }
+
+        private void sellUSD_edit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 8 || e.KeyChar == 127 || e.KeyChar == 46)
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                if (Char.IsDigit(e.KeyChar)) return;
+                else
+                    e.Handled = true;
+            }
+        }
+
+        private void buyUSD_edit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 8 || e.KeyChar == 127 || e.KeyChar == 46)
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                if (Char.IsDigit(e.KeyChar)) return;
+                else
+                    e.Handled = true;
+            }
+        }
+
+        private void buyEUR_edit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 8 || e.KeyChar == 127 || e.KeyChar == 46)
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                if (Char.IsDigit(e.KeyChar)) return;
+                else
+                    e.Handled = true;
+            }
+        }
+
+        private void buyGBP_edit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 8 || e.KeyChar == 127 || e.KeyChar == 46)
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                if (Char.IsDigit(e.KeyChar)) return;
+                else
+                    e.Handled = true;
+            }
+        }
+
+        private void buyCHF_edit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 8 || e.KeyChar == 127 || e.KeyChar == 46)
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                if (Char.IsDigit(e.KeyChar)) return;
+                else
+                    e.Handled = true;
+            }
+        }
+
+        private void buyJPY_edit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 8 || e.KeyChar == 127 || e.KeyChar == 46)
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                if (Char.IsDigit(e.KeyChar)) return;
+                else
+                    e.Handled = true;
+            }
+        }
+
+        private void sellEUR_edit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 8 || e.KeyChar == 127 || e.KeyChar == 46)
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                if (Char.IsDigit(e.KeyChar)) return;
+                else
+                    e.Handled = true;
+            }
+        }
+
+        private void sellGBP_edit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 8 || e.KeyChar == 127 || e.KeyChar == 46)
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                if (Char.IsDigit(e.KeyChar)) return;
+                else
+                    e.Handled = true;
+            }
+        }
+
+        private void sellCHF_edit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 8 || e.KeyChar == 127 || e.KeyChar == 46)
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                if (Char.IsDigit(e.KeyChar)) return;
+                else
+                    e.Handled = true;
+            }
+        }
+
+        private void sellJPY_edit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 8 || e.KeyChar == 127 || e.KeyChar == 46)
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                if (Char.IsDigit(e.KeyChar)) return;
+                else
+                    e.Handled = true;
+            }
+        }
     }
 }

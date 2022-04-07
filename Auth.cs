@@ -7,7 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.IO.Compression;
 using MySql.Data.MySqlClient;
+
 
 namespace AIS_exchangeOffice
 {
@@ -169,6 +172,15 @@ namespace AIS_exchangeOffice
         private void AuthForm_Shown(object sender, EventArgs e)
         {
             loginBox.Focus();
+        }
+
+        private void AuthForm_Load(object sender, EventArgs e)
+        {
+            File.Delete(Directory.GetCurrentDirectory() + "\\bd_reserveCopy\\reserve_bd.zip");
+            string pathBD = Directory.GetCurrentDirectory();
+            pathBD = pathBD + "\\bd\\";
+            string pathReserve = Directory.GetCurrentDirectory() + "\\bd_reserveCopy\\reserve_bd.zip";
+            ZipFile.CreateFromDirectory(pathBD, pathReserve);                     
         }
     }
 }

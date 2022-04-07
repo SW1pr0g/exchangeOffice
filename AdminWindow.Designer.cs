@@ -46,19 +46,19 @@
             this.exit = new System.Windows.Forms.Button();
             this.BalancePanel = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
+            this.USD_value = new System.Windows.Forms.Label();
+            this.JPY_value = new System.Windows.Forms.Label();
+            this.CHF_value = new System.Windows.Forms.Label();
+            this.GBP_value = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.EUR_value = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.pnael4 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.ClientsNum = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.RatePanel = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
+            this.valuesEdit_btn = new System.Windows.Forms.Button();
             this.label34 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
@@ -136,33 +136,43 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.bdPanel = new System.Windows.Forms.Panel();
             this.saveBD = new System.Windows.Forms.Button();
+            this.sellUSD_edit = new System.Windows.Forms.TextBox();
+            this.buyUSD_edit = new System.Windows.Forms.TextBox();
+            this.sellJPY_edit = new System.Windows.Forms.TextBox();
+            this.buyJPY_edit = new System.Windows.Forms.TextBox();
+            this.sellCHF_edit = new System.Windows.Forms.TextBox();
+            this.buyCHF_edit = new System.Windows.Forms.TextBox();
+            this.buyGBP_edit = new System.Windows.Forms.TextBox();
+            this.sellGBP_edit = new System.Windows.Forms.TextBox();
+            this.buyEUR_edit = new System.Windows.Forms.TextBox();
+            this.sellEUR_edit = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureUser)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureUser)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.BalancePanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.pnael4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.RatePanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.mainPanel.SuspendLayout();
             this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBox14)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             this.clientsPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBox10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             this.exchangePanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBox11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             this.searchPanel.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBox13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             this.otchetPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.bdPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -180,17 +190,17 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (158)))), ((int) (((byte) (161)))), ((int) (((byte) (176)))));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
             this.label2.Location = new System.Drawing.Point(33, 128);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(124, 16);
+            this.label2.Size = new System.Drawing.Size(123, 16);
             this.label2.TabIndex = 2;
             this.label2.Text = "Администратор";
             // 
             // NameAdmin
             // 
-            this.NameAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
+            this.NameAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.NameAdmin.ForeColor = System.Drawing.Color.White;
             this.NameAdmin.Location = new System.Drawing.Point(-4, 99);
             this.NameAdmin.Name = "NameAdmin";
@@ -201,7 +211,7 @@
             // 
             // pictureUser
             // 
-            this.pictureUser.BackgroundImage = ((System.Drawing.Image) (resources.GetObject("pictureUser.BackgroundImage")));
+            this.pictureUser.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureUser.BackgroundImage")));
             this.pictureUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureUser.Location = new System.Drawing.Point(60, 22);
             this.pictureUser.Name = "pictureUser";
@@ -216,9 +226,9 @@
             this.MainBtn.Dock = System.Windows.Forms.DockStyle.Top;
             this.MainBtn.FlatAppearance.BorderSize = 0;
             this.MainBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MainBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.MainBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MainBtn.ForeColor = System.Drawing.Color.White;
-            this.MainBtn.Image = ((System.Drawing.Image) (resources.GetObject("MainBtn.Image")));
+            this.MainBtn.Image = ((System.Drawing.Image)(resources.GetObject("MainBtn.Image")));
             this.MainBtn.Location = new System.Drawing.Point(0, 156);
             this.MainBtn.Name = "MainBtn";
             this.MainBtn.Size = new System.Drawing.Size(186, 42);
@@ -236,9 +246,9 @@
             this.ClientsBtn.Dock = System.Windows.Forms.DockStyle.Top;
             this.ClientsBtn.FlatAppearance.BorderSize = 0;
             this.ClientsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ClientsBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.ClientsBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ClientsBtn.ForeColor = System.Drawing.Color.White;
-            this.ClientsBtn.Image = ((System.Drawing.Image) (resources.GetObject("ClientsBtn.Image")));
+            this.ClientsBtn.Image = ((System.Drawing.Image)(resources.GetObject("ClientsBtn.Image")));
             this.ClientsBtn.Location = new System.Drawing.Point(0, 198);
             this.ClientsBtn.Name = "ClientsBtn";
             this.ClientsBtn.Size = new System.Drawing.Size(186, 42);
@@ -256,9 +266,9 @@
             this.ExchangeBtn.Dock = System.Windows.Forms.DockStyle.Top;
             this.ExchangeBtn.FlatAppearance.BorderSize = 0;
             this.ExchangeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ExchangeBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.ExchangeBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ExchangeBtn.ForeColor = System.Drawing.Color.White;
-            this.ExchangeBtn.Image = ((System.Drawing.Image) (resources.GetObject("ExchangeBtn.Image")));
+            this.ExchangeBtn.Image = ((System.Drawing.Image)(resources.GetObject("ExchangeBtn.Image")));
             this.ExchangeBtn.Location = new System.Drawing.Point(0, 240);
             this.ExchangeBtn.Name = "ExchangeBtn";
             this.ExchangeBtn.Size = new System.Drawing.Size(186, 42);
@@ -276,9 +286,9 @@
             this.SearchBtn.Dock = System.Windows.Forms.DockStyle.Top;
             this.SearchBtn.FlatAppearance.BorderSize = 0;
             this.SearchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SearchBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.SearchBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SearchBtn.ForeColor = System.Drawing.Color.White;
-            this.SearchBtn.Image = ((System.Drawing.Image) (resources.GetObject("SearchBtn.Image")));
+            this.SearchBtn.Image = ((System.Drawing.Image)(resources.GetObject("SearchBtn.Image")));
             this.SearchBtn.Location = new System.Drawing.Point(0, 282);
             this.SearchBtn.Name = "SearchBtn";
             this.SearchBtn.Size = new System.Drawing.Size(186, 42);
@@ -291,7 +301,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image) (resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(36, 453);
             this.pictureBox1.Name = "pictureBox1";
@@ -306,9 +316,9 @@
             this.BDbtn.Dock = System.Windows.Forms.DockStyle.Top;
             this.BDbtn.FlatAppearance.BorderSize = 0;
             this.BDbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BDbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.BDbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BDbtn.ForeColor = System.Drawing.Color.White;
-            this.BDbtn.Image = ((System.Drawing.Image) (resources.GetObject("BDbtn.Image")));
+            this.BDbtn.Image = ((System.Drawing.Image)(resources.GetObject("BDbtn.Image")));
             this.BDbtn.Location = new System.Drawing.Point(0, 324);
             this.BDbtn.Name = "BDbtn";
             this.BDbtn.Size = new System.Drawing.Size(186, 42);
@@ -326,9 +336,9 @@
             this.OtchetBtn.Dock = System.Windows.Forms.DockStyle.Top;
             this.OtchetBtn.FlatAppearance.BorderSize = 0;
             this.OtchetBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.OtchetBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.OtchetBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.OtchetBtn.ForeColor = System.Drawing.Color.White;
-            this.OtchetBtn.Image = ((System.Drawing.Image) (resources.GetObject("OtchetBtn.Image")));
+            this.OtchetBtn.Image = ((System.Drawing.Image)(resources.GetObject("OtchetBtn.Image")));
             this.OtchetBtn.Location = new System.Drawing.Point(0, 366);
             this.OtchetBtn.Name = "OtchetBtn";
             this.OtchetBtn.Size = new System.Drawing.Size(186, 42);
@@ -341,7 +351,7 @@
             // 
             // pnlNav
             // 
-            this.pnlNav.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (0)))), ((int) (((byte) (126)))), ((int) (((byte) (249)))));
+            this.pnlNav.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.pnlNav.Location = new System.Drawing.Point(0, 198);
             this.pnlNav.Name = "pnlNav";
             this.pnlNav.Size = new System.Drawing.Size(3, 100);
@@ -349,7 +359,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (11)))), ((int) (((byte) (100)))), ((int) (((byte) (103)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
             this.panel1.Controls.Add(this.pnlNav);
             this.panel1.Controls.Add(this.OtchetBtn);
             this.panel1.Controls.Add(this.BDbtn);
@@ -368,11 +378,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (11)))), ((int) (((byte) (100)))), ((int) (((byte) (103)))));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
             this.label3.Location = new System.Drawing.Point(29, 8);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(132, 32);
+            this.label3.Size = new System.Drawing.Size(131, 32);
             this.label3.TabIndex = 1;
             this.label3.Text = "Главная";
             // 
@@ -382,8 +392,8 @@
             this.exit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.exit.FlatAppearance.BorderSize = 0;
             this.exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.exit.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.exit.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (11)))), ((int) (((byte) (100)))), ((int) (((byte) (103)))));
+            this.exit.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.exit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
             this.exit.Location = new System.Drawing.Point(725, 0);
             this.exit.Name = "exit";
             this.exit.Size = new System.Drawing.Size(40, 40);
@@ -396,12 +406,12 @@
             // 
             this.BalancePanel.BackColor = System.Drawing.SystemColors.Control;
             this.BalancePanel.Controls.Add(this.button4);
-            this.BalancePanel.Controls.Add(this.label29);
-            this.BalancePanel.Controls.Add(this.label28);
-            this.BalancePanel.Controls.Add(this.label27);
-            this.BalancePanel.Controls.Add(this.label26);
+            this.BalancePanel.Controls.Add(this.USD_value);
+            this.BalancePanel.Controls.Add(this.JPY_value);
+            this.BalancePanel.Controls.Add(this.CHF_value);
+            this.BalancePanel.Controls.Add(this.GBP_value);
             this.BalancePanel.Controls.Add(this.pictureBox2);
-            this.BalancePanel.Controls.Add(this.label5);
+            this.BalancePanel.Controls.Add(this.EUR_value);
             this.BalancePanel.Controls.Add(this.label4);
             this.BalancePanel.Location = new System.Drawing.Point(26, 56);
             this.BalancePanel.Name = "BalancePanel";
@@ -414,62 +424,62 @@
             this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button4.FlatAppearance.BorderSize = 0;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.button4.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (11)))), ((int) (((byte) (100)))), ((int) (((byte) (103)))));
-            this.button4.Image = ((System.Drawing.Image) (resources.GetObject("button4.Image")));
+            this.button4.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
             this.button4.Location = new System.Drawing.Point(174, 124);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(60, 60);
             this.button4.TabIndex = 37;
             this.button4.UseVisualStyleBackColor = false;
             // 
-            // label29
+            // USD_value
             // 
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.label29.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (11)))), ((int) (((byte) (100)))), ((int) (((byte) (103)))));
-            this.label29.Location = new System.Drawing.Point(17, 34);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(90, 29);
-            this.label29.TabIndex = 12;
-            this.label29.Text = "$ 1234";
+            this.USD_value.AutoSize = true;
+            this.USD_value.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.USD_value.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.USD_value.Location = new System.Drawing.Point(17, 34);
+            this.USD_value.Name = "USD_value";
+            this.USD_value.Size = new System.Drawing.Size(90, 29);
+            this.USD_value.TabIndex = 12;
+            this.USD_value.Text = "$ 1234";
             // 
-            // label28
+            // JPY_value
             // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.label28.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (11)))), ((int) (((byte) (100)))), ((int) (((byte) (103)))));
-            this.label28.Location = new System.Drawing.Point(17, 145);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(90, 29);
-            this.label28.TabIndex = 11;
-            this.label28.Text = "¥ 1234";
+            this.JPY_value.AutoSize = true;
+            this.JPY_value.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.JPY_value.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.JPY_value.Location = new System.Drawing.Point(17, 145);
+            this.JPY_value.Name = "JPY_value";
+            this.JPY_value.Size = new System.Drawing.Size(90, 29);
+            this.JPY_value.TabIndex = 11;
+            this.JPY_value.Text = "¥ 1234";
             // 
-            // label27
+            // CHF_value
             // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.label27.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (11)))), ((int) (((byte) (100)))), ((int) (((byte) (103)))));
-            this.label27.Location = new System.Drawing.Point(15, 116);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(92, 29);
-            this.label27.TabIndex = 10;
-            this.label27.Text = "₣ 1234";
+            this.CHF_value.AutoSize = true;
+            this.CHF_value.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CHF_value.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.CHF_value.Location = new System.Drawing.Point(15, 116);
+            this.CHF_value.Name = "CHF_value";
+            this.CHF_value.Size = new System.Drawing.Size(92, 29);
+            this.CHF_value.TabIndex = 10;
+            this.CHF_value.Text = "₣ 1234";
             // 
-            // label26
+            // GBP_value
             // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.label26.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (11)))), ((int) (((byte) (100)))), ((int) (((byte) (103)))));
-            this.label26.Location = new System.Drawing.Point(17, 90);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(90, 29);
-            this.label26.TabIndex = 9;
-            this.label26.Text = "£ 1234";
+            this.GBP_value.AutoSize = true;
+            this.GBP_value.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.GBP_value.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.GBP_value.Location = new System.Drawing.Point(17, 90);
+            this.GBP_value.Name = "GBP_value";
+            this.GBP_value.Size = new System.Drawing.Size(90, 29);
+            this.GBP_value.TabIndex = 9;
+            this.GBP_value.Text = "£ 1234";
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image) (resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.InitialImage = null;
             this.pictureBox2.Location = new System.Drawing.Point(150, 25);
             this.pictureBox2.Name = "pictureBox2";
@@ -478,23 +488,23 @@
             this.pictureBox2.TabIndex = 8;
             this.pictureBox2.TabStop = false;
             // 
-            // label5
+            // EUR_value
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (11)))), ((int) (((byte) (100)))), ((int) (((byte) (103)))));
-            this.label5.Location = new System.Drawing.Point(17, 63);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(90, 29);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "€ 1234";
+            this.EUR_value.AutoSize = true;
+            this.EUR_value.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.EUR_value.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.EUR_value.Location = new System.Drawing.Point(17, 63);
+            this.EUR_value.Name = "EUR_value";
+            this.EUR_value.Size = new System.Drawing.Size(90, 29);
+            this.EUR_value.TabIndex = 7;
+            this.EUR_value.Text = "€ 1234";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.SystemColors.Control;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (11)))), ((int) (((byte) (100)))), ((int) (((byte) (103)))));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
             this.label4.Location = new System.Drawing.Point(3, -2);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(272, 31);
@@ -505,7 +515,7 @@
             // 
             this.pnael4.BackColor = System.Drawing.SystemColors.Control;
             this.pnael4.Controls.Add(this.pictureBox3);
-            this.pnael4.Controls.Add(this.label6);
+            this.pnael4.Controls.Add(this.ClientsNum);
             this.pnael4.Controls.Add(this.label7);
             this.pnael4.Location = new System.Drawing.Point(443, 90);
             this.pnael4.Name = "pnael4";
@@ -514,7 +524,7 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = ((System.Drawing.Image) (resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.InitialImage = null;
             this.pictureBox3.Location = new System.Drawing.Point(143, 16);
             this.pictureBox3.Name = "pictureBox3";
@@ -523,23 +533,23 @@
             this.pictureBox3.TabIndex = 8;
             this.pictureBox3.TabStop = false;
             // 
-            // label6
+            // ClientsNum
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (11)))), ((int) (((byte) (100)))), ((int) (((byte) (103)))));
-            this.label6.Location = new System.Drawing.Point(55, 53);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(32, 32);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "5";
+            this.ClientsNum.AutoSize = true;
+            this.ClientsNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ClientsNum.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.ClientsNum.Location = new System.Drawing.Point(55, 53);
+            this.ClientsNum.Name = "ClientsNum";
+            this.ClientsNum.Size = new System.Drawing.Size(31, 32);
+            this.ClientsNum.TabIndex = 7;
+            this.ClientsNum.Text = "5";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.SystemColors.Control;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (11)))), ((int) (((byte) (100)))), ((int) (((byte) (103)))));
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
             this.label7.Location = new System.Drawing.Point(23, 14);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(95, 24);
@@ -549,12 +559,22 @@
             // RatePanel
             // 
             this.RatePanel.BackColor = System.Drawing.SystemColors.Control;
-            this.RatePanel.Controls.Add(this.button5);
+            this.RatePanel.Controls.Add(this.buyUSD_edit);
+            this.RatePanel.Controls.Add(this.buyEUR_edit);
+            this.RatePanel.Controls.Add(this.sellUSD_edit);
+            this.RatePanel.Controls.Add(this.sellEUR_edit);
+            this.RatePanel.Controls.Add(this.valuesEdit_btn);
             this.RatePanel.Controls.Add(this.label34);
+            this.RatePanel.Controls.Add(this.sellGBP_edit);
             this.RatePanel.Controls.Add(this.label33);
+            this.RatePanel.Controls.Add(this.buyGBP_edit);
+            this.RatePanel.Controls.Add(this.sellCHF_edit);
+            this.RatePanel.Controls.Add(this.buyCHF_edit);
             this.RatePanel.Controls.Add(this.label32);
             this.RatePanel.Controls.Add(this.label31);
             this.RatePanel.Controls.Add(this.label30);
+            this.RatePanel.Controls.Add(this.sellJPY_edit);
+            this.RatePanel.Controls.Add(this.buyJPY_edit);
             this.RatePanel.Controls.Add(this.button2);
             this.RatePanel.Controls.Add(this.JPY_buy);
             this.RatePanel.Controls.Add(this.CHF_buy);
@@ -584,26 +604,27 @@
             this.RatePanel.Size = new System.Drawing.Size(675, 313);
             this.RatePanel.TabIndex = 10;
             // 
-            // button5
+            // valuesEdit_btn
             // 
-            this.button5.BackColor = System.Drawing.SystemColors.Control;
-            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.button5.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (11)))), ((int) (((byte) (100)))), ((int) (((byte) (103)))));
-            this.button5.Image = ((System.Drawing.Image) (resources.GetObject("button5.Image")));
-            this.button5.Location = new System.Drawing.Point(615, 0);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(60, 60);
-            this.button5.TabIndex = 32;
-            this.button5.UseVisualStyleBackColor = false;
+            this.valuesEdit_btn.BackColor = System.Drawing.SystemColors.Control;
+            this.valuesEdit_btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.valuesEdit_btn.FlatAppearance.BorderSize = 0;
+            this.valuesEdit_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.valuesEdit_btn.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.valuesEdit_btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.valuesEdit_btn.Image = ((System.Drawing.Image)(resources.GetObject("valuesEdit_btn.Image")));
+            this.valuesEdit_btn.Location = new System.Drawing.Point(615, 0);
+            this.valuesEdit_btn.Name = "valuesEdit_btn";
+            this.valuesEdit_btn.Size = new System.Drawing.Size(60, 60);
+            this.valuesEdit_btn.TabIndex = 32;
+            this.valuesEdit_btn.UseVisualStyleBackColor = false;
+            this.valuesEdit_btn.Click += new System.EventHandler(this.valuesEdit_btn_Click);
             // 
             // label34
             // 
             this.label34.AutoSize = true;
-            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.label34.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (11)))), ((int) (((byte) (100)))), ((int) (((byte) (103)))));
+            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label34.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
             this.label34.Location = new System.Drawing.Point(178, 259);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(37, 39);
@@ -613,8 +634,8 @@
             // label33
             // 
             this.label33.AutoSize = true;
-            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.label33.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (11)))), ((int) (((byte) (100)))), ((int) (((byte) (103)))));
+            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label33.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
             this.label33.Location = new System.Drawing.Point(179, 206);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(39, 39);
@@ -624,8 +645,8 @@
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.label32.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (11)))), ((int) (((byte) (100)))), ((int) (((byte) (103)))));
+            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label32.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
             this.label32.Location = new System.Drawing.Point(178, 153);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(37, 39);
@@ -635,8 +656,8 @@
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.label31.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (11)))), ((int) (((byte) (100)))), ((int) (((byte) (103)))));
+            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label31.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
             this.label31.Location = new System.Drawing.Point(178, 99);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(37, 39);
@@ -646,8 +667,8 @@
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.label30.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (11)))), ((int) (((byte) (100)))), ((int) (((byte) (103)))));
+            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label30.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
             this.label30.Location = new System.Drawing.Point(178, 43);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(40, 42);
@@ -660,9 +681,9 @@
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (11)))), ((int) (((byte) (100)))), ((int) (((byte) (103)))));
-            this.button2.Image = ((System.Drawing.Image) (resources.GetObject("button2.Image")));
+            this.button2.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.Location = new System.Drawing.Point(615, 253);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(60, 60);
@@ -672,55 +693,55 @@
             // JPY_buy
             // 
             this.JPY_buy.AutoSize = true;
-            this.JPY_buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.JPY_buy.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (11)))), ((int) (((byte) (100)))), ((int) (((byte) (103)))));
+            this.JPY_buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.JPY_buy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
             this.JPY_buy.Location = new System.Drawing.Point(472, 265);
             this.JPY_buy.Name = "JPY_buy";
-            this.JPY_buy.Size = new System.Drawing.Size(92, 32);
+            this.JPY_buy.Size = new System.Drawing.Size(91, 32);
             this.JPY_buy.TabIndex = 30;
             this.JPY_buy.Text = "68,31";
             // 
             // CHF_buy
             // 
             this.CHF_buy.AutoSize = true;
-            this.CHF_buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.CHF_buy.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (11)))), ((int) (((byte) (100)))), ((int) (((byte) (103)))));
+            this.CHF_buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CHF_buy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
             this.CHF_buy.Location = new System.Drawing.Point(472, 213);
             this.CHF_buy.Name = "CHF_buy";
-            this.CHF_buy.Size = new System.Drawing.Size(92, 32);
+            this.CHF_buy.Size = new System.Drawing.Size(91, 32);
             this.CHF_buy.TabIndex = 29;
             this.CHF_buy.Text = "87,46";
             // 
             // GBP_buy
             // 
             this.GBP_buy.AutoSize = true;
-            this.GBP_buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.GBP_buy.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (11)))), ((int) (((byte) (100)))), ((int) (((byte) (103)))));
+            this.GBP_buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.GBP_buy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
             this.GBP_buy.Location = new System.Drawing.Point(472, 159);
             this.GBP_buy.Name = "GBP_buy";
-            this.GBP_buy.Size = new System.Drawing.Size(109, 32);
+            this.GBP_buy.Size = new System.Drawing.Size(108, 32);
             this.GBP_buy.TabIndex = 28;
             this.GBP_buy.Text = "107,40";
             // 
             // EUR_buy
             // 
             this.EUR_buy.AutoSize = true;
-            this.EUR_buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.EUR_buy.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (11)))), ((int) (((byte) (100)))), ((int) (((byte) (103)))));
+            this.EUR_buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.EUR_buy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
             this.EUR_buy.Location = new System.Drawing.Point(472, 105);
             this.EUR_buy.Name = "EUR_buy";
-            this.EUR_buy.Size = new System.Drawing.Size(92, 32);
+            this.EUR_buy.Size = new System.Drawing.Size(91, 32);
             this.EUR_buy.TabIndex = 27;
             this.EUR_buy.Text = "90,47";
             // 
             // USD_buy
             // 
             this.USD_buy.AutoSize = true;
-            this.USD_buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.USD_buy.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (11)))), ((int) (((byte) (100)))), ((int) (((byte) (103)))));
+            this.USD_buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.USD_buy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
             this.USD_buy.Location = new System.Drawing.Point(472, 52);
             this.USD_buy.Name = "USD_buy";
-            this.USD_buy.Size = new System.Drawing.Size(92, 32);
+            this.USD_buy.Size = new System.Drawing.Size(91, 32);
             this.USD_buy.TabIndex = 26;
             this.USD_buy.Text = "79,81";
             // 
@@ -728,8 +749,8 @@
             // 
             this.label20.AutoSize = true;
             this.label20.BackColor = System.Drawing.SystemColors.Control;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.label20.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (11)))), ((int) (((byte) (100)))), ((int) (((byte) (103)))));
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
             this.label20.Location = new System.Drawing.Point(473, 7);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(80, 24);
@@ -740,8 +761,8 @@
             // 
             this.label19.AutoSize = true;
             this.label19.BackColor = System.Drawing.SystemColors.Control;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.label19.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (11)))), ((int) (((byte) (100)))), ((int) (((byte) (103)))));
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
             this.label19.Location = new System.Drawing.Point(273, 7);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(95, 24);
@@ -751,61 +772,61 @@
             // JPY_sell
             // 
             this.JPY_sell.AutoSize = true;
-            this.JPY_sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.JPY_sell.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (11)))), ((int) (((byte) (100)))), ((int) (((byte) (103)))));
+            this.JPY_sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.JPY_sell.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
             this.JPY_sell.Location = new System.Drawing.Point(273, 265);
             this.JPY_sell.Name = "JPY_sell";
-            this.JPY_sell.Size = new System.Drawing.Size(92, 32);
+            this.JPY_sell.Size = new System.Drawing.Size(91, 32);
             this.JPY_sell.TabIndex = 23;
             this.JPY_sell.Text = "66,31";
             // 
             // CHF_sell
             // 
             this.CHF_sell.AutoSize = true;
-            this.CHF_sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.CHF_sell.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (11)))), ((int) (((byte) (100)))), ((int) (((byte) (103)))));
+            this.CHF_sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CHF_sell.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
             this.CHF_sell.Location = new System.Drawing.Point(273, 213);
             this.CHF_sell.Name = "CHF_sell";
-            this.CHF_sell.Size = new System.Drawing.Size(92, 32);
+            this.CHF_sell.Size = new System.Drawing.Size(91, 32);
             this.CHF_sell.TabIndex = 22;
             this.CHF_sell.Text = "85,46";
             // 
             // GBP_sell
             // 
             this.GBP_sell.AutoSize = true;
-            this.GBP_sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.GBP_sell.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (11)))), ((int) (((byte) (100)))), ((int) (((byte) (103)))));
+            this.GBP_sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.GBP_sell.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
             this.GBP_sell.Location = new System.Drawing.Point(272, 159);
             this.GBP_sell.Name = "GBP_sell";
-            this.GBP_sell.Size = new System.Drawing.Size(109, 32);
+            this.GBP_sell.Size = new System.Drawing.Size(108, 32);
             this.GBP_sell.TabIndex = 21;
             this.GBP_sell.Text = "105,38";
             // 
             // EUR_sell
             // 
             this.EUR_sell.AutoSize = true;
-            this.EUR_sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.EUR_sell.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (11)))), ((int) (((byte) (100)))), ((int) (((byte) (103)))));
+            this.EUR_sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.EUR_sell.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
             this.EUR_sell.Location = new System.Drawing.Point(273, 105);
             this.EUR_sell.Name = "EUR_sell";
-            this.EUR_sell.Size = new System.Drawing.Size(92, 32);
+            this.EUR_sell.Size = new System.Drawing.Size(91, 32);
             this.EUR_sell.TabIndex = 20;
             this.EUR_sell.Text = "88,47";
             // 
             // USD_sell
             // 
             this.USD_sell.AutoSize = true;
-            this.USD_sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.USD_sell.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (11)))), ((int) (((byte) (100)))), ((int) (((byte) (103)))));
+            this.USD_sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.USD_sell.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
             this.USD_sell.Location = new System.Drawing.Point(272, 52);
             this.USD_sell.Name = "USD_sell";
-            this.USD_sell.Size = new System.Drawing.Size(92, 32);
+            this.USD_sell.Size = new System.Drawing.Size(91, 32);
             this.USD_sell.TabIndex = 19;
             this.USD_sell.Text = "77,81";
             // 
             // pictureBox8
             // 
-            this.pictureBox8.Image = ((System.Drawing.Image) (resources.GetObject("pictureBox8.Image")));
+            this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
             this.pictureBox8.Location = new System.Drawing.Point(55, 265);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(34, 32);
@@ -815,7 +836,7 @@
             // 
             // pictureBox7
             // 
-            this.pictureBox7.Image = ((System.Drawing.Image) (resources.GetObject("pictureBox7.Image")));
+            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
             this.pictureBox7.Location = new System.Drawing.Point(55, 159);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(34, 32);
@@ -825,7 +846,7 @@
             // 
             // pictureBox6
             // 
-            this.pictureBox6.Image = ((System.Drawing.Image) (resources.GetObject("pictureBox6.Image")));
+            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
             this.pictureBox6.Location = new System.Drawing.Point(55, 213);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(34, 32);
@@ -835,7 +856,7 @@
             // 
             // pictureBox5
             // 
-            this.pictureBox5.Image = ((System.Drawing.Image) (resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
             this.pictureBox5.Location = new System.Drawing.Point(55, 105);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(34, 32);
@@ -845,7 +866,7 @@
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Image = ((System.Drawing.Image) (resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
             this.pictureBox4.Location = new System.Drawing.Point(55, 52);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(34, 32);
@@ -856,55 +877,55 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (11)))), ((int) (((byte) (100)))), ((int) (((byte) (103)))));
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
             this.label13.Location = new System.Drawing.Point(97, 265);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(70, 32);
+            this.label13.Size = new System.Drawing.Size(69, 32);
             this.label13.TabIndex = 13;
             this.label13.Text = "JPY";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (11)))), ((int) (((byte) (100)))), ((int) (((byte) (103)))));
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
             this.label12.Location = new System.Drawing.Point(97, 213);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(75, 32);
+            this.label12.Size = new System.Drawing.Size(74, 32);
             this.label12.TabIndex = 12;
             this.label12.Text = "CHF";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (11)))), ((int) (((byte) (100)))), ((int) (((byte) (103)))));
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
             this.label11.Location = new System.Drawing.Point(94, 159);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(78, 32);
+            this.label11.Size = new System.Drawing.Size(77, 32);
             this.label11.TabIndex = 11;
             this.label11.Text = "GBP";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (11)))), ((int) (((byte) (100)))), ((int) (((byte) (103)))));
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
             this.label10.Location = new System.Drawing.Point(95, 105);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(77, 32);
+            this.label10.Size = new System.Drawing.Size(76, 32);
             this.label10.TabIndex = 10;
             this.label10.Text = "EUR";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (11)))), ((int) (((byte) (100)))), ((int) (((byte) (103)))));
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
             this.label8.Location = new System.Drawing.Point(95, 52);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(77, 32);
+            this.label8.Size = new System.Drawing.Size(76, 32);
             this.label8.TabIndex = 9;
             this.label8.Text = "USD";
             // 
@@ -912,8 +933,8 @@
             // 
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.SystemColors.Control;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (11)))), ((int) (((byte) (100)))), ((int) (((byte) (103)))));
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
             this.label9.Location = new System.Drawing.Point(68, 7);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(82, 24);
@@ -937,11 +958,11 @@
             // label66
             // 
             this.label66.AutoSize = true;
-            this.label66.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.label66.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (11)))), ((int) (((byte) (100)))), ((int) (((byte) (103)))));
+            this.label66.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label66.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
             this.label66.Location = new System.Drawing.Point(29, 8);
             this.label66.Name = "label66";
-            this.label66.Size = new System.Drawing.Size(138, 32);
+            this.label66.Size = new System.Drawing.Size(137, 32);
             this.label66.TabIndex = 1;
             this.label66.Text = "Клиенты";
             // 
@@ -951,8 +972,8 @@
             this.exitButton_clients.Cursor = System.Windows.Forms.Cursors.Hand;
             this.exitButton_clients.FlatAppearance.BorderSize = 0;
             this.exitButton_clients.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.exitButton_clients.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.exitButton_clients.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (11)))), ((int) (((byte) (100)))), ((int) (((byte) (103)))));
+            this.exitButton_clients.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.exitButton_clients.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
             this.exitButton_clients.Location = new System.Drawing.Point(725, 0);
             this.exitButton_clients.Name = "exitButton_clients";
             this.exitButton_clients.Size = new System.Drawing.Size(40, 40);
@@ -974,7 +995,7 @@
             // 
             // pictureBox14
             // 
-            this.pictureBox14.Image = ((System.Drawing.Image) (resources.GetObject("pictureBox14.Image")));
+            this.pictureBox14.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox14.Image")));
             this.pictureBox14.InitialImage = null;
             this.pictureBox14.Location = new System.Drawing.Point(133, 25);
             this.pictureBox14.Name = "pictureBox14";
@@ -986,11 +1007,11 @@
             // label58
             // 
             this.label58.AutoSize = true;
-            this.label58.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.label58.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (11)))), ((int) (((byte) (100)))), ((int) (((byte) (103)))));
+            this.label58.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label58.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
             this.label58.Location = new System.Drawing.Point(54, 59);
             this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(32, 32);
+            this.label58.Size = new System.Drawing.Size(31, 32);
             this.label58.TabIndex = 7;
             this.label58.Text = "5";
             // 
@@ -998,8 +1019,8 @@
             // 
             this.label59.AutoSize = true;
             this.label59.BackColor = System.Drawing.SystemColors.Control;
-            this.label59.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.label59.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (11)))), ((int) (((byte) (100)))), ((int) (((byte) (103)))));
+            this.label59.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label59.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
             this.label59.Location = new System.Drawing.Point(9, -3);
             this.label59.Name = "label59";
             this.label59.Size = new System.Drawing.Size(246, 25);
@@ -1019,8 +1040,8 @@
             // 
             this.label35.AutoSize = true;
             this.label35.BackColor = System.Drawing.SystemColors.Control;
-            this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.label35.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (11)))), ((int) (((byte) (100)))), ((int) (((byte) (103)))));
+            this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label35.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
             this.label35.Location = new System.Drawing.Point(57, 282);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(184, 31);
@@ -1031,9 +1052,9 @@
             // 
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (51)))), ((int) (((byte) (197)))), ((int) (((byte) (254)))));
-            this.button1.Image = ((System.Drawing.Image) (resources.GetObject("button1.Image")));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(197)))), ((int)(((byte)(254)))));
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.Location = new System.Drawing.Point(26, 88);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(308, 142);
@@ -1059,11 +1080,11 @@
             // label39
             // 
             this.label39.AutoSize = true;
-            this.label39.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.label39.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (11)))), ((int) (((byte) (100)))), ((int) (((byte) (103)))));
+            this.label39.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label39.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
             this.label39.Location = new System.Drawing.Point(29, 8);
             this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(110, 32);
+            this.label39.Size = new System.Drawing.Size(109, 32);
             this.label39.TabIndex = 1;
             this.label39.Text = "Обмен";
             // 
@@ -1073,8 +1094,8 @@
             this.exitButton_exchange.Cursor = System.Windows.Forms.Cursors.Hand;
             this.exitButton_exchange.FlatAppearance.BorderSize = 0;
             this.exitButton_exchange.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.exitButton_exchange.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.exitButton_exchange.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (11)))), ((int) (((byte) (100)))), ((int) (((byte) (103)))));
+            this.exitButton_exchange.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.exitButton_exchange.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
             this.exitButton_exchange.Location = new System.Drawing.Point(725, 0);
             this.exitButton_exchange.Name = "exitButton_exchange";
             this.exitButton_exchange.Size = new System.Drawing.Size(40, 40);
@@ -1085,7 +1106,7 @@
             // 
             // pictureBox10
             // 
-            this.pictureBox10.Image = ((System.Drawing.Image) (resources.GetObject("pictureBox10.Image")));
+            this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
             this.pictureBox10.Location = new System.Drawing.Point(26, 328);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(687, 185);
@@ -1096,8 +1117,8 @@
             // 
             this.label36.AutoSize = true;
             this.label36.BackColor = System.Drawing.SystemColors.Control;
-            this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.label36.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (11)))), ((int) (((byte) (100)))), ((int) (((byte) (103)))));
+            this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label36.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
             this.label36.Location = new System.Drawing.Point(57, 282);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(342, 31);
@@ -1108,9 +1129,9 @@
             // 
             this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (51)))), ((int) (((byte) (197)))), ((int) (((byte) (254)))));
-            this.button3.Image = ((System.Drawing.Image) (resources.GetObject("button3.Image")));
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(197)))), ((int)(((byte)(254)))));
+            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
             this.button3.Location = new System.Drawing.Point(178, 85);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(411, 142);
@@ -1135,11 +1156,11 @@
             // label38
             // 
             this.label38.AutoSize = true;
-            this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.label38.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (11)))), ((int) (((byte) (100)))), ((int) (((byte) (103)))));
+            this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label38.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
             this.label38.Location = new System.Drawing.Point(29, 8);
             this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(100, 32);
+            this.label38.Size = new System.Drawing.Size(99, 32);
             this.label38.TabIndex = 1;
             this.label38.Text = "Поиск";
             // 
@@ -1149,8 +1170,8 @@
             this.exitButton_search.Cursor = System.Windows.Forms.Cursors.Hand;
             this.exitButton_search.FlatAppearance.BorderSize = 0;
             this.exitButton_search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.exitButton_search.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.exitButton_search.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (11)))), ((int) (((byte) (100)))), ((int) (((byte) (103)))));
+            this.exitButton_search.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.exitButton_search.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
             this.exitButton_search.Location = new System.Drawing.Point(725, 0);
             this.exitButton_search.Name = "exitButton_search";
             this.exitButton_search.Size = new System.Drawing.Size(40, 40);
@@ -1161,7 +1182,7 @@
             // 
             // pictureBox11
             // 
-            this.pictureBox11.Image = ((System.Drawing.Image) (resources.GetObject("pictureBox11.Image")));
+            this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
             this.pictureBox11.Location = new System.Drawing.Point(26, 328);
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.Size = new System.Drawing.Size(687, 185);
@@ -1172,8 +1193,8 @@
             // 
             this.label37.AutoSize = true;
             this.label37.BackColor = System.Drawing.SystemColors.Control;
-            this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.label37.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (11)))), ((int) (((byte) (100)))), ((int) (((byte) (103)))));
+            this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label37.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
             this.label37.Location = new System.Drawing.Point(57, 282);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(274, 31);
@@ -1182,11 +1203,13 @@
             // 
             // textBox1
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles) ((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (158)))), ((int) (((byte) (161)))), ((int) (((byte) (176)))));
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (200)))), ((int) (((byte) (200)))), ((int) (((byte) (200)))));
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
             this.textBox1.Location = new System.Drawing.Point(26, 74);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
@@ -1197,7 +1220,7 @@
             // searchButn
             // 
             this.searchButn.BackColor = System.Drawing.Color.Transparent;
-            this.searchButn.BackgroundImage = ((System.Drawing.Image) (resources.GetObject("searchButn.BackgroundImage")));
+            this.searchButn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("searchButn.BackgroundImage")));
             this.searchButn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.searchButn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.searchButn.FlatAppearance.BorderSize = 0;
@@ -1211,7 +1234,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
+            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.checkBox1.Location = new System.Drawing.Point(28, 140);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(110, 29);
@@ -1222,7 +1245,7 @@
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
-            this.checkBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
+            this.checkBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.checkBox2.Location = new System.Drawing.Point(425, 140);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(118, 29);
@@ -1233,7 +1256,7 @@
             // checkBox3
             // 
             this.checkBox3.AutoSize = true;
-            this.checkBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
+            this.checkBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.checkBox3.Location = new System.Drawing.Point(144, 140);
             this.checkBox3.Name = "checkBox3";
             this.checkBox3.Size = new System.Drawing.Size(275, 29);
@@ -1246,7 +1269,7 @@
             this.checkBox4.AutoSize = true;
             this.checkBox4.Checked = true;
             this.checkBox4.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
+            this.checkBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.checkBox4.Location = new System.Drawing.Point(549, 140);
             this.checkBox4.Name = "checkBox4";
             this.checkBox4.Size = new System.Drawing.Size(171, 29);
@@ -1275,11 +1298,11 @@
             // label45
             // 
             this.label45.AutoSize = true;
-            this.label45.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.label45.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (11)))), ((int) (((byte) (100)))), ((int) (((byte) (103)))));
+            this.label45.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label45.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
             this.label45.Location = new System.Drawing.Point(29, 8);
             this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(120, 32);
+            this.label45.Size = new System.Drawing.Size(119, 32);
             this.label45.TabIndex = 1;
             this.label45.Text = "Отчёты";
             // 
@@ -1289,8 +1312,8 @@
             this.exitButton_Otchet.Cursor = System.Windows.Forms.Cursors.Hand;
             this.exitButton_Otchet.FlatAppearance.BorderSize = 0;
             this.exitButton_Otchet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.exitButton_Otchet.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.exitButton_Otchet.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (11)))), ((int) (((byte) (100)))), ((int) (((byte) (103)))));
+            this.exitButton_Otchet.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.exitButton_Otchet.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
             this.exitButton_Otchet.Location = new System.Drawing.Point(725, 0);
             this.exitButton_Otchet.Name = "exitButton_Otchet";
             this.exitButton_Otchet.Size = new System.Drawing.Size(40, 40);
@@ -1312,7 +1335,7 @@
             // 
             // pictureBox13
             // 
-            this.pictureBox13.Image = ((System.Drawing.Image) (resources.GetObject("pictureBox13.Image")));
+            this.pictureBox13.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox13.Image")));
             this.pictureBox13.InitialImage = null;
             this.pictureBox13.Location = new System.Drawing.Point(155, 24);
             this.pictureBox13.Name = "pictureBox13";
@@ -1325,11 +1348,11 @@
             // 
             this.label43.AutoSize = true;
             this.label43.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.label43.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (11)))), ((int) (((byte) (100)))), ((int) (((byte) (103)))));
+            this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label43.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
             this.label43.Location = new System.Drawing.Point(66, 59);
             this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(34, 34);
+            this.label43.Size = new System.Drawing.Size(33, 34);
             this.label43.TabIndex = 7;
             this.label43.Text = "0";
             // 
@@ -1337,8 +1360,8 @@
             // 
             this.label44.AutoSize = true;
             this.label44.BackColor = System.Drawing.SystemColors.Control;
-            this.label44.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.label44.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (11)))), ((int) (((byte) (100)))), ((int) (((byte) (103)))));
+            this.label44.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label44.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
             this.label44.Location = new System.Drawing.Point(9, -3);
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(254, 25);
@@ -1349,9 +1372,9 @@
             // 
             this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.button7.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (51)))), ((int) (((byte) (197)))), ((int) (((byte) (254)))));
-            this.button7.Image = ((System.Drawing.Image) (resources.GetObject("button7.Image")));
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(197)))), ((int)(((byte)(254)))));
+            this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
             this.button7.Location = new System.Drawing.Point(34, 70);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(379, 145);
@@ -1366,9 +1389,9 @@
             // 
             this.button8.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.button8.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (51)))), ((int) (((byte) (197)))), ((int) (((byte) (254)))));
-            this.button8.Image = ((System.Drawing.Image) (resources.GetObject("button8.Image")));
+            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(197)))), ((int)(((byte)(254)))));
+            this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
             this.button8.Location = new System.Drawing.Point(34, 251);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(308, 142);
@@ -1382,9 +1405,9 @@
             // 
             this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.button9.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (51)))), ((int) (((byte) (197)))), ((int) (((byte) (254)))));
-            this.button9.Image = ((System.Drawing.Image) (resources.GetObject("button9.Image")));
+            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(197)))), ((int)(((byte)(254)))));
+            this.button9.Image = ((System.Drawing.Image)(resources.GetObject("button9.Image")));
             this.button9.Location = new System.Drawing.Point(395, 251);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(325, 142);
@@ -1411,11 +1434,11 @@
             // label41
             // 
             this.label41.AutoSize = true;
-            this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.label41.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (11)))), ((int) (((byte) (100)))), ((int) (((byte) (103)))));
+            this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label41.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
             this.label41.Location = new System.Drawing.Point(29, 8);
             this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(57, 32);
+            this.label41.Size = new System.Drawing.Size(56, 32);
             this.label41.TabIndex = 1;
             this.label41.Text = "БД";
             // 
@@ -1425,8 +1448,8 @@
             this.exitButton_BD.Cursor = System.Windows.Forms.Cursors.Hand;
             this.exitButton_BD.FlatAppearance.BorderSize = 0;
             this.exitButton_BD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.exitButton_BD.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.exitButton_BD.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (11)))), ((int) (((byte) (100)))), ((int) (((byte) (103)))));
+            this.exitButton_BD.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.exitButton_BD.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
             this.exitButton_BD.Location = new System.Drawing.Point(725, 0);
             this.exitButton_BD.Name = "exitButton_BD";
             this.exitButton_BD.Size = new System.Drawing.Size(40, 40);
@@ -1439,8 +1462,8 @@
             // 
             this.label40.AutoSize = true;
             this.label40.BackColor = System.Drawing.SystemColors.Control;
-            this.label40.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.label40.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (11)))), ((int) (((byte) (100)))), ((int) (((byte) (103)))));
+            this.label40.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label40.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
             this.label40.Location = new System.Drawing.Point(57, 282);
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(371, 31);
@@ -1450,7 +1473,7 @@
             // CourseRadioBtn
             // 
             this.CourseRadioBtn.AutoSize = true;
-            this.CourseRadioBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
+            this.CourseRadioBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.CourseRadioBtn.Location = new System.Drawing.Point(59, 72);
             this.CourseRadioBtn.Name = "CourseRadioBtn";
             this.CourseRadioBtn.Size = new System.Drawing.Size(156, 29);
@@ -1462,7 +1485,7 @@
             // UsersRadioBtn
             // 
             this.UsersRadioBtn.AutoSize = true;
-            this.UsersRadioBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
+            this.UsersRadioBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.UsersRadioBtn.Location = new System.Drawing.Point(373, 72);
             this.UsersRadioBtn.Name = "UsersRadioBtn";
             this.UsersRadioBtn.Size = new System.Drawing.Size(165, 29);
@@ -1474,7 +1497,7 @@
             // OperationsRadioBtn
             // 
             this.OperationsRadioBtn.AutoSize = true;
-            this.OperationsRadioBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
+            this.OperationsRadioBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.OperationsRadioBtn.Location = new System.Drawing.Point(234, 72);
             this.OperationsRadioBtn.Name = "OperationsRadioBtn";
             this.OperationsRadioBtn.Size = new System.Drawing.Size(122, 29);
@@ -1486,7 +1509,7 @@
             // ClientsRadioBtn
             // 
             this.ClientsRadioBtn.AutoSize = true;
-            this.ClientsRadioBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
+            this.ClientsRadioBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ClientsRadioBtn.Location = new System.Drawing.Point(551, 71);
             this.ClientsRadioBtn.Name = "ClientsRadioBtn";
             this.ClientsRadioBtn.Size = new System.Drawing.Size(113, 29);
@@ -1529,9 +1552,9 @@
             this.saveBD.Cursor = System.Windows.Forms.Cursors.Hand;
             this.saveBD.FlatAppearance.BorderSize = 0;
             this.saveBD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.saveBD.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.saveBD.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (11)))), ((int) (((byte) (100)))), ((int) (((byte) (103)))));
-            this.saveBD.Image = ((System.Drawing.Image) (resources.GetObject("saveBD.Image")));
+            this.saveBD.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.saveBD.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.saveBD.Image = ((System.Drawing.Image)(resources.GetObject("saveBD.Image")));
             this.saveBD.Location = new System.Drawing.Point(693, 327);
             this.saveBD.Name = "saveBD";
             this.saveBD.Size = new System.Drawing.Size(60, 60);
@@ -1539,65 +1562,176 @@
             this.saveBD.UseVisualStyleBackColor = false;
             this.saveBD.Click += new System.EventHandler(this.saveBD_Click);
             // 
+            // sellUSD_edit
+            // 
+            this.sellUSD_edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
+            this.sellUSD_edit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.sellUSD_edit.Location = new System.Drawing.Point(272, 52);
+            this.sellUSD_edit.Name = "sellUSD_edit";
+            this.sellUSD_edit.Size = new System.Drawing.Size(108, 39);
+            this.sellUSD_edit.TabIndex = 11;
+            this.sellUSD_edit.Visible = false;
+            this.sellUSD_edit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.sellUSD_edit_KeyPress);
+            // 
+            // buyUSD_edit
+            // 
+            this.buyUSD_edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
+            this.buyUSD_edit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.buyUSD_edit.Location = new System.Drawing.Point(472, 52);
+            this.buyUSD_edit.Name = "buyUSD_edit";
+            this.buyUSD_edit.Size = new System.Drawing.Size(108, 39);
+            this.buyUSD_edit.TabIndex = 12;
+            this.buyUSD_edit.Visible = false;
+            this.buyUSD_edit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.buyUSD_edit_KeyPress);
+            // 
+            // sellJPY_edit
+            // 
+            this.sellJPY_edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
+            this.sellJPY_edit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.sellJPY_edit.Location = new System.Drawing.Point(273, 265);
+            this.sellJPY_edit.Name = "sellJPY_edit";
+            this.sellJPY_edit.Size = new System.Drawing.Size(108, 39);
+            this.sellJPY_edit.TabIndex = 13;
+            this.sellJPY_edit.Visible = false;
+            this.sellJPY_edit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.sellJPY_edit_KeyPress);
+            // 
+            // buyJPY_edit
+            // 
+            this.buyJPY_edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
+            this.buyJPY_edit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.buyJPY_edit.Location = new System.Drawing.Point(472, 265);
+            this.buyJPY_edit.Name = "buyJPY_edit";
+            this.buyJPY_edit.Size = new System.Drawing.Size(108, 39);
+            this.buyJPY_edit.TabIndex = 14;
+            this.buyJPY_edit.Visible = false;
+            this.buyJPY_edit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.buyJPY_edit_KeyPress);
+            // 
+            // sellCHF_edit
+            // 
+            this.sellCHF_edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
+            this.sellCHF_edit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.sellCHF_edit.Location = new System.Drawing.Point(273, 213);
+            this.sellCHF_edit.Name = "sellCHF_edit";
+            this.sellCHF_edit.Size = new System.Drawing.Size(108, 39);
+            this.sellCHF_edit.TabIndex = 15;
+            this.sellCHF_edit.Visible = false;
+            this.sellCHF_edit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.sellCHF_edit_KeyPress);
+            // 
+            // buyCHF_edit
+            // 
+            this.buyCHF_edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
+            this.buyCHF_edit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.buyCHF_edit.Location = new System.Drawing.Point(472, 213);
+            this.buyCHF_edit.Name = "buyCHF_edit";
+            this.buyCHF_edit.Size = new System.Drawing.Size(108, 39);
+            this.buyCHF_edit.TabIndex = 16;
+            this.buyCHF_edit.Visible = false;
+            this.buyCHF_edit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.buyCHF_edit_KeyPress);
+            // 
+            // buyGBP_edit
+            // 
+            this.buyGBP_edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
+            this.buyGBP_edit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.buyGBP_edit.Location = new System.Drawing.Point(472, 159);
+            this.buyGBP_edit.Name = "buyGBP_edit";
+            this.buyGBP_edit.Size = new System.Drawing.Size(108, 39);
+            this.buyGBP_edit.TabIndex = 17;
+            this.buyGBP_edit.Visible = false;
+            this.buyGBP_edit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.buyGBP_edit_KeyPress);
+            // 
+            // sellGBP_edit
+            // 
+            this.sellGBP_edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
+            this.sellGBP_edit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.sellGBP_edit.Location = new System.Drawing.Point(272, 159);
+            this.sellGBP_edit.Name = "sellGBP_edit";
+            this.sellGBP_edit.Size = new System.Drawing.Size(108, 39);
+            this.sellGBP_edit.TabIndex = 18;
+            this.sellGBP_edit.Visible = false;
+            this.sellGBP_edit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.sellGBP_edit_KeyPress);
+            // 
+            // buyEUR_edit
+            // 
+            this.buyEUR_edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
+            this.buyEUR_edit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.buyEUR_edit.Location = new System.Drawing.Point(472, 105);
+            this.buyEUR_edit.Name = "buyEUR_edit";
+            this.buyEUR_edit.Size = new System.Drawing.Size(108, 39);
+            this.buyEUR_edit.TabIndex = 19;
+            this.buyEUR_edit.Visible = false;
+            this.buyEUR_edit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.buyEUR_edit_KeyPress);
+            // 
+            // sellEUR_edit
+            // 
+            this.sellEUR_edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
+            this.sellEUR_edit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.sellEUR_edit.Location = new System.Drawing.Point(273, 105);
+            this.sellEUR_edit.Name = "sellEUR_edit";
+            this.sellEUR_edit.Size = new System.Drawing.Size(108, 39);
+            this.sellEUR_edit.TabIndex = 20;
+            this.sellEUR_edit.Visible = false;
+            this.sellEUR_edit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.sellEUR_edit_KeyPress);
+            // 
             // AdminWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(951, 577);
-            this.Controls.Add(this.bdPanel);
             this.Controls.Add(this.mainPanel);
+            this.Controls.Add(this.bdPanel);
             this.Controls.Add(this.otchetPanel);
             this.Controls.Add(this.searchPanel);
             this.Controls.Add(this.exchangePanel);
             this.Controls.Add(this.clientsPanel);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Icon = ((System.Drawing.Icon) (resources.GetObject("$this.Icon")));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AdminWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Обменный пункт-Администратор";
             this.Load += new System.EventHandler(this.AdminWindow_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureUser)).EndInit();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureUser)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.BalancePanel.ResumeLayout(false);
             this.BalancePanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.pnael4.ResumeLayout(false);
             this.pnael4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.RatePanel.ResumeLayout(false);
             this.RatePanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.mainPanel.ResumeLayout(false);
             this.mainPanel.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBox14)).EndInit();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             this.clientsPanel.ResumeLayout(false);
             this.clientsPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBox10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             this.exchangePanel.ResumeLayout(false);
             this.exchangePanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBox11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             this.searchPanel.ResumeLayout(false);
             this.searchPanel.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBox13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
             this.otchetPanel.ResumeLayout(false);
             this.otchetPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.bdPanel.ResumeLayout(false);
             this.bdPanel.PerformLayout();
             this.ResumeLayout(false);
+
         }
 
         private System.Windows.Forms.Panel BalancePanel;
@@ -1607,7 +1741,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button valuesEdit_btn;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
@@ -1643,10 +1777,10 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label GBP_value;
+        private System.Windows.Forms.Label CHF_value;
+        private System.Windows.Forms.Label JPY_value;
+        private System.Windows.Forms.Label USD_value;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label31;
@@ -1664,10 +1798,10 @@
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.Label label44;
         private System.Windows.Forms.Label label45;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label EUR_value;
         private System.Windows.Forms.Label label58;
         private System.Windows.Forms.Label label59;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label ClientsNum;
         private System.Windows.Forms.Label label66;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
@@ -1709,5 +1843,16 @@
         private System.Windows.Forms.RadioButton UsersRadioBtn;
 
         #endregion
+
+        private System.Windows.Forms.TextBox buyUSD_edit;
+        private System.Windows.Forms.TextBox buyEUR_edit;
+        private System.Windows.Forms.TextBox sellUSD_edit;
+        private System.Windows.Forms.TextBox sellEUR_edit;
+        private System.Windows.Forms.TextBox sellGBP_edit;
+        private System.Windows.Forms.TextBox buyGBP_edit;
+        private System.Windows.Forms.TextBox sellCHF_edit;
+        private System.Windows.Forms.TextBox buyCHF_edit;
+        private System.Windows.Forms.TextBox sellJPY_edit;
+        private System.Windows.Forms.TextBox buyJPY_edit;
     }
 }
