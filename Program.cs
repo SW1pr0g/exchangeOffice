@@ -16,7 +16,7 @@ namespace AIS_exchangeOffice
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AdminWindow());
+            Application.Run(new AuthForm());
         }
     }
 }

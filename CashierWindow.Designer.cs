@@ -1589,6 +1589,7 @@
             this.selectValueBox.TabIndex = 2;
             this.selectValueBox.Text = "Выберите валюту";
             this.selectValueBox.SelectedIndexChanged += new System.EventHandler(this.selectSaledValueBox_SelectedIndexChanged);
+            this.selectValueBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.selectClientBox_KeyPress);
             // 
             // panel16
             // 
@@ -1666,8 +1667,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(951, 577);
-            this.Controls.Add(this.searchPanel);
             this.Controls.Add(this.currencies_exchangePanel);
+            this.Controls.Add(this.searchPanel);
             this.Controls.Add(this.exchangePanel);
             this.Controls.Add(this.clientsPanel);
             this.Controls.Add(this.mainPanel);

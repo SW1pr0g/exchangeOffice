@@ -81,6 +81,8 @@ namespace AIS_exchangeOffice
                 if (pass == cmd.ExecuteScalar().ToString())
                 {
                     MessageBox.Show("Авторизация успешна");
+                    AdminWindow.admin_login = login;
+                    AdminWindow.admin_password = pass;
                     sql = "SELECT type FROM users WHERE login = '" + login + "'";
                     cmd = new MySqlCommand(sql, conn);                    
                     string data = cmd.ExecuteScalar().ToString();
@@ -180,7 +182,7 @@ namespace AIS_exchangeOffice
             string pathBD = Directory.GetCurrentDirectory();
             pathBD = pathBD + "\\bd\\";
             string pathReserve = Directory.GetCurrentDirectory() + "\\bd_reserveCopy\\reserve_bd.zip";
-            ZipFile.CreateFromDirectory(pathBD, pathReserve);                     
+            ZipFile.CreateFromDirectory(pathBD, pathReserve);
         }
     }
 }

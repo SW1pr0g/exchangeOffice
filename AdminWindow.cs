@@ -19,6 +19,7 @@ namespace AIS_exchangeOffice
         //string connStr = "server=localhost;user=root;database=aisdatabd;password=root123;";
         //MySqlConnection conn = new MySqlConnection(connStr);
         public bool valuesEdited = false;
+        public static string admin_login = "", admin_password = ""; 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         
         private static extern IntPtr CreateRoundRectRgn(int nLeftRect, int nTopRect, int nRightRect, int nBottomRect, int nWidthEllipse, int nHeightEllipse);
@@ -931,7 +932,7 @@ namespace AIS_exchangeOffice
             }
             else if (valuesEdited == true)
             {
-                if (sellUSD_edit.Text == "" || buyUSD_edit.Text == "" || sellEUR_edit.Text == "" || buyEUR_edit.Text == "" || sellGBP_edit.Text == "" || buyGBP_edit.Text == "" || sellCHF_edit.Text == "" || buyCHF_edit.Text == "" || sellJPY_edit.Text == "" || buyJPY_edit.Text == "" || sellUSD_edit.Text.Count(chr => chr == '.') > 1 || buyUSD_edit.Text.Count(chr => chr == '.') > 1 || sellEUR_edit.Text.Count(chr => chr == '.') > 1 || buyEUR_edit.Text.Count(chr => chr == '.') > 1 || sellGBP_edit.Text.Count(chr => chr == '.') > 1 || buyGBP_edit.Text.Count(chr => chr == '.') > 1 || sellCHF_edit.Text.Count(chr => chr == '.') > 1 || buyCHF_edit.Text.Count(chr => chr == '.') > 1 || sellJPY_edit.Text.Count(chr => chr == '.') > 1 || buyJPY_edit.Text.Count(chr => chr == '.') > 1)
+                if (sellUSD_edit.Text == "" || buyUSD_edit.Text == "" || sellEUR_edit.Text == "" || buyEUR_edit.Text == "" || sellGBP_edit.Text == "" || buyGBP_edit.Text == "" || sellCHF_edit.Text == "" || buyCHF_edit.Text == "" || sellJPY_edit.Text == "" || buyJPY_edit.Text == "" || sellUSD_edit.Text.Count(chr => chr == '.') > 1 || buyUSD_edit.Text.Count(chr => chr == '.') > 1 || sellEUR_edit.Text.Count(chr => chr == '.') > 1 || buyEUR_edit.Text.Count(chr => chr == '.') > 1 || sellGBP_edit.Text.Count(chr => chr == '.') > 1 || buyGBP_edit.Text.Count(chr => chr == '.') > 1 || sellCHF_edit.Text.Count(chr => chr == '.') > 1 || buyCHF_edit.Text.Count(chr => chr == '.') > 1 || sellJPY_edit.Text.Count(chr => chr == '.') > 1 || buyJPY_edit.Text.Count(chr => chr == '.') > 1 || sellUSD_edit.Text[0] == '.' || buyUSD_edit.Text[0] == '.' || sellEUR_edit.Text[0] == '.' || buyEUR_edit.Text[0] == '.' || sellGBP_edit.Text[0] == '.' || buyGBP_edit.Text[0] == '.' || sellCHF_edit.Text[0] == '.' || buyCHF_edit.Text[0] == '.' || sellJPY_edit.Text[0] == '.' || buyJPY_edit.Text[0] == '.')
                 {
                     MessageBox.Show("Ошибка! Заполните все поля изменения валюты или введите корректные значения в эти поля.");
                     return;
@@ -943,8 +944,27 @@ namespace AIS_exchangeOffice
                 MySqlCommand command = new MySqlCommand();
 
                 //вставить здесь редактирование БД
+                command.Connection = conn;
+                command.Connection.Open();
+                string commandString = "UPDATE currencycourse SET summsale = " + sellUSD_edit.Text + ", summpurchase = " + buyUSD_edit.Text + " WHERE name = 'USD'";
+                command = new MySqlCommand(commandString, conn);
+                command.ExecuteNonQuery();
+                commandString = "UPDATE currencycourse SET summsale = " + sellEUR_edit.Text + ", summpurchase = " + buyEUR_edit.Text + " WHERE name = 'EUR'";
+                command = new MySqlCommand(commandString, conn);
+                command.ExecuteNonQuery();
+                commandString = "UPDATE currencycourse SET summsale = " + sellGBP_edit.Text + ", summpurchase = " + buyGBP_edit.Text + " WHERE name = 'GBP'";
+                command = new MySqlCommand(commandString, conn);
+                command.ExecuteNonQuery();
+                commandString = "UPDATE currencycourse SET summsale = " + sellCHF_edit.Text + ", summpurchase = " + buyCHF_edit.Text + " WHERE name = 'CHF'";
+                command = new MySqlCommand(commandString, conn);
+                command.ExecuteNonQuery();
+                commandString = "UPDATE currencycourse SET summsale = " + sellJPY_edit.Text + ", summpurchase = " + buyJPY_edit.Text + " WHERE name = 'JPY'";
+                command = new MySqlCommand(commandString, conn);
+                command.ExecuteNonQuery();
 
-                string commandString = "SELECT summsale, summpurchase FROM currencycourse WHERE name = 'USD';";
+                command.Connection.Close();
+
+                commandString = "SELECT summsale, summpurchase FROM currencycourse WHERE name = 'USD';";
                 command.CommandText = commandString;
                 command.Connection = conn;
                 MySqlDataReader reader;
@@ -1194,6 +1214,262 @@ namespace AIS_exchangeOffice
         }
 
         private void sellJPY_edit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 8 || e.KeyChar == 127 || e.KeyChar == 46)
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                if (Char.IsDigit(e.KeyChar)) return;
+                else
+                    e.Handled = true;
+            }
+        }
+
+        private void print_currencies_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Вывести на печать данные о текущем курсе валют?", "Печать текущего курса валют", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                var helper = new classes.wordHelper("wordDocs/currencycourse_print.docx");
+                var items = new Dictionary<string, string>
+                {
+                    { "_<date>_", DateTime.Now.ToString().Substring(0, 10) },
+                    { "_<date_update>_", DateTime.Now.ToString() },
+                    { "_<USD_sell>_", USD_sell.Text },
+                    { "_<USD_buy>_", USD_buy.Text },
+                    { "_<EUR_sell>_", EUR_sell.Text },
+                    { "_<EUR_buy>_", EUR_buy.Text },
+                    { "_<GBP_sell>_", GBP_sell.Text },
+                    { "_<GBP_buy>_", GBP_buy.Text },
+                    { "_<CHF_sell>_", CHF_sell.Text },
+                    { "_<CHF_buy>_", CHF_buy.Text },
+                    { "_<JPY_sell>_", JPY_sell.Text },
+                    { "_<JPY_buy>_", JPY_buy.Text },
+                };
+                MessageBox.Show("Сейчас откроется документ на печать. Документ находится в корневой папке программы(AIS_exchangeOffice/wordDocs)");
+                helper.Process(items);
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                //do nothing
+            }
+        }
+
+        private void goBackValuesBtn_Click(object sender, EventArgs e)
+        {
+            mainPanel.Visible = true;
+            add_valuesPanel.Visible = false;
+            bdPanel.Visible = false;
+            otchetPanel.Visible = false;
+            searchPanel.Visible = false;
+            exchangePanel.Visible = false;
+            clientsPanel.Visible = false;
+        }
+
+        private void add_valuesBtn_Click(object sender, EventArgs e)
+        {
+            mainPanel.Visible = false;
+            add_valuesPanel.Visible = true;
+            bdPanel.Visible = false;
+            otchetPanel.Visible = false;
+            searchPanel.Visible = false;
+            exchangePanel.Visible = false;
+            clientsPanel.Visible = false;
+        }
+
+        private void pictureBox12_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (passBox.Text == "Введите ваш пароль")
+            {
+                //
+            }
+            else
+            {
+                passBox.UseSystemPasswordChar = false;
+            }            
+        }
+
+        private void pictureBox12_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (passBox.Text == "Введите ваш пароль")
+            {
+                //
+            }
+            else
+            {
+                passBox.UseSystemPasswordChar = true;
+            }
+        }
+
+        private void passBox_Enter(object sender, EventArgs e)
+        {
+            if (passBox.Text == "Введите ваш пароль")
+            {
+                passBox.Text = "";
+                passBox.ForeColor = Color.FromArgb(11, 100, 103);
+                passBox.UseSystemPasswordChar = true;
+            }
+        }
+
+        private void passBox_Leave(object sender, EventArgs e)
+        {
+            if (passBox.Text == "")
+            {
+                passBox.Text = "Введите ваш пароль";
+                passBox.ForeColor = Color.Silver;
+                passBox.UseSystemPasswordChar = false;
+            }
+        }
+
+        private void quantityBox_Enter(object sender, EventArgs e)
+        {
+            if (quantityBox.Text == "Введите количество валюты")
+            {
+                quantityBox.ForeColor = Color.FromArgb(11, 100, 103);                
+                quantityBox.Text = "";
+            }
+        }
+
+        private void quantityBox_Leave(object sender, EventArgs e)
+        {
+            if (quantityBox.Text == "")
+            {
+                quantityBox.ForeColor = Color.Silver;
+                quantityBox.Text = "Введите количество валюты";
+            }
+        }
+
+        private void add_valuesPanel_VisibleChanged(object sender, EventArgs e)
+        {
+            name_admin.Text = NameAdmin.Text;
+            login_admin.Text = "Ваш логин: " + admin_login;
+        }
+
+        private void exchangedBtn_Click(object sender, EventArgs e)
+        {
+            if (passBox.Text == "" || passBox.Text == "Введите ваш пароль")
+            {
+                MessageBox.Show("Ошибка! Пароль не введён.");
+                return;
+            }
+            else if (selectValueBox.Text == "Выберите валюту для заказа")
+            {
+                MessageBox.Show("Ошибка! Валюта для заказа не выбрана.");
+                return;
+            }
+            else if (quantityBox.Text == "Введите количество валюты")
+            {
+                MessageBox.Show("Ошибка! Количество валюты не выбрано.");
+                return;
+            }
+            else if (passBox.Text != admin_password)
+            {
+                MessageBox.Show("Ошибка! Ваш пароль некорректен.");
+                return;
+            }
+            else
+            {
+                string connectionString = "server = localhost; user = root; database = aisdatabd; password = root123;";
+                MySqlConnection connection = new MySqlConnection(connectionString);
+                connection.Open();
+                //string query = "INSERT INTO operations (u_num, surname, name, patronymic, type, value, quantity, summ, date) VALUES (" + u_num + ", '" + FIO[0] + "', '" + FIO[1] + "', '" + FIO[2] + "', '" + selectOperBox.Text + "', '" + selectValueBox.Text[0] + "', " + quantityBox.Text + ", " + summ[1].Replace(',', '.') + ", '" + DateTime.Now.ToString("yyyy-MM-dd H:mm:ss") + "');";
+                string query = "";
+                MySqlCommand command = new MySqlCommand(query, connection);
+                double numValue = 0.0;
+                string nameValue = null;
+                switch (selectValueBox.SelectedIndex)
+                {
+                    case 0:
+                        numValue = Convert.ToDouble(USD_value.Text.Substring(1).Replace('.', ',')) + Convert.ToDouble(quantityBox.Text.Replace('.', ','));
+                        nameValue = "USD";
+                        break;
+                    case 1:
+                        numValue = Convert.ToDouble(EUR_value.Text.Substring(1).Replace('.', ',')) + Convert.ToDouble(quantityBox.Text.Replace('.', ','));
+                        nameValue = "EUR";
+                        break;
+                    case 2:
+                        numValue = Convert.ToDouble(GBP_value.Text.Substring(1).Replace('.', ',')) + Convert.ToDouble(quantityBox.Text.Replace('.', ','));
+                        nameValue = "GBP";
+                        break;
+                    case 3:
+                        numValue = Convert.ToDouble(CHF_value.Text.Substring(1).Replace('.', ',')) + Convert.ToDouble(quantityBox.Text.Replace('.', ','));
+                        nameValue = "CHF";
+                        break;
+                    case 4:
+                        numValue = Convert.ToDouble(JPY_value.Text.Substring(1).Replace('.', ',')) + Convert.ToDouble(quantityBox.Text.Replace('.', ','));
+                        nameValue = "JPY";
+                        break;
+                }
+                query = "UPDATE currency_values SET value = " + Math.Round(numValue, 3).ToString().Replace(',', '.') + " WHERE name = '" + nameValue + "'";
+                command = new MySqlCommand(query, connection);
+                command.ExecuteNonQuery();
+                MessageBox.Show("Заказ успешно совершен!\nСейчас будет произведена печать документа о заказе валюты.");
+                passBox.Text = "Введите ваш пароль";
+                passBox.UseSystemPasswordChar = false;
+                passBox.ForeColor = Color.Silver;
+                selectValueBox.Text = "Выберите валюту для заказа";
+                selectValueBox.ForeColor = Color.Silver;
+                quantityBox.Text = "Введите количество валюты";
+                quantityBox.ForeColor = Color.Silver;
+                add_valuesPanel.Visible = false;
+                mainPanel.Visible = true;
+            }
+        }
+
+        private void selectValueBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            selectValueBox.ForeColor = Color.FromArgb(11, 100, 103);
+        }
+
+        private void selectValueBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar)) { e.Handled = true; } else { e.Handled = true; }
+        }
+
+        private void goBackExchangeBtn_Click(object sender, EventArgs e)
+        {
+            currencies_exchangePanel.Visible = false;
+            exchangePanel.Visible = true;
+        }
+
+        private void currencies_exchangePanel_VisibleChanged(object sender, EventArgs e)
+        {
+            if (currencies_exchangePanel.Visible == true)
+            {
+                //datagrid
+                string connStr = "server=localhost;user=root;database=aisdatabd;password=root123;";
+                MySqlConnection conn = new MySqlConnection(connStr);
+
+                MySqlCommand command = new MySqlCommand();
+                string commandString = "SELECT * FROM clients;";
+                command.CommandText = commandString;
+                command.Connection = conn;
+                MySqlDataReader reader;
+                try
+                {
+                    command.Connection.Open();
+                    reader = command.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        selectClientBox.Items.Add(reader["surname"].ToString() + " " + reader["name"].ToString() + " " + reader["patronymic"].ToString());
+                    }
+                    reader.Close();
+                }
+                catch (MySqlException ex)
+                {
+                    Console.WriteLine("Error: \r\n{0}", ex.ToString());
+                }
+                finally
+                {
+                    command.Connection.Close();
+                }
+            }
+        }
+
+        private void quantityBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 8 || e.KeyChar == 127 || e.KeyChar == 46)
             {

@@ -45,7 +45,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.exit = new System.Windows.Forms.Button();
             this.BalancePanel = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
+            this.add_valuesBtn = new System.Windows.Forms.Button();
             this.USD_value = new System.Windows.Forms.Label();
             this.JPY_value = new System.Windows.Forms.Label();
             this.CHF_value = new System.Windows.Forms.Label();
@@ -58,13 +58,23 @@
             this.ClientsNum = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.RatePanel = new System.Windows.Forms.Panel();
+            this.buyUSD_edit = new System.Windows.Forms.TextBox();
+            this.buyEUR_edit = new System.Windows.Forms.TextBox();
+            this.sellUSD_edit = new System.Windows.Forms.TextBox();
+            this.sellEUR_edit = new System.Windows.Forms.TextBox();
             this.valuesEdit_btn = new System.Windows.Forms.Button();
             this.label34 = new System.Windows.Forms.Label();
+            this.sellGBP_edit = new System.Windows.Forms.TextBox();
             this.label33 = new System.Windows.Forms.Label();
+            this.buyGBP_edit = new System.Windows.Forms.TextBox();
+            this.sellCHF_edit = new System.Windows.Forms.TextBox();
+            this.buyCHF_edit = new System.Windows.Forms.TextBox();
             this.label32 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.sellJPY_edit = new System.Windows.Forms.TextBox();
+            this.buyJPY_edit = new System.Windows.Forms.TextBox();
+            this.print_currencies = new System.Windows.Forms.Button();
             this.JPY_buy = new System.Windows.Forms.Label();
             this.CHF_buy = new System.Windows.Forms.Label();
             this.GBP_buy = new System.Windows.Forms.Label();
@@ -136,16 +146,38 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.bdPanel = new System.Windows.Forms.Panel();
             this.saveBD = new System.Windows.Forms.Button();
-            this.sellUSD_edit = new System.Windows.Forms.TextBox();
-            this.buyUSD_edit = new System.Windows.Forms.TextBox();
-            this.sellJPY_edit = new System.Windows.Forms.TextBox();
-            this.buyJPY_edit = new System.Windows.Forms.TextBox();
-            this.sellCHF_edit = new System.Windows.Forms.TextBox();
-            this.buyCHF_edit = new System.Windows.Forms.TextBox();
-            this.buyGBP_edit = new System.Windows.Forms.TextBox();
-            this.sellGBP_edit = new System.Windows.Forms.TextBox();
-            this.buyEUR_edit = new System.Windows.Forms.TextBox();
-            this.sellEUR_edit = new System.Windows.Forms.TextBox();
+            this.add_valuesPanel = new System.Windows.Forms.Panel();
+            this.goBackValuesBtn = new System.Windows.Forms.Button();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.login_admin = new System.Windows.Forms.Label();
+            this.name_admin = new System.Windows.Forms.Label();
+            this.passwordPanel = new System.Windows.Forms.Panel();
+            this.passBox = new System.Windows.Forms.TextBox();
+            this.pictureBox12 = new System.Windows.Forms.PictureBox();
+            this.add_values_Btn = new System.Windows.Forms.Button();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.quantityBox = new System.Windows.Forms.TextBox();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.selectValueBox = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.currencies_exchangePanel = new System.Windows.Forms.Panel();
+            this.goBackExchangeBtn = new System.Windows.Forms.Button();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.exchangedBtn = new System.Windows.Forms.Button();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.summBox = new System.Windows.Forms.TextBox();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.quantityBoxExchange = new System.Windows.Forms.TextBox();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.selectValueBoxExchange = new System.Windows.Forms.ComboBox();
+            this.panel16 = new System.Windows.Forms.Panel();
+            this.selectClientBox = new System.Windows.Forms.ComboBox();
+            this.panel17 = new System.Windows.Forms.Panel();
+            this.selectOperBox = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -174,6 +206,20 @@
             this.otchetPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.bdPanel.SuspendLayout();
+            this.add_valuesPanel.SuspendLayout();
+            this.panel11.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.passwordPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
+            this.panel13.SuspendLayout();
+            this.panel15.SuspendLayout();
+            this.currencies_exchangePanel.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.panel12.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.panel8.SuspendLayout();
+            this.panel16.SuspendLayout();
+            this.panel17.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -405,7 +451,7 @@
             // BalancePanel
             // 
             this.BalancePanel.BackColor = System.Drawing.SystemColors.Control;
-            this.BalancePanel.Controls.Add(this.button4);
+            this.BalancePanel.Controls.Add(this.add_valuesBtn);
             this.BalancePanel.Controls.Add(this.USD_value);
             this.BalancePanel.Controls.Add(this.JPY_value);
             this.BalancePanel.Controls.Add(this.CHF_value);
@@ -418,20 +464,21 @@
             this.BalancePanel.Size = new System.Drawing.Size(265, 184);
             this.BalancePanel.TabIndex = 5;
             // 
-            // button4
+            // add_valuesBtn
             // 
-            this.button4.BackColor = System.Drawing.SystemColors.Control;
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.Location = new System.Drawing.Point(174, 124);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(60, 60);
-            this.button4.TabIndex = 37;
-            this.button4.UseVisualStyleBackColor = false;
+            this.add_valuesBtn.BackColor = System.Drawing.SystemColors.Control;
+            this.add_valuesBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.add_valuesBtn.FlatAppearance.BorderSize = 0;
+            this.add_valuesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.add_valuesBtn.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.add_valuesBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.add_valuesBtn.Image = ((System.Drawing.Image)(resources.GetObject("add_valuesBtn.Image")));
+            this.add_valuesBtn.Location = new System.Drawing.Point(174, 124);
+            this.add_valuesBtn.Name = "add_valuesBtn";
+            this.add_valuesBtn.Size = new System.Drawing.Size(60, 60);
+            this.add_valuesBtn.TabIndex = 37;
+            this.add_valuesBtn.UseVisualStyleBackColor = false;
+            this.add_valuesBtn.Click += new System.EventHandler(this.add_valuesBtn_Click);
             // 
             // USD_value
             // 
@@ -575,7 +622,7 @@
             this.RatePanel.Controls.Add(this.label30);
             this.RatePanel.Controls.Add(this.sellJPY_edit);
             this.RatePanel.Controls.Add(this.buyJPY_edit);
-            this.RatePanel.Controls.Add(this.button2);
+            this.RatePanel.Controls.Add(this.print_currencies);
             this.RatePanel.Controls.Add(this.JPY_buy);
             this.RatePanel.Controls.Add(this.CHF_buy);
             this.RatePanel.Controls.Add(this.GBP_buy);
@@ -604,6 +651,50 @@
             this.RatePanel.Size = new System.Drawing.Size(675, 313);
             this.RatePanel.TabIndex = 10;
             // 
+            // buyUSD_edit
+            // 
+            this.buyUSD_edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
+            this.buyUSD_edit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.buyUSD_edit.Location = new System.Drawing.Point(472, 52);
+            this.buyUSD_edit.Name = "buyUSD_edit";
+            this.buyUSD_edit.Size = new System.Drawing.Size(108, 39);
+            this.buyUSD_edit.TabIndex = 12;
+            this.buyUSD_edit.Visible = false;
+            this.buyUSD_edit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.buyUSD_edit_KeyPress);
+            // 
+            // buyEUR_edit
+            // 
+            this.buyEUR_edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
+            this.buyEUR_edit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.buyEUR_edit.Location = new System.Drawing.Point(472, 105);
+            this.buyEUR_edit.Name = "buyEUR_edit";
+            this.buyEUR_edit.Size = new System.Drawing.Size(108, 39);
+            this.buyEUR_edit.TabIndex = 19;
+            this.buyEUR_edit.Visible = false;
+            this.buyEUR_edit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.buyEUR_edit_KeyPress);
+            // 
+            // sellUSD_edit
+            // 
+            this.sellUSD_edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
+            this.sellUSD_edit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.sellUSD_edit.Location = new System.Drawing.Point(272, 52);
+            this.sellUSD_edit.Name = "sellUSD_edit";
+            this.sellUSD_edit.Size = new System.Drawing.Size(108, 39);
+            this.sellUSD_edit.TabIndex = 11;
+            this.sellUSD_edit.Visible = false;
+            this.sellUSD_edit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.sellUSD_edit_KeyPress);
+            // 
+            // sellEUR_edit
+            // 
+            this.sellEUR_edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
+            this.sellEUR_edit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.sellEUR_edit.Location = new System.Drawing.Point(273, 105);
+            this.sellEUR_edit.Name = "sellEUR_edit";
+            this.sellEUR_edit.Size = new System.Drawing.Size(108, 39);
+            this.sellEUR_edit.TabIndex = 20;
+            this.sellEUR_edit.Visible = false;
+            this.sellEUR_edit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.sellEUR_edit_KeyPress);
+            // 
             // valuesEdit_btn
             // 
             this.valuesEdit_btn.BackColor = System.Drawing.SystemColors.Control;
@@ -631,6 +722,17 @@
             this.label34.TabIndex = 36;
             this.label34.Text = "¥";
             // 
+            // sellGBP_edit
+            // 
+            this.sellGBP_edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
+            this.sellGBP_edit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.sellGBP_edit.Location = new System.Drawing.Point(272, 159);
+            this.sellGBP_edit.Name = "sellGBP_edit";
+            this.sellGBP_edit.Size = new System.Drawing.Size(108, 39);
+            this.sellGBP_edit.TabIndex = 18;
+            this.sellGBP_edit.Visible = false;
+            this.sellGBP_edit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.sellGBP_edit_KeyPress);
+            // 
             // label33
             // 
             this.label33.AutoSize = true;
@@ -641,6 +743,39 @@
             this.label33.Size = new System.Drawing.Size(39, 39);
             this.label33.TabIndex = 35;
             this.label33.Text = "₣";
+            // 
+            // buyGBP_edit
+            // 
+            this.buyGBP_edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
+            this.buyGBP_edit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.buyGBP_edit.Location = new System.Drawing.Point(472, 159);
+            this.buyGBP_edit.Name = "buyGBP_edit";
+            this.buyGBP_edit.Size = new System.Drawing.Size(108, 39);
+            this.buyGBP_edit.TabIndex = 17;
+            this.buyGBP_edit.Visible = false;
+            this.buyGBP_edit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.buyGBP_edit_KeyPress);
+            // 
+            // sellCHF_edit
+            // 
+            this.sellCHF_edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
+            this.sellCHF_edit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.sellCHF_edit.Location = new System.Drawing.Point(273, 213);
+            this.sellCHF_edit.Name = "sellCHF_edit";
+            this.sellCHF_edit.Size = new System.Drawing.Size(108, 39);
+            this.sellCHF_edit.TabIndex = 15;
+            this.sellCHF_edit.Visible = false;
+            this.sellCHF_edit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.sellCHF_edit_KeyPress);
+            // 
+            // buyCHF_edit
+            // 
+            this.buyCHF_edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
+            this.buyCHF_edit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.buyCHF_edit.Location = new System.Drawing.Point(472, 213);
+            this.buyCHF_edit.Name = "buyCHF_edit";
+            this.buyCHF_edit.Size = new System.Drawing.Size(108, 39);
+            this.buyCHF_edit.TabIndex = 16;
+            this.buyCHF_edit.Visible = false;
+            this.buyCHF_edit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.buyCHF_edit_KeyPress);
             // 
             // label32
             // 
@@ -675,20 +810,43 @@
             this.label30.TabIndex = 32;
             this.label30.Text = "$";
             // 
-            // button2
+            // sellJPY_edit
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.Control;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(615, 253);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(60, 60);
-            this.button2.TabIndex = 31;
-            this.button2.UseVisualStyleBackColor = false;
+            this.sellJPY_edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
+            this.sellJPY_edit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.sellJPY_edit.Location = new System.Drawing.Point(273, 265);
+            this.sellJPY_edit.Name = "sellJPY_edit";
+            this.sellJPY_edit.Size = new System.Drawing.Size(108, 39);
+            this.sellJPY_edit.TabIndex = 13;
+            this.sellJPY_edit.Visible = false;
+            this.sellJPY_edit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.sellJPY_edit_KeyPress);
+            // 
+            // buyJPY_edit
+            // 
+            this.buyJPY_edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
+            this.buyJPY_edit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.buyJPY_edit.Location = new System.Drawing.Point(472, 265);
+            this.buyJPY_edit.Name = "buyJPY_edit";
+            this.buyJPY_edit.Size = new System.Drawing.Size(108, 39);
+            this.buyJPY_edit.TabIndex = 14;
+            this.buyJPY_edit.Visible = false;
+            this.buyJPY_edit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.buyJPY_edit_KeyPress);
+            // 
+            // print_currencies
+            // 
+            this.print_currencies.BackColor = System.Drawing.SystemColors.Control;
+            this.print_currencies.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.print_currencies.FlatAppearance.BorderSize = 0;
+            this.print_currencies.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.print_currencies.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.print_currencies.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.print_currencies.Image = ((System.Drawing.Image)(resources.GetObject("print_currencies.Image")));
+            this.print_currencies.Location = new System.Drawing.Point(615, 253);
+            this.print_currencies.Name = "print_currencies";
+            this.print_currencies.Size = new System.Drawing.Size(60, 60);
+            this.print_currencies.TabIndex = 31;
+            this.print_currencies.UseVisualStyleBackColor = false;
+            this.print_currencies.Click += new System.EventHandler(this.print_currencies_Click);
             // 
             // JPY_buy
             // 
@@ -1562,121 +1720,416 @@
             this.saveBD.UseVisualStyleBackColor = false;
             this.saveBD.Click += new System.EventHandler(this.saveBD_Click);
             // 
-            // sellUSD_edit
+            // add_valuesPanel
             // 
-            this.sellUSD_edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
-            this.sellUSD_edit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
-            this.sellUSD_edit.Location = new System.Drawing.Point(272, 52);
-            this.sellUSD_edit.Name = "sellUSD_edit";
-            this.sellUSD_edit.Size = new System.Drawing.Size(108, 39);
-            this.sellUSD_edit.TabIndex = 11;
-            this.sellUSD_edit.Visible = false;
-            this.sellUSD_edit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.sellUSD_edit_KeyPress);
+            this.add_valuesPanel.Controls.Add(this.goBackValuesBtn);
+            this.add_valuesPanel.Controls.Add(this.panel11);
+            this.add_valuesPanel.Controls.Add(this.label5);
+            this.add_valuesPanel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.add_valuesPanel.Location = new System.Drawing.Point(186, 0);
+            this.add_valuesPanel.Name = "add_valuesPanel";
+            this.add_valuesPanel.Size = new System.Drawing.Size(765, 577);
+            this.add_valuesPanel.TabIndex = 34;
+            this.add_valuesPanel.Visible = false;
+            this.add_valuesPanel.VisibleChanged += new System.EventHandler(this.add_valuesPanel_VisibleChanged);
             // 
-            // buyUSD_edit
+            // goBackValuesBtn
             // 
-            this.buyUSD_edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
-            this.buyUSD_edit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
-            this.buyUSD_edit.Location = new System.Drawing.Point(472, 52);
-            this.buyUSD_edit.Name = "buyUSD_edit";
-            this.buyUSD_edit.Size = new System.Drawing.Size(108, 39);
-            this.buyUSD_edit.TabIndex = 12;
-            this.buyUSD_edit.Visible = false;
-            this.buyUSD_edit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.buyUSD_edit_KeyPress);
+            this.goBackValuesBtn.BackColor = System.Drawing.SystemColors.Control;
+            this.goBackValuesBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.goBackValuesBtn.FlatAppearance.BorderSize = 0;
+            this.goBackValuesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.goBackValuesBtn.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.goBackValuesBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.goBackValuesBtn.Image = ((System.Drawing.Image)(resources.GetObject("goBackValuesBtn.Image")));
+            this.goBackValuesBtn.Location = new System.Drawing.Point(16, 8);
+            this.goBackValuesBtn.Name = "goBackValuesBtn";
+            this.goBackValuesBtn.Size = new System.Drawing.Size(60, 60);
+            this.goBackValuesBtn.TabIndex = 32;
+            this.goBackValuesBtn.UseVisualStyleBackColor = false;
+            this.goBackValuesBtn.Click += new System.EventHandler(this.goBackValuesBtn_Click);
             // 
-            // sellJPY_edit
+            // panel11
             // 
-            this.sellJPY_edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
-            this.sellJPY_edit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
-            this.sellJPY_edit.Location = new System.Drawing.Point(273, 265);
-            this.sellJPY_edit.Name = "sellJPY_edit";
-            this.sellJPY_edit.Size = new System.Drawing.Size(108, 39);
-            this.sellJPY_edit.TabIndex = 13;
-            this.sellJPY_edit.Visible = false;
-            this.sellJPY_edit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.sellJPY_edit_KeyPress);
+            this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.panel11.Controls.Add(this.panel4);
+            this.panel11.Controls.Add(this.passwordPanel);
+            this.panel11.Controls.Add(this.add_values_Btn);
+            this.panel11.Controls.Add(this.panel13);
+            this.panel11.Controls.Add(this.panel15);
+            this.panel11.Controls.Add(this.label1);
+            this.panel11.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.panel11.Location = new System.Drawing.Point(169, 74);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(437, 446);
+            this.panel11.TabIndex = 9;
             // 
-            // buyJPY_edit
+            // panel4
             // 
-            this.buyJPY_edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
-            this.buyJPY_edit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
-            this.buyJPY_edit.Location = new System.Drawing.Point(472, 265);
-            this.buyJPY_edit.Name = "buyJPY_edit";
-            this.buyJPY_edit.Size = new System.Drawing.Size(108, 39);
-            this.buyJPY_edit.TabIndex = 14;
-            this.buyJPY_edit.Visible = false;
-            this.buyJPY_edit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.buyJPY_edit_KeyPress);
+            this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.Controls.Add(this.login_admin);
+            this.panel4.Controls.Add(this.name_admin);
+            this.panel4.Location = new System.Drawing.Point(3, 7);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(430, 63);
+            this.panel4.TabIndex = 10;
             // 
-            // sellCHF_edit
+            // login_admin
             // 
-            this.sellCHF_edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
-            this.sellCHF_edit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
-            this.sellCHF_edit.Location = new System.Drawing.Point(273, 213);
-            this.sellCHF_edit.Name = "sellCHF_edit";
-            this.sellCHF_edit.Size = new System.Drawing.Size(108, 39);
-            this.sellCHF_edit.TabIndex = 15;
-            this.sellCHF_edit.Visible = false;
-            this.sellCHF_edit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.sellCHF_edit_KeyPress);
+            this.login_admin.AutoSize = true;
+            this.login_admin.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.login_admin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.login_admin.Location = new System.Drawing.Point(110, 33);
+            this.login_admin.Name = "login_admin";
+            this.login_admin.Size = new System.Drawing.Size(220, 24);
+            this.login_admin.TabIndex = 1;
+            this.login_admin.Text = "Логин администратора";
             // 
-            // buyCHF_edit
+            // name_admin
             // 
-            this.buyCHF_edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
-            this.buyCHF_edit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
-            this.buyCHF_edit.Location = new System.Drawing.Point(472, 213);
-            this.buyCHF_edit.Name = "buyCHF_edit";
-            this.buyCHF_edit.Size = new System.Drawing.Size(108, 39);
-            this.buyCHF_edit.TabIndex = 16;
-            this.buyCHF_edit.Visible = false;
-            this.buyCHF_edit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.buyCHF_edit_KeyPress);
+            this.name_admin.AutoSize = true;
+            this.name_admin.Cursor = System.Windows.Forms.Cursors.Default;
+            this.name_admin.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.name_admin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.name_admin.Location = new System.Drawing.Point(148, 6);
+            this.name_admin.Name = "name_admin";
+            this.name_admin.Size = new System.Drawing.Size(225, 25);
+            this.name_admin.TabIndex = 0;
+            this.name_admin.Text = "Имя администратора";
+            this.name_admin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // buyGBP_edit
+            // passwordPanel
             // 
-            this.buyGBP_edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
-            this.buyGBP_edit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
-            this.buyGBP_edit.Location = new System.Drawing.Point(472, 159);
-            this.buyGBP_edit.Name = "buyGBP_edit";
-            this.buyGBP_edit.Size = new System.Drawing.Size(108, 39);
-            this.buyGBP_edit.TabIndex = 17;
-            this.buyGBP_edit.Visible = false;
-            this.buyGBP_edit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.buyGBP_edit_KeyPress);
+            this.passwordPanel.BackColor = System.Drawing.Color.White;
+            this.passwordPanel.Controls.Add(this.passBox);
+            this.passwordPanel.Controls.Add(this.pictureBox12);
+            this.passwordPanel.Location = new System.Drawing.Point(4, 114);
+            this.passwordPanel.Name = "passwordPanel";
+            this.passwordPanel.Size = new System.Drawing.Size(430, 57);
+            this.passwordPanel.TabIndex = 34;
             // 
-            // sellGBP_edit
+            // passBox
             // 
-            this.sellGBP_edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
-            this.sellGBP_edit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
-            this.sellGBP_edit.Location = new System.Drawing.Point(272, 159);
-            this.sellGBP_edit.Name = "sellGBP_edit";
-            this.sellGBP_edit.Size = new System.Drawing.Size(108, 39);
-            this.sellGBP_edit.TabIndex = 18;
-            this.sellGBP_edit.Visible = false;
-            this.sellGBP_edit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.sellGBP_edit_KeyPress);
+            this.passBox.BackColor = System.Drawing.SystemColors.Window;
+            this.passBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.passBox.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.passBox.ForeColor = System.Drawing.Color.Silver;
+            this.passBox.Location = new System.Drawing.Point(8, 13);
+            this.passBox.Name = "passBox";
+            this.passBox.Size = new System.Drawing.Size(374, 30);
+            this.passBox.TabIndex = 6;
+            this.passBox.Text = "Введите ваш пароль";
+            this.passBox.Enter += new System.EventHandler(this.passBox_Enter);
+            this.passBox.Leave += new System.EventHandler(this.passBox_Leave);
             // 
-            // buyEUR_edit
+            // pictureBox12
             // 
-            this.buyEUR_edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
-            this.buyEUR_edit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
-            this.buyEUR_edit.Location = new System.Drawing.Point(472, 105);
-            this.buyEUR_edit.Name = "buyEUR_edit";
-            this.buyEUR_edit.Size = new System.Drawing.Size(108, 39);
-            this.buyEUR_edit.TabIndex = 19;
-            this.buyEUR_edit.Visible = false;
-            this.buyEUR_edit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.buyEUR_edit_KeyPress);
+            this.pictureBox12.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox12.BackgroundImage")));
+            this.pictureBox12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox12.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox12.Location = new System.Drawing.Point(391, 13);
+            this.pictureBox12.Name = "pictureBox12";
+            this.pictureBox12.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox12.TabIndex = 5;
+            this.pictureBox12.TabStop = false;
+            this.pictureBox12.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox12_MouseDown);
+            this.pictureBox12.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox12_MouseUp);
             // 
-            // sellEUR_edit
+            // add_values_Btn
             // 
-            this.sellEUR_edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
-            this.sellEUR_edit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
-            this.sellEUR_edit.Location = new System.Drawing.Point(273, 105);
-            this.sellEUR_edit.Name = "sellEUR_edit";
-            this.sellEUR_edit.Size = new System.Drawing.Size(108, 39);
-            this.sellEUR_edit.TabIndex = 20;
-            this.sellEUR_edit.Visible = false;
-            this.sellEUR_edit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.sellEUR_edit_KeyPress);
+            this.add_values_Btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.add_values_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.add_values_Btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.add_values_Btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(197)))), ((int)(((byte)(254)))));
+            this.add_values_Btn.Image = ((System.Drawing.Image)(resources.GetObject("add_values_Btn.Image")));
+            this.add_values_Btn.Location = new System.Drawing.Point(101, 352);
+            this.add_values_Btn.Name = "add_values_Btn";
+            this.add_values_Btn.Size = new System.Drawing.Size(258, 73);
+            this.add_values_Btn.TabIndex = 33;
+            this.add_values_Btn.Text = "Заказать валюту";
+            this.add_values_Btn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.add_values_Btn.UseVisualStyleBackColor = true;
+            this.add_values_Btn.Click += new System.EventHandler(this.exchangedBtn_Click);
+            // 
+            // panel13
+            // 
+            this.panel13.BackColor = System.Drawing.Color.White;
+            this.panel13.Controls.Add(this.quantityBox);
+            this.panel13.Location = new System.Drawing.Point(3, 265);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(430, 54);
+            this.panel13.TabIndex = 10;
+            // 
+            // quantityBox
+            // 
+            this.quantityBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.quantityBox.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.quantityBox.ForeColor = System.Drawing.Color.Silver;
+            this.quantityBox.Location = new System.Drawing.Point(8, 11);
+            this.quantityBox.Multiline = true;
+            this.quantityBox.Name = "quantityBox";
+            this.quantityBox.Size = new System.Drawing.Size(413, 30);
+            this.quantityBox.TabIndex = 5;
+            this.quantityBox.Text = "Введите количество валюты";
+            this.quantityBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.quantityBox.Enter += new System.EventHandler(this.quantityBox_Enter);
+            this.quantityBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.quantityBox_KeyPress);
+            this.quantityBox.Leave += new System.EventHandler(this.quantityBox_Leave);
+            // 
+            // panel15
+            // 
+            this.panel15.BackColor = System.Drawing.Color.White;
+            this.panel15.Controls.Add(this.selectValueBox);
+            this.panel15.Location = new System.Drawing.Point(3, 182);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(430, 57);
+            this.panel15.TabIndex = 9;
+            // 
+            // selectValueBox
+            // 
+            this.selectValueBox.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.selectValueBox.ForeColor = System.Drawing.Color.Silver;
+            this.selectValueBox.FormattingEnabled = true;
+            this.selectValueBox.Items.AddRange(new object[] {
+            "$(Доллар США)",
+            "€(Евро)",
+            "£(Британский фунт стерлингов)",
+            "₣(Швейцарский франк)",
+            "¥(Японская иена)"});
+            this.selectValueBox.Location = new System.Drawing.Point(8, 9);
+            this.selectValueBox.Name = "selectValueBox";
+            this.selectValueBox.Size = new System.Drawing.Size(414, 38);
+            this.selectValueBox.TabIndex = 2;
+            this.selectValueBox.Text = "Выберите валюту для заказа";
+            this.selectValueBox.SelectedIndexChanged += new System.EventHandler(this.selectValueBox_SelectedIndexChanged);
+            this.selectValueBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.selectValueBox_KeyPress);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(124, 81);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(197, 25);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Введите данные:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.label5.Location = new System.Drawing.Point(290, 21);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(212, 32);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Заказ валюты";
+            // 
+            // currencies_exchangePanel
+            // 
+            this.currencies_exchangePanel.Controls.Add(this.goBackExchangeBtn);
+            this.currencies_exchangePanel.Controls.Add(this.panel6);
+            this.currencies_exchangePanel.Controls.Add(this.label14);
+            this.currencies_exchangePanel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.currencies_exchangePanel.Location = new System.Drawing.Point(186, 0);
+            this.currencies_exchangePanel.Name = "currencies_exchangePanel";
+            this.currencies_exchangePanel.Size = new System.Drawing.Size(765, 577);
+            this.currencies_exchangePanel.TabIndex = 34;
+            this.currencies_exchangePanel.Visible = false;
+            this.currencies_exchangePanel.VisibleChanged += new System.EventHandler(this.currencies_exchangePanel_VisibleChanged);
+            // 
+            // goBackExchangeBtn
+            // 
+            this.goBackExchangeBtn.BackColor = System.Drawing.SystemColors.Control;
+            this.goBackExchangeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.goBackExchangeBtn.FlatAppearance.BorderSize = 0;
+            this.goBackExchangeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.goBackExchangeBtn.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.goBackExchangeBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.goBackExchangeBtn.Image = ((System.Drawing.Image)(resources.GetObject("goBackExchangeBtn.Image")));
+            this.goBackExchangeBtn.Location = new System.Drawing.Point(16, 8);
+            this.goBackExchangeBtn.Name = "goBackExchangeBtn";
+            this.goBackExchangeBtn.Size = new System.Drawing.Size(60, 60);
+            this.goBackExchangeBtn.TabIndex = 32;
+            this.goBackExchangeBtn.UseVisualStyleBackColor = false;
+            this.goBackExchangeBtn.Click += new System.EventHandler(this.goBackExchangeBtn_Click);
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.panel6.Controls.Add(this.exchangedBtn);
+            this.panel6.Controls.Add(this.panel12);
+            this.panel6.Controls.Add(this.panel7);
+            this.panel6.Controls.Add(this.panel8);
+            this.panel6.Controls.Add(this.panel16);
+            this.panel6.Controls.Add(this.panel17);
+            this.panel6.Controls.Add(this.label6);
+            this.panel6.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.panel6.Location = new System.Drawing.Point(169, 74);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(437, 479);
+            this.panel6.TabIndex = 9;
+            // 
+            // exchangedBtn
+            // 
+            this.exchangedBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.exchangedBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exchangedBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.exchangedBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(197)))), ((int)(((byte)(254)))));
+            this.exchangedBtn.Image = ((System.Drawing.Image)(resources.GetObject("exchangedBtn.Image")));
+            this.exchangedBtn.Location = new System.Drawing.Point(112, 425);
+            this.exchangedBtn.Name = "exchangedBtn";
+            this.exchangedBtn.Size = new System.Drawing.Size(235, 51);
+            this.exchangedBtn.TabIndex = 33;
+            this.exchangedBtn.Text = "Произвести обмен";
+            this.exchangedBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.exchangedBtn.UseVisualStyleBackColor = true;
+            // 
+            // panel12
+            // 
+            this.panel12.BackColor = System.Drawing.Color.White;
+            this.panel12.Controls.Add(this.summBox);
+            this.panel12.Location = new System.Drawing.Point(3, 356);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(430, 57);
+            this.panel12.TabIndex = 11;
+            // 
+            // summBox
+            // 
+            this.summBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.summBox.Enabled = false;
+            this.summBox.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.summBox.ForeColor = System.Drawing.Color.Silver;
+            this.summBox.Location = new System.Drawing.Point(8, 11);
+            this.summBox.Name = "summBox";
+            this.summBox.Size = new System.Drawing.Size(413, 30);
+            this.summBox.TabIndex = 5;
+            this.summBox.Text = "Сумма сделки: 0 рублей";
+            this.summBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.White;
+            this.panel7.Controls.Add(this.quantityBoxExchange);
+            this.panel7.Location = new System.Drawing.Point(3, 293);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(430, 54);
+            this.panel7.TabIndex = 10;
+            // 
+            // quantityBoxExchange
+            // 
+            this.quantityBoxExchange.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.quantityBoxExchange.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.quantityBoxExchange.ForeColor = System.Drawing.Color.Silver;
+            this.quantityBoxExchange.Location = new System.Drawing.Point(8, 11);
+            this.quantityBoxExchange.Multiline = true;
+            this.quantityBoxExchange.Name = "quantityBoxExchange";
+            this.quantityBoxExchange.Size = new System.Drawing.Size(413, 30);
+            this.quantityBoxExchange.TabIndex = 5;
+            this.quantityBoxExchange.Text = "Введите количество валюты";
+            this.quantityBoxExchange.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.White;
+            this.panel8.Controls.Add(this.selectValueBoxExchange);
+            this.panel8.Location = new System.Drawing.Point(3, 167);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(430, 57);
+            this.panel8.TabIndex = 9;
+            // 
+            // selectValueBoxExchange
+            // 
+            this.selectValueBoxExchange.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.selectValueBoxExchange.ForeColor = System.Drawing.Color.Silver;
+            this.selectValueBoxExchange.FormattingEnabled = true;
+            this.selectValueBoxExchange.Items.AddRange(new object[] {
+            "$(Доллар США)",
+            "€(Евро)",
+            "£(Британский фунт стерлингов)",
+            "₣(Швейцарский франк)",
+            "¥(Японская иена)"});
+            this.selectValueBoxExchange.Location = new System.Drawing.Point(8, 9);
+            this.selectValueBoxExchange.Name = "selectValueBoxExchange";
+            this.selectValueBoxExchange.Size = new System.Drawing.Size(414, 38);
+            this.selectValueBoxExchange.TabIndex = 2;
+            this.selectValueBoxExchange.Text = "Выберите валюту";
+            // 
+            // panel16
+            // 
+            this.panel16.BackColor = System.Drawing.Color.White;
+            this.panel16.Controls.Add(this.selectClientBox);
+            this.panel16.Location = new System.Drawing.Point(3, 41);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(430, 57);
+            this.panel16.TabIndex = 8;
+            // 
+            // selectClientBox
+            // 
+            this.selectClientBox.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.selectClientBox.ForeColor = System.Drawing.Color.Silver;
+            this.selectClientBox.FormattingEnabled = true;
+            this.selectClientBox.Location = new System.Drawing.Point(8, 11);
+            this.selectClientBox.Name = "selectClientBox";
+            this.selectClientBox.Size = new System.Drawing.Size(414, 38);
+            this.selectClientBox.TabIndex = 0;
+            this.selectClientBox.Text = "Выберите клиента";
+            // 
+            // panel17
+            // 
+            this.panel17.BackColor = System.Drawing.Color.White;
+            this.panel17.Controls.Add(this.selectOperBox);
+            this.panel17.Location = new System.Drawing.Point(3, 104);
+            this.panel17.Name = "panel17";
+            this.panel17.Size = new System.Drawing.Size(430, 57);
+            this.panel17.TabIndex = 7;
+            // 
+            // selectOperBox
+            // 
+            this.selectOperBox.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.selectOperBox.ForeColor = System.Drawing.Color.Silver;
+            this.selectOperBox.FormattingEnabled = true;
+            this.selectOperBox.Items.AddRange(new object[] {
+            "Покупка",
+            "Продажа"});
+            this.selectOperBox.Location = new System.Drawing.Point(8, 11);
+            this.selectOperBox.Name = "selectOperBox";
+            this.selectOperBox.Size = new System.Drawing.Size(414, 38);
+            this.selectOperBox.TabIndex = 1;
+            this.selectOperBox.Text = "Выберите операцию";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(128, 3);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(197, 25);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "Введите данные:";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.label14.Location = new System.Drawing.Point(264, 21);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(264, 32);
+            this.label14.TabIndex = 1;
+            this.label14.Text = "Обменять валюту";
             // 
             // AdminWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(951, 577);
+            this.Controls.Add(this.currencies_exchangePanel);
+            this.Controls.Add(this.add_valuesPanel);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.bdPanel);
             this.Controls.Add(this.otchetPanel);
@@ -1730,6 +2183,29 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.bdPanel.ResumeLayout(false);
             this.bdPanel.PerformLayout();
+            this.add_valuesPanel.ResumeLayout(false);
+            this.add_valuesPanel.PerformLayout();
+            this.panel11.ResumeLayout(false);
+            this.panel11.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.passwordPanel.ResumeLayout(false);
+            this.passwordPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
+            this.panel13.ResumeLayout(false);
+            this.panel13.PerformLayout();
+            this.panel15.ResumeLayout(false);
+            this.currencies_exchangePanel.ResumeLayout(false);
+            this.currencies_exchangePanel.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            this.panel12.ResumeLayout(false);
+            this.panel12.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            this.panel8.ResumeLayout(false);
+            this.panel16.ResumeLayout(false);
+            this.panel17.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1738,9 +2214,9 @@
         private System.Windows.Forms.Button BDbtn;
         private System.Windows.Forms.Panel bdPanel;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button print_currencies;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button add_valuesBtn;
         private System.Windows.Forms.Button valuesEdit_btn;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
@@ -1854,5 +2330,37 @@
         private System.Windows.Forms.TextBox buyCHF_edit;
         private System.Windows.Forms.TextBox sellJPY_edit;
         private System.Windows.Forms.TextBox buyJPY_edit;
+        private System.Windows.Forms.Panel add_valuesPanel;
+        private System.Windows.Forms.Button goBackValuesBtn;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.Button add_values_Btn;
+        private System.Windows.Forms.Panel panel13;
+        private System.Windows.Forms.TextBox quantityBox;
+        private System.Windows.Forms.Panel panel15;
+        private System.Windows.Forms.ComboBox selectValueBox;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel passwordPanel;
+        private System.Windows.Forms.TextBox passBox;
+        private System.Windows.Forms.PictureBox pictureBox12;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label login_admin;
+        private System.Windows.Forms.Label name_admin;
+        private System.Windows.Forms.Panel currencies_exchangePanel;
+        private System.Windows.Forms.Button goBackExchangeBtn;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Button exchangedBtn;
+        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.TextBox summBox;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.TextBox quantityBoxExchange;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.ComboBox selectValueBoxExchange;
+        private System.Windows.Forms.Panel panel16;
+        private System.Windows.Forms.ComboBox selectClientBox;
+        private System.Windows.Forms.Panel panel17;
+        private System.Windows.Forms.ComboBox selectOperBox;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label14;
     }
 }

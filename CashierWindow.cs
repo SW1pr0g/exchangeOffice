@@ -997,13 +997,13 @@ namespace AIS_exchangeOffice
                                 nameValue = "USD";
                                 if (selectOperBox.Text == "Покупка")
                                 {
-                                    numValue = Convert.ToDouble(USD_value.Text.Substring(1).Replace('.', ',')) - Convert.ToDouble(quantityBox.Text);
+                                    numValue = Convert.ToDouble(USD_value.Text.Substring(1).Replace('.', ',')) - Convert.ToDouble(quantityBox.Text.Replace('.', ','));
                                     if (numValue < 0) { MessageBox.Show("Операция не выполнена. Недостаточно валюты в кассе!"); return; }
                                     USD_value.Text = "$ " + Math.Round(numValue, 2).ToString().Replace(',', '.');
                                 }
                                 else if (selectOperBox.Text == "Продажа")
                                 {
-                                    numValue = Convert.ToDouble(USD_value.Text.Substring(1).Replace('.', ',')) + Convert.ToDouble(quantityBox.Text);
+                                    numValue = Convert.ToDouble(USD_value.Text.Substring(1).Replace('.', ',')) + Convert.ToDouble(quantityBox.Text.Replace('.', ','));
                                     USD_value.Text = "$ " + Math.Round(numValue, 2).ToString().Replace(',', '.');
                                 }
                                 break;
@@ -1011,13 +1011,13 @@ namespace AIS_exchangeOffice
                                 nameValue = "EUR";
                                 if (selectOperBox.Text == "Покупка")
                                 {
-                                    numValue = Convert.ToDouble(EUR_value.Text.Substring(1).Replace('.', ',')) - Convert.ToDouble(quantityBox.Text);
+                                    numValue = Convert.ToDouble(EUR_value.Text.Substring(1).Replace('.', ',')) - Convert.ToDouble(quantityBox.Text.Replace('.', ','));
                                     if (numValue < 0) { MessageBox.Show("Операция не выполнена. Недостаточно валюты в кассе!"); return; }
                                     EUR_value.Text = "€ " + Math.Round(numValue, 2).ToString().Replace(',', '.');
                                 }
                                 else if (selectOperBox.Text == "Продажа")
                                 {
-                                    numValue = Convert.ToDouble(EUR_value.Text.Substring(1).Replace('.', ',')) + Convert.ToDouble(quantityBox.Text);
+                                    numValue = Convert.ToDouble(EUR_value.Text.Substring(1).Replace('.', ',')) + Convert.ToDouble(quantityBox.Text.Replace('.', ','));
                                     EUR_value.Text = "€ " + Math.Round(numValue, 2).ToString().Replace(',', '.');                                   
                                 }                                
                                 break;
@@ -1025,13 +1025,13 @@ namespace AIS_exchangeOffice
                                 nameValue = "GBP";
                                 if (selectOperBox.Text == "Покупка")
                                 {
-                                    numValue = Convert.ToDouble(GBP_value.Text.Substring(1).Replace('.', ',')) - Convert.ToDouble(quantityBox.Text);
+                                    numValue = Convert.ToDouble(GBP_value.Text.Substring(1).Replace('.', ',')) - Convert.ToDouble(quantityBox.Text.Replace('.', ','));
                                     if (numValue < 0) { MessageBox.Show("Операция не выполнена. Недостаточно валюты в кассе!"); return; }
                                     GBP_value.Text = "£ " + Math.Round(numValue, 2).ToString().Replace(',', '.');
                                 }
                                 else if (selectOperBox.Text == "Продажа")
                                 {
-                                    numValue = Convert.ToDouble(GBP_value.Text.Substring(1).Replace('.', ',')) + Convert.ToDouble(quantityBox.Text);
+                                    numValue = Convert.ToDouble(GBP_value.Text.Substring(1).Replace('.', ',')) + Convert.ToDouble(quantityBox.Text.Replace('.', ','));
                                     GBP_value.Text = "£ " + Math.Round(numValue, 2).ToString();                                    
                                 }   
                                 break;
@@ -1039,13 +1039,13 @@ namespace AIS_exchangeOffice
                                 nameValue = "CHF";
                                 if (selectOperBox.Text == "Покупка")
                                 {
-                                    numValue = Convert.ToDouble(CHF_value.Text.Substring(1).Replace('.', ',')) - Convert.ToDouble(quantityBox.Text);
+                                    numValue = Convert.ToDouble(CHF_value.Text.Substring(1).Replace('.', ',')) - Convert.ToDouble(quantityBox.Text.Replace('.', ','));
                                     if (numValue < 0) { MessageBox.Show("Операция не выполнена. Недостаточно валюты в кассе!"); return; }
                                     CHF_value.Text = "₣ " + Math.Round(numValue, 2).ToString().Replace(',', '.');
                                 }
                                 else if (selectOperBox.Text == "Продажа")
                                 {
-                                    numValue = Convert.ToDouble(CHF_value.Text.Substring(1).Replace('.', ',')) + Convert.ToDouble(quantityBox.Text);
+                                    numValue = Convert.ToDouble(CHF_value.Text.Substring(1).Replace('.', ',')) + Convert.ToDouble(quantityBox.Text.Replace('.', ','));
                                     CHF_value.Text = "₣ " + Math.Round(numValue, 2).ToString().Replace(',', '.');                                   
                                 }  
                                 break;
@@ -1053,13 +1053,13 @@ namespace AIS_exchangeOffice
                                 nameValue = "JPY";
                                 if (selectOperBox.Text == "Покупка")
                                 {
-                                    numValue = Convert.ToDouble(JPY_value.Text.Substring(1).Replace('.', ',')) - Convert.ToDouble(quantityBox.Text);
+                                    numValue = Convert.ToDouble(JPY_value.Text.Substring(1).Replace('.', ',')) - Convert.ToDouble(quantityBox.Text.Replace('.', ','));
                                     if (numValue < 0) { MessageBox.Show("Операция не выполнена. Недостаточно валюты в кассе!"); return; }
                                     JPY_value.Text = "¥ " + Math.Round(numValue, 2).ToString().Replace(',', '.');
                                 }
                                 else if (selectOperBox.Text == "Продажа")
                                 {
-                                    numValue = Convert.ToDouble(JPY_value.Text.Substring(1).Replace('.', ',')) + Convert.ToDouble(quantityBox.Text);
+                                    numValue = Convert.ToDouble(JPY_value.Text.Substring(1).Replace('.', ',')) + Convert.ToDouble(quantityBox.Text.Replace('.', ','));
                                     JPY_value.Text = "¥ " + Math.Round(numValue, 2).ToString().Replace(',', '.');                                   
                                 }  
                                 break;
@@ -1086,7 +1086,7 @@ namespace AIS_exchangeOffice
                         var items = new Dictionary<string, string>
                         {
                             { "_<number>_", u_num.ToString() },
-                            { "_<date>_", DateTime.Now.ToString("dd.mm.yyyy") },
+                            { "_<date>_", DateTime.Now.ToString("dd.MM.yyyy") },
                             { "_<oper>_", selectOperBox.Text },
                             { "_<value>_", selectValueBox.Text },
                             { "_<quantity>_", quantityBox.Text },
@@ -1094,7 +1094,7 @@ namespace AIS_exchangeOffice
                             { "_<summ_oper>_", summ[1].Replace(',', '.') },
                             { "_<name_client>_", FIO[0] + " " + FIO[1].ToString()[0] + ". " + FIO[2].ToString()[0] + "." },
                             { "_<name_cashier>_", CashierName.Text },
-                            { "_<date_long>_", DateTime.Now.ToString("dd.mm.yyyy HH:mm:ss") },
+                            { "_<date_long>_", DateTime.Now.ToString("dd.MM.yyyy HH:mm:ss") },
                         };
                         helper.Process(items);
                         selectClientBox.Text = "Выберите клиента";
@@ -1124,7 +1124,7 @@ namespace AIS_exchangeOffice
 
         private void quantityBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == 8 || e.KeyChar == 127 || e.KeyChar == 44)
+            if (e.KeyChar == 8 || e.KeyChar == 127 || e.KeyChar == 46)
             {
                 e.Handled = false;
             }
@@ -1143,7 +1143,7 @@ namespace AIS_exchangeOffice
             try
             {
                 classes.summValues summValues = new classes.summValues();
-                if (quantityBox.Text.ToString()[0] == '.' || quantityBox.Text.ToString()[0] == ',')
+                if (quantityBox.Text.ToString()[0] == '.')
                 {
                     MessageBox.Show("Значение не может начинаться с '.' или ','");
                     quantityBox.Text = "";
@@ -1151,15 +1151,15 @@ namespace AIS_exchangeOffice
                 else if (selectValueBox.SelectedIndex == -1 || selectOperBox.SelectedIndex == -1)
                 {
                     //
-                }                
+                }
                 else
                 {
-                    summBox.Text = "Сумма: " + summValues.summoutputValues(selectOperBox.SelectedIndex, selectValueBox.SelectedIndex, Convert.ToDouble(quantityBox.Text), valuesBuy, valuesSell).ToString() + " рублей";
+                    summBox.Text = "Сумма: " + summValues.summoutputValues(selectOperBox.SelectedIndex, selectValueBox.SelectedIndex, Convert.ToDouble(quantityBox.Text.Replace('.', ',')), valuesBuy, valuesSell).ToString().Replace(',', '.') + " рублей";
                 }
-                
-                
+
+
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
             }
