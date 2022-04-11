@@ -99,22 +99,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.mainPanel = new System.Windows.Forms.Panel();
-            this.label66 = new System.Windows.Forms.Label();
-            this.exitButton_clients = new System.Windows.Forms.Button();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.pictureBox14 = new System.Windows.Forms.PictureBox();
-            this.label58 = new System.Windows.Forms.Label();
-            this.label59 = new System.Windows.Forms.Label();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.label35 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.clientsPanel = new System.Windows.Forms.Panel();
-            this.label39 = new System.Windows.Forms.Label();
-            this.exitButton_exchange = new System.Windows.Forms.Button();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.label36 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.exchangePanel = new System.Windows.Forms.Panel();
             this.label38 = new System.Windows.Forms.Label();
             this.exitButton_search = new System.Windows.Forms.Button();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
@@ -162,6 +146,40 @@
             this.selectValueBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.clientsPanel = new System.Windows.Forms.Panel();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.AddClientsBtn = new System.Windows.Forms.Button();
+            this.label35 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.pictureBox14 = new System.Windows.Forms.PictureBox();
+            this.clientsNumT = new System.Windows.Forms.Label();
+            this.label59 = new System.Windows.Forms.Label();
+            this.exitButton_clients = new System.Windows.Forms.Button();
+            this.label66 = new System.Windows.Forms.Label();
+            this.addclientPanel = new System.Windows.Forms.Panel();
+            this.GoBackClientsPanel = new System.Windows.Forms.Button();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.AddClientBtn = new System.Windows.Forms.Button();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.numberBox = new System.Windows.Forms.TextBox();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.seriesBox = new System.Windows.Forms.TextBox();
+            this.panel18 = new System.Windows.Forms.Panel();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.panel19 = new System.Windows.Forms.Panel();
+            this.patronymicBox = new System.Windows.Forms.TextBox();
+            this.panel20 = new System.Windows.Forms.Panel();
+            this.surnameBox = new System.Windows.Forms.TextBox();
+            this.loginPanel = new System.Windows.Forms.Panel();
+            this.nameBox = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.exchangePanel = new System.Windows.Forms.Panel();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.buy_valuesBtn = new System.Windows.Forms.Button();
+            this.label36 = new System.Windows.Forms.Label();
+            this.exitButton_exchange = new System.Windows.Forms.Button();
+            this.label39 = new System.Windows.Forms.Label();
             this.currencies_exchangePanel = new System.Windows.Forms.Panel();
             this.goBackExchangeBtn = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -169,9 +187,9 @@
             this.panel12 = new System.Windows.Forms.Panel();
             this.summBox = new System.Windows.Forms.TextBox();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.quantityBoxExchange = new System.Windows.Forms.TextBox();
+            this.quantityBox_ = new System.Windows.Forms.TextBox();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.selectValueBoxExchange = new System.Windows.Forms.ComboBox();
+            this.selectValueBox_ = new System.Windows.Forms.ComboBox();
             this.panel16 = new System.Windows.Forms.Panel();
             this.selectClientBox = new System.Windows.Forms.ComboBox();
             this.panel17 = new System.Windows.Forms.Panel();
@@ -193,12 +211,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.mainPanel.SuspendLayout();
-            this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            this.clientsPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
-            this.exchangePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             this.searchPanel.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -213,6 +225,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             this.panel13.SuspendLayout();
             this.panel15.SuspendLayout();
+            this.clientsPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
+            this.addclientPanel.SuspendLayout();
+            this.panel9.SuspendLayout();
+            this.panel10.SuspendLayout();
+            this.panel14.SuspendLayout();
+            this.panel18.SuspendLayout();
+            this.panel19.SuspendLayout();
+            this.panel20.SuspendLayout();
+            this.loginPanel.SuspendLayout();
+            this.exchangePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.currencies_exchangePanel.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel12.SuspendLayout();
@@ -1113,204 +1139,6 @@
             this.mainPanel.TabIndex = 2;
             this.mainPanel.VisibleChanged += new System.EventHandler(this.mainPanel_VisibleChanged);
             // 
-            // label66
-            // 
-            this.label66.AutoSize = true;
-            this.label66.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label66.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
-            this.label66.Location = new System.Drawing.Point(29, 8);
-            this.label66.Name = "label66";
-            this.label66.Size = new System.Drawing.Size(137, 32);
-            this.label66.TabIndex = 1;
-            this.label66.Text = "Клиенты";
-            // 
-            // exitButton_clients
-            // 
-            this.exitButton_clients.BackColor = System.Drawing.SystemColors.Control;
-            this.exitButton_clients.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.exitButton_clients.FlatAppearance.BorderSize = 0;
-            this.exitButton_clients.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.exitButton_clients.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.exitButton_clients.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
-            this.exitButton_clients.Location = new System.Drawing.Point(725, 0);
-            this.exitButton_clients.Name = "exitButton_clients";
-            this.exitButton_clients.Size = new System.Drawing.Size(40, 40);
-            this.exitButton_clients.TabIndex = 4;
-            this.exitButton_clients.Text = "X";
-            this.exitButton_clients.UseVisualStyleBackColor = false;
-            this.exitButton_clients.Click += new System.EventHandler(this.exitButton_clients_Click);
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.SystemColors.Control;
-            this.panel5.Controls.Add(this.pictureBox14);
-            this.panel5.Controls.Add(this.label58);
-            this.panel5.Controls.Add(this.label59);
-            this.panel5.Location = new System.Drawing.Point(443, 90);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(258, 140);
-            this.panel5.TabIndex = 9;
-            // 
-            // pictureBox14
-            // 
-            this.pictureBox14.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox14.Image")));
-            this.pictureBox14.InitialImage = null;
-            this.pictureBox14.Location = new System.Drawing.Point(133, 25);
-            this.pictureBox14.Name = "pictureBox14";
-            this.pictureBox14.Size = new System.Drawing.Size(100, 100);
-            this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox14.TabIndex = 8;
-            this.pictureBox14.TabStop = false;
-            // 
-            // label58
-            // 
-            this.label58.AutoSize = true;
-            this.label58.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label58.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
-            this.label58.Location = new System.Drawing.Point(54, 59);
-            this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(31, 32);
-            this.label58.TabIndex = 7;
-            this.label58.Text = "5";
-            // 
-            // label59
-            // 
-            this.label59.AutoSize = true;
-            this.label59.BackColor = System.Drawing.SystemColors.Control;
-            this.label59.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label59.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
-            this.label59.Location = new System.Drawing.Point(9, -3);
-            this.label59.Name = "label59";
-            this.label59.Size = new System.Drawing.Size(246, 25);
-            this.label59.TabIndex = 6;
-            this.label59.Text = "Количество клиентов";
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.Image = global::AIS_exchangeOffice.Properties.Resources.clientsall;
-            this.pictureBox9.Location = new System.Drawing.Point(26, 328);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(687, 185);
-            this.pictureBox9.TabIndex = 10;
-            this.pictureBox9.TabStop = false;
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.BackColor = System.Drawing.SystemColors.Control;
-            this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label35.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
-            this.label35.Location = new System.Drawing.Point(57, 282);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(184, 31);
-            this.label35.TabIndex = 13;
-            this.label35.Text = "Все клиенты";
-            // 
-            // button1
-            // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(197)))), ((int)(((byte)(254)))));
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(26, 88);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(308, 142);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Добавить";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // clientsPanel
-            // 
-            this.clientsPanel.Controls.Add(this.button1);
-            this.clientsPanel.Controls.Add(this.label35);
-            this.clientsPanel.Controls.Add(this.pictureBox9);
-            this.clientsPanel.Controls.Add(this.panel5);
-            this.clientsPanel.Controls.Add(this.exitButton_clients);
-            this.clientsPanel.Controls.Add(this.label66);
-            this.clientsPanel.Location = new System.Drawing.Point(186, 0);
-            this.clientsPanel.Name = "clientsPanel";
-            this.clientsPanel.Size = new System.Drawing.Size(765, 577);
-            this.clientsPanel.TabIndex = 12;
-            this.clientsPanel.Visible = false;
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label39.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
-            this.label39.Location = new System.Drawing.Point(29, 8);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(109, 32);
-            this.label39.TabIndex = 1;
-            this.label39.Text = "Обмен";
-            // 
-            // exitButton_exchange
-            // 
-            this.exitButton_exchange.BackColor = System.Drawing.SystemColors.Control;
-            this.exitButton_exchange.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.exitButton_exchange.FlatAppearance.BorderSize = 0;
-            this.exitButton_exchange.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.exitButton_exchange.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.exitButton_exchange.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
-            this.exitButton_exchange.Location = new System.Drawing.Point(725, 0);
-            this.exitButton_exchange.Name = "exitButton_exchange";
-            this.exitButton_exchange.Size = new System.Drawing.Size(40, 40);
-            this.exitButton_exchange.TabIndex = 4;
-            this.exitButton_exchange.Text = "X";
-            this.exitButton_exchange.UseVisualStyleBackColor = false;
-            this.exitButton_exchange.Click += new System.EventHandler(this.exitButton_exchange_Click);
-            // 
-            // pictureBox10
-            // 
-            this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
-            this.pictureBox10.Location = new System.Drawing.Point(26, 328);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(687, 185);
-            this.pictureBox10.TabIndex = 10;
-            this.pictureBox10.TabStop = false;
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.BackColor = System.Drawing.SystemColors.Control;
-            this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label36.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
-            this.label36.Location = new System.Drawing.Point(57, 282);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(342, 31);
-            this.label36.TabIndex = 13;
-            this.label36.Text = "Совершенные операции";
-            // 
-            // button3
-            // 
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(197)))), ((int)(((byte)(254)))));
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(178, 85);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(411, 142);
-            this.button3.TabIndex = 14;
-            this.button3.Text = "Покупка/продажа валюты";
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // exchangePanel
-            // 
-            this.exchangePanel.Controls.Add(this.button3);
-            this.exchangePanel.Controls.Add(this.label36);
-            this.exchangePanel.Controls.Add(this.pictureBox10);
-            this.exchangePanel.Controls.Add(this.exitButton_exchange);
-            this.exchangePanel.Controls.Add(this.label39);
-            this.exchangePanel.Location = new System.Drawing.Point(186, 0);
-            this.exchangePanel.Name = "exchangePanel";
-            this.exchangePanel.Size = new System.Drawing.Size(765, 577);
-            this.exchangePanel.TabIndex = 15;
-            this.exchangePanel.Visible = false;
-            // 
             // label38
             // 
             this.label38.AutoSize = true;
@@ -1927,6 +1755,442 @@
             this.label5.TabIndex = 1;
             this.label5.Text = "Заказ валюты";
             // 
+            // clientsPanel
+            // 
+            this.clientsPanel.Controls.Add(this.dataGridView2);
+            this.clientsPanel.Controls.Add(this.AddClientsBtn);
+            this.clientsPanel.Controls.Add(this.label35);
+            this.clientsPanel.Controls.Add(this.panel5);
+            this.clientsPanel.Controls.Add(this.exitButton_clients);
+            this.clientsPanel.Controls.Add(this.label66);
+            this.clientsPanel.Location = new System.Drawing.Point(186, 0);
+            this.clientsPanel.Name = "clientsPanel";
+            this.clientsPanel.Size = new System.Drawing.Size(765, 577);
+            this.clientsPanel.TabIndex = 35;
+            this.clientsPanel.Visible = false;
+            this.clientsPanel.VisibleChanged += new System.EventHandler(this.clientsPanel_VisibleChanged);
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(26, 327);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.Size = new System.Drawing.Size(675, 226);
+            this.dataGridView2.TabIndex = 30;
+            // 
+            // AddClientsBtn
+            // 
+            this.AddClientsBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.AddClientsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddClientsBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AddClientsBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(197)))), ((int)(((byte)(254)))));
+            this.AddClientsBtn.Image = ((System.Drawing.Image)(resources.GetObject("AddClientsBtn.Image")));
+            this.AddClientsBtn.Location = new System.Drawing.Point(26, 88);
+            this.AddClientsBtn.Name = "AddClientsBtn";
+            this.AddClientsBtn.Size = new System.Drawing.Size(308, 142);
+            this.AddClientsBtn.TabIndex = 14;
+            this.AddClientsBtn.Text = "Добавить";
+            this.AddClientsBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.AddClientsBtn.UseVisualStyleBackColor = true;
+            this.AddClientsBtn.Click += new System.EventHandler(this.AddClientsBtn_Click);
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.BackColor = System.Drawing.SystemColors.Control;
+            this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label35.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.label35.Location = new System.Drawing.Point(57, 282);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(184, 31);
+            this.label35.TabIndex = 13;
+            this.label35.Text = "Все клиенты";
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.SystemColors.Control;
+            this.panel5.Controls.Add(this.pictureBox14);
+            this.panel5.Controls.Add(this.clientsNumT);
+            this.panel5.Controls.Add(this.label59);
+            this.panel5.Location = new System.Drawing.Point(443, 90);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(258, 140);
+            this.panel5.TabIndex = 9;
+            // 
+            // pictureBox14
+            // 
+            this.pictureBox14.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox14.Image")));
+            this.pictureBox14.InitialImage = null;
+            this.pictureBox14.Location = new System.Drawing.Point(133, 25);
+            this.pictureBox14.Name = "pictureBox14";
+            this.pictureBox14.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox14.TabIndex = 8;
+            this.pictureBox14.TabStop = false;
+            // 
+            // clientsNumT
+            // 
+            this.clientsNumT.AutoSize = true;
+            this.clientsNumT.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.clientsNumT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.clientsNumT.Location = new System.Drawing.Point(54, 59);
+            this.clientsNumT.Name = "clientsNumT";
+            this.clientsNumT.Size = new System.Drawing.Size(31, 32);
+            this.clientsNumT.TabIndex = 7;
+            this.clientsNumT.Text = "5";
+            // 
+            // label59
+            // 
+            this.label59.AutoSize = true;
+            this.label59.BackColor = System.Drawing.SystemColors.Control;
+            this.label59.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label59.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.label59.Location = new System.Drawing.Point(9, -3);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(246, 25);
+            this.label59.TabIndex = 6;
+            this.label59.Text = "Количество клиентов";
+            // 
+            // exitButton_clients
+            // 
+            this.exitButton_clients.BackColor = System.Drawing.SystemColors.Control;
+            this.exitButton_clients.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.exitButton_clients.FlatAppearance.BorderSize = 0;
+            this.exitButton_clients.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exitButton_clients.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.exitButton_clients.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.exitButton_clients.Location = new System.Drawing.Point(725, 0);
+            this.exitButton_clients.Name = "exitButton_clients";
+            this.exitButton_clients.Size = new System.Drawing.Size(40, 40);
+            this.exitButton_clients.TabIndex = 4;
+            this.exitButton_clients.Text = "X";
+            this.exitButton_clients.UseVisualStyleBackColor = false;
+            this.exitButton_clients.Click += new System.EventHandler(this.exitButton_search_Click);
+            // 
+            // label66
+            // 
+            this.label66.AutoSize = true;
+            this.label66.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label66.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.label66.Location = new System.Drawing.Point(29, 8);
+            this.label66.Name = "label66";
+            this.label66.Size = new System.Drawing.Size(137, 32);
+            this.label66.TabIndex = 1;
+            this.label66.Text = "Клиенты";
+            // 
+            // addclientPanel
+            // 
+            this.addclientPanel.Controls.Add(this.GoBackClientsPanel);
+            this.addclientPanel.Controls.Add(this.panel9);
+            this.addclientPanel.Controls.Add(this.label16);
+            this.addclientPanel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.addclientPanel.Location = new System.Drawing.Point(186, 0);
+            this.addclientPanel.Name = "addclientPanel";
+            this.addclientPanel.Size = new System.Drawing.Size(765, 577);
+            this.addclientPanel.TabIndex = 36;
+            this.addclientPanel.Visible = false;
+            // 
+            // GoBackClientsPanel
+            // 
+            this.GoBackClientsPanel.BackColor = System.Drawing.SystemColors.Control;
+            this.GoBackClientsPanel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.GoBackClientsPanel.FlatAppearance.BorderSize = 0;
+            this.GoBackClientsPanel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.GoBackClientsPanel.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.GoBackClientsPanel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.GoBackClientsPanel.Image = ((System.Drawing.Image)(resources.GetObject("GoBackClientsPanel.Image")));
+            this.GoBackClientsPanel.Location = new System.Drawing.Point(16, 8);
+            this.GoBackClientsPanel.Name = "GoBackClientsPanel";
+            this.GoBackClientsPanel.Size = new System.Drawing.Size(60, 60);
+            this.GoBackClientsPanel.TabIndex = 32;
+            this.GoBackClientsPanel.UseVisualStyleBackColor = false;
+            this.GoBackClientsPanel.Click += new System.EventHandler(this.GoBackClientsPanel_Click);
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.panel9.Controls.Add(this.AddClientBtn);
+            this.panel9.Controls.Add(this.panel10);
+            this.panel9.Controls.Add(this.panel14);
+            this.panel9.Controls.Add(this.panel18);
+            this.panel9.Controls.Add(this.panel19);
+            this.panel9.Controls.Add(this.panel20);
+            this.panel9.Controls.Add(this.loginPanel);
+            this.panel9.Controls.Add(this.label15);
+            this.panel9.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.panel9.Location = new System.Drawing.Point(182, 74);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(437, 479);
+            this.panel9.TabIndex = 9;
+            // 
+            // AddClientBtn
+            // 
+            this.AddClientBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.AddClientBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddClientBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AddClientBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(197)))), ((int)(((byte)(254)))));
+            this.AddClientBtn.Image = ((System.Drawing.Image)(resources.GetObject("AddClientBtn.Image")));
+            this.AddClientBtn.Location = new System.Drawing.Point(172, 419);
+            this.AddClientBtn.Name = "AddClientBtn";
+            this.AddClientBtn.Size = new System.Drawing.Size(144, 51);
+            this.AddClientBtn.TabIndex = 33;
+            this.AddClientBtn.Text = "Добавить";
+            this.AddClientBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.AddClientBtn.UseVisualStyleBackColor = true;
+            this.AddClientBtn.Click += new System.EventHandler(this.AddClientBtn_Click);
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.White;
+            this.panel10.Controls.Add(this.numberBox);
+            this.panel10.Location = new System.Drawing.Point(3, 356);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(430, 57);
+            this.panel10.TabIndex = 11;
+            // 
+            // numberBox
+            // 
+            this.numberBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.numberBox.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.numberBox.ForeColor = System.Drawing.Color.Silver;
+            this.numberBox.Location = new System.Drawing.Point(8, 11);
+            this.numberBox.Name = "numberBox";
+            this.numberBox.Size = new System.Drawing.Size(417, 30);
+            this.numberBox.TabIndex = 5;
+            this.numberBox.Text = "Введите номер документа";
+            this.numberBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numberBox.Enter += new System.EventHandler(this.numberBox_Enter);
+            this.numberBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numberBox_KeyPress);
+            this.numberBox.Leave += new System.EventHandler(this.numberBox_Leave);
+            // 
+            // panel14
+            // 
+            this.panel14.BackColor = System.Drawing.Color.White;
+            this.panel14.Controls.Add(this.seriesBox);
+            this.panel14.Location = new System.Drawing.Point(3, 293);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(430, 57);
+            this.panel14.TabIndex = 10;
+            // 
+            // seriesBox
+            // 
+            this.seriesBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.seriesBox.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.seriesBox.ForeColor = System.Drawing.Color.Silver;
+            this.seriesBox.Location = new System.Drawing.Point(8, 11);
+            this.seriesBox.Name = "seriesBox";
+            this.seriesBox.Size = new System.Drawing.Size(417, 30);
+            this.seriesBox.TabIndex = 5;
+            this.seriesBox.Text = "Введите серию документа";
+            this.seriesBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.seriesBox.Enter += new System.EventHandler(this.seriesBox_Enter);
+            this.seriesBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.seriesBox_KeyPress);
+            this.seriesBox.Leave += new System.EventHandler(this.seriesBox_Leave);
+            // 
+            // panel18
+            // 
+            this.panel18.BackColor = System.Drawing.Color.White;
+            this.panel18.Controls.Add(this.dateTimePicker1);
+            this.panel18.Location = new System.Drawing.Point(3, 230);
+            this.panel18.Name = "panel18";
+            this.panel18.Size = new System.Drawing.Size(430, 57);
+            this.panel18.TabIndex = 9;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dateTimePicker1.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.dateTimePicker1.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.dateTimePicker1.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.dateTimePicker1.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.dateTimePicker1.CalendarTrailingForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.dateTimePicker1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dateTimePicker1.Location = new System.Drawing.Point(95, 12);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(269, 37);
+            this.dateTimePicker1.TabIndex = 33;
+            this.dateTimePicker1.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            // 
+            // panel19
+            // 
+            this.panel19.BackColor = System.Drawing.Color.White;
+            this.panel19.Controls.Add(this.patronymicBox);
+            this.panel19.Location = new System.Drawing.Point(3, 167);
+            this.panel19.Name = "panel19";
+            this.panel19.Size = new System.Drawing.Size(430, 57);
+            this.panel19.TabIndex = 9;
+            // 
+            // patronymicBox
+            // 
+            this.patronymicBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.patronymicBox.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.patronymicBox.ForeColor = System.Drawing.Color.Silver;
+            this.patronymicBox.Location = new System.Drawing.Point(8, 11);
+            this.patronymicBox.Name = "patronymicBox";
+            this.patronymicBox.Size = new System.Drawing.Size(417, 30);
+            this.patronymicBox.TabIndex = 5;
+            this.patronymicBox.Text = "Введите отчество";
+            this.patronymicBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.patronymicBox.Enter += new System.EventHandler(this.patronymicBox_Enter);
+            this.patronymicBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.patronymicBox_KeyPress);
+            this.patronymicBox.Leave += new System.EventHandler(this.patronymicBox_Leave);
+            // 
+            // panel20
+            // 
+            this.panel20.BackColor = System.Drawing.Color.White;
+            this.panel20.Controls.Add(this.surnameBox);
+            this.panel20.Location = new System.Drawing.Point(3, 41);
+            this.panel20.Name = "panel20";
+            this.panel20.Size = new System.Drawing.Size(430, 57);
+            this.panel20.TabIndex = 8;
+            // 
+            // surnameBox
+            // 
+            this.surnameBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.surnameBox.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.surnameBox.ForeColor = System.Drawing.Color.Silver;
+            this.surnameBox.Location = new System.Drawing.Point(8, 11);
+            this.surnameBox.Name = "surnameBox";
+            this.surnameBox.Size = new System.Drawing.Size(417, 30);
+            this.surnameBox.TabIndex = 5;
+            this.surnameBox.Text = "Введите фамилию";
+            this.surnameBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.surnameBox.Enter += new System.EventHandler(this.surnameBox_Enter);
+            this.surnameBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.surnameBox_KeyPress);
+            this.surnameBox.Leave += new System.EventHandler(this.surnameBox_Leave);
+            // 
+            // loginPanel
+            // 
+            this.loginPanel.BackColor = System.Drawing.Color.White;
+            this.loginPanel.Controls.Add(this.nameBox);
+            this.loginPanel.Location = new System.Drawing.Point(3, 104);
+            this.loginPanel.Name = "loginPanel";
+            this.loginPanel.Size = new System.Drawing.Size(430, 57);
+            this.loginPanel.TabIndex = 7;
+            // 
+            // nameBox
+            // 
+            this.nameBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.nameBox.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.nameBox.ForeColor = System.Drawing.Color.Silver;
+            this.nameBox.Location = new System.Drawing.Point(8, 11);
+            this.nameBox.Name = "nameBox";
+            this.nameBox.Size = new System.Drawing.Size(417, 30);
+            this.nameBox.TabIndex = 5;
+            this.nameBox.Text = "Введите имя";
+            this.nameBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nameBox.Enter += new System.EventHandler(this.nameBox_Enter);
+            this.nameBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nameBox_KeyPress);
+            this.nameBox.Leave += new System.EventHandler(this.nameBox_Leave);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label15.ForeColor = System.Drawing.Color.White;
+            this.label15.Location = new System.Drawing.Point(128, 3);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(197, 25);
+            this.label15.TabIndex = 6;
+            this.label15.Text = "Введите данные:";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.label16.Location = new System.Drawing.Point(191, 22);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(415, 32);
+            this.label16.TabIndex = 1;
+            this.label16.Text = "Добавление нового клиента";
+            // 
+            // exchangePanel
+            // 
+            this.exchangePanel.Controls.Add(this.dataGridView3);
+            this.exchangePanel.Controls.Add(this.buy_valuesBtn);
+            this.exchangePanel.Controls.Add(this.label36);
+            this.exchangePanel.Controls.Add(this.exitButton_exchange);
+            this.exchangePanel.Controls.Add(this.label39);
+            this.exchangePanel.Location = new System.Drawing.Point(186, 0);
+            this.exchangePanel.Name = "exchangePanel";
+            this.exchangePanel.Size = new System.Drawing.Size(765, 577);
+            this.exchangePanel.TabIndex = 37;
+            this.exchangePanel.Visible = false;
+            this.exchangePanel.VisibleChanged += new System.EventHandler(this.exchangePanel_VisibleChanged);
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.AllowUserToAddRows = false;
+            this.dataGridView3.AllowUserToDeleteRows = false;
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Location = new System.Drawing.Point(26, 327);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.ReadOnly = true;
+            this.dataGridView3.Size = new System.Drawing.Size(675, 226);
+            this.dataGridView3.TabIndex = 31;
+            // 
+            // buy_valuesBtn
+            // 
+            this.buy_valuesBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buy_valuesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buy_valuesBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buy_valuesBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(197)))), ((int)(((byte)(254)))));
+            this.buy_valuesBtn.Image = ((System.Drawing.Image)(resources.GetObject("buy_valuesBtn.Image")));
+            this.buy_valuesBtn.Location = new System.Drawing.Point(178, 85);
+            this.buy_valuesBtn.Name = "buy_valuesBtn";
+            this.buy_valuesBtn.Size = new System.Drawing.Size(411, 142);
+            this.buy_valuesBtn.TabIndex = 14;
+            this.buy_valuesBtn.Text = "Покупка/продажа валюты";
+            this.buy_valuesBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.buy_valuesBtn.UseVisualStyleBackColor = true;
+            this.buy_valuesBtn.Click += new System.EventHandler(this.buy_valuesBtn_Click);
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.BackColor = System.Drawing.SystemColors.Control;
+            this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label36.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.label36.Location = new System.Drawing.Point(57, 282);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(342, 31);
+            this.label36.TabIndex = 13;
+            this.label36.Text = "Совершенные операции";
+            // 
+            // exitButton_exchange
+            // 
+            this.exitButton_exchange.BackColor = System.Drawing.SystemColors.Control;
+            this.exitButton_exchange.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.exitButton_exchange.FlatAppearance.BorderSize = 0;
+            this.exitButton_exchange.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exitButton_exchange.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.exitButton_exchange.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.exitButton_exchange.Location = new System.Drawing.Point(725, 0);
+            this.exitButton_exchange.Name = "exitButton_exchange";
+            this.exitButton_exchange.Size = new System.Drawing.Size(40, 40);
+            this.exitButton_exchange.TabIndex = 4;
+            this.exitButton_exchange.Text = "X";
+            this.exitButton_exchange.UseVisualStyleBackColor = false;
+            this.exitButton_exchange.Click += new System.EventHandler(this.exitButton_search_Click);
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label39.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.label39.Location = new System.Drawing.Point(29, 8);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(109, 32);
+            this.label39.TabIndex = 1;
+            this.label39.Text = "Обмен";
+            // 
             // currencies_exchangePanel
             // 
             this.currencies_exchangePanel.Controls.Add(this.goBackExchangeBtn);
@@ -1936,7 +2200,7 @@
             this.currencies_exchangePanel.Location = new System.Drawing.Point(186, 0);
             this.currencies_exchangePanel.Name = "currencies_exchangePanel";
             this.currencies_exchangePanel.Size = new System.Drawing.Size(765, 577);
-            this.currencies_exchangePanel.TabIndex = 34;
+            this.currencies_exchangePanel.TabIndex = 38;
             this.currencies_exchangePanel.Visible = false;
             this.currencies_exchangePanel.VisibleChanged += new System.EventHandler(this.currencies_exchangePanel_VisibleChanged);
             // 
@@ -2012,50 +2276,51 @@
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.White;
-            this.panel7.Controls.Add(this.quantityBoxExchange);
+            this.panel7.Controls.Add(this.quantityBox_);
             this.panel7.Location = new System.Drawing.Point(3, 293);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(430, 54);
             this.panel7.TabIndex = 10;
             // 
-            // quantityBoxExchange
+            // quantityBox_
             // 
-            this.quantityBoxExchange.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.quantityBoxExchange.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.quantityBoxExchange.ForeColor = System.Drawing.Color.Silver;
-            this.quantityBoxExchange.Location = new System.Drawing.Point(8, 11);
-            this.quantityBoxExchange.Multiline = true;
-            this.quantityBoxExchange.Name = "quantityBoxExchange";
-            this.quantityBoxExchange.Size = new System.Drawing.Size(413, 30);
-            this.quantityBoxExchange.TabIndex = 5;
-            this.quantityBoxExchange.Text = "Введите количество валюты";
-            this.quantityBoxExchange.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.quantityBox_.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.quantityBox_.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.quantityBox_.ForeColor = System.Drawing.Color.Silver;
+            this.quantityBox_.Location = new System.Drawing.Point(8, 11);
+            this.quantityBox_.Multiline = true;
+            this.quantityBox_.Name = "quantityBox_";
+            this.quantityBox_.Size = new System.Drawing.Size(413, 30);
+            this.quantityBox_.TabIndex = 5;
+            this.quantityBox_.Text = "Введите количество валюты";
+            this.quantityBox_.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.quantityBox_.TextChanged += new System.EventHandler(this.quantityBox__TextChanged);
             // 
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.White;
-            this.panel8.Controls.Add(this.selectValueBoxExchange);
+            this.panel8.Controls.Add(this.selectValueBox_);
             this.panel8.Location = new System.Drawing.Point(3, 167);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(430, 57);
             this.panel8.TabIndex = 9;
             // 
-            // selectValueBoxExchange
+            // selectValueBox_
             // 
-            this.selectValueBoxExchange.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.selectValueBoxExchange.ForeColor = System.Drawing.Color.Silver;
-            this.selectValueBoxExchange.FormattingEnabled = true;
-            this.selectValueBoxExchange.Items.AddRange(new object[] {
+            this.selectValueBox_.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.selectValueBox_.ForeColor = System.Drawing.Color.Silver;
+            this.selectValueBox_.FormattingEnabled = true;
+            this.selectValueBox_.Items.AddRange(new object[] {
             "$(Доллар США)",
             "€(Евро)",
             "£(Британский фунт стерлингов)",
             "₣(Швейцарский франк)",
             "¥(Японская иена)"});
-            this.selectValueBoxExchange.Location = new System.Drawing.Point(8, 9);
-            this.selectValueBoxExchange.Name = "selectValueBoxExchange";
-            this.selectValueBoxExchange.Size = new System.Drawing.Size(414, 38);
-            this.selectValueBoxExchange.TabIndex = 2;
-            this.selectValueBoxExchange.Text = "Выберите валюту";
+            this.selectValueBox_.Location = new System.Drawing.Point(8, 9);
+            this.selectValueBox_.Name = "selectValueBox_";
+            this.selectValueBox_.Size = new System.Drawing.Size(414, 38);
+            this.selectValueBox_.TabIndex = 2;
+            this.selectValueBox_.Text = "Выберите валюту";
             // 
             // panel16
             // 
@@ -2128,14 +2393,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(951, 577);
-            this.Controls.Add(this.currencies_exchangePanel);
-            this.Controls.Add(this.add_valuesPanel);
             this.Controls.Add(this.mainPanel);
+            this.Controls.Add(this.currencies_exchangePanel);
+            this.Controls.Add(this.exchangePanel);
+            this.Controls.Add(this.addclientPanel);
+            this.Controls.Add(this.clientsPanel);
+            this.Controls.Add(this.add_valuesPanel);
             this.Controls.Add(this.bdPanel);
             this.Controls.Add(this.otchetPanel);
             this.Controls.Add(this.searchPanel);
-            this.Controls.Add(this.exchangePanel);
-            this.Controls.Add(this.clientsPanel);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -2163,15 +2429,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.mainPanel.ResumeLayout(false);
             this.mainPanel.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            this.clientsPanel.ResumeLayout(false);
-            this.clientsPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
-            this.exchangePanel.ResumeLayout(false);
-            this.exchangePanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             this.searchPanel.ResumeLayout(false);
             this.searchPanel.PerformLayout();
@@ -2195,6 +2452,30 @@
             this.panel13.ResumeLayout(false);
             this.panel13.PerformLayout();
             this.panel15.ResumeLayout(false);
+            this.clientsPanel.ResumeLayout(false);
+            this.clientsPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
+            this.addclientPanel.ResumeLayout(false);
+            this.addclientPanel.PerformLayout();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
+            this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
+            this.panel14.ResumeLayout(false);
+            this.panel14.PerformLayout();
+            this.panel18.ResumeLayout(false);
+            this.panel19.ResumeLayout(false);
+            this.panel19.PerformLayout();
+            this.panel20.ResumeLayout(false);
+            this.panel20.PerformLayout();
+            this.loginPanel.ResumeLayout(false);
+            this.loginPanel.PerformLayout();
+            this.exchangePanel.ResumeLayout(false);
+            this.exchangePanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.currencies_exchangePanel.ResumeLayout(false);
             this.currencies_exchangePanel.PerformLayout();
             this.panel6.ResumeLayout(false);
@@ -2213,9 +2494,7 @@
         private System.Windows.Forms.Panel BalancePanel;
         private System.Windows.Forms.Button BDbtn;
         private System.Windows.Forms.Panel bdPanel;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button print_currencies;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button add_valuesBtn;
         private System.Windows.Forms.Button valuesEdit_btn;
         private System.Windows.Forms.Button button7;
@@ -2228,18 +2507,14 @@
         private System.Windows.Forms.Label CHF_buy;
         private System.Windows.Forms.Label CHF_sell;
         private System.Windows.Forms.Button ClientsBtn;
-        private System.Windows.Forms.Panel clientsPanel;
         private System.Windows.Forms.RadioButton ClientsRadioBtn;
         private System.Windows.Forms.RadioButton CourseRadioBtn;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label EUR_buy;
         private System.Windows.Forms.Label EUR_sell;
         private System.Windows.Forms.Button ExchangeBtn;
-        private System.Windows.Forms.Panel exchangePanel;
         private System.Windows.Forms.Button exit;
         private System.Windows.Forms.Button exitButton_BD;
-        private System.Windows.Forms.Button exitButton_clients;
-        private System.Windows.Forms.Button exitButton_exchange;
         private System.Windows.Forms.Button exitButton_Otchet;
         private System.Windows.Forms.Button exitButton_search;
         private System.Windows.Forms.Label GBP_buy;
@@ -2263,11 +2538,8 @@
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.Label label36;
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.Label label38;
-        private System.Windows.Forms.Label label39;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.Label label41;
@@ -2275,10 +2547,7 @@
         private System.Windows.Forms.Label label44;
         private System.Windows.Forms.Label label45;
         private System.Windows.Forms.Label EUR_value;
-        private System.Windows.Forms.Label label58;
-        private System.Windows.Forms.Label label59;
         private System.Windows.Forms.Label ClientsNum;
-        private System.Windows.Forms.Label label66;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
@@ -2291,12 +2560,9 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox10;
         private System.Windows.Forms.PictureBox pictureBox11;
         private System.Windows.Forms.PictureBox pictureBox13;
-        private System.Windows.Forms.PictureBox pictureBox14;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
@@ -2304,7 +2570,6 @@
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.PictureBox pictureUser;
         private System.Windows.Forms.Panel pnael4;
         private System.Windows.Forms.Panel pnlNav;
@@ -2346,6 +2611,40 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label login_admin;
         private System.Windows.Forms.Label name_admin;
+        private System.Windows.Forms.Panel clientsPanel;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Button AddClientsBtn;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.PictureBox pictureBox14;
+        private System.Windows.Forms.Label clientsNumT;
+        private System.Windows.Forms.Label label59;
+        private System.Windows.Forms.Button exitButton_clients;
+        private System.Windows.Forms.Label label66;
+        private System.Windows.Forms.Panel addclientPanel;
+        private System.Windows.Forms.Button GoBackClientsPanel;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Button AddClientBtn;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.TextBox numberBox;
+        private System.Windows.Forms.Panel panel14;
+        private System.Windows.Forms.TextBox seriesBox;
+        private System.Windows.Forms.Panel panel18;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Panel panel19;
+        private System.Windows.Forms.TextBox patronymicBox;
+        private System.Windows.Forms.Panel panel20;
+        private System.Windows.Forms.TextBox surnameBox;
+        private System.Windows.Forms.Panel loginPanel;
+        private System.Windows.Forms.TextBox nameBox;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Panel exchangePanel;
+        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.Button buy_valuesBtn;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Button exitButton_exchange;
+        private System.Windows.Forms.Label label39;
         private System.Windows.Forms.Panel currencies_exchangePanel;
         private System.Windows.Forms.Button goBackExchangeBtn;
         private System.Windows.Forms.Panel panel6;
@@ -2353,9 +2652,9 @@
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.TextBox summBox;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.TextBox quantityBoxExchange;
+        private System.Windows.Forms.TextBox quantityBox_;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.ComboBox selectValueBoxExchange;
+        private System.Windows.Forms.ComboBox selectValueBox_;
         private System.Windows.Forms.Panel panel16;
         private System.Windows.Forms.ComboBox selectClientBox;
         private System.Windows.Forms.Panel panel17;

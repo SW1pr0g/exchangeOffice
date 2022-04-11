@@ -946,19 +946,19 @@ namespace AIS_exchangeOffice
                 //вставить здесь редактирование БД
                 command.Connection = conn;
                 command.Connection.Open();
-                string commandString = "UPDATE currencycourse SET summsale = " + sellUSD_edit.Text + ", summpurchase = " + buyUSD_edit.Text + " WHERE name = 'USD'";
+                string commandString = "UPDATE currencycourse SET summsale = " + Math.Round(Convert.ToDouble(sellUSD_edit.Text.Replace('.', ',')), 2).ToString().Replace(',', '.') + ", summpurchase = " + Math.Round(Convert.ToDouble(buyUSD_edit.Text.Replace('.', ',')), 2).ToString().Replace(',', '.') + " WHERE name = 'USD'";
                 command = new MySqlCommand(commandString, conn);
                 command.ExecuteNonQuery();
-                commandString = "UPDATE currencycourse SET summsale = " + sellEUR_edit.Text + ", summpurchase = " + buyEUR_edit.Text + " WHERE name = 'EUR'";
+                commandString = "UPDATE currencycourse SET summsale = " + Math.Round(Convert.ToDouble(sellEUR_edit.Text.Replace('.', ',')), 2).ToString().Replace(',', '.') + ", summpurchase = " + Math.Round(Convert.ToDouble(buyEUR_edit.Text.Replace('.', ',')), 2).ToString().Replace(',', '.') + " WHERE name = 'EUR'";
                 command = new MySqlCommand(commandString, conn);
                 command.ExecuteNonQuery();
-                commandString = "UPDATE currencycourse SET summsale = " + sellGBP_edit.Text + ", summpurchase = " + buyGBP_edit.Text + " WHERE name = 'GBP'";
+                commandString = "UPDATE currencycourse SET summsale = " + Math.Round(Convert.ToDouble(sellGBP_edit.Text.Replace('.', ',')), 2).ToString().Replace(',', '.') + ", summpurchase = " + Math.Round(Convert.ToDouble(buyGBP_edit.Text.Replace('.', ',')), 2).ToString().Replace(',', '.') + " WHERE name = 'GBP'";
                 command = new MySqlCommand(commandString, conn);
                 command.ExecuteNonQuery();
-                commandString = "UPDATE currencycourse SET summsale = " + sellCHF_edit.Text + ", summpurchase = " + buyCHF_edit.Text + " WHERE name = 'CHF'";
+                commandString = "UPDATE currencycourse SET summsale = " + Math.Round(Convert.ToDouble(sellCHF_edit.Text.Replace('.', ',')), 2).ToString().Replace(',', '.') + ", summpurchase = " + Math.Round(Convert.ToDouble(buyCHF_edit.Text.Replace('.', ',')), 2).ToString().Replace(',', '.') + " WHERE name = 'CHF'";
                 command = new MySqlCommand(commandString, conn);
                 command.ExecuteNonQuery();
-                commandString = "UPDATE currencycourse SET summsale = " + sellJPY_edit.Text + ", summpurchase = " + buyJPY_edit.Text + " WHERE name = 'JPY'";
+                commandString = "UPDATE currencycourse SET summsale = " + Math.Round(Convert.ToDouble(sellJPY_edit.Text.Replace('.', ',')), 2).ToString().Replace(',', '.') + ", summpurchase = " + Math.Round(Convert.ToDouble(buyJPY_edit.Text.Replace('.', ',')), 2).ToString().Replace(',', '.') + " WHERE name = 'JPY'";
                 command = new MySqlCommand(commandString, conn);
                 command.ExecuteNonQuery();
 
@@ -1430,6 +1430,13 @@ namespace AIS_exchangeOffice
 
         private void goBackExchangeBtn_Click(object sender, EventArgs e)
         {
+            selectClientBox.Items.Clear();
+            nameBox.Text = "Введите имя";
+            surnameBox.Text = "Введите фамилию";
+            patronymicBox.Text = "Введите отчество";
+            dateTimePicker1.Text = "01.01.2022";
+            seriesBox.Text = "Введите серию документа";
+            numberBox.Text = "Введите номер документа";
             currencies_exchangePanel.Visible = false;
             exchangePanel.Visible = true;
         }
@@ -1467,6 +1474,67 @@ namespace AIS_exchangeOffice
                     command.Connection.Close();
                 }
             }
+        }        
+        private void clientsPanel_VisibleChanged(object sender, EventArgs e)
+        {
+            dataGridView2.Rows.Clear();
+            dataGridView2.Columns.Clear();
+
+            //datagrid
+            string connStr = "server=localhost;user=root;database=aisdatabd;password=root123;";
+            MySqlConnection conn = new MySqlConnection(connStr);
+
+            MySqlCommand command = new MySqlCommand();
+            string commandString = "SELECT * FROM clients;";
+            command.CommandText = commandString;
+            command.Connection = conn;
+            MySqlDataReader reader;
+            try
+            {
+                command.Connection.Open();
+                reader = command.ExecuteReader();
+                this.dataGridView2.Columns.Add("u_num", "№");
+                this.dataGridView2.Columns["u_num"].Width = 45;
+                this.dataGridView2.Columns.Add("surname", "Фамилия");
+                this.dataGridView2.Columns["surname"].Width = 110;
+                this.dataGridView2.Columns.Add("name", "Имя");
+                this.dataGridView2.Columns["name"].Width = 90;
+                this.dataGridView2.Columns.Add("patronymic", "Отчество");
+                this.dataGridView2.Columns["patronymic"].Width = 110;
+                this.dataGridView2.Columns.Add("date_birth", "Дата рождения");
+                this.dataGridView2.Columns["date_birth"].Width = 90;
+                this.dataGridView2.Columns.Add("seriesDoc", "Серия документа");
+                this.dataGridView2.Columns["seriesDoc"].Width = 100;
+                this.dataGridView2.Columns.Add("numberDoc", "Номер документа");
+                this.dataGridView2.Columns["numberDoc"].Width = 100;
+                while (reader.Read())
+                {
+                    classes.reversedate reversedate = new classes.reversedate();
+                    dataGridView2.Rows.Add(reader["u_num"].ToString(), reader["surname"].ToString(), reader["name"].ToString(), reader["patronymic"].ToString(), reversedate.dateReverse(reader["date_birth"].ToString()), reader["seriesDoc"].ToString(), reader["numberDoc"].ToString());
+                }
+                reader.Close();
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("Error: \r\n{0}", ex.ToString());
+            }
+            finally
+            {
+                command.Connection.Close();
+            }
+            clientsNumT.Text = dataGridView2.RowCount.ToString();
+        }
+
+        private void AddClientsBtn_Click(object sender, EventArgs e)
+        {
+            clientsPanel.Visible = false;
+            addclientPanel.Visible = true;
+        }
+
+        private void GoBackClientsPanel_Click(object sender, EventArgs e)
+        {
+            clientsPanel.Visible = true;
+            addclientPanel.Visible = false;
         }
 
         private void quantityBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -1482,5 +1550,300 @@ namespace AIS_exchangeOffice
                     e.Handled = true;
             }
         }
+        private void surnameBox_Enter(object sender, EventArgs e)
+        {
+            if (surnameBox.Text == "Введите фамилию")
+            {
+                surnameBox.Text = null;
+                surnameBox.ForeColor = Color.FromArgb(11, 100, 103);
+            }
+        }
+        private void surnameBox_Leave(object sender, EventArgs e)
+        {
+            if (surnameBox.Text == "")
+            {
+                surnameBox.Text = "Введите фамилию";
+                surnameBox.ForeColor = Color.Silver;
+            }
+        }
+        private void surnameBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar))
+                if ((e.KeyChar > 32 && e.KeyChar < 48) || (e.KeyChar > 57 && e.KeyChar < 65) || (e.KeyChar > 90 && e.KeyChar < 97) || (e.KeyChar > 122 && e.KeyChar < 256))
+                    e.Handled = true;
+                else
+                    e.Handled = false;
+            else if (e.KeyChar == 8)
+                e.Handled = false;
+            else
+                e.Handled = true;
+        }
+        private void nameBox_Enter(object sender, EventArgs e)
+        {
+            if (nameBox.Text == "Введите имя")
+            {
+                nameBox.Text = null;
+                nameBox.ForeColor = Color.FromArgb(11, 100, 103);
+            }
+        }
+
+        private void nameBox_Leave(object sender, EventArgs e)
+        {
+            if (nameBox.Text == "")
+            {
+                nameBox.Text = "Введите имя";
+                nameBox.ForeColor = Color.Silver;
+            }
+        }
+        private void nameBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar))
+                if ((e.KeyChar > 32 && e.KeyChar < 48) || (e.KeyChar > 57 && e.KeyChar < 65) || (e.KeyChar > 90 && e.KeyChar < 97) || (e.KeyChar > 122 && e.KeyChar < 256))
+                    e.Handled = true;
+                else
+                    e.Handled = false;
+            else if (e.KeyChar == 8)
+                e.Handled = false;
+            else
+                e.Handled = true;
+        }
+        private void patronymicBox_Enter(object sender, EventArgs e)
+        {
+            if (patronymicBox.Text == "Введите отчество")
+            {
+                patronymicBox.Text = null;
+                patronymicBox.ForeColor = Color.FromArgb(11, 100, 103);
+            }
+        }
+        private void patronymicBox_Leave(object sender, EventArgs e)
+        {
+            if (patronymicBox.Text == "")
+            {
+                patronymicBox.Text = "Введите отчество";
+                patronymicBox.ForeColor = Color.Silver;
+            }
+        }
+        private void patronymicBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar))
+                if ((e.KeyChar > 32 && e.KeyChar < 48) || (e.KeyChar > 57 && e.KeyChar < 65) || (e.KeyChar > 90 && e.KeyChar < 97) || (e.KeyChar > 122 && e.KeyChar < 256))
+                    e.Handled = true;
+                else
+                    e.Handled = false;
+            else if (e.KeyChar == 8)
+                e.Handled = false;
+            else
+                e.Handled = true;
+        }
+        private void seriesBox_Enter(object sender, EventArgs e)
+        {
+            if (seriesBox.Text == "Введите серию документа")
+            {
+                seriesBox.Text = null;
+                seriesBox.MaxLength = 4;
+                seriesBox.ForeColor = Color.FromArgb(11, 100, 103);
+            }
+        }
+        private void seriesBox_Leave(object sender, EventArgs e)
+        {
+            if (seriesBox.Text == "")
+            {
+                seriesBox.MaxLength = 32767;
+                seriesBox.Text = "Введите серию документа";
+                seriesBox.ForeColor = Color.Silver;
+            }
+        }
+        private void seriesBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 8) { }
+            else
+            {
+                if (Char.IsDigit(e.KeyChar)) return;
+                else
+                    e.Handled = true;
+            }
+        }
+        private void numberBox_Enter(object sender, EventArgs e)
+        {
+            if (numberBox.Text == "Введите номер документа")
+            {
+                numberBox.Text = null;
+                numberBox.MaxLength = 6;
+                numberBox.ForeColor = Color.FromArgb(11, 100, 103);
+            }
+        }
+        private void numberBox_Leave(object sender, EventArgs e)
+        {
+            if (numberBox.Text == "")
+            {
+                seriesBox.MaxLength = 32767;
+                numberBox.Text = "Введите номер документа";
+                numberBox.ForeColor = Color.Silver;
+            }
+        }
+        private void numberBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 8) { }
+            else
+            {
+                if (Char.IsDigit(e.KeyChar)) return;
+                else
+                    e.Handled = true;
+            }
+        }
+
+        private void exchangePanel_VisibleChanged(object sender, EventArgs e)
+        {
+            dataGridView3.Rows.Clear();
+            dataGridView3.Columns.Clear();
+
+            //datagrid
+            string connStr = "server=localhost;user=root;database=aisdatabd;password=root123;";
+            MySqlConnection conn = new MySqlConnection(connStr);
+
+            MySqlCommand command = new MySqlCommand();
+            string commandString = "SELECT * FROM operations;";
+            command.CommandText = commandString;
+            command.Connection = conn;
+            MySqlDataReader reader;
+            try
+            {
+                command.Connection.Open();
+                reader = command.ExecuteReader();
+                this.dataGridView3.Columns.Add("u_num", "Уникальный номер");
+                this.dataGridView3.Columns["u_num"].Width = 75;
+                this.dataGridView3.Columns.Add("surname", "Фамилия");
+                this.dataGridView3.Columns["surname"].Width = 66;
+                this.dataGridView3.Columns.Add("name", "Имя");
+                this.dataGridView3.Columns["name"].Width = 60;
+                this.dataGridView3.Columns.Add("patronymic", "Отчество");
+                this.dataGridView3.Columns["patronymic"].Width = 75;
+                this.dataGridView3.Columns.Add("type", "Тип операции");
+                this.dataGridView3.Columns["type"].Width = 65;
+                this.dataGridView3.Columns.Add("value", "Валюта");
+                this.dataGridView3.Columns["value"].Width = 55;
+                this.dataGridView3.Columns.Add("quantity", "Количество валюты");
+                this.dataGridView3.Columns["quantity"].Width = 69;
+                this.dataGridView3.Columns.Add("summ", "Сумма операции");
+                this.dataGridView3.Columns["summ"].Width = 60;
+                this.dataGridView3.Columns.Add("date", "Дата и время");
+                this.dataGridView3.Columns["date"].Width = 107;
+                while (reader.Read())
+                {
+                    classes.reversedate reversedate = new classes.reversedate();
+                    dataGridView3.Rows.Add(reader["u_num"].ToString(), reader["surname"].ToString(), reader["name"].ToString(), reader["patronymic"].ToString(), reader["type"].ToString(), reader["value"].ToString(), reader["quantity"].ToString().Replace(',', '.'), reader["summ"].ToString().Replace(',', '.'), reversedate.datetimeReverse(reader["date"].ToString()));
+                }
+                reader.Close();
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("Error: \r\n{0}", ex.ToString());
+            }
+            finally
+            {
+                command.Connection.Close();
+            }            
+        }
+
+        private void buy_valuesBtn_Click(object sender, EventArgs e)
+        {
+            exchangePanel.Visible = false;
+            currencies_exchangePanel.Visible = true;
+        }
+
+        private void goBackExchangeBtn_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void currencies_exchangePanel_VisibleChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddClientBtn_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Вы уверены что хотите добавить нового клиента?", "Добавление нового клиента", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                try
+                {
+                    if (nameBox.Text == "Введите имя" || surnameBox.Text == "Введите фамилию" || patronymicBox.Text == "Введите отчество" || seriesBox.Text == "Введите серию документа" || numberBox.Text == "Введите номер документа")
+                    {
+                        MessageBox.Show("Одно или несколько полей не заполнены!");
+                    }
+                    else if (seriesBox.Text.Length != 4 || numberBox.Text.Length != 6)
+                    {
+                        MessageBox.Show("Серия имеет 4 цифры, а номер 6! Проверьте введённые значения и повторите попытку.");
+                    }
+                    else
+                    {
+                        string connectionString = "server = localhost; user = root; database = aisdatabd; password = root123;";
+                        MySqlConnection connection = new MySqlConnection(connectionString);
+                        connection.Open();
+                        classes.reversedate getDate = new classes.reversedate();
+                        Random rnd = new Random();
+                        string query = "INSERT INTO clients (u_num, surname, name, patronymic, date_birth, seriesDoc, numberDoc) VALUES (" + rnd.Next(100000, 999999) + ", '" + surnameBox.Text + "', '" + nameBox.Text + "', '" + patronymicBox.Text + "', '" + getDate.dateReverse(dateTimePicker1.Value.ToString().Substring(0, 10)) + "', " + seriesBox.Text + ", " + numberBox.Text + ")";
+                        MySqlCommand command = new MySqlCommand(query, connection);
+                        command.ExecuteNonQuery();
+                        MessageBox.Show("Клиент успешно добавлен!");
+                        nameBox.Text = "Введите имя";
+                        nameBox.ForeColor = Color.Silver;
+                        surnameBox.Text = "Введите фамилию";
+                        surnameBox.ForeColor = Color.Silver;
+                        patronymicBox.Text = "Введите отчество";
+                        patronymicBox.ForeColor = Color.Silver;
+                        dateTimePicker1.Text = "01.01.2000";
+                        seriesBox.Text = "Введите серию документа";
+                        seriesBox.ForeColor = Color.Silver;
+                        numberBox.Text = "Введите номер документа";
+                        numberBox.ForeColor = Color.Silver;
+                        addclientPanel.Visible = false;
+                        clientsPanel.Visible = true;
+                    }
+                }
+                catch (MySqlException)
+                {
+                    MessageBox.Show("Произошла ошибка данных! Проверьте введённые данные.");
+                }
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                //do nothing
+            }
+
+        }
+
+        
+
+        private void quantityBox__TextChanged(object sender, EventArgs e)
+        {            
+            double[] valuesBuy = { Convert.ToDouble(USD_buy.Text.Replace('.', ',')), Convert.ToDouble(EUR_buy.Text.Replace('.', ',')), Convert.ToDouble(GBP_buy.Text.Replace('.', ',')), Convert.ToDouble(CHF_buy.Text.Replace('.', ',')), Convert.ToDouble(JPY_buy.Text.Replace('.', ',')) };
+            double[] valuesSell = { Convert.ToDouble(USD_sell.Text.Replace('.', ',')), Convert.ToDouble(EUR_sell.Text.Replace('.', ',')), Convert.ToDouble(GBP_sell.Text.Replace('.', ',')), Convert.ToDouble(CHF_sell.Text.Replace('.', ',')), Convert.ToDouble(JPY_sell.Text.Replace('.', ',')) };
+            try
+            {
+                classes.summValues summValues = new classes.summValues();
+                if (quantityBox.Text.ToString()[0] == '.')
+                {
+                    MessageBox.Show("Значение не может начинаться с '.' или ','");
+                    quantityBox.Text = "";
+                }
+                else if (selectValueBox.SelectedIndex == -1 || selectOperBox.SelectedIndex == -1)
+                {
+                    //
+                }
+                else
+                {
+                    summBox.Text = "Сумма: " + summValues.summoutputValues(selectOperBox.SelectedIndex, selectValueBox.SelectedIndex, Convert.ToDouble(quantityBox.Text.Replace('.', ',')), valuesBuy, valuesSell).ToString().Replace(',', '.') + " рублей";
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }            
+        }
+
     }
 }

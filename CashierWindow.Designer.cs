@@ -1668,11 +1668,11 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(951, 577);
             this.Controls.Add(this.currencies_exchangePanel);
-            this.Controls.Add(this.searchPanel);
             this.Controls.Add(this.exchangePanel);
-            this.Controls.Add(this.clientsPanel);
-            this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.addclientPanel);
+            this.Controls.Add(this.clientsPanel);
+            this.Controls.Add(this.searchPanel);
+            this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
