@@ -1817,24 +1817,24 @@ namespace AIS_exchangeOffice
         
 
         private void quantityBox__TextChanged(object sender, EventArgs e)
-        {            
+        {
             double[] valuesBuy = { Convert.ToDouble(USD_buy.Text.Replace('.', ',')), Convert.ToDouble(EUR_buy.Text.Replace('.', ',')), Convert.ToDouble(GBP_buy.Text.Replace('.', ',')), Convert.ToDouble(CHF_buy.Text.Replace('.', ',')), Convert.ToDouble(JPY_buy.Text.Replace('.', ',')) };
             double[] valuesSell = { Convert.ToDouble(USD_sell.Text.Replace('.', ',')), Convert.ToDouble(EUR_sell.Text.Replace('.', ',')), Convert.ToDouble(GBP_sell.Text.Replace('.', ',')), Convert.ToDouble(CHF_sell.Text.Replace('.', ',')), Convert.ToDouble(JPY_sell.Text.Replace('.', ',')) };
             try
             {
                 classes.summValues summValues = new classes.summValues();
-                if (quantityBox.Text.ToString()[0] == '.')
+                if (quantityBox_.Text.ToString()[0] == '.')
                 {
                     MessageBox.Show("Значение не может начинаться с '.' или ','");
-                    quantityBox.Text = "";
+                    quantityBox_.Text = "";
                 }
-                else if (selectValueBox.SelectedIndex == -1 || selectOperBox.SelectedIndex == -1)
+                else if (selectValueBox_.SelectedIndex == -1 || selectOperBox.SelectedIndex == -1)
                 {
                     //
                 }
                 else
                 {
-                    summBox.Text = "Сумма: " + summValues.summoutputValues(selectOperBox.SelectedIndex, selectValueBox.SelectedIndex, Convert.ToDouble(quantityBox.Text.Replace('.', ',')), valuesBuy, valuesSell).ToString().Replace(',', '.') + " рублей";
+                    summBox.Text = "Сумма: " + summValues.summoutputValues(selectOperBox.SelectedIndex, selectValueBox_.SelectedIndex, Convert.ToDouble(quantityBox_.Text.Replace('.', ',')), valuesBuy, valuesSell).ToString().Replace(',', '.') + " рублей";
                 }
 
 
@@ -1845,5 +1845,504 @@ namespace AIS_exchangeOffice
             }            
         }
 
+        private void quantityBox__Enter(object sender, EventArgs e)
+        {
+            if (selectOperBox.SelectedIndex == -1 || selectValueBox_.SelectedIndex == -1)
+            {
+                MessageBox.Show("Операция или валюта не выбраны!");
+                this.ActiveControl = null;
+            }
+
+            if (quantityBox_.Text == "Введите количество покупаемой валюты" || quantityBox_.Text == "Введите количество продаваемой валюты")
+            {
+                quantityBox_.ForeColor = Color.FromArgb(11, 100, 103);
+                panel7.Size = new Size(430, 54);
+                quantityBox_.Size = new Size(413, 30);
+                quantityBox_.Location = new Point(8, 11);
+                panel12.Location = new Point(3, 356);
+                exchangedBtn.Location = new Point(112, 425);
+                panel6.Size = new Size(437, 479);
+                quantityBox_.Text = "";
+            }
+
+            if (quantityBox_.Text == "Введите сумму покупаемой валюты" || quantityBox_.Text == "Введите сумму продаваемой валюты")
+            {
+                quantityBox_.ForeColor = Color.FromArgb(11, 100, 103);
+                panel7.Size = new Size(430, 54);
+                quantityBox_.Size = new Size(413, 30);
+                quantityBox_.Location = new Point(8, 11);
+                panel12.Location = new Point(3, 356);
+                exchangedBtn.Location = new Point(112, 425);
+                panel6.Size = new Size(437, 479);
+                quantityBox_.Text = "";
+            }
+        }
+
+        private void quantityBox__Leave(object sender, EventArgs e)
+        {
+            if (quantityBox_.Text == "")
+            {
+                quantityBox_.ForeColor = Color.Silver;
+                panel7.Size = new Size(430, 76);
+                quantityBox_.Size = new Size(413, 62);
+                quantityBox_.Location = new Point(9, 6);
+                panel12.Location = new Point(3, 375);
+                exchangedBtn.Location = new Point(112, 437);
+                panel6.Size = new Size(437, 491);
+                quantityBox_.Text = "Введите количество покупаемой валюты";
+                summBox.Text = "Сумма сделки: 0 рублей";
+            }
+        }
+
+        private void quantityBox__KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 8 || e.KeyChar == 127 || e.KeyChar == 46)
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                if (Char.IsDigit(e.KeyChar)) return;
+                else
+                    e.Handled = true;
+            }
+        }
+
+        private void selectClientBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            selectClientBox.ForeColor = Color.FromArgb(11, 100, 103); 
+        }
+
+        private void selectOperBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (selectOperBox.SelectedIndex == 0)
+            {
+                quantityBox_.ForeColor = Color.Silver;
+                panel7.Size = new Size(430, 76);
+                quantityBox_.Size = new Size(413, 62);
+                quantityBox_.Location = new Point(9, 6);
+                panel12.Location = new Point(3, 375);
+                exchangedBtn.Location = new Point(112, 437);
+                panel6.Size = new Size(437, 491);
+                quantityBox_.Text = "Введите количество покупаемой валюты";
+            }
+            else if (selectOperBox.SelectedIndex == 1)
+            {
+                quantityBox_.ForeColor = Color.Silver;
+                panel7.Size = new Size(430, 76);
+                quantityBox_.Size = new Size(413, 62);
+                quantityBox_.Location = new Point(9, 6);
+                panel12.Location = new Point(3, 375);
+                exchangedBtn.Location = new Point(112, 437);
+                panel6.Size = new Size(437, 491);
+                quantityBox_.Text = "Введите количество продаваемой валюты";
+            }
+            else
+            {
+                quantityBox_.ForeColor = Color.Silver;
+                panel7.Size = new Size(430, 54);
+                quantityBox_.Size = new Size(413, 30);
+                quantityBox_.Location = new Point(8, 11);
+                panel12.Location = new Point(3, 356);
+                exchangedBtn.Location = new Point(112, 425);
+                panel6.Size = new Size(437, 479);
+                quantityBox_.Text = "Введите количество валюты";
+            }
+
+            selectOperBox.ForeColor = Color.FromArgb(11, 100, 103);
+            if (selectOperBox.SelectedIndex == 0)
+            {
+                selectValueBox_.Text = "Выберите покупаемую валюту";
+                selectValueBox_.ForeColor = Color.Silver;
+            }
+            else if (selectOperBox.SelectedIndex == 1)
+            {
+                selectValueBox_.Text = "Выберите продаваемую валюту";
+                selectValueBox_.ForeColor = Color.Silver;
+            }                        
+        }
+
+        private void selectClientBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar)) { e.Handled = true; } else { e.Handled = true; }
+        }
+
+        private void selectValueBox__SelectedIndexChanged(object sender, EventArgs e)
+        {
+            selectValueBox_.ForeColor = Color.FromArgb(11, 100, 103);
+        }
+
+        private void searchBox_Enter(object sender, EventArgs e)
+        {
+            if (searchBox.Text == " Введите для поиска...")
+            {
+                searchBox.Text = null;
+            }
+        }
+
+        private void searchBox_Leave(object sender, EventArgs e)
+        {
+            if (searchBox.Text == "")
+            {
+                searchBox.Text = " Введите для поиска...";
+            }
+        }
+
+        private void searchBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter && searchBox.Text != "")
+            {
+                SearchBut_Click(sender, e);
+            }
+        }
+
+        private void exchangedBtn_Click_1(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Вы уверены что хотите произвести обмен по введённым данным?", "Обмен валюты", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                try
+                {
+                    if (selectClientBox.Text == "Выберите клиента" || selectOperBox.Text == "Выберите операцию" || selectValueBox.Text == "Выберите продаваемую валюту" || selectValueBox.Text == "Выберите покупаемую валюту" || quantityBox.Text == "Введите количество покупаемой валюты")
+                    {
+                        MessageBox.Show("Одно или несколько полей не заполнены!");
+                    }
+                    else
+                    {
+                        string connectionString = "server = localhost; user = root; database = aisdatabd; password = root123;";
+                        MySqlConnection connection = new MySqlConnection(connectionString);
+                        connection.Open();
+                        classes.reversedate getDate = new classes.reversedate();
+                        Random rnd = new Random();
+                        string[] FIO = selectClientBox.Text.Split(' ');
+                        string[] summ = summBox.Text.Split(' ');
+                        int u_num = rnd.Next(100000, 999999);
+                        var helper = new classes.wordHelper("wordDocs/transaction_print.docx");
+                        double[] valuesBuy = { Convert.ToDouble(USD_buy.Text.Replace('.', ',')), Convert.ToDouble(EUR_buy.Text.Replace('.', ',')), Convert.ToDouble(GBP_buy.Text.Replace('.', ',')), Convert.ToDouble(CHF_buy.Text.Replace('.', ',')), Convert.ToDouble(JPY_buy.Text.Replace('.', ',')) };
+                        double[] valuesSell = { Convert.ToDouble(USD_sell.Text.Replace('.', ',')), Convert.ToDouble(EUR_sell.Text.Replace('.', ',')), Convert.ToDouble(GBP_sell.Text.Replace('.', ',')), Convert.ToDouble(CHF_sell.Text.Replace('.', ',')), Convert.ToDouble(JPY_sell.Text.Replace('.', ',')) };
+                        string currency = "", nameValue = "";
+                        double numValue = 0.0;
+                        switch (selectValueBox.Text.ToString()[0])
+                        {
+                            case '$':
+                                nameValue = "USD";
+                                if (selectOperBox.Text == "Покупка")
+                                {
+                                    numValue = Convert.ToDouble(USD_value.Text.Substring(1).Replace('.', ',')) - Convert.ToDouble(quantityBox.Text.Replace('.', ','));
+                                    if (numValue < 0) { MessageBox.Show("Операция не выполнена. Недостаточно валюты в кассе!"); return; }
+                                    USD_value.Text = "$ " + Math.Round(numValue, 2).ToString().Replace(',', '.');
+                                }
+                                else if (selectOperBox.Text == "Продажа")
+                                {
+                                    numValue = Convert.ToDouble(USD_value.Text.Substring(1).Replace('.', ',')) + Convert.ToDouble(quantityBox.Text.Replace('.', ','));
+                                    USD_value.Text = "$ " + Math.Round(numValue, 2).ToString().Replace(',', '.');
+                                }
+                                break;
+                            case '€':
+                                nameValue = "EUR";
+                                if (selectOperBox.Text == "Покупка")
+                                {
+                                    numValue = Convert.ToDouble(EUR_value.Text.Substring(1).Replace('.', ',')) - Convert.ToDouble(quantityBox.Text.Replace('.', ','));
+                                    if (numValue < 0) { MessageBox.Show("Операция не выполнена. Недостаточно валюты в кассе!"); return; }
+                                    EUR_value.Text = "€ " + Math.Round(numValue, 2).ToString().Replace(',', '.');
+                                }
+                                else if (selectOperBox.Text == "Продажа")
+                                {
+                                    numValue = Convert.ToDouble(EUR_value.Text.Substring(1).Replace('.', ',')) + Convert.ToDouble(quantityBox.Text.Replace('.', ','));
+                                    EUR_value.Text = "€ " + Math.Round(numValue, 2).ToString().Replace(',', '.');
+                                }
+                                break;
+                            case '£':
+                                nameValue = "GBP";
+                                if (selectOperBox.Text == "Покупка")
+                                {
+                                    numValue = Convert.ToDouble(GBP_value.Text.Substring(1).Replace('.', ',')) - Convert.ToDouble(quantityBox.Text.Replace('.', ','));
+                                    if (numValue < 0) { MessageBox.Show("Операция не выполнена. Недостаточно валюты в кассе!"); return; }
+                                    GBP_value.Text = "£ " + Math.Round(numValue, 2).ToString().Replace(',', '.');
+                                }
+                                else if (selectOperBox.Text == "Продажа")
+                                {
+                                    numValue = Convert.ToDouble(GBP_value.Text.Substring(1).Replace('.', ',')) + Convert.ToDouble(quantityBox.Text.Replace('.', ','));
+                                    GBP_value.Text = "£ " + Math.Round(numValue, 2).ToString();
+                                }
+                                break;
+                            case '₣':
+                                nameValue = "CHF";
+                                if (selectOperBox.Text == "Покупка")
+                                {
+                                    numValue = Convert.ToDouble(CHF_value.Text.Substring(1).Replace('.', ',')) - Convert.ToDouble(quantityBox.Text.Replace('.', ','));
+                                    if (numValue < 0) { MessageBox.Show("Операция не выполнена. Недостаточно валюты в кассе!"); return; }
+                                    CHF_value.Text = "₣ " + Math.Round(numValue, 2).ToString().Replace(',', '.');
+                                }
+                                else if (selectOperBox.Text == "Продажа")
+                                {
+                                    numValue = Convert.ToDouble(CHF_value.Text.Substring(1).Replace('.', ',')) + Convert.ToDouble(quantityBox.Text.Replace('.', ','));
+                                    CHF_value.Text = "₣ " + Math.Round(numValue, 2).ToString().Replace(',', '.');
+                                }
+                                break;
+                            case '¥':
+                                nameValue = "JPY";
+                                if (selectOperBox.Text == "Покупка")
+                                {
+                                    numValue = Convert.ToDouble(JPY_value.Text.Substring(1).Replace('.', ',')) - Convert.ToDouble(quantityBox.Text.Replace('.', ','));
+                                    if (numValue < 0) { MessageBox.Show("Операция не выполнена. Недостаточно валюты в кассе!"); return; }
+                                    JPY_value.Text = "¥ " + Math.Round(numValue, 2).ToString().Replace(',', '.');
+                                }
+                                else if (selectOperBox.Text == "Продажа")
+                                {
+                                    numValue = Convert.ToDouble(JPY_value.Text.Substring(1).Replace('.', ',')) + Convert.ToDouble(quantityBox.Text.Replace('.', ','));
+                                    JPY_value.Text = "¥ " + Math.Round(numValue, 2).ToString().Replace(',', '.');
+                                }
+                                break;
+                        }
+                        string query = "INSERT INTO operations (u_num, surname, name, patronymic, type, value, quantity, summ, date) VALUES (" + u_num + ", '" + FIO[0] + "', '" + FIO[1] + "', '" + FIO[2] + "', '" + selectOperBox.Text + "', '" + selectValueBox_.Text[0] + "', " + quantityBox_.Text + ", " + summ[1].Replace(',', '.') + ", '" + DateTime.Now.ToString("yyyy-MM-dd H:mm:ss") + "');";
+                        MySqlCommand command = new MySqlCommand(query, connection);
+                        command.ExecuteNonQuery();
+                        MessageBox.Show("Обмен успешно совершен!\nСейчас будет произведена печать чека по операции.");
+                        switch (selectOperBox.Text)
+                        {
+                            case "Покупка":
+                                currency = valuesBuy[selectOperBox.SelectedIndex].ToString();
+                                query = "UPDATE currency_values SET value = " + numValue.ToString().Replace(',', '.') + " WHERE name = '" + nameValue + "'";
+                                command = new MySqlCommand(query, connection);
+                                command.ExecuteNonQuery();
+                                break;
+                            case "Продажа":
+                                currency = valuesSell[selectOperBox.SelectedIndex].ToString();
+                                query = "UPDATE currency_values SET value = " + numValue.ToString().Replace(',', '.') + " WHERE name = '" + nameValue + "'";
+                                command = new MySqlCommand(query, connection);
+                                command.ExecuteNonQuery();
+                                break;
+                        }
+                        var items = new Dictionary<string, string>
+                        {
+                            { "_<number>_", u_num.ToString() },
+                            { "_<date>_", DateTime.Now.ToString("dd.MM.yyyy") },
+                            { "_<oper>_", selectOperBox.Text },
+                            { "_<value>_", selectValueBox_.Text },
+                            { "_<quantity>_", quantityBox_.Text },
+                            { "_<currency>_", currency.Replace(',', '.') },
+                            { "_<summ_oper>_", summ[1].Replace(',', '.') },
+                            { "_<name_client>_", FIO[0] + " " + FIO[1].ToString()[0] + ". " + FIO[2].ToString()[0] + "." },
+                            { "_<name_cashier>_", NameAdmin.Text },
+                            { "_<date_long>_", DateTime.Now.ToString("dd.MM.yyyy HH:mm:ss") },
+                        };
+                        helper.Process(items);
+                        selectClientBox.Text = "Выберите клиента";
+                        selectClientBox.ForeColor = Color.Silver;
+                        selectOperBox.Text = "Выберите операцию";
+                        selectOperBox.ForeColor = Color.Silver;
+                        selectValueBox.Text = "Выберите валюту";
+                        selectValueBox.ForeColor = Color.Silver;
+                        summBox.Text = "Сумма сделки: 0 рублей";
+                        quantityBox.Text = "Введите количество валюты";
+                        quantityBox.ForeColor = Color.Silver;
+                        numberBox.Text = "";
+                        currencies_exchangePanel.Visible = false;
+                        exchangePanel.Visible = true;
+                    }
+                }
+                catch (MySqlException)
+                {
+                    MessageBox.Show("Произошла ошибка данных! Проверьте введённые данные.");
+                }
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                //do nothing
+            }                   
+        }
+        private void search_values_CheckedChanged(object sender, EventArgs e)
+        {
+            dataGridView4.Rows.Clear();
+            dataGridView4.Columns.Clear();
+        }
+
+        private void search_operations_CheckedChanged(object sender, EventArgs e)
+        {
+            dataGridView4.Rows.Clear();
+            dataGridView4.Columns.Clear();
+        }
+
+        private void SearchBut_Click(object sender, EventArgs e)
+        {
+            string search_string = searchBox.Text;
+            if (search_string == " Введите для поиска..." || search_string == "" || searchBox.Text == "" || searchBox.Text == null)
+            {
+                MessageBox.Show("Ошибка! Введите строку для поиска.");
+                return;
+            }
+            dataGridView4.Rows.Clear();
+            dataGridView4.Columns.Clear();
+
+            //datagrid
+            string connStr = "server=localhost;user=root;database=aisdatabd;password=root123;";
+            MySqlConnection conn = new MySqlConnection(connStr);
+
+            MySqlCommand command = new MySqlCommand();
+            string commandString;
+            MySqlDataReader reader;
+            if (search_values.Checked == true)
+            {
+                commandString = "SELECT * FROM currencycourse WHERE (u_num LIKE" + " '%" + search_string + "%') OR (name LIKE" + " '%" + search_string + "%') OR (summsale LIKE" + " '%" + search_string.Replace(',', '.') + "%') OR (summpurchase LIKE" + " '%" + search_string + "%')";
+                command.CommandText = commandString;
+                command.Connection = conn;
+                try
+                {
+                    command.Connection.Open();
+                    reader = command.ExecuteReader();
+                    try
+                    {
+                        this.dataGridView4.Columns.Add("u_num", "u_num");
+                        this.dataGridView4.Columns["u_num"].Width = 50;
+                        this.dataGridView4.Columns.Add("name", "Name");
+                        this.dataGridView4.Columns["name"].Width = 130;
+                        this.dataGridView4.Columns.Add("summsale", "SummSale");
+                        this.dataGridView4.Columns["summsale"].Width = 226;
+                        this.dataGridView4.Columns.Add("summpurchase", "SummPurchase");
+                        this.dataGridView4.Columns["summpurchase"].Width = 226;
+                        while (reader.Read())
+                        {
+                            dataGridView4.Rows.Add(reader["u_num"].ToString(), reader["name"].ToString(), reader["summsale"].ToString(), reader["summpurchase"].ToString());
+                        }
+                        reader.Close();
+                    }
+                    catch (MySqlException ex)
+                    {
+                        Console.WriteLine("Error: \r\n{0}", ex.ToString());
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    Console.WriteLine("Error: \r\n{0}", ex.ToString());
+                }
+            }
+            else if (search_operations.Checked == true)
+            {
+                commandString = "SELECT * FROM operations WHERE (u_num LIKE" + " '%" + search_string + "%') OR (surname LIKE" + " '%" + search_string + "%') OR (name LIKE" + " '%" + search_string + "%') OR (patronymic LIKE" + " '%" + search_string + "%') OR (type LIKE" + " '%" + search_string + "%') OR (value LIKE" + " '%" + search_string + "%') OR (quantity LIKE" + " '%" + search_string.Replace(',', '.') + "%') OR (summ LIKE" + " '%" + search_string.Replace(',', '.') + "%') OR (CONVERT(`date` USING utf8) LIKE" + " '%" + search_string + "%');";
+                command.CommandText = commandString;
+                command.Connection = conn;
+                try
+                {
+                    command.Connection.Open();
+                    reader = command.ExecuteReader();
+                    try
+                    {
+                        this.dataGridView4.Columns.Add("u_num", "u_num");
+                        this.dataGridView4.Columns["u_num"].Width = 50;
+                        this.dataGridView4.Columns.Add("surname", "Surname");
+                        this.dataGridView4.Columns["surname"].Width = 90;
+                        this.dataGridView4.Columns.Add("name", "Name");
+                        this.dataGridView4.Columns["name"].Width = 70;
+                        this.dataGridView4.Columns.Add("patronymic", "Patronymic");
+                        this.dataGridView4.Columns["patronymic"].Width = 90;
+                        this.dataGridView4.Columns.Add("type", "Type");
+                        this.dataGridView4.Columns["type"].Width = 60;
+                        this.dataGridView4.Columns.Add("quantity", "Quantity");
+                        this.dataGridView4.Columns["quantity"].Width = 65;
+                        this.dataGridView4.Columns.Add("summ", "Summ");
+                        this.dataGridView4.Columns["summ"].Width = 80;
+                        this.dataGridView4.Columns.Add("date", "Date");
+                        this.dataGridView4.Columns["date"].Width = 127;
+                        while (reader.Read())
+                        {
+                            classes.reversedate reversedate = new classes.reversedate();
+                            dataGridView4.Rows.Add(reader["u_num"].ToString(), reader["surname"].ToString(), reader["name"].ToString(), reader["patronymic"].ToString(), reader["type"].ToString(), reader["quantity"].ToString(), reader["summ"].ToString(), reversedate.datetimeReverse(reader["date"].ToString()));
+                        }
+                        reader.Close();
+                    }
+                    catch (MySqlException ex)
+                    {
+                        Console.WriteLine("Error: \r\n{0}", ex.ToString());
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    Console.WriteLine("Error: \r\n{0}", ex.ToString());
+                }
+            }
+            else if (search_clients.Checked == true)
+            {
+                commandString = "SELECT * FROM clients WHERE (u_num LIKE" + " '%" + search_string + "%') OR (surname LIKE" + " '%" + search_string + "%') OR (name LIKE" + " '%" + search_string + "%') OR (patronymic LIKE" + " '%" + search_string + "%') OR (CONVERT(`date_birth` USING utf8) LIKE" + " '%" + search_string + "%') OR (seriesDoc LIKE" + " '%" + search_string + "%') OR (numberDoc LIKE" + " '%" + search_string + "%');";
+                command.CommandText = commandString;
+                command.Connection = conn;
+                try
+                {
+                    command.Connection.Open();
+                    reader = command.ExecuteReader();
+                    try
+                    {
+                        this.dataGridView4.Columns.Add("u_num", "№");
+                        this.dataGridView4.Columns["u_num"].Width = 45;
+                        this.dataGridView4.Columns.Add("surname", "Фамилия");
+                        this.dataGridView4.Columns["surname"].Width = 110;
+                        this.dataGridView4.Columns.Add("name", "Имя");
+                        this.dataGridView4.Columns["name"].Width = 90;
+                        this.dataGridView4.Columns.Add("patronymic", "Отчество");
+                        this.dataGridView4.Columns["patronymic"].Width = 110;
+                        this.dataGridView4.Columns.Add("date_birth", "Дата рождения");
+                        this.dataGridView4.Columns["date_birth"].Width = 89;
+                        this.dataGridView4.Columns.Add("seriesDoc", "Серия документа");
+                        this.dataGridView4.Columns["seriesDoc"].Width = 94;
+                        this.dataGridView4.Columns.Add("numberDoc", "Номер документа");
+                        this.dataGridView4.Columns["numberDoc"].Width = 94;
+                        while (reader.Read())
+                        {
+                            classes.reversedate reversedate = new classes.reversedate();
+                            dataGridView4.Rows.Add(reader["u_num"].ToString(), reader["surname"].ToString(), reader["name"].ToString(), reader["patronymic"].ToString(), reversedate.dateReverse(reader["date_birth"].ToString()), reader["seriesDoc"].ToString(), reader["numberDoc"].ToString());
+                        }
+                        reader.Close();
+                    }
+                    catch (MySqlException ex)
+                    {
+                        Console.WriteLine("Error: \r\n{0}", ex.ToString());
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    Console.WriteLine("Error: \r\n{0}", ex.ToString());
+                }
+            }
+        }
+
+        private void otchetPanel_VisibleChanged(object sender, EventArgs e)
+        {
+            string connStr = "server=localhost;user=root;database=aisdatabd;password=root123;";
+            MySqlConnection conn = new MySqlConnection(connStr);
+            MySqlCommand command = new MySqlCommand();
+            string commandString;
+            MySqlDataReader reader;
+
+            commandString = "SELECT * FROM otchets_quantity WHERE id = 1;";
+            command.CommandText = commandString;
+            command.Connection = conn;
+            try
+            {
+                command.Connection.Open();
+                reader = command.ExecuteReader();
+                try
+                {                    
+                    while (reader.Read())
+                    {
+                        otchets_quantity.Text = reader["quantity"].ToString();
+                    }
+                    reader.Close();
+                }
+                catch (MySqlException ex)
+                {
+                    Console.WriteLine("Error: \r\n{0}", ex.ToString());
+                }
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("Error: \r\n{0}", ex.ToString());
+            }
+        }
+
+        private void search_clients_CheckedChanged(object sender, EventArgs e)
+        {
+            dataGridView4.Rows.Clear();
+            dataGridView4.Columns.Clear();
+        }
     }
 }

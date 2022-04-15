@@ -99,22 +99,11 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.mainPanel = new System.Windows.Forms.Panel();
-            this.label38 = new System.Windows.Forms.Label();
-            this.exitButton_search = new System.Windows.Forms.Button();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
-            this.label37 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.searchButn = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.searchPanel = new System.Windows.Forms.Panel();
             this.label45 = new System.Windows.Forms.Label();
             this.exitButton_Otchet = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
-            this.label43 = new System.Windows.Forms.Label();
+            this.otchets_quantity = new System.Windows.Forms.Label();
             this.label44 = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
@@ -196,6 +185,16 @@
             this.selectOperBox = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
+            this.searchPanel = new System.Windows.Forms.Panel();
+            this.search_clients = new System.Windows.Forms.RadioButton();
+            this.search_operations = new System.Windows.Forms.RadioButton();
+            this.search_values = new System.Windows.Forms.RadioButton();
+            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.SearchBut = new System.Windows.Forms.Button();
+            this.searchBox = new System.Windows.Forms.TextBox();
+            this.label37 = new System.Windows.Forms.Label();
+            this.exitButton_search = new System.Windows.Forms.Button();
+            this.label38 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -211,8 +210,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.mainPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
-            this.searchPanel.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             this.otchetPanel.SuspendLayout();
@@ -246,6 +243,8 @@
             this.panel8.SuspendLayout();
             this.panel16.SuspendLayout();
             this.panel17.SuspendLayout();
+            this.searchPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -1139,148 +1138,6 @@
             this.mainPanel.TabIndex = 2;
             this.mainPanel.VisibleChanged += new System.EventHandler(this.mainPanel_VisibleChanged);
             // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label38.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
-            this.label38.Location = new System.Drawing.Point(29, 8);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(99, 32);
-            this.label38.TabIndex = 1;
-            this.label38.Text = "Поиск";
-            // 
-            // exitButton_search
-            // 
-            this.exitButton_search.BackColor = System.Drawing.SystemColors.Control;
-            this.exitButton_search.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.exitButton_search.FlatAppearance.BorderSize = 0;
-            this.exitButton_search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.exitButton_search.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.exitButton_search.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
-            this.exitButton_search.Location = new System.Drawing.Point(725, 0);
-            this.exitButton_search.Name = "exitButton_search";
-            this.exitButton_search.Size = new System.Drawing.Size(40, 40);
-            this.exitButton_search.TabIndex = 4;
-            this.exitButton_search.Text = "X";
-            this.exitButton_search.UseVisualStyleBackColor = false;
-            this.exitButton_search.Click += new System.EventHandler(this.exitButton_search_Click);
-            // 
-            // pictureBox11
-            // 
-            this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
-            this.pictureBox11.Location = new System.Drawing.Point(26, 328);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(687, 185);
-            this.pictureBox11.TabIndex = 10;
-            this.pictureBox11.TabStop = false;
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.BackColor = System.Drawing.SystemColors.Control;
-            this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label37.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
-            this.label37.Location = new System.Drawing.Point(57, 282);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(274, 31);
-            this.label37.TabIndex = 13;
-            this.label37.Text = "Результаты поиска";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.textBox1.Location = new System.Drawing.Point(26, 74);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(580, 38);
-            this.textBox1.TabIndex = 15;
-            this.textBox1.Text = " Введите для поиска...";
-            // 
-            // searchButn
-            // 
-            this.searchButn.BackColor = System.Drawing.Color.Transparent;
-            this.searchButn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("searchButn.BackgroundImage")));
-            this.searchButn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.searchButn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.searchButn.FlatAppearance.BorderSize = 0;
-            this.searchButn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.searchButn.Location = new System.Drawing.Point(616, 74);
-            this.searchButn.Name = "searchButn";
-            this.searchButn.Size = new System.Drawing.Size(48, 38);
-            this.searchButn.TabIndex = 16;
-            this.searchButn.UseVisualStyleBackColor = false;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.checkBox1.Location = new System.Drawing.Point(28, 140);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(110, 29);
-            this.checkBox1.TabIndex = 17;
-            this.checkBox1.Text = "Валюты";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.checkBox2.Location = new System.Drawing.Point(425, 140);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(118, 29);
-            this.checkBox2.TabIndex = 18;
-            this.checkBox2.Text = "Клиенты";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.checkBox3.Location = new System.Drawing.Point(144, 140);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(275, 29);
-            this.checkBox3.TabIndex = 19;
-            this.checkBox3.Text = "Совершенные операции";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            // 
-            // checkBox4
-            // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Checked = true;
-            this.checkBox4.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.checkBox4.Location = new System.Drawing.Point(549, 140);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(171, 29);
-            this.checkBox4.TabIndex = 20;
-            this.checkBox4.Text = "Без фильтров";
-            this.checkBox4.UseVisualStyleBackColor = true;
-            // 
-            // searchPanel
-            // 
-            this.searchPanel.Controls.Add(this.checkBox4);
-            this.searchPanel.Controls.Add(this.checkBox3);
-            this.searchPanel.Controls.Add(this.checkBox2);
-            this.searchPanel.Controls.Add(this.checkBox1);
-            this.searchPanel.Controls.Add(this.searchButn);
-            this.searchPanel.Controls.Add(this.textBox1);
-            this.searchPanel.Controls.Add(this.label37);
-            this.searchPanel.Controls.Add(this.pictureBox11);
-            this.searchPanel.Controls.Add(this.exitButton_search);
-            this.searchPanel.Controls.Add(this.label38);
-            this.searchPanel.Location = new System.Drawing.Point(186, 0);
-            this.searchPanel.Name = "searchPanel";
-            this.searchPanel.Size = new System.Drawing.Size(765, 577);
-            this.searchPanel.TabIndex = 16;
-            this.searchPanel.Visible = false;
-            // 
             // label45
             // 
             this.label45.AutoSize = true;
@@ -1312,7 +1169,7 @@
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.Control;
             this.panel3.Controls.Add(this.pictureBox13);
-            this.panel3.Controls.Add(this.label43);
+            this.panel3.Controls.Add(this.otchets_quantity);
             this.panel3.Controls.Add(this.label44);
             this.panel3.Location = new System.Drawing.Point(462, 69);
             this.panel3.Name = "panel3";
@@ -1330,17 +1187,17 @@
             this.pictureBox13.TabIndex = 8;
             this.pictureBox13.TabStop = false;
             // 
-            // label43
+            // otchets_quantity
             // 
-            this.label43.AutoSize = true;
-            this.label43.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label43.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
-            this.label43.Location = new System.Drawing.Point(66, 59);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(33, 34);
-            this.label43.TabIndex = 7;
-            this.label43.Text = "0";
+            this.otchets_quantity.AutoSize = true;
+            this.otchets_quantity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.otchets_quantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.otchets_quantity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.otchets_quantity.Location = new System.Drawing.Point(66, 59);
+            this.otchets_quantity.Name = "otchets_quantity";
+            this.otchets_quantity.Size = new System.Drawing.Size(33, 34);
+            this.otchets_quantity.TabIndex = 7;
+            this.otchets_quantity.Text = "0";
             // 
             // label44
             // 
@@ -1416,6 +1273,7 @@
             this.otchetPanel.Size = new System.Drawing.Size(765, 577);
             this.otchetPanel.TabIndex = 29;
             this.otchetPanel.Visible = false;
+            this.otchetPanel.VisibleChanged += new System.EventHandler(this.otchetPanel_VisibleChanged);
             // 
             // label41
             // 
@@ -2250,6 +2108,7 @@
             this.exchangedBtn.Text = "Произвести обмен";
             this.exchangedBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.exchangedBtn.UseVisualStyleBackColor = true;
+            this.exchangedBtn.Click += new System.EventHandler(this.exchangedBtn_Click_1);
             // 
             // panel12
             // 
@@ -2295,6 +2154,9 @@
             this.quantityBox_.Text = "Введите количество валюты";
             this.quantityBox_.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.quantityBox_.TextChanged += new System.EventHandler(this.quantityBox__TextChanged);
+            this.quantityBox_.Enter += new System.EventHandler(this.quantityBox__Enter);
+            this.quantityBox_.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.quantityBox__KeyPress);
+            this.quantityBox_.Leave += new System.EventHandler(this.quantityBox__Leave);
             // 
             // panel8
             // 
@@ -2321,6 +2183,8 @@
             this.selectValueBox_.Size = new System.Drawing.Size(414, 38);
             this.selectValueBox_.TabIndex = 2;
             this.selectValueBox_.Text = "Выберите валюту";
+            this.selectValueBox_.SelectedIndexChanged += new System.EventHandler(this.selectValueBox__SelectedIndexChanged);
+            this.selectValueBox_.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.selectClientBox_KeyPress);
             // 
             // panel16
             // 
@@ -2341,6 +2205,8 @@
             this.selectClientBox.Size = new System.Drawing.Size(414, 38);
             this.selectClientBox.TabIndex = 0;
             this.selectClientBox.Text = "Выберите клиента";
+            this.selectClientBox.SelectedIndexChanged += new System.EventHandler(this.selectClientBox_SelectedIndexChanged);
+            this.selectClientBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.selectClientBox_KeyPress);
             // 
             // panel17
             // 
@@ -2364,6 +2230,8 @@
             this.selectOperBox.Size = new System.Drawing.Size(414, 38);
             this.selectOperBox.TabIndex = 1;
             this.selectOperBox.Text = "Выберите операцию";
+            this.selectOperBox.SelectedIndexChanged += new System.EventHandler(this.selectOperBox_SelectedIndexChanged);
+            this.selectOperBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.selectClientBox_KeyPress);
             // 
             // label6
             // 
@@ -2388,20 +2256,157 @@
             this.label14.TabIndex = 1;
             this.label14.Text = "Обменять валюту";
             // 
+            // searchPanel
+            // 
+            this.searchPanel.Controls.Add(this.search_clients);
+            this.searchPanel.Controls.Add(this.search_operations);
+            this.searchPanel.Controls.Add(this.search_values);
+            this.searchPanel.Controls.Add(this.dataGridView4);
+            this.searchPanel.Controls.Add(this.SearchBut);
+            this.searchPanel.Controls.Add(this.searchBox);
+            this.searchPanel.Controls.Add(this.label37);
+            this.searchPanel.Controls.Add(this.exitButton_search);
+            this.searchPanel.Controls.Add(this.label38);
+            this.searchPanel.Location = new System.Drawing.Point(186, 0);
+            this.searchPanel.Name = "searchPanel";
+            this.searchPanel.Size = new System.Drawing.Size(765, 577);
+            this.searchPanel.TabIndex = 39;
+            this.searchPanel.Visible = false;
+            // 
+            // search_clients
+            // 
+            this.search_clients.AutoSize = true;
+            this.search_clients.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.search_clients.Location = new System.Drawing.Point(559, 135);
+            this.search_clients.Name = "search_clients";
+            this.search_clients.Size = new System.Drawing.Size(117, 29);
+            this.search_clients.TabIndex = 34;
+            this.search_clients.Text = "Клиенты";
+            this.search_clients.UseVisualStyleBackColor = true;
+            this.search_clients.CheckedChanged += new System.EventHandler(this.search_clients_CheckedChanged);
+            // 
+            // search_operations
+            // 
+            this.search_operations.AutoSize = true;
+            this.search_operations.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.search_operations.Location = new System.Drawing.Point(224, 135);
+            this.search_operations.Name = "search_operations";
+            this.search_operations.Size = new System.Drawing.Size(274, 29);
+            this.search_operations.TabIndex = 33;
+            this.search_operations.Text = "Совершённые операции";
+            this.search_operations.UseVisualStyleBackColor = true;
+            this.search_operations.CheckedChanged += new System.EventHandler(this.search_operations_CheckedChanged);
+            // 
+            // search_values
+            // 
+            this.search_values.AutoSize = true;
+            this.search_values.Checked = true;
+            this.search_values.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.search_values.Location = new System.Drawing.Point(57, 135);
+            this.search_values.Name = "search_values";
+            this.search_values.Size = new System.Drawing.Size(109, 29);
+            this.search_values.TabIndex = 32;
+            this.search_values.TabStop = true;
+            this.search_values.Text = "Валюты";
+            this.search_values.UseVisualStyleBackColor = true;
+            this.search_values.CheckedChanged += new System.EventHandler(this.search_values_CheckedChanged);
+            // 
+            // dataGridView4
+            // 
+            this.dataGridView4.AllowUserToAddRows = false;
+            this.dataGridView4.AllowUserToDeleteRows = false;
+            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView4.Location = new System.Drawing.Point(35, 324);
+            this.dataGridView4.Name = "dataGridView4";
+            this.dataGridView4.ReadOnly = true;
+            this.dataGridView4.Size = new System.Drawing.Size(675, 226);
+            this.dataGridView4.TabIndex = 31;
+            // 
+            // SearchBut
+            // 
+            this.SearchBut.BackColor = System.Drawing.Color.Transparent;
+            this.SearchBut.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("SearchBut.BackgroundImage")));
+            this.SearchBut.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.SearchBut.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SearchBut.FlatAppearance.BorderSize = 0;
+            this.SearchBut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SearchBut.Location = new System.Drawing.Point(612, 74);
+            this.SearchBut.Name = "SearchBut";
+            this.SearchBut.Size = new System.Drawing.Size(41, 31);
+            this.SearchBut.TabIndex = 16;
+            this.SearchBut.UseVisualStyleBackColor = false;
+            this.SearchBut.Click += new System.EventHandler(this.SearchBut_Click);
+            // 
+            // searchBox
+            // 
+            this.searchBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.searchBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
+            this.searchBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.searchBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.searchBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.searchBox.Location = new System.Drawing.Point(26, 74);
+            this.searchBox.Name = "searchBox";
+            this.searchBox.Size = new System.Drawing.Size(580, 31);
+            this.searchBox.TabIndex = 15;
+            this.searchBox.Text = " Введите для поиска...";
+            this.searchBox.Enter += new System.EventHandler(this.searchBox_Enter);
+            this.searchBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.searchBox_KeyPress);
+            this.searchBox.Leave += new System.EventHandler(this.searchBox_Leave);
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.BackColor = System.Drawing.SystemColors.Control;
+            this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label37.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.label37.Location = new System.Drawing.Point(57, 282);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(274, 31);
+            this.label37.TabIndex = 13;
+            this.label37.Text = "Результаты поиска";
+            // 
+            // exitButton_search
+            // 
+            this.exitButton_search.BackColor = System.Drawing.SystemColors.Control;
+            this.exitButton_search.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.exitButton_search.FlatAppearance.BorderSize = 0;
+            this.exitButton_search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exitButton_search.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.exitButton_search.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.exitButton_search.Location = new System.Drawing.Point(725, 0);
+            this.exitButton_search.Name = "exitButton_search";
+            this.exitButton_search.Size = new System.Drawing.Size(40, 40);
+            this.exitButton_search.TabIndex = 4;
+            this.exitButton_search.Text = "X";
+            this.exitButton_search.UseVisualStyleBackColor = false;
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label38.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.label38.Location = new System.Drawing.Point(29, 8);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(99, 32);
+            this.label38.TabIndex = 1;
+            this.label38.Text = "Поиск";
+            // 
             // AdminWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(951, 577);
-            this.Controls.Add(this.mainPanel);
+            this.Controls.Add(this.otchetPanel);
+            this.Controls.Add(this.searchPanel);
             this.Controls.Add(this.currencies_exchangePanel);
+            this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.exchangePanel);
             this.Controls.Add(this.addclientPanel);
             this.Controls.Add(this.clientsPanel);
             this.Controls.Add(this.add_valuesPanel);
             this.Controls.Add(this.bdPanel);
-            this.Controls.Add(this.otchetPanel);
-            this.Controls.Add(this.searchPanel);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -2429,9 +2434,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.mainPanel.ResumeLayout(false);
             this.mainPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
-            this.searchPanel.ResumeLayout(false);
-            this.searchPanel.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
@@ -2487,6 +2489,9 @@
             this.panel8.ResumeLayout(false);
             this.panel16.ResumeLayout(false);
             this.panel17.ResumeLayout(false);
+            this.searchPanel.ResumeLayout(false);
+            this.searchPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2500,10 +2505,6 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox4;
         private System.Windows.Forms.Label CHF_buy;
         private System.Windows.Forms.Label CHF_sell;
         private System.Windows.Forms.Button ClientsBtn;
@@ -2516,7 +2517,6 @@
         private System.Windows.Forms.Button exit;
         private System.Windows.Forms.Button exitButton_BD;
         private System.Windows.Forms.Button exitButton_Otchet;
-        private System.Windows.Forms.Button exitButton_search;
         private System.Windows.Forms.Label GBP_buy;
         private System.Windows.Forms.Label GBP_sell;
         private System.Windows.Forms.Label JPY_buy;
@@ -2538,12 +2538,10 @@
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.Label label38;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.Label label41;
-        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.Label otchets_quantity;
         private System.Windows.Forms.Label label44;
         private System.Windows.Forms.Label label45;
         private System.Windows.Forms.Label EUR_value;
@@ -2561,7 +2559,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox11;
         private System.Windows.Forms.PictureBox pictureBox13;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
@@ -2576,9 +2573,6 @@
         private System.Windows.Forms.Panel RatePanel;
         private System.Windows.Forms.Button saveBD;
         private System.Windows.Forms.Button SearchBtn;
-        private System.Windows.Forms.Button searchButn;
-        private System.Windows.Forms.Panel searchPanel;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label USD_buy;
         private System.Windows.Forms.Label USD_sell;
         private System.Windows.Forms.RadioButton UsersRadioBtn;
@@ -2661,5 +2655,15 @@
         private System.Windows.Forms.ComboBox selectOperBox;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Panel searchPanel;
+        private System.Windows.Forms.RadioButton search_clients;
+        private System.Windows.Forms.RadioButton search_operations;
+        private System.Windows.Forms.RadioButton search_values;
+        private System.Windows.Forms.DataGridView dataGridView4;
+        private System.Windows.Forms.Button SearchBut;
+        private System.Windows.Forms.TextBox searchBox;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Button exitButton_search;
+        private System.Windows.Forms.Label label38;
     }
 }

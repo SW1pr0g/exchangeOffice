@@ -1033,7 +1033,7 @@
             this.searchBox.TabIndex = 15;
             this.searchBox.Text = " Введите для поиска...";
             this.searchBox.Enter += new System.EventHandler(this.searchBox_Enter);
-            this.searchBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.searchBox_KeyDown);
+            this.searchBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.searchBox_KeyPress);
             this.searchBox.Leave += new System.EventHandler(this.searchBox_Leave);
             // 
             // label37
@@ -1667,11 +1667,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(951, 577);
+            this.Controls.Add(this.searchPanel);
             this.Controls.Add(this.currencies_exchangePanel);
             this.Controls.Add(this.exchangePanel);
             this.Controls.Add(this.addclientPanel);
             this.Controls.Add(this.clientsPanel);
-            this.Controls.Add(this.searchPanel);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

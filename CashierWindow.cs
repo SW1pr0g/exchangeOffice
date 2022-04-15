@@ -949,8 +949,7 @@ namespace AIS_exchangeOffice
         }
 
         private void quantityBox_Leave(object sender, EventArgs e)
-        {
-            
+        {            
             if (quantityBox.Text == "")
             {
                 quantityBox.ForeColor = Color.Silver;
@@ -1203,14 +1202,6 @@ namespace AIS_exchangeOffice
             }
         }
 
-        private void searchBox_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter && searchBox.Text != "")
-            {
-                SearchBut_Click(sender, e);
-            }
-        }
-
         private void search_values_CheckedChanged(object sender, EventArgs e)
         {
             dataGridView3.Rows.Clear();
@@ -1227,6 +1218,14 @@ namespace AIS_exchangeOffice
         {
             dataGridView3.Rows.Clear();
             dataGridView3.Columns.Clear();
+        }
+
+        private void searchBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter && searchBox.Text != "")
+            {
+                SearchBut_Click(sender, e);
+            }
         }
     }
 }
