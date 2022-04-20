@@ -41,7 +41,7 @@ CREATE TABLE `clients` (
 
 LOCK TABLES `clients` WRITE;
 /*!40000 ALTER TABLE `clients` DISABLE KEYS */;
-INSERT INTO `clients` VALUES (549831,'Фортнайтеров','Женя','Татьянович','2000-01-01',4887,855122),(699506,'Порядин','Алексей','Евгеньевич','2004-03-17',4549,213654);
+INSERT INTO `clients` VALUES (549831,'Фортнайтеров','Женя','Татьянович','2000-01-01',4887,855122),(699505,'Порядин','Алексей','Евгеньевич','2004-03-17',4125,213654);
 /*!40000 ALTER TABLE `clients` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -66,7 +66,7 @@ CREATE TABLE `currency_values` (
 
 LOCK TABLES `currency_values` WRITE;
 /*!40000 ALTER TABLE `currency_values` DISABLE KEYS */;
-INSERT INTO `currency_values` VALUES (392,'JPY',1500.6),(756,'CHF',623.569),(826,'GBP',789),(840,'USD',1010.7),(978,'EUR',5000);
+INSERT INTO `currency_values` VALUES (392,'JPY',1500.6),(756,'CHF',623.569),(826,'GBP',810),(840,'USD',1060.752),(978,'EUR',4995);
 /*!40000 ALTER TABLE `currency_values` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -93,7 +93,7 @@ CREATE TABLE `currencycourse` (
 
 LOCK TABLES `currencycourse` WRITE;
 /*!40000 ALTER TABLE `currencycourse` DISABLE KEYS */;
-INSERT INTO `currencycourse` VALUES (392,'JPY',66.33,68.31),(756,'CHF',85.45,87.46),(826,'GBP',105.37,107.4),(840,'USD',77.12,79.81),(978,'EUR',88.47,90.47);
+INSERT INTO `currencycourse` VALUES (392,'JPY',66.33,68.31),(756,'CHF',85.45,87.46),(826,'GBP',105.37,107.4),(840,'USD',79.33,79.83),(978,'EUR',88.43,90.47);
 /*!40000 ALTER TABLE `currencycourse` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -125,8 +125,32 @@ CREATE TABLE `operations` (
 
 LOCK TABLES `operations` WRITE;
 /*!40000 ALTER TABLE `operations` DISABLE KEYS */;
-INSERT INTO `operations` VALUES (694362,'Порядин','Алексей','Евгеньевич','Продажа','€',5000,442350,'2022-04-01 20:17:39');
+INSERT INTO `operations` VALUES (571872,'Фортнайтеров','Женя','Татьянович','Покупка','€',5,452.35,'2022-04-07 23:18:21'),(694362,'Порядин','Алексей','Евгеньевич','Продажа','€',5000,442350,'2022-04-01 20:17:39'),(734080,'Фортнайтеров','Женя','Татьянович','Покупка','€',5,452.35,'2022-04-13 23:02:53'),(882582,'Фортнайтеров','Женя','Татьянович','Покупка','$',569,45411.89,'2022-04-08 19:33:05'),(900291,'Фортнайтеров','Женя','Татьянович','Покупка','£',1,107.4,'2022-04-13 23:04:40');
 /*!40000 ALTER TABLE `operations` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `otchets_quantity`
+--
+
+DROP TABLE IF EXISTS `otchets_quantity`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `otchets_quantity` (
+  `id` int(11) NOT NULL,
+  `quantity` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `otchets_quantity`
+--
+
+LOCK TABLES `otchets_quantity` WRITE;
+/*!40000 ALTER TABLE `otchets_quantity` DISABLE KEYS */;
+INSERT INTO `otchets_quantity` VALUES (1,2);
+/*!40000 ALTER TABLE `otchets_quantity` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -174,4 +198,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-04-06  8:25:23
+-- Dump completed on 2022-04-20  7:21:17

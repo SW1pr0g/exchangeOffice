@@ -233,11 +233,6 @@ namespace AIS_exchangeOffice
             }
         }
 
-        private void button7_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void CourseRadioBtn_CheckedChanged(object sender, EventArgs e)
         {
             dataGridView1.Rows.Clear();
@@ -2336,6 +2331,173 @@ namespace AIS_exchangeOffice
             catch (MySqlException ex)
             {
                 Console.WriteLine("Error: \r\n{0}", ex.ToString());
+            }
+        }
+
+        private void printOtchetClients_btn_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Произвести печать отчёта - информация о клиентах?", "Печать отчёта", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                
+                classes.wordOtchets_print wordOtchets_print = new classes.wordOtchets_print();
+                classes.reversedate reversedate = new classes.reversedate();
+                string connStr = "server=localhost;user=root;database=aisdatabd;password=root123;";
+                MySqlConnection conn = new MySqlConnection(connStr);
+                MySqlCommand command = new MySqlCommand();
+                string commandString;
+                MySqlDataReader reader;
+                command.Connection = conn;
+                command.Connection.Open();
+                commandString = "SELECT COUNT(*) FROM clients;";
+                command.CommandText = commandString;
+                string[] data = new string[Convert.ToInt32(command.ExecuteScalar())];
+                commandString = "SELECT * FROM clients;";
+                command.CommandText = commandString;
+                
+                try
+                {                    
+                    reader = command.ExecuteReader();
+                    try
+                    {
+                        int i = 0;
+                        while (reader.Read())
+                        {
+
+                            data[i] = reader["u_num"].ToString() + " " + reader["surname"].ToString() + " " + reader["name"].ToString() + " " + reader["patronymic"].ToString() + " " + reversedate.dateReverse(reader["date_birth"].ToString()) + " " + reader["seriesDoc"].ToString() + " " + reader["numberDoc"].ToString();
+                            i++;
+                        }
+                        reader.Close();
+                    }
+                    catch (MySqlException ex)
+                    {
+                        Console.WriteLine("Error: \r\n{0}", ex.ToString());
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    Console.WriteLine("Error: \r\n{0}", ex.ToString());
+                }
+                wordOtchets_print.otchetClients_print(Environment.CurrentDirectory + "\\wordDocs\\otchetClients_print.docx", data);
+                commandString = "UPDATE otchets_quantity SET quantity = " + (Convert.ToInt32(otchets_quantity.Text) + 1).ToString() + " WHERE id = 1";
+                command.CommandText = commandString;
+                command.ExecuteReader();
+                command.Connection.Close();
+                otchets_quantity.Text = (Convert.ToInt32(otchets_quantity.Text) + 1).ToString();
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                //do nothing
+            }
+        }
+        private void printOtchetBuyValues_btn_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Произвести печать отчёта - операция покупок?", "Печать отчёта", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+
+                classes.wordOtchets_print wordOtchets_print = new classes.wordOtchets_print();
+                classes.reversedate reversedate = new classes.reversedate();
+                string connStr = "server=localhost;user=root;database=aisdatabd;password=root123;";
+                MySqlConnection conn = new MySqlConnection(connStr);
+                MySqlCommand command = new MySqlCommand();
+                string commandString;
+                MySqlDataReader reader;
+                command.Connection = conn;
+                command.Connection.Open();
+                commandString = "SELECT COUNT(*) FROM operations WHERE type = 'Покупка';";
+                command.CommandText = commandString;
+                string[] data = new string[Convert.ToInt32(command.ExecuteScalar())];
+                commandString = "SELECT * FROM operations WHERE type = 'Покупка';";
+                command.CommandText = commandString;
+
+                try
+                {
+                    reader = command.ExecuteReader();
+                    try
+                    {
+                        int i = 0;
+                        while (reader.Read())
+                        {
+                            data[i] = reader["u_num"].ToString() + " " + reader["surname"].ToString() + " " + reader["name"].ToString() + " " + reader["patronymic"].ToString() + " " + reader["value"].ToString() + " " + reader["quantity"].ToString() + " " + reader["summ"].ToString() + " " + reader["date"].ToString();
+                            i++;
+                        }
+                        reader.Close();
+                    }
+                    catch (MySqlException ex)
+                    {
+                        Console.WriteLine("Error: \r\n{0}", ex.ToString());
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    Console.WriteLine("Error: \r\n{0}", ex.ToString());
+                }                
+                wordOtchets_print.otchetBuyValues_print(Environment.CurrentDirectory + "\\wordDocs\\otchetBuyValues_print.docx", data);
+                commandString = "UPDATE otchets_quantity SET quantity = " + (Convert.ToInt32(otchets_quantity.Text) + 1).ToString() + " WHERE id = 1";
+                command.CommandText = commandString;
+                command.ExecuteReader();
+                command.Connection.Close();
+                otchets_quantity.Text = (Convert.ToInt32(otchets_quantity.Text) + 1).ToString();
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                //do nothing
+            }
+        }
+        private void printOtchetSellValues_btn_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Произвести печать отчёта - операция покупок?", "Печать отчёта", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+
+                classes.wordOtchets_print wordOtchets_print = new classes.wordOtchets_print();
+                classes.reversedate reversedate = new classes.reversedate();
+                string connStr = "server=localhost;user=root;database=aisdatabd;password=root123;";
+                MySqlConnection conn = new MySqlConnection(connStr);
+                MySqlCommand command = new MySqlCommand();
+                string commandString;
+                MySqlDataReader reader;
+                command.Connection = conn;
+                command.Connection.Open();
+                commandString = "SELECT COUNT(*) FROM operations WHERE type = 'Продажа';";
+                command.CommandText = commandString;
+                string[] data = new string[Convert.ToInt32(command.ExecuteScalar())];
+                commandString = "SELECT * FROM operations WHERE type = 'Продажа';";
+                command.CommandText = commandString;
+
+                try
+                {
+                    reader = command.ExecuteReader();
+                    try
+                    {
+                        int i = 0;
+                        while (reader.Read())
+                        {
+                            data[i] = reader["u_num"].ToString() + " " + reader["surname"].ToString() + " " + reader["name"].ToString() + " " + reader["patronymic"].ToString() + " " + reader["value"].ToString() + " " + reader["quantity"].ToString() + " " + reader["summ"].ToString() + " " + reader["date"].ToString();
+                            i++;
+                        }
+                        reader.Close();
+                    }
+                    catch (MySqlException ex)
+                    {
+                        Console.WriteLine("Error: \r\n{0}", ex.ToString());
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    Console.WriteLine("Error: \r\n{0}", ex.ToString());
+                }                
+                wordOtchets_print.otchetSellValues_print(Environment.CurrentDirectory + "\\wordDocs\\otchetSellValues_print.docx", data);
+                commandString = "UPDATE otchets_quantity SET quantity = " + (Convert.ToInt32(otchets_quantity.Text) + 1).ToString() + " WHERE id = 1";
+                command.CommandText = commandString;
+                command.ExecuteReader();
+                command.Connection.Close();
+                otchets_quantity.Text = (Convert.ToInt32(otchets_quantity.Text) + 1).ToString();
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                //do nothing
             }
         }
 

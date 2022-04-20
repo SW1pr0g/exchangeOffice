@@ -2805,7 +2805,7 @@
         wp8P+XmpvOpV/x/vXi+EAtK4bgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="button7.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="printOtchetClients_btn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
         MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAADdAAAA3QARBsPQcAAAxaSURBVHhe7ZsJUBRXGsff7sYc
@@ -2864,7 +2864,7 @@
         lkBGZhaTSzNpBkthnwSrGXPW1hJQzv4D0osfxuesc88AAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="button8.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="printOtchetBuyValues_btn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
         MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAADdAAAA3QARBsPQcAAAxaSURBVHhe7ZsJUBRXGsff7sYc
@@ -2923,7 +2923,7 @@
         lkBGZhaTSzNpBkthnwSrGXPW1hJQzv4D0osfxuesc88AAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="button9.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="printOtchetSellValues_btn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
         MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAADdAAAA3QARBsPQcAAAxaSURBVHhe7ZsJUBRXGsff7sYc
@@ -3314,7 +3314,7 @@
   <data name="add_values_Btn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAADr0AAA69AUf7kK0AAAUxSURBVEhLpVUJTFRXFAVhoBIU
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAADrwAAA68AZW8ckkAAAUxSURBVEhLpVUJTFRXFAVhoBIU
         oVTEFZESXIayOYBSFq0wWBShjEHAQsAqCM4gWAdBGLZiR+Noo0UM4tKqVZBqW40UF8SIUxHQqsEiKorK
         LhgQqlY4ve//oY2JGpeTnPz5bznn33vffaP1hvhET6BzduJooyrhx2YNQ/V1j9tZGbUYGQoqDfR1cjVr
         3gvOkfOnAfez0VUuRe1ub6BiIW7sFWO4geAPzZq3RjgxgehKHGZuYnDgybUUoCUBqA0FOqJRkCwCzUUR

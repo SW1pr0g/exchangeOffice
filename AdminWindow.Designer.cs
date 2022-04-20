@@ -105,9 +105,9 @@
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.otchets_quantity = new System.Windows.Forms.Label();
             this.label44 = new System.Windows.Forms.Label();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
+            this.printOtchetClients_btn = new System.Windows.Forms.Button();
+            this.printOtchetBuyValues_btn = new System.Windows.Forms.Button();
+            this.printOtchetSellValues_btn = new System.Windows.Forms.Button();
             this.otchetPanel = new System.Windows.Forms.Panel();
             this.label41 = new System.Windows.Forms.Label();
             this.exitButton_BD = new System.Windows.Forms.Button();
@@ -1171,7 +1171,7 @@
             this.panel3.Controls.Add(this.pictureBox13);
             this.panel3.Controls.Add(this.otchets_quantity);
             this.panel3.Controls.Add(this.label44);
-            this.panel3.Location = new System.Drawing.Point(462, 69);
+            this.panel3.Location = new System.Drawing.Point(470, 66);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(258, 140);
             this.panel3.TabIndex = 10;
@@ -1211,60 +1211,62 @@
             this.label44.TabIndex = 6;
             this.label44.Text = "Напечатанные отчёты";
             // 
-            // button7
+            // printOtchetClients_btn
             // 
-            this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(197)))), ((int)(((byte)(254)))));
-            this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
-            this.button7.Location = new System.Drawing.Point(34, 70);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(379, 145);
-            this.button7.TabIndex = 15;
-            this.button7.Text = "Напечатать отчёт \"Информация о клиентах\"";
-            this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.printOtchetClients_btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.printOtchetClients_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.printOtchetClients_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.printOtchetClients_btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(197)))), ((int)(((byte)(254)))));
+            this.printOtchetClients_btn.Image = ((System.Drawing.Image)(resources.GetObject("printOtchetClients_btn.Image")));
+            this.printOtchetClients_btn.Location = new System.Drawing.Point(34, 70);
+            this.printOtchetClients_btn.Name = "printOtchetClients_btn";
+            this.printOtchetClients_btn.Size = new System.Drawing.Size(379, 145);
+            this.printOtchetClients_btn.TabIndex = 15;
+            this.printOtchetClients_btn.Text = "Напечатать отчёт \"Информация о клиентах\"";
+            this.printOtchetClients_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.printOtchetClients_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.printOtchetClients_btn.UseVisualStyleBackColor = true;
+            this.printOtchetClients_btn.Click += new System.EventHandler(this.printOtchetClients_btn_Click);
             // 
-            // button8
+            // printOtchetBuyValues_btn
             // 
-            this.button8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(197)))), ((int)(((byte)(254)))));
-            this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
-            this.button8.Location = new System.Drawing.Point(34, 251);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(308, 142);
-            this.button8.TabIndex = 16;
-            this.button8.Text = "Напечатать отчёт \"Операции покупок\"";
-            this.button8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.button8.UseVisualStyleBackColor = true;
+            this.printOtchetBuyValues_btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.printOtchetBuyValues_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.printOtchetBuyValues_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.printOtchetBuyValues_btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(197)))), ((int)(((byte)(254)))));
+            this.printOtchetBuyValues_btn.Image = ((System.Drawing.Image)(resources.GetObject("printOtchetBuyValues_btn.Image")));
+            this.printOtchetBuyValues_btn.Location = new System.Drawing.Point(35, 237);
+            this.printOtchetBuyValues_btn.Name = "printOtchetBuyValues_btn";
+            this.printOtchetBuyValues_btn.Size = new System.Drawing.Size(379, 142);
+            this.printOtchetBuyValues_btn.TabIndex = 16;
+            this.printOtchetBuyValues_btn.Text = "Напечатать отчёт \"Операции покупок\"";
+            this.printOtchetBuyValues_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.printOtchetBuyValues_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.printOtchetBuyValues_btn.UseVisualStyleBackColor = true;
+            this.printOtchetBuyValues_btn.Click += new System.EventHandler(this.printOtchetBuyValues_btn_Click);
             // 
-            // button9
+            // printOtchetSellValues_btn
             // 
-            this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(197)))), ((int)(((byte)(254)))));
-            this.button9.Image = ((System.Drawing.Image)(resources.GetObject("button9.Image")));
-            this.button9.Location = new System.Drawing.Point(395, 251);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(325, 142);
-            this.button9.TabIndex = 17;
-            this.button9.Text = "Напечатать отчёт \"Операции продаж\"";
-            this.button9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button9.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.button9.UseVisualStyleBackColor = true;
+            this.printOtchetSellValues_btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.printOtchetSellValues_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.printOtchetSellValues_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.printOtchetSellValues_btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(197)))), ((int)(((byte)(254)))));
+            this.printOtchetSellValues_btn.Image = ((System.Drawing.Image)(resources.GetObject("printOtchetSellValues_btn.Image")));
+            this.printOtchetSellValues_btn.Location = new System.Drawing.Point(34, 399);
+            this.printOtchetSellValues_btn.Name = "printOtchetSellValues_btn";
+            this.printOtchetSellValues_btn.Size = new System.Drawing.Size(378, 142);
+            this.printOtchetSellValues_btn.TabIndex = 17;
+            this.printOtchetSellValues_btn.Text = "Напечатать отчёт \"Операции продаж\"";
+            this.printOtchetSellValues_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.printOtchetSellValues_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.printOtchetSellValues_btn.UseVisualStyleBackColor = true;
+            this.printOtchetSellValues_btn.Click += new System.EventHandler(this.printOtchetSellValues_btn_Click);
             // 
             // otchetPanel
             // 
-            this.otchetPanel.Controls.Add(this.button9);
-            this.otchetPanel.Controls.Add(this.button8);
-            this.otchetPanel.Controls.Add(this.button7);
+            this.otchetPanel.Controls.Add(this.printOtchetSellValues_btn);
+            this.otchetPanel.Controls.Add(this.printOtchetBuyValues_btn);
+            this.otchetPanel.Controls.Add(this.printOtchetClients_btn);
             this.otchetPanel.Controls.Add(this.panel3);
             this.otchetPanel.Controls.Add(this.exitButton_Otchet);
             this.otchetPanel.Controls.Add(this.label45);
@@ -2502,9 +2504,9 @@
         private System.Windows.Forms.Button print_currencies;
         private System.Windows.Forms.Button add_valuesBtn;
         private System.Windows.Forms.Button valuesEdit_btn;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button printOtchetClients_btn;
+        private System.Windows.Forms.Button printOtchetBuyValues_btn;
+        private System.Windows.Forms.Button printOtchetSellValues_btn;
         private System.Windows.Forms.Label CHF_buy;
         private System.Windows.Forms.Label CHF_sell;
         private System.Windows.Forms.Button ClientsBtn;
