@@ -351,11 +351,11 @@ namespace AIS_exchangeOffice
                 this.dataGridView1.Columns.Add("patronymic", "Patronymic");
                 this.dataGridView1.Columns["patronymic"].Width = 100;
                 this.dataGridView1.Columns.Add("date_birth", "Date_birth");
-                this.dataGridView1.Columns["date_birth"].Width = 100;
+                this.dataGridView1.Columns["date_birth"].Width = 89;
                 this.dataGridView1.Columns.Add("seriesDoc", "SeriesDoc");
-                this.dataGridView1.Columns["seriesDoc"].Width = 79;
+                this.dataGridView1.Columns["seriesDoc"].Width = 75;
                 this.dataGridView1.Columns.Add("numberDoc", "NumberDoc");
-                this.dataGridView1.Columns["numberDoc"].Width = 83;
+                this.dataGridView1.Columns["numberDoc"].Width = 81;
                 while (reader.Read())
                 {
                     classes.reversedate reversedate = new classes.reversedate();
@@ -2392,58 +2392,7 @@ namespace AIS_exchangeOffice
         }
         private void printOtchetBuyValues_btn_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Произвести печать отчёта - операция покупок?", "Печать отчёта", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
-            {
 
-                classes.wordOtchets_print wordOtchets_print = new classes.wordOtchets_print();
-                classes.reversedate reversedate = new classes.reversedate();
-                string connStr = "server=localhost;user=root;database=aisdatabd;password=root123;";
-                MySqlConnection conn = new MySqlConnection(connStr);
-                MySqlCommand command = new MySqlCommand();
-                string commandString;
-                MySqlDataReader reader;
-                command.Connection = conn;
-                command.Connection.Open();
-                commandString = "SELECT COUNT(*) FROM operations WHERE type = 'Покупка';";
-                command.CommandText = commandString;
-                string[] data = new string[Convert.ToInt32(command.ExecuteScalar())];
-                commandString = "SELECT * FROM operations WHERE type = 'Покупка';";
-                command.CommandText = commandString;
-
-                try
-                {
-                    reader = command.ExecuteReader();
-                    try
-                    {
-                        int i = 0;
-                        while (reader.Read())
-                        {
-                            data[i] = reader["u_num"].ToString() + " " + reader["surname"].ToString() + " " + reader["name"].ToString() + " " + reader["patronymic"].ToString() + " " + reader["value"].ToString() + " " + reader["quantity"].ToString() + " " + reader["summ"].ToString() + " " + reader["date"].ToString();
-                            i++;
-                        }
-                        reader.Close();
-                    }
-                    catch (MySqlException ex)
-                    {
-                        Console.WriteLine("Error: \r\n{0}", ex.ToString());
-                    }
-                }
-                catch (MySqlException ex)
-                {
-                    Console.WriteLine("Error: \r\n{0}", ex.ToString());
-                }                
-                wordOtchets_print.otchetBuyValues_print(Environment.CurrentDirectory + "\\wordDocs\\otchetBuyValues_print.docx", data);
-                commandString = "UPDATE otchets_quantity SET quantity = " + (Convert.ToInt32(otchets_quantity.Text) + 1).ToString() + " WHERE id = 1";
-                command.CommandText = commandString;
-                command.ExecuteReader();
-                command.Connection.Close();
-                otchets_quantity.Text = (Convert.ToInt32(otchets_quantity.Text) + 1).ToString();
-            }
-            else if (dialogResult == DialogResult.No)
-            {
-                //do nothing
-            }
         }
         private void printOtchetSellValues_btn_Click(object sender, EventArgs e)
         {
@@ -2499,6 +2448,11 @@ namespace AIS_exchangeOffice
             {
                 //do nothing
             }
+        }
+
+        private void printOtchetBuyValues_btn_Enter(object sender, EventArgs e)
+        {
+            
         }
 
         private void search_clients_CheckedChanged(object sender, EventArgs e)

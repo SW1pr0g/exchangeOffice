@@ -25,8 +25,7 @@ namespace AIS_exchangeOffice
             pnlNav.Height = MainBtn.Height;
             pnlNav.Top = MainBtn.Top;
             pnlNav.Left = MainBtn.Left;
-            MainBtn.BackColor = Color.FromArgb(46, 51, 73);
-
+            MainBtn.BackColor = Color.FromArgb(46, 51, 73);            
         }
 
         private void MainBtn_Click(object sender, EventArgs e)

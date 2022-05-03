@@ -41,7 +41,7 @@ CREATE TABLE `clients` (
 
 LOCK TABLES `clients` WRITE;
 /*!40000 ALTER TABLE `clients` DISABLE KEYS */;
-INSERT INTO `clients` VALUES (549831,'Фортнайтеров','Женя','Татьянович','2000-01-01',4887,855122),(699505,'Порядин','Алексей','Евгеньевич','2004-03-17',4125,213654);
+INSERT INTO `clients` VALUES (549831,'Фортнайтеров','Женя','Татьянович','2000-01-01',4887,855122),(549842,'ывраыалоы','ывраыраолы','ыварыолоарыа','2000-01-01',3423,372426),(699505,'Порядин','Алексей','Евгеньевич','2004-03-17',4125,213654);
 /*!40000 ALTER TABLE `clients` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -198,4 +198,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-04-20  7:21:17
+-- Dump completed on 2022-04-27  7:28:26

@@ -195,6 +195,26 @@
             this.label37 = new System.Windows.Forms.Label();
             this.exitButton_search = new System.Windows.Forms.Button();
             this.label38 = new System.Windows.Forms.Label();
+            this.operationsOtchetSellClient = new System.Windows.Forms.Panel();
+            this.goBackOtchetsBtn = new System.Windows.Forms.Button();
+            this.panel22 = new System.Windows.Forms.Panel();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.dateTimePicker_startSell = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker_endSell = new System.Windows.Forms.DateTimePicker();
+            this.OtchetSellClientprint_btn = new System.Windows.Forms.Button();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.operationsOtchetBuyClient = new System.Windows.Forms.Panel();
+            this.goBackOtchetBtn = new System.Windows.Forms.Button();
+            this.panel23 = new System.Windows.Forms.Panel();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.dateTimePicker_startBuy = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker_endBuy = new System.Windows.Forms.DateTimePicker();
+            this.OtchetBuyClientprint_btn = new System.Windows.Forms.Button();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -245,6 +265,10 @@
             this.panel17.SuspendLayout();
             this.searchPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            this.operationsOtchetSellClient.SuspendLayout();
+            this.panel22.SuspendLayout();
+            this.operationsOtchetBuyClient.SuspendLayout();
+            this.panel23.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -553,7 +577,7 @@
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.InitialImage = null;
-            this.pictureBox2.Location = new System.Drawing.Point(150, 25);
+            this.pictureBox2.Location = new System.Drawing.Point(156, 25);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(100, 100);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1243,7 +1267,7 @@
             this.printOtchetBuyValues_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.printOtchetBuyValues_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.printOtchetBuyValues_btn.UseVisualStyleBackColor = true;
-            this.printOtchetBuyValues_btn.Click += new System.EventHandler(this.printOtchetBuyValues_btn_Click);
+            this.printOtchetBuyValues_btn.Click += new System.EventHandler(this.printOtchetBuyValues_btn_Enter);
             // 
             // printOtchetSellValues_btn
             // 
@@ -2383,6 +2407,7 @@
             this.exitButton_search.TabIndex = 4;
             this.exitButton_search.Text = "X";
             this.exitButton_search.UseVisualStyleBackColor = false;
+            this.exitButton_search.Click += new System.EventHandler(this.exitButton_search_Click);
             // 
             // label38
             // 
@@ -2395,15 +2420,257 @@
             this.label38.TabIndex = 1;
             this.label38.Text = "Поиск";
             // 
+            // operationsOtchetSellClient
+            // 
+            this.operationsOtchetSellClient.Controls.Add(this.goBackOtchetsBtn);
+            this.operationsOtchetSellClient.Controls.Add(this.panel22);
+            this.operationsOtchetSellClient.Controls.Add(this.label18);
+            this.operationsOtchetSellClient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.operationsOtchetSellClient.Location = new System.Drawing.Point(186, 0);
+            this.operationsOtchetSellClient.Name = "operationsOtchetSellClient";
+            this.operationsOtchetSellClient.Size = new System.Drawing.Size(765, 577);
+            this.operationsOtchetSellClient.TabIndex = 40;
+            this.operationsOtchetSellClient.Visible = false;
+            // 
+            // goBackOtchetsBtn
+            // 
+            this.goBackOtchetsBtn.BackColor = System.Drawing.SystemColors.Control;
+            this.goBackOtchetsBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.goBackOtchetsBtn.FlatAppearance.BorderSize = 0;
+            this.goBackOtchetsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.goBackOtchetsBtn.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.goBackOtchetsBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.goBackOtchetsBtn.Image = ((System.Drawing.Image)(resources.GetObject("goBackOtchetsBtn.Image")));
+            this.goBackOtchetsBtn.Location = new System.Drawing.Point(16, 8);
+            this.goBackOtchetsBtn.Name = "goBackOtchetsBtn";
+            this.goBackOtchetsBtn.Size = new System.Drawing.Size(60, 60);
+            this.goBackOtchetsBtn.TabIndex = 32;
+            this.goBackOtchetsBtn.UseVisualStyleBackColor = false;
+            // 
+            // panel22
+            // 
+            this.panel22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.panel22.Controls.Add(this.label22);
+            this.panel22.Controls.Add(this.label21);
+            this.panel22.Controls.Add(this.dateTimePicker_startSell);
+            this.panel22.Controls.Add(this.dateTimePicker_endSell);
+            this.panel22.Controls.Add(this.OtchetSellClientprint_btn);
+            this.panel22.Controls.Add(this.label17);
+            this.panel22.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.panel22.Location = new System.Drawing.Point(172, 118);
+            this.panel22.Name = "panel22";
+            this.panel22.Size = new System.Drawing.Size(437, 351);
+            this.panel22.TabIndex = 9;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label22.ForeColor = System.Drawing.Color.White;
+            this.label22.Location = new System.Drawing.Point(132, 178);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(162, 24);
+            this.label22.TabIndex = 37;
+            this.label22.Text = "Конечная дата:";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label21.ForeColor = System.Drawing.Color.White;
+            this.label21.Location = new System.Drawing.Point(132, 87);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(172, 24);
+            this.label21.TabIndex = 36;
+            this.label21.Text = "Начальная дата:";
+            // 
+            // dateTimePicker_startSell
+            // 
+            this.dateTimePicker_startSell.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dateTimePicker_startSell.Location = new System.Drawing.Point(112, 218);
+            this.dateTimePicker_startSell.Name = "dateTimePicker_startSell";
+            this.dateTimePicker_startSell.Size = new System.Drawing.Size(200, 29);
+            this.dateTimePicker_startSell.TabIndex = 35;
+            // 
+            // dateTimePicker_endSell
+            // 
+            this.dateTimePicker_endSell.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dateTimePicker_endSell.Location = new System.Drawing.Point(117, 124);
+            this.dateTimePicker_endSell.Name = "dateTimePicker_endSell";
+            this.dateTimePicker_endSell.Size = new System.Drawing.Size(200, 29);
+            this.dateTimePicker_endSell.TabIndex = 34;
+            // 
+            // OtchetSellClientprint_btn
+            // 
+            this.OtchetSellClientprint_btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.OtchetSellClientprint_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.OtchetSellClientprint_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.OtchetSellClientprint_btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(197)))), ((int)(((byte)(254)))));
+            this.OtchetSellClientprint_btn.Image = ((System.Drawing.Image)(resources.GetObject("OtchetSellClientprint_btn.Image")));
+            this.OtchetSellClientprint_btn.Location = new System.Drawing.Point(98, 286);
+            this.OtchetSellClientprint_btn.Name = "OtchetSellClientprint_btn";
+            this.OtchetSellClientprint_btn.Size = new System.Drawing.Size(235, 51);
+            this.OtchetSellClientprint_btn.TabIndex = 33;
+            this.OtchetSellClientprint_btn.Text = "Произвести печать";
+            this.OtchetSellClientprint_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.OtchetSellClientprint_btn.UseVisualStyleBackColor = true;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label17.ForeColor = System.Drawing.Color.White;
+            this.label17.Location = new System.Drawing.Point(128, 11);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(194, 25);
+            this.label17.TabIndex = 6;
+            this.label17.Text = "Введите период:";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.label18.Location = new System.Drawing.Point(163, 21);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(476, 32);
+            this.label18.TabIndex = 1;
+            this.label18.Text = "Печать отчёта операции продаж";
+            // 
+            // operationsOtchetBuyClient
+            // 
+            this.operationsOtchetBuyClient.Controls.Add(this.goBackOtchetBtn);
+            this.operationsOtchetBuyClient.Controls.Add(this.panel23);
+            this.operationsOtchetBuyClient.Controls.Add(this.label26);
+            this.operationsOtchetBuyClient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.operationsOtchetBuyClient.Location = new System.Drawing.Point(186, 0);
+            this.operationsOtchetBuyClient.Name = "operationsOtchetBuyClient";
+            this.operationsOtchetBuyClient.Size = new System.Drawing.Size(765, 577);
+            this.operationsOtchetBuyClient.TabIndex = 41;
+            this.operationsOtchetBuyClient.Visible = false;
+            // 
+            // goBackOtchetBtn
+            // 
+            this.goBackOtchetBtn.BackColor = System.Drawing.SystemColors.Control;
+            this.goBackOtchetBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.goBackOtchetBtn.FlatAppearance.BorderSize = 0;
+            this.goBackOtchetBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.goBackOtchetBtn.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.goBackOtchetBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.goBackOtchetBtn.Image = ((System.Drawing.Image)(resources.GetObject("goBackOtchetBtn.Image")));
+            this.goBackOtchetBtn.Location = new System.Drawing.Point(16, 8);
+            this.goBackOtchetBtn.Name = "goBackOtchetBtn";
+            this.goBackOtchetBtn.Size = new System.Drawing.Size(60, 60);
+            this.goBackOtchetBtn.TabIndex = 32;
+            this.goBackOtchetBtn.UseVisualStyleBackColor = false;
+            // 
+            // panel23
+            // 
+            this.panel23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.panel23.Controls.Add(this.label23);
+            this.panel23.Controls.Add(this.label24);
+            this.panel23.Controls.Add(this.dateTimePicker_startBuy);
+            this.panel23.Controls.Add(this.dateTimePicker_endBuy);
+            this.panel23.Controls.Add(this.OtchetBuyClientprint_btn);
+            this.panel23.Controls.Add(this.label25);
+            this.panel23.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.panel23.Location = new System.Drawing.Point(172, 118);
+            this.panel23.Name = "panel23";
+            this.panel23.Size = new System.Drawing.Size(437, 351);
+            this.panel23.TabIndex = 9;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label23.ForeColor = System.Drawing.Color.White;
+            this.label23.Location = new System.Drawing.Point(132, 178);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(162, 24);
+            this.label23.TabIndex = 37;
+            this.label23.Text = "Конечная дата:";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label24.ForeColor = System.Drawing.Color.White;
+            this.label24.Location = new System.Drawing.Point(132, 87);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(172, 24);
+            this.label24.TabIndex = 36;
+            this.label24.Text = "Начальная дата:";
+            // 
+            // dateTimePicker_startBuy
+            // 
+            this.dateTimePicker_startBuy.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dateTimePicker_startBuy.Location = new System.Drawing.Point(112, 218);
+            this.dateTimePicker_startBuy.Name = "dateTimePicker_startBuy";
+            this.dateTimePicker_startBuy.Size = new System.Drawing.Size(200, 29);
+            this.dateTimePicker_startBuy.TabIndex = 35;
+            // 
+            // dateTimePicker_endBuy
+            // 
+            this.dateTimePicker_endBuy.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dateTimePicker_endBuy.Location = new System.Drawing.Point(117, 124);
+            this.dateTimePicker_endBuy.Name = "dateTimePicker_endBuy";
+            this.dateTimePicker_endBuy.Size = new System.Drawing.Size(200, 29);
+            this.dateTimePicker_endBuy.TabIndex = 34;
+            // 
+            // OtchetBuyClientprint_btn
+            // 
+            this.OtchetBuyClientprint_btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.OtchetBuyClientprint_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.OtchetBuyClientprint_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.OtchetBuyClientprint_btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(197)))), ((int)(((byte)(254)))));
+            this.OtchetBuyClientprint_btn.Image = ((System.Drawing.Image)(resources.GetObject("OtchetBuyClientprint_btn.Image")));
+            this.OtchetBuyClientprint_btn.Location = new System.Drawing.Point(98, 286);
+            this.OtchetBuyClientprint_btn.Name = "OtchetBuyClientprint_btn";
+            this.OtchetBuyClientprint_btn.Size = new System.Drawing.Size(235, 51);
+            this.OtchetBuyClientprint_btn.TabIndex = 33;
+            this.OtchetBuyClientprint_btn.Text = "Произвести печать";
+            this.OtchetBuyClientprint_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.OtchetBuyClientprint_btn.UseVisualStyleBackColor = true;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label25.ForeColor = System.Drawing.Color.White;
+            this.label25.Location = new System.Drawing.Point(128, 11);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(194, 25);
+            this.label25.TabIndex = 6;
+            this.label25.Text = "Введите период:";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
+            this.label26.Location = new System.Drawing.Point(163, 21);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(483, 32);
+            this.label26.TabIndex = 1;
+            this.label26.Text = "Печать отчёта операции покупок";
+            // 
             // AdminWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(951, 577);
             this.Controls.Add(this.otchetPanel);
-            this.Controls.Add(this.searchPanel);
-            this.Controls.Add(this.currencies_exchangePanel);
             this.Controls.Add(this.mainPanel);
+            this.Controls.Add(this.operationsOtchetBuyClient);
+            this.Controls.Add(this.operationsOtchetSellClient);
+            this.Controls.Add(this.currencies_exchangePanel);
+            this.Controls.Add(this.searchPanel);
             this.Controls.Add(this.exchangePanel);
             this.Controls.Add(this.addclientPanel);
             this.Controls.Add(this.clientsPanel);
@@ -2494,6 +2761,14 @@
             this.searchPanel.ResumeLayout(false);
             this.searchPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            this.operationsOtchetSellClient.ResumeLayout(false);
+            this.operationsOtchetSellClient.PerformLayout();
+            this.panel22.ResumeLayout(false);
+            this.panel22.PerformLayout();
+            this.operationsOtchetBuyClient.ResumeLayout(false);
+            this.operationsOtchetBuyClient.PerformLayout();
+            this.panel23.ResumeLayout(false);
+            this.panel23.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2667,5 +2942,25 @@
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.Button exitButton_search;
         private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Panel operationsOtchetSellClient;
+        private System.Windows.Forms.Button goBackOtchetsBtn;
+        private System.Windows.Forms.Panel panel22;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.DateTimePicker dateTimePicker_startSell;
+        private System.Windows.Forms.DateTimePicker dateTimePicker_endSell;
+        private System.Windows.Forms.Button OtchetSellClientprint_btn;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Panel operationsOtchetBuyClient;
+        private System.Windows.Forms.Button goBackOtchetBtn;
+        private System.Windows.Forms.Panel panel23;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.DateTimePicker dateTimePicker_startBuy;
+        private System.Windows.Forms.DateTimePicker dateTimePicker_endBuy;
+        private System.Windows.Forms.Button OtchetBuyClientprint_btn;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label26;
     }
 }
