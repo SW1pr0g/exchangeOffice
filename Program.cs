@@ -7,16 +7,16 @@ using System.Windows.Forms;
 namespace AIS_exchangeOffice
 {
     static class Program
-    {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
+    {        
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            //запуск приложения с формы аунтефикации(AuthForm)
             Application.Run(new AdminWindow());
+
         }
     }
 }

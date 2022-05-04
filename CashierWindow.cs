@@ -21,15 +21,19 @@ namespace AIS_exchangeOffice
         public CashierWindowMain()
         {
             InitializeComponent();
+
+            //визуальное сопровождение панели навигации
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
             pnlNav.Height = MainBtn.Height;
             pnlNav.Top = MainBtn.Top;
             pnlNav.Left = MainBtn.Left;
-            MainBtn.BackColor = Color.FromArgb(46, 51, 73);            
+            MainBtn.BackColor = Color.FromArgb(46, 51, 73);      
+            
         }
 
         private void MainBtn_Click(object sender, EventArgs e)
         {
+            //отображение главного меню
             pnlNav.Height = MainBtn.Height;
             pnlNav.Top = MainBtn.Top;
             pnlNav.Left = MainBtn.Left;
@@ -43,10 +47,13 @@ namespace AIS_exchangeOffice
         }
         private void MainBtn_Leave(object sender, EventArgs e)
         {
+            //визуальное сопровождение выбранного главного меню в
+            //панели навигации
             MainBtn.BackColor = Color.FromArgb(11, 100, 103);           
         }
         private void ClientsBtn_Click(object sender, EventArgs e)
         {
+            //отображение панели клиенты
             pnlNav.Height = ClientsBtn.Height;
             pnlNav.Top = ClientsBtn.Top;
             pnlNav.Left = ClientsBtn.Left;
@@ -60,15 +67,18 @@ namespace AIS_exchangeOffice
         }
         private void ClientsBtn_Leave(object sender, EventArgs e)
         {
+            //визуальное сопровождение выбранной панели клиенты в
+            //панели навигации
             ClientsBtn.BackColor = Color.FromArgb(11, 100, 103);          
         }
         private void ExchangeBtn_Click(object sender, EventArgs e)
         {
+            //отображение панели обмен валюты
             pnlNav.Height = ExchangeBtn.Height;
             pnlNav.Top = ExchangeBtn.Top;
             pnlNav.Left = ExchangeBtn.Left;
             ExchangeBtn.BackColor = Color.FromArgb(46, 51, 73);
-            mainPanel.Visible = true;
+            mainPanel.Visible = false;
             clientsPanel.Visible = false;
             exchangePanel.Visible = true;
             searchPanel.Visible = false;
@@ -77,11 +87,14 @@ namespace AIS_exchangeOffice
         }
         private void ExchangeBtn_Leave(object sender, EventArgs e)
         {
+            //визуальное сопровождение выбранной панели обмен валюты в
+            //панели навигации
             ExchangeBtn.BackColor = Color.FromArgb(11, 100, 103);
         }
 
         private void exit_Click(object sender, EventArgs e)
         {
+            //выход из аккаунта
             DialogResult dialogResult = MessageBox.Show("Выйти из аккаунта?", "Выход из аккаунта", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
@@ -91,12 +104,13 @@ namespace AIS_exchangeOffice
             }
             else if (dialogResult == DialogResult.No)
             {
-                //do nothing
+                //ничего не делать
             }
         }
 
         private void SearchBtn_Click(object sender, EventArgs e)
         {
+            //отображение панели поиск
             pnlNav.Height = SearchBtn.Height;
             pnlNav.Top = SearchBtn.Top;
             pnlNav.Left = SearchBtn.Left;
@@ -111,6 +125,8 @@ namespace AIS_exchangeOffice
 
         private void SearchBtn_Leave(object sender, EventArgs e)
         {
+            //визуальное сопровождение выбранной панели поиск в
+            //панели навигации
             SearchBtn.BackColor = Color.FromArgb(11, 100, 103);
         }
 
@@ -125,7 +141,7 @@ namespace AIS_exchangeOffice
             }
             else if (dialogResult == DialogResult.No)
             {
-                //do nothing
+                //ничего не делать
             }
         }
 
@@ -140,7 +156,7 @@ namespace AIS_exchangeOffice
             }
             else if (dialogResult == DialogResult.No)
             {
-                //do nothing
+                //ничего не делать
             }
         }
 
@@ -155,12 +171,13 @@ namespace AIS_exchangeOffice
             }
             else if (dialogResult == DialogResult.No)
             {
-                //do nothing
+                //ничего не делать
             }
         }
 
         private void CashierWindowMain_Load(object sender, EventArgs e)
         {
+            //при загрузке формы отображаем имя текущего кассира
             CashierName.Text = AuthForm.nameUser;
         }        
         private void mainPanel_VisibleChanged(object sender, EventArgs e)
@@ -168,6 +185,7 @@ namespace AIS_exchangeOffice
             string connStr = "server=localhost;user=root;database=aisdatabd;password=root123;";
             MySqlConnection conn = new MySqlConnection(connStr);
 
+            //выборка данных о валютах для отображения на форме
             MySqlCommand command = new MySqlCommand();
             string commandString = "SELECT summsale, summpurchase FROM currencycourse WHERE name = 'USD';";
             command.CommandText = commandString;
@@ -279,6 +297,7 @@ namespace AIS_exchangeOffice
             }
         }
 
+        //визуальное сопровождение поля поиска
         private void searchBox_Enter(object sender, EventArgs e)
         {            
             if (searchBox.Text == " Введите для поиска...")
@@ -286,7 +305,6 @@ namespace AIS_exchangeOffice
                 searchBox.Text = null;
             }
         }
-
         private void searchBox_Leave(object sender, EventArgs e)
         {
             if (searchBox.Text == "")
@@ -298,11 +316,15 @@ namespace AIS_exchangeOffice
         private void SearchBut_Click(object sender, EventArgs e)
         {
             string search_string = searchBox.Text;
+
+            //проверяем, не пусто ли в поле для поиска
             if (search_string == " Введите для поиска..." || search_string == "")
             {
                 MessageBox.Show("Ошибка! Введите строку для поиска.");
                 return;
             }
+
+            //подчищаем данные после прошлого поиска
             dataGridView3.Rows.Clear();
             dataGridView3.Columns.Clear();
             
@@ -315,6 +337,7 @@ namespace AIS_exchangeOffice
             MySqlDataReader reader;
             if (search_values.Checked == true)
             {
+                //SQL-запрос по поиску данных по таблицам
                 commandString = "SELECT * FROM currencycourse WHERE (u_num LIKE" + " '%" + search_string + "%') OR (name LIKE" + " '%" + search_string + "%') OR (summsale LIKE" + " '%" + search_string.Replace(',', '.') + "%') OR (summpurchase LIKE" + " '%" + search_string + "%')";
                 command.CommandText = commandString;
                 command.Connection = conn;
@@ -332,6 +355,7 @@ namespace AIS_exchangeOffice
                         this.dataGridView3.Columns["summsale"].Width = 226;
                         this.dataGridView3.Columns.Add("summpurchase", "SummPurchase");
                         this.dataGridView3.Columns["summpurchase"].Width = 226;
+                        //вывод результатов поиска
                         while (reader.Read())
                         {
                             dataGridView3.Rows.Add(reader["u_num"].ToString(), reader["name"].ToString(), reader["summsale"].ToString(), reader["summpurchase"].ToString());
@@ -436,6 +460,7 @@ namespace AIS_exchangeOffice
             }                                  
         }
 
+        
         private void clientsPanel_VisibleChanged(object sender, EventArgs e)
         {            
             dataGridView1.Rows.Clear();
@@ -445,6 +470,7 @@ namespace AIS_exchangeOffice
             string connStr = "server=localhost;user=root;database=aisdatabd;password=root123;";
             MySqlConnection conn = new MySqlConnection(connStr);
 
+            //отображаем таблицу с клиентами
             MySqlCommand command = new MySqlCommand();
             string commandString = "SELECT * FROM clients;";
             command.CommandText = commandString;
@@ -483,7 +509,10 @@ namespace AIS_exchangeOffice
             {
                 command.Connection.Close();
             }
+
+            //отображаем количество клиентов
             clientsNumT.Text = dataGridView1.RowCount.ToString();
+
         }
 
         private void print_currencies_Click(object sender, EventArgs e)
@@ -512,14 +541,20 @@ namespace AIS_exchangeOffice
             }            
             else if (dialogResult == DialogResult.No)
             {
-                //do nothing
+                //ничего не делать
             }
         }
-
-        private void AddClientsBtn_Click(object sender, EventArgs e)
+        
+        
+        //отображение панели добавление клиентов
+       private void AddClientsBtn_Click(object sender, EventArgs e)
         {
+            mainPanel.Visible = false;
             clientsPanel.Visible = false;
+            exchangePanel.Visible = false;
+            searchPanel.Visible = false;
             addclientPanel.Visible = true;
+            currencies_exchangePanel.Visible = false;
         }
 
         private void exitButton_addclient_Click(object sender, EventArgs e)
@@ -533,16 +568,22 @@ namespace AIS_exchangeOffice
             }
             else if (dialogResult == DialogResult.No)
             {
-                //do nothing
+                //ничего не делать
             }
         }
-
+        // иницилизируем кнопку которая поможет
+        //возвращаться на предыдущую панель
         private void GoBackClientsPanel_Click(object sender, EventArgs e)
-        {           
+        {
+            mainPanel.Visible = false;
             clientsPanel.Visible = true;
+            exchangePanel.Visible = false;
+            searchPanel.Visible = false;
             addclientPanel.Visible = false;
+            currencies_exchangePanel.Visible = false;
         }
 
+        //делаем красивый ввод-выход в поля добавления клиента
         private void nameBox_Enter(object sender, EventArgs e)
         {
             if (nameBox.Text == "Введите имя")
@@ -628,7 +669,7 @@ namespace AIS_exchangeOffice
                 numberBox.ForeColor = Color.Silver;
             }
         }
-
+        //-----------------------------------------------------------------------
         private void AddClientBtn_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Вы уверены что хотите добавить нового клиента?", "Добавление нового клиента", MessageBoxButtons.YesNo);
@@ -636,6 +677,7 @@ namespace AIS_exchangeOffice
             {
                 try
                 {
+                    //проверка заполненности полей и корректности ввода данных
                     if (nameBox.Text == "Введите имя" || surnameBox.Text == "Введите фамилию" || patronymicBox.Text == "Введите отчество" || seriesBox.Text == "Введите серию документа" || numberBox.Text == "Введите номер документа")
                     {
                         MessageBox.Show("Одно или несколько полей не заполнены!");
@@ -644,6 +686,7 @@ namespace AIS_exchangeOffice
                     {
                         MessageBox.Show("Серия имеет 4 цифры, а номер 6! Проверьте введённые значения и повторите попытку.");
                     }
+                    //--------------------------------------------------------------
                     else
                     {
                         string connectionString = "server = localhost; user = root; database = aisdatabd; password = root123;";
@@ -651,9 +694,13 @@ namespace AIS_exchangeOffice
                         connection.Open();
                         classes.reversedate getDate = new classes.reversedate();
                         Random rnd = new Random();
+
+                        //производим добавление в MySQL - БД
                         string query = "INSERT INTO clients (u_num, surname, name, patronymic, date_birth, seriesDoc, numberDoc) VALUES (" + rnd.Next(100000, 999999) +  ", '" + surnameBox.Text + "', '" + nameBox.Text + "', '" + patronymicBox.Text + "', '" + getDate.dateReverse(dateTimePicker1.Value.ToString().Substring(0, 10)) + "', " + seriesBox.Text + ", " + numberBox.Text + ")";
                         MySqlCommand command = new MySqlCommand(query, connection);
                         command.ExecuteNonQuery();
+
+                        //отображение результатов работы пользователю и чистка полей добавления
                         MessageBox.Show("Клиент успешно добавлен!");
                         nameBox.Text = "Введите имя";
                         nameBox.ForeColor = Color.Silver;
@@ -666,8 +713,12 @@ namespace AIS_exchangeOffice
                         seriesBox.ForeColor = Color.Silver;
                         numberBox.Text = "Введите номер документа";
                         numberBox.ForeColor = Color.Silver;
-                        addclientPanel.Visible = false;
+                        mainPanel.Visible = false;
                         clientsPanel.Visible = true;
+                        exchangePanel.Visible = false;
+                        searchPanel.Visible = false;
+                        addclientPanel.Visible = false;
+                        currencies_exchangePanel.Visible = false;
                     }
                 }
                 catch (MySqlException)
@@ -682,6 +733,7 @@ namespace AIS_exchangeOffice
             
         }
 
+        //запрет ввода недопустимых значений
         private void nameBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!Char.IsDigit(e.KeyChar))
@@ -742,7 +794,7 @@ namespace AIS_exchangeOffice
                     e.Handled = true;
             }            
         }
-
+        //-------------------------------------------------------------------------------------
         private void goBackExchangeBtn_Click(object sender, EventArgs e)
         {
             selectClientBox.Items.Clear();
@@ -752,16 +804,25 @@ namespace AIS_exchangeOffice
             dateTimePicker1.Text = "01.01.2022";
             seriesBox.Text = "Введите серию документа";
             numberBox.Text = "Введите номер документа";
-            currencies_exchangePanel.Visible = false;
+            mainPanel.Visible = false;
+            clientsPanel.Visible = false;
             exchangePanel.Visible = true;
+            searchPanel.Visible = false;
+            addclientPanel.Visible = false;
+            currencies_exchangePanel.Visible = false;
         }
-
+        //отображение панели покупки валюты
         private void buy_valuesBtn_Click(object sender, EventArgs e)
         {
+            mainPanel.Visible = false;
+            clientsPanel.Visible = false;
             exchangePanel.Visible = false;
+            searchPanel.Visible = false;
+            addclientPanel.Visible = false;
             currencies_exchangePanel.Visible = true;
         }
 
+        //производим вывод бд в панель обмена валют
         private void exchangePanel_VisibleChanged(object sender, EventArgs e)
         {
             dataGridView2.Rows.Clear();
@@ -821,6 +882,7 @@ namespace AIS_exchangeOffice
             if (!Char.IsDigit(e.KeyChar)) { e.Handled = true; } else { e.Handled = true; }  
         }
 
+        //добавляем выбор всех доступных клиентов в ComboBox
         private void currencies_exchangePanel_VisibleChanged(object sender, EventArgs e)
         {
             if (currencies_exchangePanel.Visible == true)
@@ -909,7 +971,7 @@ namespace AIS_exchangeOffice
                 selectValueBox.ForeColor = Color.Silver;
             }                        
         }
-
+        //красивый ввод-вывод
         private void selectSaledValueBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             selectValueBox.ForeColor = Color.FromArgb(11, 100, 103);
@@ -962,9 +1024,10 @@ namespace AIS_exchangeOffice
                 summBox.Text = "Сумма сделки: 0 рублей";
             }         
         }
-
+        //----------------------------------------------------
         private void exchangedBtn_Click(object sender, EventArgs e)
         {
+            //производим обмен по данным
             DialogResult dialogResult = MessageBox.Show("Вы уверены что хотите произвести обмен по введённым данным?", "Обмен валюты", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
@@ -979,7 +1042,10 @@ namespace AIS_exchangeOffice
                         string connectionString = "server = localhost; user = root; database = aisdatabd; password = root123;";
                         MySqlConnection connection = new MySqlConnection(connectionString);
                         connection.Open();
+
+                        //также для корректности добавления конвертируем дату через самописный класс
                         classes.reversedate getDate = new classes.reversedate();
+
                         Random rnd = new Random();
                         string[] FIO = selectClientBox.Text.Split(' ');
                         string[] summ = summBox.Text.Split(' ');
@@ -1094,6 +1160,7 @@ namespace AIS_exchangeOffice
                             { "_<name_cashier>_", CashierName.Text },
                             { "_<date_long>_", DateTime.Now.ToString("dd.MM.yyyy HH:mm:ss") },
                         };
+                        //подчищаем остатки предыдущей операции и сообщаем пользователю о работе
                         helper.Process(items);
                         selectClientBox.Text = "Выберите клиента";
                         selectClientBox.ForeColor = Color.Silver;
@@ -1105,8 +1172,12 @@ namespace AIS_exchangeOffice
                         quantityBox.Text = "Введите количество валюты";
                         quantityBox.ForeColor = Color.Silver;
                         numberBox.Text = "";
-                        currencies_exchangePanel.Visible = false;
+                        mainPanel.Visible = false;
+                        clientsPanel.Visible = false;
                         exchangePanel.Visible = true;
+                        searchPanel.Visible = false;
+                        addclientPanel.Visible = false;
+                        currencies_exchangePanel.Visible = false;
                     }
                 }                
                 catch (MySqlException)
@@ -1134,10 +1205,14 @@ namespace AIS_exchangeOffice
             }
         }
 
+        //динамический вывод предварительной стоимости операции
         private void quantityBox_TextChanged(object sender, EventArgs e)
         {
+
+            //добавляем все валюты в массивы для дальнейшей переброски в класс
             double[] valuesBuy = { Convert.ToDouble(USD_buy.Text.Replace('.', ',')), Convert.ToDouble(EUR_buy.Text.Replace('.', ',')), Convert.ToDouble(GBP_buy.Text.Replace('.', ',')), Convert.ToDouble(CHF_buy.Text.Replace('.', ',')), Convert.ToDouble(JPY_buy.Text.Replace('.', ',')) };
             double[] valuesSell = { Convert.ToDouble(USD_sell.Text.Replace('.', ',')), Convert.ToDouble(EUR_sell.Text.Replace('.', ',')), Convert.ToDouble(GBP_sell.Text.Replace('.', ',')), Convert.ToDouble(CHF_sell.Text.Replace('.', ',')), Convert.ToDouble(JPY_sell.Text.Replace('.', ',')) };
+            
             try
             {
                 classes.summValues summValues = new classes.summValues();
@@ -1152,6 +1227,7 @@ namespace AIS_exchangeOffice
                 }
                 else
                 {
+                    //обновляем постоянно предварительную стоимость
                     summBox.Text = "Сумма: " + summValues.summoutputValues(selectOperBox.SelectedIndex, selectValueBox.SelectedIndex, Convert.ToDouble(quantityBox.Text.Replace('.', ',')), valuesBuy, valuesSell).ToString().Replace(',', '.') + " рублей";
                 }
 
@@ -1163,6 +1239,7 @@ namespace AIS_exchangeOffice
             }
         }
 
+        //визуализация ввода
         private void ValueradioButton_CheckedChanged(object sender, EventArgs e)
         {           
             if (selectOperBox.SelectedIndex == 0)
@@ -1201,6 +1278,7 @@ namespace AIS_exchangeOffice
             }
         }
 
+        //подчищаем результаты работы приложения
         private void search_values_CheckedChanged(object sender, EventArgs e)
         {
             dataGridView3.Rows.Clear();
@@ -1218,12 +1296,15 @@ namespace AIS_exchangeOffice
             dataGridView3.Rows.Clear();
             dataGridView3.Columns.Clear();
         }
+        //-------------------------------------------
 
+        //модернизирование поиска с помощью клавиши Enter
         private void searchBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Enter && searchBox.Text != "")
             {
-                SearchBut_Click(sender, e);
+                SearchBut_Click(sender, e);         //вызываем функцию поиска при нажатии на Enter
+                                                    //и если поле поиска не пустое
             }
         }
     }

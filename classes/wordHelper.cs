@@ -4,10 +4,13 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Word = Microsoft.Office.Interop.Word;
+
+using Word = Microsoft.Office.Interop.Word;         //инициализация библиотеки для работы с Word
 
 namespace AIS_exchangeOffice.classes
 {
+    //класс для обработки всех документов
+    //типа Word
     class wordHelper
     {
         private FileInfo _fileInfo;
@@ -41,6 +44,7 @@ namespace AIS_exchangeOffice.classes
                     find.Text = item.Key;
                     find.Replacement.Text = item.Value;
 
+                    //ищем сходства в шаблоне и заменяем на нужные переданные значения
                     Object wrap = Word.WdFindWrap.wdFindContinue;
                     Object replace = Word.WdReplace.wdReplaceAll;
 
@@ -54,12 +58,16 @@ namespace AIS_exchangeOffice.classes
                         Wrap: wrap,
                         Format: false,
                         ReplaceWith: missing, Replace: replace);
+                    //------------------------------------------------------------------
                 }
 
+                //как только всё поменяли сохраняем файл в формате дата_время_название файла
                 Object newFileName = Path.Combine(_fileInfo.DirectoryName, DateTime.Now.ToString("yyyMMdd_HHmmss_") + _fileInfo.Name);
                 app.ActiveDocument.SaveAs(newFileName);
                 return true;
             }
+
+            //если происходит ошибка не даём упасть приложению
             catch (Exception ex) {Console.WriteLine(ex.Message);}
             finally
             {
@@ -68,6 +76,7 @@ namespace AIS_exchangeOffice.classes
                     app.Visible = true;                   
                 }
             }
+
             return false;
         }       
     }

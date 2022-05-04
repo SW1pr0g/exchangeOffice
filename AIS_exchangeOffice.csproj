@@ -75,7 +75,10 @@
       <DependentUpon>CashierWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="classes\reversedate.cs" />
+    <Compile Include="classes\reversedate.cs" />
     <Compile Include="classes\summValues.cs" />
+    <Compile Include="classes\summValues.cs" />
+    <Compile Include="classes\wordHelper.cs" />
     <Compile Include="classes\wordHelper.cs" />
     <Compile Include="classes\wordOtchets_print.cs" />
     <Compile Include="Program.cs" />
@@ -112,7 +115,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="wordDocs\ordertransaction_print .docx" />
+    <None Include="wordDocs\ordertransaction_print.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="wordDocs\otchetBuyValues_print.docx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

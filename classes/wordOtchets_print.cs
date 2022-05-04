@@ -3,13 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Word = Microsoft.Office.Interop.Word;
-using Microsoft.Office.Interop.Word;
+using Word = Microsoft.Office.Interop.Word; 
+
+//инициализируем библиотеку для работы с Word
+using Microsoft.Office.Interop.Word;        
+
 namespace AIS_exchangeOffice.classes
 {
-    public class wordOtchets_print
+    //класс для работы с отчётами
+    public class wordOtchets_print          
     {
-        public void otchetClients_print(string file_path, string[] data)
+
+        public void otchetClients_print(string file_path, string[] data, string admin)
         {
             try
             {
@@ -21,6 +26,7 @@ namespace AIS_exchangeOffice.classes
                     Object wdMiss = System.Reflection.Missing.Value;
                     Document doc = app.Documents.Open(file_path);
                     Range r = doc.Range();
+                    //находим таблицу и делаем шапку
 
                     Table t = doc.Tables[2];
                     t.Rows.Add(t.Rows[1]);
@@ -32,6 +38,7 @@ namespace AIS_exchangeOffice.classes
                     t.Cell(1, 6).Range.Text = "серия паспорта";
                     t.Cell(1, 7).Range.Text = "номер паспорта";
 
+                    //дополняем таблицу найденными данными по условию
                     for (int i = 0; i < data.Length; i++)
                     {
                         var data_edit = data[i].Split(' ');
@@ -44,9 +51,15 @@ namespace AIS_exchangeOffice.classes
                         t.Cell(i + 2, 6).Range.Text = data_edit[5];
                         t.Cell(i + 2, 7).Range.Text = data_edit[6];
                     }
+
+                    //замена значений в шаблоне
+                    Random rnd = new Random();
+                    string uidd = rnd.Next(99999, 1000000).ToString();
                     var items = new Dictionary<string, string>
                 {
-                    { "_<date_update>_", DateTime.Now.ToString() }
+                    { "_<date_update>_", DateTime.Now.ToString() },
+                    { "_<number>_", uidd },
+                    { "_<admin_name>_", admin},
                 };
                     Object missing = Type.Missing;
                     foreach (var item in items)
@@ -69,7 +82,9 @@ namespace AIS_exchangeOffice.classes
                             Format: false,
                             ReplaceWith: missing, Replace: replace);
                     }
-                    doc.SaveAs(Environment.CurrentDirectory + "\\wordDocs\\" + DateTime.Now.ToString("yyyMMdd_HHmmss_") + "otchetClients.docx");
+
+                    //сохраняем в формате дата_индивидуальныйномер_название файла
+                    doc.SaveAs(Environment.CurrentDirectory + "\\wordDocs\\" + DateTime.Now.ToString("yyyMMdd_" + uidd) + "otchetClients.docx");
                     app.Visible = true;
                 }
 
@@ -83,7 +98,8 @@ namespace AIS_exchangeOffice.classes
                 Console.WriteLine("Error: \r\n{0}", ex.ToString());
             }
         }
-        public void otchetBuyValues_print(string file_path, string[] data)
+        // в остальных 2 функциях работаем идентично, но с другими шаблонами
+        public void otchetBuyValues_print(string file_path, string[] data, DateTime date1, DateTime date2, string admin)
         {
             try
             {
@@ -119,9 +135,15 @@ namespace AIS_exchangeOffice.classes
                         t.Cell(i + 2, 7).Range.Text = data_edit[6];
                         t.Cell(i + 2, 8).Range.Text = data_edit[7] + " " + data_edit[8];
                     }
+                    Random rnd = new Random();
+                    string uidd = rnd.Next(99999, 1000000).ToString();
                     var items = new Dictionary<string, string>
                 {
-                    { "_<date_update>_", DateTime.Now.ToString() }
+                    { "_<date_update>_", DateTime.Now.ToString() },
+                    { "_<date1>_", date1.ToString("dd-MM-yyyy") },
+                    { "_<date2>_", date2.ToString("dd-MM-yyyy") },
+                    { "_<number>_", uidd },
+                    { "_<admin_name>_", admin },
                 };
                     Object missing = Type.Missing;
                     foreach (var item in items)
@@ -144,7 +166,7 @@ namespace AIS_exchangeOffice.classes
                             Format: false,
                             ReplaceWith: missing, Replace: replace);
                     }
-                    doc.SaveAs(Environment.CurrentDirectory + "\\wordDocs\\" + DateTime.Now.ToString("yyyMMdd_HHmmss_") + "otchetBuyValues.docx");
+                    doc.SaveAs(Environment.CurrentDirectory + "\\wordDocs\\" + DateTime.Now.ToString("yyyMMdd_" + uidd) + "otchetBuyValues.docx");
                     app.Visible = true;
                 }
 
@@ -158,7 +180,7 @@ namespace AIS_exchangeOffice.classes
                 Console.WriteLine("Error: \r\n{0}", ex.ToString());
             }
         }
-        public void otchetSellValues_print(string file_path, string[] data)
+        public void otchetSellValues_print(string file_path, string[] data, DateTime date1, DateTime date2, string admin)
         {
             try
             {
@@ -194,9 +216,15 @@ namespace AIS_exchangeOffice.classes
                         t.Cell(i + 2, 7).Range.Text = data_edit[6];
                         t.Cell(i + 2, 8).Range.Text = data_edit[7] + " " + data_edit[8];
                     }
+                    Random rnd = new Random();
+                    string uidd = rnd.Next(99999, 1000000).ToString();
                     var items = new Dictionary<string, string>
                 {
-                    { "_<date_update>_", DateTime.Now.ToString() }
+                    { "_<date_update>_", DateTime.Now.ToString() },
+                    { "_<date1>_", date1.ToString("dd-MM-yyyy") },
+                    { "_<date2>_", date2.ToString("dd-MM-yyyy") },
+                    { "_<number>_", uidd },
+                    { "_<admin_name>_", admin },
                 };
                     Object missing = Type.Missing;
                     foreach (var item in items)
@@ -219,7 +247,7 @@ namespace AIS_exchangeOffice.classes
                             Format: false,
                             ReplaceWith: missing, Replace: replace);
                     }
-                    doc.SaveAs(Environment.CurrentDirectory + "\\wordDocs\\" + DateTime.Now.ToString("yyyMMdd_HHmmss_") + "otchetSellValues.docx");
+                    doc.SaveAs(Environment.CurrentDirectory + "\\wordDocs\\" + DateTime.Now.ToString("yyyMMdd_" + uidd) + "otchetSellValues.docx");
                     app.Visible = true;
                 }
 

@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace AIS_exchangeOffice.classes
 {
+    //класс для мгновенного вывода предварительной
+    //суммы обмена
     public class summValues
     {
         public double summoutputValues(int oper, int saledC, double value, double[] valuesBuy, double[] valuesSell) 

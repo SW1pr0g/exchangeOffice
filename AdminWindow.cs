@@ -15,9 +15,7 @@ namespace AIS_exchangeOffice
 {
     public partial class AdminWindow : Form
     {
-        //connect to BD
-        //string connStr = "server=localhost;user=root;database=aisdatabd;password=root123;";
-        //MySqlConnection conn = new MySqlConnection(connStr);
+        
         public bool valuesEdited = false;
         public static string admin_login = "", admin_password = ""; 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
@@ -26,15 +24,18 @@ namespace AIS_exchangeOffice
         public AdminWindow()
         {
             InitializeComponent();
+            
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
             pnlNav.Height = MainBtn.Height;
             pnlNav.Top = MainBtn.Top;
             pnlNav.Left = MainBtn.Left;
             MainBtn.BackColor = Color.FromArgb(46, 51, 73);
+
         }
 
         private void exitButton_search_Click(object sender, EventArgs e)
         {
+            //выход из аккаунта
             DialogResult dialogResult = MessageBox.Show("Выйти из аккаунта?", "Выход из аккаунта", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
@@ -44,7 +45,7 @@ namespace AIS_exchangeOffice
             }
             else if (dialogResult == DialogResult.No)
             {
-                //do nothing
+                //ничего не делать
             }
         }
 
@@ -59,7 +60,7 @@ namespace AIS_exchangeOffice
             }
             else if (dialogResult == DialogResult.No)
             {
-                //do nothing
+                //ничего не делать
             }
         }
 
@@ -74,7 +75,7 @@ namespace AIS_exchangeOffice
             }
             else if (dialogResult == DialogResult.No)
             {
-                //do nothing
+                //ничего не делать
             }
         }
 
@@ -89,7 +90,7 @@ namespace AIS_exchangeOffice
             }
             else if (dialogResult == DialogResult.No)
             {
-                //do nothing
+                //ничего не делать
             }
         }
 
@@ -99,35 +100,45 @@ namespace AIS_exchangeOffice
             pnlNav.Top = MainBtn.Top;
             pnlNav.Left = MainBtn.Left;
             MainBtn.BackColor = Color.FromArgb(46, 51, 73);
-            mainPanel.Visible = true;
-            clientsPanel.Visible = false;
-            exchangePanel.Visible = false;
-            searchPanel.Visible = false;
-            bdPanel.Visible = false;
             otchetPanel.Visible = false;
+            mainPanel.Visible = true;
+            addclientPanel.Visible = false;
+            add_valuesPanel.Visible = false;
+            operationsOtchetBuyClient.Visible = false;
+            operationsOtchetSellClient.Visible = false;
+            searchPanel.Visible = false;
+            exchangePanel.Visible = false;
+            currencies_exchangePanel.Visible = false;
+            clientsPanel.Visible = false;
+            bdPanel.Visible = false;
         }
 
         private void MainBtn_Leave(object sender, EventArgs e)
-        {
+        {            
             MainBtn.BackColor = Color.FromArgb(11, 100, 103);
         }
 
         private void ClientsBtn_Click(object sender, EventArgs e)
-        {
+        {           
             pnlNav.Height = ClientsBtn.Height;
             pnlNav.Top = ClientsBtn.Top;
             pnlNav.Left = ClientsBtn.Left;
             ClientsBtn.BackColor = Color.FromArgb(46, 51, 73);
-            mainPanel.Visible = false;
-            clientsPanel.Visible = true;
-            exchangePanel.Visible = false;
-            searchPanel.Visible = false;
-            bdPanel.Visible = false;
             otchetPanel.Visible = false;
+            mainPanel.Visible = false;
+            addclientPanel.Visible = false;
+            add_valuesPanel.Visible = false;
+            operationsOtchetBuyClient.Visible = false;
+            operationsOtchetSellClient.Visible = false;
+            searchPanel.Visible = false;
+            exchangePanel.Visible = false;
+            currencies_exchangePanel.Visible = false;
+            clientsPanel.Visible = true;
+            bdPanel.Visible = false;
         }
 
         private void ClientsBtn_Leave(object sender, EventArgs e)
-        {
+        {   
             ClientsBtn.BackColor = Color.FromArgb(11, 100, 103);
         }
 
@@ -137,12 +148,17 @@ namespace AIS_exchangeOffice
             pnlNav.Top = ExchangeBtn.Top;
             pnlNav.Left = ExchangeBtn.Left;
             ExchangeBtn.BackColor = Color.FromArgb(46, 51, 73);
-            exchangePanel.Visible = true;
-            mainPanel.Visible = false;
-            clientsPanel.Visible = false;
-            searchPanel.Visible = false;
-            bdPanel.Visible = false;
             otchetPanel.Visible = false;
+            mainPanel.Visible = false;
+            addclientPanel.Visible = false;
+            add_valuesPanel.Visible = false;
+            operationsOtchetBuyClient.Visible = false;
+            operationsOtchetSellClient.Visible = false;
+            searchPanel.Visible = false;
+            exchangePanel.Visible = true;
+            currencies_exchangePanel.Visible = false;
+            clientsPanel.Visible = false;
+            bdPanel.Visible = false;
         }
 
         private void ExchangeBtn_Leave(object sender, EventArgs e)
@@ -156,12 +172,17 @@ namespace AIS_exchangeOffice
             pnlNav.Top = SearchBtn.Top;
             pnlNav.Left = SearchBtn.Left;
             SearchBtn.BackColor = Color.FromArgb(46, 51, 73);
+            otchetPanel.Visible = false;
+            mainPanel.Visible = false;
+            addclientPanel.Visible = false;
+            add_valuesPanel.Visible = false;
+            operationsOtchetBuyClient.Visible = false;
+            operationsOtchetSellClient.Visible = false;
             searchPanel.Visible = true;
             exchangePanel.Visible = false;
-            mainPanel.Visible = false;
+            currencies_exchangePanel.Visible = false;
             clientsPanel.Visible = false;
             bdPanel.Visible = false;
-            otchetPanel.Visible = false;
         }
         private void SearchBtn_Leave(object sender, EventArgs e)
         {
@@ -173,12 +194,17 @@ namespace AIS_exchangeOffice
             pnlNav.Top = BDbtn.Top;
             pnlNav.Left = BDbtn.Left;
             BDbtn.BackColor = Color.FromArgb(46, 51, 73);
-            exchangePanel.Visible = false;
-            mainPanel.Visible = false;
-            clientsPanel.Visible = false;
-            searchPanel.Visible = false;
-            bdPanel.Visible = true;
             otchetPanel.Visible = false;
+            mainPanel.Visible = false;
+            addclientPanel.Visible = false;
+            add_valuesPanel.Visible = false;
+            operationsOtchetBuyClient.Visible = false;
+            operationsOtchetSellClient.Visible = false;
+            searchPanel.Visible = false;
+            exchangePanel.Visible = false;
+            currencies_exchangePanel.Visible = false;
+            clientsPanel.Visible = false;
+            bdPanel.Visible = true;
 
         }
         private void BDbtn_Leave(object sender, EventArgs e)
@@ -191,12 +217,17 @@ namespace AIS_exchangeOffice
             pnlNav.Top = OtchetBtn.Top;
             pnlNav.Left = OtchetBtn.Left;
             OtchetBtn.BackColor = Color.FromArgb(46, 51, 73);
-            exchangePanel.Visible = false;
-            mainPanel.Visible = false;
-            clientsPanel.Visible = false;
-            searchPanel.Visible = false;
-            bdPanel.Visible = false;
             otchetPanel.Visible = true;
+            mainPanel.Visible = false;
+            addclientPanel.Visible = false;
+            add_valuesPanel.Visible = false;
+            operationsOtchetBuyClient.Visible = false;
+            operationsOtchetSellClient.Visible = false;
+            searchPanel.Visible = false;
+            exchangePanel.Visible = false;
+            currencies_exchangePanel.Visible = false;
+            clientsPanel.Visible = false;
+            bdPanel.Visible = false;
         }       
         private void OtchetBtn_Leave(object sender, EventArgs e)
         {
@@ -1369,7 +1400,6 @@ namespace AIS_exchangeOffice
                 string connectionString = "server = localhost; user = root; database = aisdatabd; password = root123;";
                 MySqlConnection connection = new MySqlConnection(connectionString);
                 connection.Open();
-                //string query = "INSERT INTO operations (u_num, surname, name, patronymic, type, value, quantity, summ, date) VALUES (" + u_num + ", '" + FIO[0] + "', '" + FIO[1] + "', '" + FIO[2] + "', '" + selectOperBox.Text + "', '" + selectValueBox.Text[0] + "', " + quantityBox.Text + ", " + summ[1].Replace(',', '.') + ", '" + DateTime.Now.ToString("yyyy-MM-dd H:mm:ss") + "');";
                 string query = "";
                 MySqlCommand command = new MySqlCommand(query, connection);
                 double numValue = 0.0;
@@ -1401,6 +1431,18 @@ namespace AIS_exchangeOffice
                 command = new MySqlCommand(query, connection);
                 command.ExecuteNonQuery();
                 MessageBox.Show("Заказ успешно совершен!\nСейчас будет произведена печать документа о заказе валюты.");
+                Random rnd = new Random();               
+                var items = new Dictionary<string, string>
+                        {
+                            { "_<number>_", rnd.Next(99999, 1000000).ToString() },
+                            { "_<date>_", DateTime.Now.ToString("dd.MM.yyyy") },
+                            { "_<admin_name>_", NameAdmin.Text },
+                            { "_<value>_", selectValueBox.Text },
+                            { "_<quantity>_", quantityBox.Text },                                                      
+                            { "_<date_long>_", DateTime.Now.ToString("dd.MM.yyyy HH:mm:ss") },
+                        };
+                var helper = new classes.wordHelper("wordDocs/ordertransaction_print.docx");
+                helper.Process(items);
                 passBox.Text = "Введите ваш пароль";
                 passBox.UseSystemPasswordChar = false;
                 passBox.ForeColor = Color.Silver;
@@ -2378,7 +2420,7 @@ namespace AIS_exchangeOffice
                 {
                     Console.WriteLine("Error: \r\n{0}", ex.ToString());
                 }
-                wordOtchets_print.otchetClients_print(Environment.CurrentDirectory + "\\wordDocs\\otchetClients_print.docx", data);
+                wordOtchets_print.otchetClients_print(Environment.CurrentDirectory + "\\wordDocs\\otchetClients_print.docx", data, NameAdmin.Text);
                 commandString = "UPDATE otchets_quantity SET quantity = " + (Convert.ToInt32(otchets_quantity.Text) + 1).ToString() + " WHERE id = 1";
                 command.CommandText = commandString;
                 command.ExecuteReader();
@@ -2389,17 +2431,49 @@ namespace AIS_exchangeOffice
             {
                 //do nothing
             }
-        }
+        }        
         private void printOtchetBuyValues_btn_Click(object sender, EventArgs e)
         {
-
+            otchetPanel.Visible = false;
+            mainPanel.Visible = false;
+            addclientPanel.Visible = false;
+            add_valuesPanel.Visible = false;
+            operationsOtchetBuyClient.Visible = true;
+            operationsOtchetSellClient.Visible = false;
+            searchPanel.Visible = false;
+            exchangePanel.Visible = false;
+            currencies_exchangePanel.Visible = false;
+            clientsPanel.Visible = false;
+            bdPanel.Visible = false;
         }
+
         private void printOtchetSellValues_btn_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Произвести печать отчёта - операция покупок?", "Печать отчёта", MessageBoxButtons.YesNo);
+            otchetPanel.Visible = false;
+            mainPanel.Visible = false;
+            addclientPanel.Visible = false;
+            add_valuesPanel.Visible = false;
+            operationsOtchetBuyClient.Visible = false;
+            operationsOtchetSellClient.Visible = true;
+            searchPanel.Visible = false;
+            exchangePanel.Visible = false;
+            currencies_exchangePanel.Visible = false;
+            clientsPanel.Visible = false;
+            bdPanel.Visible = false;
+        }
+
+        private void OtchetSellClientprint_btn_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Произвести печать отчёта - операции продаж?", "Печать отчёта", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-
+                var date1 = dateTimePicker_startSell;
+                var date2 = dateTimePicker_endSell;
+                if (date1 == date2)
+                {
+                    MessageBox.Show("Ошибка! Даты одинаковы. Измените даты и попробуйте ещё раз");
+                    return;
+                }
                 classes.wordOtchets_print wordOtchets_print = new classes.wordOtchets_print();
                 classes.reversedate reversedate = new classes.reversedate();
                 string connStr = "server=localhost;user=root;database=aisdatabd;password=root123;";
@@ -2409,10 +2483,10 @@ namespace AIS_exchangeOffice
                 MySqlDataReader reader;
                 command.Connection = conn;
                 command.Connection.Open();
-                commandString = "SELECT COUNT(*) FROM operations WHERE type = 'Продажа';";
+                commandString = "SELECT COUNT(*) FROM operations WHERE (type = 'Продажа') AND (date BETWEEN '" + reversedate.datetimeReverse(date1.Value.ToString()) + "' AND '" + reversedate.datetimeReverse(date2.Value.ToString()) + "');";
                 command.CommandText = commandString;
                 string[] data = new string[Convert.ToInt32(command.ExecuteScalar())];
-                commandString = "SELECT * FROM operations WHERE type = 'Продажа';";
+                commandString = "SELECT * FROM operations WHERE (type = 'Продажа') AND (date BETWEEN '" + reversedate.datetimeReverse(date1.Value.ToString()) + "' AND '" + reversedate.datetimeReverse(date2.Value.ToString()) + "');";
                 command.CommandText = commandString;
 
                 try
@@ -2436,8 +2510,8 @@ namespace AIS_exchangeOffice
                 catch (MySqlException ex)
                 {
                     Console.WriteLine("Error: \r\n{0}", ex.ToString());
-                }                
-                wordOtchets_print.otchetSellValues_print(Environment.CurrentDirectory + "\\wordDocs\\otchetSellValues_print.docx", data);
+                }
+                wordOtchets_print.otchetSellValues_print(Environment.CurrentDirectory + "\\wordDocs\\otchetSellValues_print.docx", data, date1.Value, date2.Value, NameAdmin.Text);
                 commandString = "UPDATE otchets_quantity SET quantity = " + (Convert.ToInt32(otchets_quantity.Text) + 1).ToString() + " WHERE id = 1";
                 command.CommandText = commandString;
                 command.ExecuteReader();
@@ -2450,9 +2524,81 @@ namespace AIS_exchangeOffice
             }
         }
 
-        private void printOtchetBuyValues_btn_Enter(object sender, EventArgs e)
+        private void OtchetBuyClientprint_btn_Click(object sender, EventArgs e)
         {
-            
+            DialogResult dialogResult = MessageBox.Show("Произвести печать отчёта - операции покупок?", "Печать отчёта", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                var date1 = dateTimePicker_startBuy;
+                var date2 = dateTimePicker_endBuy;
+                if (date1 == date2)
+                {
+                    MessageBox.Show("Ошибка! Даты одинаковы. Измените даты и попробуйте ещё раз");
+                    return;
+                }
+                classes.wordOtchets_print wordOtchets_print = new classes.wordOtchets_print();
+                classes.reversedate reversedate = new classes.reversedate();
+                string connStr = "server=localhost;user=root;database=aisdatabd;password=root123;";
+                MySqlConnection conn = new MySqlConnection(connStr);
+                MySqlCommand command = new MySqlCommand();
+                string commandString;
+                MySqlDataReader reader;
+                command.Connection = conn;
+                command.Connection.Open();
+                commandString = "SELECT COUNT(*) FROM operations WHERE (type = 'Покупка') AND (date BETWEEN '" + reversedate.datetimeReverse(date1.Value.ToString()) + "' AND '" + reversedate.datetimeReverse(date2.Value.ToString()) + "');";
+                command.CommandText = commandString;
+                string[] data = new string[Convert.ToInt32(command.ExecuteScalar())];
+                commandString = "SELECT * FROM operations WHERE (type = 'Покупка') AND (date BETWEEN '" + reversedate.datetimeReverse(date1.Value.ToString()) + "' AND '" + reversedate.datetimeReverse(date2.Value.ToString()) + "');";
+                command.CommandText = commandString;
+
+                try
+                {
+                    reader = command.ExecuteReader();
+                    try
+                    {
+                        int i = 0;
+                        while (reader.Read())
+                        {
+                            data[i] = reader["u_num"].ToString() + " " + reader["surname"].ToString() + " " + reader["name"].ToString() + " " + reader["patronymic"].ToString() + " " + reader["value"].ToString() + " " + reader["quantity"].ToString() + " " + reader["summ"].ToString() + " " + reader["date"].ToString();
+                            i++;
+                        }
+                        reader.Close();
+                    }
+                    catch (MySqlException ex)
+                    {
+                        Console.WriteLine("Error: \r\n{0}", ex.ToString());
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    Console.WriteLine("Error: \r\n{0}", ex.ToString());
+                }
+                wordOtchets_print.otchetBuyValues_print(Environment.CurrentDirectory + "\\wordDocs\\otchetBuyValues_print.docx", data, date1.Value, date2.Value, NameAdmin.Text);
+                commandString = "UPDATE otchets_quantity SET quantity = " + (Convert.ToInt32(otchets_quantity.Text) + 1).ToString() + " WHERE id = 1";
+                command.CommandText = commandString;
+                command.ExecuteReader();
+                command.Connection.Close();
+                otchets_quantity.Text = (Convert.ToInt32(otchets_quantity.Text) + 1).ToString();
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                //do nothing
+            }
+        }
+
+        private void goBackOtchetBtn_Click(object sender, EventArgs e)
+        {
+            otchetPanel.Visible = true;
+            mainPanel.Visible = false;
+            addclientPanel.Visible = false;
+            add_valuesPanel.Visible = false;
+            operationsOtchetBuyClient.Visible = false;
+            operationsOtchetSellClient.Visible = false;
+            searchPanel.Visible = false;
+            exchangePanel.Visible = false;
+            currencies_exchangePanel.Visible = false;
+            clientsPanel.Visible = false;
+            bdPanel.Visible = false;
         }
 
         private void search_clients_CheckedChanged(object sender, EventArgs e)

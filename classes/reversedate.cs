@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace AIS_exchangeOffice.classes
 {
+    //класс для конвертации типа даты до того
+    //который принимает наша БД
     public class reversedate
     {
+        //длинный формат
         public string datetimeReverse(string s) 
         {
             s = s.Replace('.', '-');
@@ -27,6 +30,8 @@ namespace AIS_exchangeOffice.classes
             s = new string(charArr);
             return new string(charArr);
         }
+
+        //короткий формат
         public string dateReverse(string s)
         {
             s = s.Replace('.', '-');
