@@ -75,10 +75,7 @@
       <DependentUpon>CashierWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="classes\reversedate.cs" />
-    <Compile Include="classes\reversedate.cs" />
     <Compile Include="classes\summValues.cs" />
-    <Compile Include="classes\summValues.cs" />
-    <Compile Include="classes\wordHelper.cs" />
     <Compile Include="classes\wordHelper.cs" />
     <Compile Include="classes\wordOtchets_print.cs" />
     <Compile Include="Program.cs" />

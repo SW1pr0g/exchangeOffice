@@ -289,7 +289,7 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
             this.label2.Location = new System.Drawing.Point(33, 128);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(123, 16);
+            this.label2.Size = new System.Drawing.Size(124, 16);
             this.label2.TabIndex = 2;
             this.label2.Text = "Администратор";
             // 
@@ -477,7 +477,7 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
             this.label3.Location = new System.Drawing.Point(29, 8);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(131, 32);
+            this.label3.Size = new System.Drawing.Size(132, 32);
             this.label3.TabIndex = 1;
             this.label3.Text = "Главная";
             // 
@@ -636,7 +636,7 @@
             this.ClientsNum.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
             this.ClientsNum.Location = new System.Drawing.Point(55, 53);
             this.ClientsNum.Name = "ClientsNum";
-            this.ClientsNum.Size = new System.Drawing.Size(31, 32);
+            this.ClientsNum.Size = new System.Drawing.Size(32, 32);
             this.ClientsNum.TabIndex = 7;
             this.ClientsNum.Text = "5";
             // 
@@ -904,7 +904,7 @@
             this.JPY_buy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
             this.JPY_buy.Location = new System.Drawing.Point(472, 265);
             this.JPY_buy.Name = "JPY_buy";
-            this.JPY_buy.Size = new System.Drawing.Size(91, 32);
+            this.JPY_buy.Size = new System.Drawing.Size(92, 32);
             this.JPY_buy.TabIndex = 30;
             this.JPY_buy.Text = "68,31";
             // 
@@ -915,7 +915,7 @@
             this.CHF_buy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
             this.CHF_buy.Location = new System.Drawing.Point(472, 213);
             this.CHF_buy.Name = "CHF_buy";
-            this.CHF_buy.Size = new System.Drawing.Size(91, 32);
+            this.CHF_buy.Size = new System.Drawing.Size(92, 32);
             this.CHF_buy.TabIndex = 29;
             this.CHF_buy.Text = "87,46";
             // 
@@ -926,7 +926,7 @@
             this.GBP_buy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
             this.GBP_buy.Location = new System.Drawing.Point(472, 159);
             this.GBP_buy.Name = "GBP_buy";
-            this.GBP_buy.Size = new System.Drawing.Size(108, 32);
+            this.GBP_buy.Size = new System.Drawing.Size(109, 32);
             this.GBP_buy.TabIndex = 28;
             this.GBP_buy.Text = "107,40";
             // 
@@ -937,7 +937,7 @@
             this.EUR_buy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
             this.EUR_buy.Location = new System.Drawing.Point(472, 105);
             this.EUR_buy.Name = "EUR_buy";
-            this.EUR_buy.Size = new System.Drawing.Size(91, 32);
+            this.EUR_buy.Size = new System.Drawing.Size(92, 32);
             this.EUR_buy.TabIndex = 27;
             this.EUR_buy.Text = "90,47";
             // 
@@ -948,7 +948,7 @@
             this.USD_buy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
             this.USD_buy.Location = new System.Drawing.Point(472, 52);
             this.USD_buy.Name = "USD_buy";
-            this.USD_buy.Size = new System.Drawing.Size(91, 32);
+            this.USD_buy.Size = new System.Drawing.Size(92, 32);
             this.USD_buy.TabIndex = 26;
             this.USD_buy.Text = "79,81";
             // 
@@ -983,7 +983,7 @@
             this.JPY_sell.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
             this.JPY_sell.Location = new System.Drawing.Point(273, 265);
             this.JPY_sell.Name = "JPY_sell";
-            this.JPY_sell.Size = new System.Drawing.Size(91, 32);
+            this.JPY_sell.Size = new System.Drawing.Size(92, 32);
             this.JPY_sell.TabIndex = 23;
             this.JPY_sell.Text = "66,31";
             // 
@@ -994,7 +994,7 @@
             this.CHF_sell.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
             this.CHF_sell.Location = new System.Drawing.Point(273, 213);
             this.CHF_sell.Name = "CHF_sell";
-            this.CHF_sell.Size = new System.Drawing.Size(91, 32);
+            this.CHF_sell.Size = new System.Drawing.Size(92, 32);
             this.CHF_sell.TabIndex = 22;
             this.CHF_sell.Text = "85,46";
             // 
@@ -1005,7 +1005,7 @@
             this.GBP_sell.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
             this.GBP_sell.Location = new System.Drawing.Point(272, 159);
             this.GBP_sell.Name = "GBP_sell";
-            this.GBP_sell.Size = new System.Drawing.Size(108, 32);
+            this.GBP_sell.Size = new System.Drawing.Size(109, 32);
             this.GBP_sell.TabIndex = 21;
             this.GBP_sell.Text = "105,38";
             // 
@@ -1016,7 +1016,7 @@
             this.EUR_sell.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
             this.EUR_sell.Location = new System.Drawing.Point(273, 105);
             this.EUR_sell.Name = "EUR_sell";
-            this.EUR_sell.Size = new System.Drawing.Size(91, 32);
+            this.EUR_sell.Size = new System.Drawing.Size(92, 32);
             this.EUR_sell.TabIndex = 20;
             this.EUR_sell.Text = "88,47";
             // 
@@ -1027,7 +1027,7 @@
             this.USD_sell.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
             this.USD_sell.Location = new System.Drawing.Point(272, 52);
             this.USD_sell.Name = "USD_sell";
-            this.USD_sell.Size = new System.Drawing.Size(91, 32);
+            this.USD_sell.Size = new System.Drawing.Size(92, 32);
             this.USD_sell.TabIndex = 19;
             this.USD_sell.Text = "77,81";
             // 
@@ -1088,7 +1088,7 @@
             this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
             this.label13.Location = new System.Drawing.Point(97, 265);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(69, 32);
+            this.label13.Size = new System.Drawing.Size(70, 32);
             this.label13.TabIndex = 13;
             this.label13.Text = "JPY";
             // 
@@ -1099,7 +1099,7 @@
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
             this.label12.Location = new System.Drawing.Point(97, 213);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(74, 32);
+            this.label12.Size = new System.Drawing.Size(75, 32);
             this.label12.TabIndex = 12;
             this.label12.Text = "CHF";
             // 
@@ -1110,7 +1110,7 @@
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
             this.label11.Location = new System.Drawing.Point(94, 159);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(77, 32);
+            this.label11.Size = new System.Drawing.Size(78, 32);
             this.label11.TabIndex = 11;
             this.label11.Text = "GBP";
             // 
@@ -1121,7 +1121,7 @@
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
             this.label10.Location = new System.Drawing.Point(95, 105);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(76, 32);
+            this.label10.Size = new System.Drawing.Size(77, 32);
             this.label10.TabIndex = 10;
             this.label10.Text = "EUR";
             // 
@@ -1132,7 +1132,7 @@
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
             this.label8.Location = new System.Drawing.Point(95, 52);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(76, 32);
+            this.label8.Size = new System.Drawing.Size(77, 32);
             this.label8.TabIndex = 9;
             this.label8.Text = "USD";
             // 
@@ -1169,7 +1169,7 @@
             this.label45.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
             this.label45.Location = new System.Drawing.Point(29, 8);
             this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(119, 32);
+            this.label45.Size = new System.Drawing.Size(120, 32);
             this.label45.TabIndex = 1;
             this.label45.Text = "Отчёты";
             // 
@@ -1219,7 +1219,7 @@
             this.otchets_quantity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
             this.otchets_quantity.Location = new System.Drawing.Point(66, 59);
             this.otchets_quantity.Name = "otchets_quantity";
-            this.otchets_quantity.Size = new System.Drawing.Size(33, 34);
+            this.otchets_quantity.Size = new System.Drawing.Size(34, 34);
             this.otchets_quantity.TabIndex = 7;
             this.otchets_quantity.Text = "0";
             // 
@@ -1308,7 +1308,7 @@
             this.label41.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
             this.label41.Location = new System.Drawing.Point(29, 8);
             this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(56, 32);
+            this.label41.Size = new System.Drawing.Size(57, 32);
             this.label41.TabIndex = 1;
             this.label41.Text = "БД";
             // 
@@ -1635,7 +1635,7 @@
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
             this.label5.Location = new System.Drawing.Point(290, 21);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(212, 32);
+            this.label5.Size = new System.Drawing.Size(213, 32);
             this.label5.TabIndex = 1;
             this.label5.Text = "Заказ валюты";
             // 
@@ -1722,7 +1722,7 @@
             this.clientsNumT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
             this.clientsNumT.Location = new System.Drawing.Point(54, 59);
             this.clientsNumT.Name = "clientsNumT";
-            this.clientsNumT.Size = new System.Drawing.Size(31, 32);
+            this.clientsNumT.Size = new System.Drawing.Size(32, 32);
             this.clientsNumT.TabIndex = 7;
             this.clientsNumT.Text = "5";
             // 
@@ -1761,7 +1761,7 @@
             this.label66.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
             this.label66.Location = new System.Drawing.Point(29, 8);
             this.label66.Name = "label66";
-            this.label66.Size = new System.Drawing.Size(137, 32);
+            this.label66.Size = new System.Drawing.Size(138, 32);
             this.label66.TabIndex = 1;
             this.label66.Text = "Клиенты";
             // 
@@ -1991,7 +1991,7 @@
             this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
             this.label16.Location = new System.Drawing.Point(191, 22);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(415, 32);
+            this.label16.Size = new System.Drawing.Size(416, 32);
             this.label16.TabIndex = 1;
             this.label16.Text = "Добавление нового клиента";
             // 
@@ -2071,7 +2071,7 @@
             this.label39.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
             this.label39.Location = new System.Drawing.Point(29, 8);
             this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(109, 32);
+            this.label39.Size = new System.Drawing.Size(110, 32);
             this.label39.TabIndex = 1;
             this.label39.Text = "Обмен";
             // 
@@ -2278,7 +2278,7 @@
             this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
             this.label14.Location = new System.Drawing.Point(264, 21);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(264, 32);
+            this.label14.Size = new System.Drawing.Size(265, 32);
             this.label14.TabIndex = 1;
             this.label14.Text = "Обменять валюту";
             // 
@@ -2416,7 +2416,7 @@
             this.label38.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
             this.label38.Location = new System.Drawing.Point(29, 8);
             this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(99, 32);
+            this.label38.Size = new System.Drawing.Size(100, 32);
             this.label38.TabIndex = 1;
             this.label38.Text = "Поиск";
             // 
@@ -2538,7 +2538,7 @@
             this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
             this.label18.Location = new System.Drawing.Point(163, 21);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(476, 32);
+            this.label18.Size = new System.Drawing.Size(477, 32);
             this.label18.TabIndex = 1;
             this.label18.Text = "Печать отчёта операции продаж";
             // 
@@ -2660,7 +2660,7 @@
             this.label26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(100)))), ((int)(((byte)(103)))));
             this.label26.Location = new System.Drawing.Point(163, 21);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(483, 32);
+            this.label26.Size = new System.Drawing.Size(484, 32);
             this.label26.TabIndex = 1;
             this.label26.Text = "Печать отчёта операции покупок";
             // 
@@ -2669,12 +2669,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(951, 577);
+            this.Controls.Add(this.clientsPanel);
             this.Controls.Add(this.operationsOtchetSellClient);
             this.Controls.Add(this.operationsOtchetBuyClient);
             this.Controls.Add(this.otchetPanel);
             this.Controls.Add(this.bdPanel);
             this.Controls.Add(this.mainPanel);
-            this.Controls.Add(this.clientsPanel);
             this.Controls.Add(this.add_valuesPanel);
             this.Controls.Add(this.currencies_exchangePanel);
             this.Controls.Add(this.searchPanel);

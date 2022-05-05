@@ -188,6 +188,8 @@ namespace AIS_exchangeOffice
         {
             SearchBtn.BackColor = Color.FromArgb(11, 100, 103);
         }
+
+        //отображение панели БД
         private void BDbtn_Click(object sender, EventArgs e)
         {
             pnlNav.Height = BDbtn.Height;
@@ -207,10 +209,15 @@ namespace AIS_exchangeOffice
             bdPanel.Visible = true;
 
         }
+
+        //визуальное сопровождение выбранной панели БД в
+        //панели навигации
         private void BDbtn_Leave(object sender, EventArgs e)
         {
             BDbtn.BackColor = Color.FromArgb(11, 100, 103);
-        }        
+        }
+
+        //отображение панели отчёты
         private void OtchetBtn_Click(object sender, EventArgs e)
         {
             pnlNav.Height = OtchetBtn.Height;
@@ -228,7 +235,10 @@ namespace AIS_exchangeOffice
             currencies_exchangePanel.Visible = false;
             clientsPanel.Visible = false;
             bdPanel.Visible = false;
-        }       
+        }
+
+        //визуальное сопровождение выбранной панели отчёты в
+        //панели навигации
         private void OtchetBtn_Leave(object sender, EventArgs e)
         {
             OtchetBtn.BackColor = Color.FromArgb(11, 100, 103);
@@ -264,6 +274,9 @@ namespace AIS_exchangeOffice
             }
         }
 
+        // ------отображение БД для возможности редактирования--------
+       
+        // таблица из БД - курс валюты
         private void CourseRadioBtn_CheckedChanged(object sender, EventArgs e)
         {
             dataGridView1.Rows.Clear();
@@ -305,6 +318,8 @@ namespace AIS_exchangeOffice
                 command.Connection.Close();
             }
         }
+
+        // таблица из БД - операции клиентов
         private void OperationsRadioBtn_CheckedChanged(object sender, EventArgs e)
         {
             dataGridView1.Rows.Clear();
@@ -354,7 +369,9 @@ namespace AIS_exchangeOffice
             {
                 command.Connection.Close();
             }
-        }        
+        }
+
+        // таблица из БД - клиенты
         private void ClientsRadioBtn_CheckedChanged(object sender, EventArgs e)
         {
             dataGridView1.Rows.Clear();
@@ -404,6 +421,7 @@ namespace AIS_exchangeOffice
             }
         }
 
+        // таблица из БД - пользователи
         private void UsersRadioBtn_CheckedChanged(object sender, EventArgs e)
         {
             dataGridView1.Rows.Clear();
@@ -452,6 +470,8 @@ namespace AIS_exchangeOffice
         {
 
         }
+
+        //кнопка для сохранения изменений в БД
         private void saveBD_Click(object sender, EventArgs e)
         {           
             DialogResult dialogResult = MessageBox.Show("Вы уверены?", "Внесение изменений в БД", MessageBoxButtons.YesNo);
@@ -463,11 +483,13 @@ namespace AIS_exchangeOffice
                 if (CourseRadioBtn.Checked == true)
                 {                  
                     bool enderr = false;
-                    int u_num = dataGridView1.Rows.Count;
-                    string name = "";
+                    int u_num = dataGridView1.Rows.Count;       //смотрим количество строк в БД и соотносим 
+                    string name = "";                           //со структурой в MySQL
                     string summsale = "", summpurchase = "";
                     for (int i = 0; i < dataGridView1.Rows.Count-1; i++)
                     {
+                        // в таблице с валютами не может быть больше 6
+                        // это некорректно, так как валют у нас в АИС всего 6
                         if (dataGridView1.Rows.Count > 6)
                         {                            
                             enderr = true;
@@ -504,10 +526,14 @@ namespace AIS_exchangeOffice
                             name = dataGridView1[1, i].Value.ToString();
                             summsale = dataGridView1[2, i].Value.ToString();
                             summpurchase = dataGridView1[3, i].Value.ToString();
+
+                            //обновляем
                             string query = "UPDATE currencycourse SET name = '" + name + "', summsale = " + summsale.Replace(',', '.') + ", summpurchase = " + summpurchase.Replace(',', '.') + " WHERE u_num = " + u_num;
                             MySqlCommand command = new MySqlCommand(query, connection);
                             command.ExecuteNonQuery();                            
                         }
+
+                        //не даём упасть приложению
                         catch (MySqlException)
                         {
                             enderr = true;
@@ -526,6 +552,8 @@ namespace AIS_exchangeOffice
                             MessageBox.Show("В какой то из ячеек содержится некорректная информация, либо поле id не увеличивается на 1. Измените данные и попробуйте снова.");
                             break;
                         }
+                        //-------------------------------------------
+
                     }
                     if (enderr == false)
                     {                        
@@ -604,13 +632,17 @@ namespace AIS_exchangeOffice
                             patronymic = dataGridView1[3, i].Value.ToString();
                             date_birth = dataGridView1[4, i].Value.ToString();
                             seriesDoc = Convert.ToInt32(dataGridView1[5, i].Value.ToString());
-                            numberDoc = Convert.ToInt32(dataGridView1[6, i].Value.ToString());                            
+                            numberDoc = Convert.ToInt32(dataGridView1[6, i].Value.ToString());           
+                            
+                            //проверяем корректность внесения изменений - серии и паспорта
                             if (seriesDoc > 9999 || seriesDoc < 1000 || numberDoc > 999999 || numberDoc < 100000)
                             {
                                 enderr = true;
                                 MessageBox.Show("Серия паспорта состоит из 4 цифр, а номер паспорта состоит из 6 цифр. Проверьте поля seriesDoc и numberDoc.");
                                 break;
                             }
+
+                            //обновляем
                             query = "UPDATE clients SET name = '" + name + "', surname = '" + surname + "', patronymic = '" + patronymic + "', date_birth = '" + date_birth + "', seriesDoc = " + seriesDoc + ", numberDoc = " + numberDoc + " WHERE u_num = " + u_num;
                             command = new MySqlCommand(query, connection);
                             var tr = command.ExecuteNonQuery();
@@ -665,12 +697,16 @@ namespace AIS_exchangeOffice
                             type = dataGridView1[4, i].Value.ToString();                                                                                                                                      
                             if (type != "admin" )
                             {
+
+                                //в АИС не может быть другого типа пользователей помимо кассира 
+                                //и администратора
                                 if (type != "cashier")
                                 {
                                     enderr = true;
                                     MessageBox.Show("В текущей АИС есть 2 типа прав пользователей(cashier - кассир, admin - администратор). Проверьте поля колонки type и попробуйте снова.");
                                     break;
                                 }
+
                             }
                             else if(type != "cashier")
                             {
@@ -725,11 +761,15 @@ namespace AIS_exchangeOffice
             }
         }
        
+        //производим контроль над удалением строк из таблицы
         private void dataGridView1_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
         {
             if (CourseRadioBtn.Checked == true)
             {
+
+                //нельзя удалять строки из таблицы с курсом валюты
                 MessageBox.Show("Удаление строк в данной таблице невозможно!");                
+            
             }
             else
             {
@@ -749,6 +789,8 @@ namespace AIS_exchangeOffice
                     {
                         table = "users";
                     }
+
+                    //после проверки всех условий производим удаление 
                     string connectionString = "server = localhost; user = root; database = aisdatabd; password = root123;";
                     MySqlConnection connection = new MySqlConnection(connectionString);
                     connection.Open();
@@ -759,10 +801,13 @@ namespace AIS_exchangeOffice
                     command.ExecuteNonQuery();
                     connection.Close();
                     MessageBox.Show("Удаление успешно!");
+
                 }                
             }
         }
 
+        //после удаления надо обновить БД чтобы администратор смог 
+        //увидеть результат удаления
         private void dataGridView1_UserDeletedRow(object sender, DataGridViewRowEventArgs e)
         {
             if (CourseRadioBtn.Checked == true)
@@ -774,6 +819,7 @@ namespace AIS_exchangeOffice
                 string connStr = "server=localhost;user=root;database=aisdatabd;password=root123;";
                 MySqlConnection conn = new MySqlConnection(connStr);
 
+                
                 MySqlCommand command = new MySqlCommand();
                 string commandString = "SELECT * FROM currencycourse;";
                 command.CommandText = commandString;
@@ -808,6 +854,7 @@ namespace AIS_exchangeOffice
             }            
         }
 
+        //при загрузке формы нужно отобразить имя администратора
         private void AdminWindow_Load(object sender, EventArgs e)
         {
             NameAdmin.Text = AuthForm.nameUser;
@@ -929,10 +976,13 @@ namespace AIS_exchangeOffice
             }
         }
 
+        //редактирование курса валют с удобной кнопки на MainForm
         private void valuesEdit_btn_Click(object sender, EventArgs e)
         {
             if (valuesEdited == false)
             {
+
+                //спавним TextBox'ы для изменения валют
                 sellUSD_edit.Visible = true;
                 sellUSD_edit.Text = USD_sell.Text;
                 buyUSD_edit.Visible = true;
@@ -954,10 +1004,15 @@ namespace AIS_exchangeOffice
                 buyJPY_edit.Visible = true;
                 buyJPY_edit.Text = JPY_buy.Text;
                 valuesEdited = true;
+
+                //смена иконки
                 valuesEdit_btn.Image = Image.FromFile(@Directory.GetCurrentDirectory() + "\\images\\icons\\edit_accept.png");
+            
             }
             else if (valuesEdited == true)
             {
+
+                //проверяем администратора на ошибки
                 if (sellUSD_edit.Text == "" || buyUSD_edit.Text == "" || sellEUR_edit.Text == "" || buyEUR_edit.Text == "" || sellGBP_edit.Text == "" || buyGBP_edit.Text == "" || sellCHF_edit.Text == "" || buyCHF_edit.Text == "" || sellJPY_edit.Text == "" || buyJPY_edit.Text == "" || sellUSD_edit.Text.Count(chr => chr == '.') > 1 || buyUSD_edit.Text.Count(chr => chr == '.') > 1 || sellEUR_edit.Text.Count(chr => chr == '.') > 1 || buyEUR_edit.Text.Count(chr => chr == '.') > 1 || sellGBP_edit.Text.Count(chr => chr == '.') > 1 || buyGBP_edit.Text.Count(chr => chr == '.') > 1 || sellCHF_edit.Text.Count(chr => chr == '.') > 1 || buyCHF_edit.Text.Count(chr => chr == '.') > 1 || sellJPY_edit.Text.Count(chr => chr == '.') > 1 || buyJPY_edit.Text.Count(chr => chr == '.') > 1 || sellUSD_edit.Text[0] == '.' || buyUSD_edit.Text[0] == '.' || sellEUR_edit.Text[0] == '.' || buyEUR_edit.Text[0] == '.' || sellGBP_edit.Text[0] == '.' || buyGBP_edit.Text[0] == '.' || sellCHF_edit.Text[0] == '.' || buyCHF_edit.Text[0] == '.' || sellJPY_edit.Text[0] == '.' || buyJPY_edit.Text[0] == '.')
                 {
                     MessageBox.Show("Ошибка! Заполните все поля изменения валюты или введите корректные значения в эти поля.");
@@ -969,7 +1024,7 @@ namespace AIS_exchangeOffice
 
                 MySqlCommand command = new MySqlCommand();
 
-                //вставить здесь редактирование БД
+                //обновление
                 command.Connection = conn;
                 command.Connection.Open();
                 string commandString = "UPDATE currencycourse SET summsale = " + Math.Round(Convert.ToDouble(sellUSD_edit.Text.Replace('.', ',')), 2).ToString().Replace(',', '.') + ", summpurchase = " + Math.Round(Convert.ToDouble(buyUSD_edit.Text.Replace('.', ',')), 2).ToString().Replace(',', '.') + " WHERE name = 'USD'";
@@ -990,6 +1045,7 @@ namespace AIS_exchangeOffice
 
                 command.Connection.Close();
 
+                //отображение с учётом новых изменений
                 commandString = "SELECT summsale, summpurchase FROM currencycourse WHERE name = 'USD';";
                 command.CommandText = commandString;
                 command.Connection = conn;
@@ -1098,6 +1154,8 @@ namespace AIS_exchangeOffice
                 {
                     command.Connection.Close();
                 }
+
+                //прячем TextBox'ы для изменения курса валют 
                 sellUSD_edit.Visible = false;
                 buyUSD_edit.Visible = false;
                 sellEUR_edit.Visible = false;
@@ -1113,6 +1171,7 @@ namespace AIS_exchangeOffice
             }
         }
 
+        //недопустимость ввода некорректных значений
         private void sellUSD_edit_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 8 || e.KeyChar == 127 || e.KeyChar == 46)
@@ -1252,6 +1311,7 @@ namespace AIS_exchangeOffice
                     e.Handled = true;
             }
         }
+        //-------------------------------------------------------------------------
 
         private void print_currencies_Click(object sender, EventArgs e)
         {
@@ -1294,6 +1354,7 @@ namespace AIS_exchangeOffice
             clientsPanel.Visible = false;
         }
 
+        //отображение панели заказ валюты
         private void add_valuesBtn_Click(object sender, EventArgs e)
         {
             mainPanel.Visible = false;
@@ -1304,7 +1365,8 @@ namespace AIS_exchangeOffice
             exchangePanel.Visible = false;
             clientsPanel.Visible = false;
         }
-
+        
+        //отображение и скрывание пароля по клику
         private void pictureBox12_MouseDown(object sender, MouseEventArgs e)
         {
             if (passBox.Text == "Введите ваш пароль")
@@ -1328,7 +1390,9 @@ namespace AIS_exchangeOffice
                 passBox.UseSystemPasswordChar = true;
             }
         }
+        //---------------------------------------------------
 
+        //визуальный стиль
         private void passBox_Enter(object sender, EventArgs e)
         {
             if (passBox.Text == "Введите ваш пароль")
@@ -1366,13 +1430,17 @@ namespace AIS_exchangeOffice
                 quantityBox.Text = "Введите количество валюты";
             }
         }
+        //-----------------------------------------------------------------
 
+        //отображение администратору его логина
+        //просим его ввести пароль от его учетной записи
         private void add_valuesPanel_VisibleChanged(object sender, EventArgs e)
         {
             name_admin.Text = NameAdmin.Text;
             login_admin.Text = "Ваш логин: " + admin_login;
         }
 
+        //заказываем валюту, после проведения всех проверок
         private void exchangedBtn_Click(object sender, EventArgs e)
         {
             if (passBox.Text == "" || passBox.Text == "Введите ваш пароль")
@@ -1427,6 +1495,8 @@ namespace AIS_exchangeOffice
                         nameValue = "JPY";
                         break;
                 }
+
+                //соответственно обновляем количество валюты в кассе
                 query = "UPDATE currency_values SET value = " + Math.Round(numValue, 3).ToString().Replace(',', '.') + " WHERE name = '" + nameValue + "'";
                 command = new MySqlCommand(query, connection);
                 command.ExecuteNonQuery();
@@ -1541,9 +1611,9 @@ namespace AIS_exchangeOffice
                 this.dataGridView2.Columns.Add("date_birth", "Дата рождения");
                 this.dataGridView2.Columns["date_birth"].Width = 90;
                 this.dataGridView2.Columns.Add("seriesDoc", "Серия документа");
-                this.dataGridView2.Columns["seriesDoc"].Width = 100;
+                this.dataGridView2.Columns["seriesDoc"].Width = 85;
                 this.dataGridView2.Columns.Add("numberDoc", "Номер документа");
-                this.dataGridView2.Columns["numberDoc"].Width = 100;
+                this.dataGridView2.Columns["numberDoc"].Width = 85;
                 while (reader.Read())
                 {
                     classes.reversedate reversedate = new classes.reversedate();
@@ -2342,6 +2412,7 @@ namespace AIS_exchangeOffice
             }
         }
 
+        //при загрузке панели отчёты - отображаем общее количество напечатанных отчётов
         private void otchetPanel_VisibleChanged(object sender, EventArgs e)
         {
             string connStr = "server=localhost;user=root;database=aisdatabd;password=root123;";
@@ -2376,6 +2447,7 @@ namespace AIS_exchangeOffice
             }
         }
 
+        //отчет - информация о клиентах на печать
         private void printOtchetClients_btn_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Произвести печать отчёта - информация о клиентах?", "Печать отчёта", MessageBoxButtons.YesNo);
@@ -2420,6 +2492,8 @@ namespace AIS_exchangeOffice
                 {
                     Console.WriteLine("Error: \r\n{0}", ex.ToString());
                 }
+
+                //сохраняем отчёт
                 wordOtchets_print.otchetClients_print(Environment.CurrentDirectory + "\\wordDocs\\otchetClients_print.docx", data, NameAdmin.Text);
                 commandString = "UPDATE otchets_quantity SET quantity = " + (Convert.ToInt32(otchets_quantity.Text) + 1).ToString() + " WHERE id = 1";
                 command.CommandText = commandString;
@@ -2432,6 +2506,8 @@ namespace AIS_exchangeOffice
                 //do nothing
             }
         }        
+
+        //переход на панель печати отчёта о покупках клиентов
         private void printOtchetBuyValues_btn_Click(object sender, EventArgs e)
         {
             otchetPanel.Visible = false;
@@ -2447,6 +2523,7 @@ namespace AIS_exchangeOffice
             bdPanel.Visible = false;
         }
 
+        //переход на панель печати отчёта о продажах клиентов
         private void printOtchetSellValues_btn_Click(object sender, EventArgs e)
         {
             otchetPanel.Visible = false;
@@ -2462,6 +2539,7 @@ namespace AIS_exchangeOffice
             bdPanel.Visible = false;
         }
 
+        //печатаем отчёт - операции продаж
         private void OtchetSellClientprint_btn_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Произвести печать отчёта - операции продаж?", "Печать отчёта", MessageBoxButtons.YesNo);
@@ -2511,6 +2589,8 @@ namespace AIS_exchangeOffice
                 {
                     Console.WriteLine("Error: \r\n{0}", ex.ToString());
                 }
+
+                // передаем данные для отчёта в класс для его печати
                 wordOtchets_print.otchetSellValues_print(Environment.CurrentDirectory + "\\wordDocs\\otchetSellValues_print.docx", data, date1.Value, date2.Value, NameAdmin.Text);
                 commandString = "UPDATE otchets_quantity SET quantity = " + (Convert.ToInt32(otchets_quantity.Text) + 1).ToString() + " WHERE id = 1";
                 command.CommandText = commandString;
@@ -2524,6 +2604,7 @@ namespace AIS_exchangeOffice
             }
         }
 
+        //печатаем отчёт - операции покупок
         private void OtchetBuyClientprint_btn_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Произвести печать отчёта - операции покупок?", "Печать отчёта", MessageBoxButtons.YesNo);
@@ -2582,7 +2663,7 @@ namespace AIS_exchangeOffice
             }
             else if (dialogResult == DialogResult.No)
             {
-                //do nothing
+                //ничего не делаем
             }
         }
 

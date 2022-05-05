@@ -15,7 +15,7 @@ namespace AIS_exchangeOffice
             Application.SetCompatibleTextRenderingDefault(false);
 
             //запуск приложения с формы аунтефикации(AuthForm)
-            Application.Run(new AdminWindow());
+            Application.Run(new AuthForm());
 
         }
     }

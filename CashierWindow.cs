@@ -491,9 +491,9 @@ namespace AIS_exchangeOffice
                 this.dataGridView1.Columns.Add("date_birth", "Дата рождения");
                 this.dataGridView1.Columns["date_birth"].Width = 90;
                 this.dataGridView1.Columns.Add("seriesDoc", "Серия документа");
-                this.dataGridView1.Columns["seriesDoc"].Width = 100;
+                this.dataGridView1.Columns["seriesDoc"].Width = 85;
                 this.dataGridView1.Columns.Add("numberDoc", "Номер документа");
-                this.dataGridView1.Columns["numberDoc"].Width = 100;
+                this.dataGridView1.Columns["numberDoc"].Width = 85;
                 while (reader.Read())
                 {
                     classes.reversedate reversedate = new classes.reversedate();
@@ -1183,6 +1183,10 @@ namespace AIS_exchangeOffice
                 catch (MySqlException)
                 {
                     MessageBox.Show("Произошла ошибка данных! Проверьте введённые данные.");
+                }
+                catch (FormatException)
+                {
+                    MessageBox.Show("Произошла ошибка данных! Поле количества валюты некорректно, либо пустое.");
                 }
             }
             else if (dialogResult == DialogResult.No)
